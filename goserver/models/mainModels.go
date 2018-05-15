@@ -14,7 +14,7 @@ type MainModel struct {
 }
 
 const (
-	fileNameMainModel = "./models/mainmodel.json"
+	fileNameMainModel = "models/mainmodel.json"
 )
 
 var (
@@ -42,7 +42,7 @@ func init() {
 		Сontrolleds:                     make(map[int]*Сontrolled),
 		IncrementForInsertСontrolleddID: 0,
 	}
-	raw, err := ioutil.ReadFile(fileNameMainModel)
+	raw, err := ioutil.ReadFile(Path + fileNameMainModel)
 	if err == nil {
 		json.Unmarshal(raw, mainModel)
 	}
@@ -57,6 +57,6 @@ func save() error {
 	if err != nil {
 		return err
 	}
-	err = ioutil.WriteFile(fileNameMainModel, raw, 0666)
+	err = ioutil.WriteFile(Path+fileNameMainModel, raw, 0666)
 	return err
 }

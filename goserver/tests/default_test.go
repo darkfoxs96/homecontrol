@@ -1,7 +1,7 @@
 package test
 
 import (
-	_ "homecontrol/routers"
+	_ "homecontrol/goserver/routers"
 	"net/http"
 	"net/http/httptest"
 	"path/filepath"
@@ -9,7 +9,7 @@ import (
 	"testing"
 
 	"github.com/astaxie/beego"
-	. "github.com/smartystreets/goconvey/convey"
+	. "github.com/smartystreets/goconvey/convey"	
 )
 
 func init() {
