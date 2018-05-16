@@ -17,7 +17,9 @@ type CommandRecord struct {
 }
 
 type Сontrolled struct {
-	Name string `json:"name"`
-	Host string `json:"host"`
-	Port string `json:"port"`
+	Name         string `json:"name"`
+	Host         string `json:"host"`
+	Port         string `json:"port"`
+	// CommonBuffer 1 - Yes, 0 - No
+	CommonBuffer int   `json:"common_buffer"`
 }
