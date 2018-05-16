@@ -1,6 +1,6 @@
 package soundparsing
 
-//Min 8000 SampleRate
+//Min 16000 SampleRate
 import (
 	"bytes"
 	"encoding/xml"
@@ -73,7 +73,7 @@ var (
 	LANG    = ""
 )
 
-//Get ID controlled and command
+// Get ID controlled and command
 func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID string, err error) {
 	if len(sound) < 44 {
 		err = errors.New("SoundParsing: Not sound, size sound - " + strconv.Itoa(len(sound)) + " byte")
