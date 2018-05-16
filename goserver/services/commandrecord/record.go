@@ -2,8 +2,10 @@ package commandrecord
 
 import (
 	"errors"
-	"homecontrol/goserver/models"
 	"strings"
+
+	"homecontrol/goserver/models"	
+	"homecontrol/goserver/soundparsing"	
 )
 
 type Record struct {
@@ -35,4 +37,19 @@ func AddOrUpdateRecord(record *Record) (err error) {
 	}
 	err = models.InsertCommandRecord(soundRecord, record.ID)
 	return
+}
+
+// Sound to command and used command
+func UsedSoundCommand(sound []byte) error {
+	_, _, err := soundparsing.GetIDCommandANDControlledBySound(sound)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
+// Used text command
+func UsedTextCommand(command string) error {
+
+	return nil
 }

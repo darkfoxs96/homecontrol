@@ -19,7 +19,8 @@ type RecognitionResults struct {
 	Variant []string `xml:"variant"`
 }
 
-func compareCommand(commandControlled, commandRecord string) (controlledID int, commandID string, err error) {
+// Compate text and return ID command and contolled
+func CompareCommand(commandControlled, commandRecord string) (controlledID int, commandID string, err error) {
 	commandControlled = strings.ToLower(commandControlled)
 	commandRecord = strings.ToLower(commandRecord)
 
@@ -107,7 +108,7 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 		if len(variants) < 2 {
 			continue
 		} else {
-			controlledID, commandID, err = compareCommand(variants[0], strings.Join(variants[1:], " "))
+			controlledID, commandID, err = CompareCommand(variants[0], strings.Join(variants[1:], " "))
 			if err != nil {
 				continue
 			}
