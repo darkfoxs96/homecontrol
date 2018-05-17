@@ -69,3 +69,23 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 
 	return controlled.RequestToControlled(models.GetСontrolled(controlledID), models.GetCommandRecord(commandID))
 }
+
+// GetCommandRecords return command record map
+func GetCommandRecords() (commandRecords map[string]*models.CommandRecord) {
+	return models.GetCommandRecords()
+}
+
+// GetCommandRecord return command record bu ID
+func GetCommandRecord(ID string) (commandRecord *models.CommandRecord) {
+	return models.GetCommandRecord(ID)
+}
+
+// AddCommandRecord insert command record to storage
+func AddCommandRecord(record *models.CommandRecord, ID string) error {
+	return models.InsertCommandRecord(record, ID)
+}
+
+// DeleteCommandRecord delete command record bu ID
+func DeleteCommandRecord(ID string) error {
+	return models.DeleteCommandRecord(ID)
+}

@@ -52,3 +52,18 @@ func RegistrationAndUpdateControlled(controlledID int, host, port, name string, 
 	}
 	return
 }
+
+// GetControlleds return controlled map
+func GetControlleds() (controlleds map[int]*models.Сontrolled) {
+	return models.GetСontrolleds()
+}
+
+// GetControlled return controlled bu ID
+func GetControlled(ID int) (controlled *models.Сontrolled) {
+	return models.GetСontrolled(ID)
+}
+
+// DeleteControlled delete controlled bu ID
+func DeleteControlled(ID int) error {
+	return models.DeleteСontrolled(ID)
+}
