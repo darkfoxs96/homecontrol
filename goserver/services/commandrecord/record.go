@@ -23,7 +23,7 @@ type Record struct {
 // AddOrUpdateRecord create or update Record
 func AddOrUpdateRecord(record *Record) (err error) {
 	if record.ID == "" {
-		err = errors.New("No commandID")
+		err = errors.New("No ID")
 		return
 	}
 
