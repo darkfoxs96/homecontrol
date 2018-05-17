@@ -5,12 +5,17 @@ import (
 )
 
 // ControlSystemHome implements third-party home management systems
+// used *models.CommandRecord.StringCommand as objectID
+// *models.CommandRecord.Command interpret for oneself
+// *models.Сontrolled.Host and *models.Сontrolled.Port are relevant for ControlSystemHome
 type ControlSystemHome interface {
 	RequestToHomeControlSystem(controlled *models.Сontrolled, commandRecord *models.CommandRecord) (msg string, err error)
 	GetInfoHTML() (html string, err error)
 	GetInfoJSON() (json string, err error)
 	GetInfoString() (str string, err error)
-	GetInfoObjectString(objectName string) (str string, err error)
+	GetInfoObjectString(objectID string) (str string, err error)
+	GetListObjectJSON() (json string, err error)
+	IsSupporting() (msg string, err error)
 }
 
 // ControlSystemHomeInterfaces map all ControlSystemHome
@@ -42,7 +47,17 @@ func GetInfoString() (str string, err error) {
 }
 
 // GetInfoObjectString return in arbitrary format
-func GetInfoObjectString(objectName string) (str string, err error) {
+func GetInfoObjectString(objectID string) (str string, err error) {
+	return
+}
+
+// GetListObjectJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
+func GetListObjectJSON() (json string, err error) {
+	return
+}
+
+// IsSupporting system ?
+func IsSupporting() (msg string, err error) {
 	return
 }
 

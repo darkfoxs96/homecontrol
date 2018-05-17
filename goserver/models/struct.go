@@ -8,6 +8,7 @@ type CommandRecord struct {
 	//Command:  6 - Open youtube,   7 - Open vk,   8 - Open ok
 	//Command:  9 - Open fecebook, 10 - Open,     11 - Used code in terminal
 	//Command: 12 - testWork
+	// TODO: commands for Third-party home control systems
 	Command int `json:"command"`
 	//Addition to the command
 	StringCommand string `json:"string_command"`

@@ -18,3 +18,8 @@ Interpretation command for controlled:
 
 Control web: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static 
 and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views            lang javascript
+
+Third-party home control systems: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/thirdpartyhomecontrol lang golang
+
+Interpretation command for Third-party home control systems:
+//Command: 1000
