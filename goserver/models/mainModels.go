@@ -23,9 +23,9 @@ var (
 	mainModel *MainModel
 	locker    sync.Mutex
 	// Path to project
-	Path      string
+	Path string
 	// Test for testing systems
-	Test      bool
+	Test bool
 )
 
 // Lock locker

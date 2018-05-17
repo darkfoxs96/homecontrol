@@ -3,9 +3,9 @@ package main
 import (
 	"github.com/astaxie/beego"
 
+	_ "homecontrol/goserver/gosession"
 	"homecontrol/goserver/models"
 	_ "homecontrol/goserver/routers"
-	_ "homecontrol/goserver/gosession"
 )
 
 func main() {

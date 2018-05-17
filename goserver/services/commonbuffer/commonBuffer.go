@@ -27,7 +27,7 @@ func RequestToControlledBuffer() error {
 }
 
 // UpdateBuffer update models.CommonBuffer and sends a new buffer to all subscribers
-func UpdateBuffer(buffer string) error{
+func UpdateBuffer(buffer string) error {
 	if buffer == models.GetCommonBuffer() {
 		return nil
 	}

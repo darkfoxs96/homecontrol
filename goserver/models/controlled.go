@@ -72,7 +72,7 @@ func GetCommonBuffer() string {
 	return mainModel.CommonBuffer
 }
 
-func SetCommonBuffer(buffer string) error{
+func SetCommonBuffer(buffer string) error {
 	locker.Lock()
 	defer locker.Unlock()
 	mainModel.CommonBuffer = buffer
