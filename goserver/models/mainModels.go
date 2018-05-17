@@ -5,12 +5,14 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"sync"
 )
 
 type MainModel struct {
 	CommandRecords                  map[string]*CommandRecord
 	Сontrolleds                     map[int]*Сontrolled
-	IncrementForInsertСontrolleddID int `json:"increment_for_insert_controlled_id"`
+	IncrementForInsertСontrolleddID int    `json:"increment_for_insert_controlled_id"`
+	CommonBuffer                    string `json:"common_buffer"`
 }
 
 const (
@@ -19,13 +21,26 @@ const (
 
 var (
 	mainModel *MainModel
-	Path      string
-	Test      bool
+	locker    sync.Mutex
+	// Path to project
+	Path string
+	// Test for testing systems
+	Test bool
 )
+
+// Lock locker
+func Lock() {
+	locker.Lock()
+}
+
+// Unlock locker
+func Unlock() {
+	locker.Unlock()
+}
 
 func init() {
 	//Testing system
-	Test = true
+	Test = false
 	//Get path
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err != nil {
@@ -48,6 +63,7 @@ func init() {
 	}
 }
 
+// Save to json file
 func Save() error {
 	return save()
 }

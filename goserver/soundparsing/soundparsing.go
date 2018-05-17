@@ -19,7 +19,7 @@ type RecognitionResults struct {
 	Variant []string `xml:"variant"`
 }
 
-// Compate text and return ID command and contolled
+// CompareCommand compate text and return ID command and contolled
 func CompareCommand(commandControlled, commandRecord string) (controlledID int, commandID string, err error) {
 	commandControlled = strings.ToLower(commandControlled)
 	commandRecord = strings.ToLower(commandRecord)
@@ -73,7 +73,7 @@ var (
 	LANG    = ""
 )
 
-// Get ID controlled and command
+//  GetIDCommandANDControlledBySound get ID controlled and command
 func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID string, err error) {
 	if len(sound) < 44 {
 		err = errors.New("SoundParsing: Not sound, size sound - " + strconv.Itoa(len(sound)) + " byte")
@@ -82,8 +82,8 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 
 	var recognitionResults RecognitionResults
 	buffer := bytes.NewBuffer(sound)
-	endpoint := "https://asr.yandex.net/asr_xml?uuid=" + UUID + "&key=" + KEY + "&topic=" + QUERIES + "&lang=" + LANG
-	req, err := http.NewRequest("POST", endpoint, buffer)
+	URL := "https://asr.yandex.net/asr_xml?uuid=" + UUID + "&key=" + KEY + "&topic=" + QUERIES + "&lang=" + LANG
+	req, err := http.NewRequest("POST", URL, buffer)
 	if err != nil {
 		return
 	}
