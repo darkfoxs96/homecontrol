@@ -5,6 +5,7 @@ import (
 
 	"homecontrol/goserver/models"
 	_ "homecontrol/goserver/routers"
+	_ "homecontrol/goserver/gosession"
 )
 
 func main() {
