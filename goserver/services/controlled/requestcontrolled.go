@@ -11,6 +11,10 @@ import (
 
 // RequestToControlled action request
 func RequestToControlled(controlled *models.Сontrolled, command *models.CommandRecord) (responseMessage string, err error) {
+	if controlled.HomeControlID != 0 {
+		// TODO: Request to homecontrol
+		return
+	}
 	buffer := bytes.NewBuffer(nil)
 	err = binary.Write(buffer, binary.LittleEndian, int32(command.Command))
 	if err != nil {
@@ -38,12 +42,13 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 }
 
 // RegistrationAndUpdateControlled create record 'controlled' or update
-func RegistrationAndUpdateControlled(controlledID int, host, port, name string, commonBuffer int) (controlledAddID int, err error) {
+func RegistrationAndUpdateControlled(controlledID int, host, port, name string, commonBuffer, homeControlID int) (controlledAddID int, err error) {
 	controlled := models.Сontrolled{
-		Host:         host,
-		Port:         port,
-		Name:         name,
-		CommonBuffer: commonBuffer,
+		Host:          host,
+		Port:          port,
+		Name:          name,
+		CommonBuffer:  commonBuffer,
+		HomeControlID: homeControlID,
 	}
 	if controlledID > 0 {
 		controlledAddID, err = models.UpdateСontrolled(&controlled, controlledID)
