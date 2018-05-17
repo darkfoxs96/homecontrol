@@ -6,6 +6,8 @@ import (
 )
 
 func InsertСontrolled(record *Сontrolled) (ID int, err error) {
+	locker.Lock()
+	defer locker.Unlock()
 	mainModel.IncrementForInsertСontrolleddID++
 	ID = mainModel.IncrementForInsertСontrolleddID
 	if record.Name == "" {
@@ -16,7 +18,11 @@ func InsertСontrolled(record *Сontrolled) (ID int, err error) {
 	return
 }
 
+// UpdateСontrolled  update field
+// if the CommonBuffer is -1 then not update,
 func UpdateСontrolled(record *Сontrolled, controlledID int) (controlledAddID int, err error) {
+	locker.Lock()
+	defer locker.Unlock()
 	recordUpdate := mainModel.Сontrolleds[controlledID]
 	if recordUpdate == nil {
 		err = errors.New("Models: Not found record 'Controlled' for update")
@@ -41,15 +47,34 @@ func UpdateСontrolled(record *Сontrolled, controlledID int) (controlledAddID i
 }
 
 func DeleteСontrolled(ID int) (err error) {
+	locker.Lock()
+	defer locker.Unlock()
 	mainModel.Сontrolleds[ID] = nil
 	err = Save()
 	return
 }
 
 func GetСontrolleds() (controlleds map[int]*Сontrolled) {
+	locker.Lock()
+	defer locker.Unlock()
 	return mainModel.Сontrolleds
 }
 
 func GetСontrolled(ID int) (controlled *Сontrolled) {
+	locker.Lock()
+	defer locker.Unlock()
 	return mainModel.Сontrolleds[ID]
+}
+
+func GetCommonBuffer() string {
+	locker.Lock()
+	defer locker.Unlock()
+	return mainModel.CommonBuffer
+}
+
+func SetCommonBuffer(buffer string) error{
+	locker.Lock()
+	defer locker.Unlock()
+	mainModel.CommonBuffer = buffer
+	return Save()
 }

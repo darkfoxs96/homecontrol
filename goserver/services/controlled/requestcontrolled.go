@@ -10,10 +10,7 @@ import (
 )
 
 // RequestToControlled action request
-func RequestToControlled(controlledID int, commandID string) (responseMessage string, err error) {
-	controlled := models.GetСontrolled(controlledID)
-	command := models.GetCommandRecord(commandID)
-
+func RequestToControlled(controlled *models.Сontrolled, command *models.CommandRecord) (responseMessage string, err error) {
 	buffer := bytes.NewBuffer(nil)
 	err = binary.Write(buffer, binary.LittleEndian, int32(command.Command))
 	if err != nil {
