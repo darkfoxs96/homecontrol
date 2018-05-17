@@ -40,7 +40,7 @@ func UpdateСontrolled(record *Сontrolled, controlledID int) (controlledAddID i
 	if record.CommonBuffer == -1 {
 		record.CommonBuffer = recordUpdate.CommonBuffer
 	}
-	if record.HomeControlID == -1 {
+	if record.HomeControlID == "" {
 		record.HomeControlID = recordUpdate.HomeControlID
 	}
 	mainModel.Сontrolleds[controlledID] = record
