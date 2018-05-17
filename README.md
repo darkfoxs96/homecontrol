@@ -1,6 +1,6 @@
 # homecontrol
 
-Server: https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: golang
+Server: https://github.com/darkfoxs96/homecontrol/goserver lang: golang
 HTTP API:
 
 Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled lang: java
