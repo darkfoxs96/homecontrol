@@ -9,6 +9,7 @@ import (
 	"homecontrol/goserver/services/controlled"	
 )
 
+// Record struct for commandrecord
 type Record struct {
 	ID            string
 	Sound         []byte
@@ -46,7 +47,7 @@ func UsedSoundCommand(sound []byte) (responseMessage string, err error) {
 	if err != nil {
 		return
 	}
-	return controlled.RequestToControlled(controlledID, commandID)
+	return controlled.RequestToControlled(models.GetСontrolled(controlledID), models.GetCommandRecord(commandID))
 }
 
 // UsedTextCommand used text to command
@@ -66,5 +67,5 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 		err = soundparsing.ErrNotFoundIdCommand
 	}
 
-	return controlled.RequestToControlled(controlledID, commandID)
+	return controlled.RequestToControlled(models.GetСontrolled(controlledID), models.GetCommandRecord(commandID))
 }
