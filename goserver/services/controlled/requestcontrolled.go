@@ -22,7 +22,12 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	}
 	buffer.Write([]byte(command.StringCommand))
 
-	URL := "http://" + controlled.Host + ":" + controlled.Port
+	URL := ""
+	if controlled.Port != "" {
+		URL = "http://" + controlled.Host + ":" + controlled.Port
+	} else {
+		URL = "http://" + controlled.Host
+	}
 	req, err := http.NewRequest("POST", URL, buffer)
 	if err != nil {
 		return

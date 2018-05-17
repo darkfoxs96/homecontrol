@@ -58,13 +58,13 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 	controlledID, commandID, _ := soundparsing.CompareCommand(commands[0], strings.Join(commands[1:], " "))
 
 	if controlledID == 0 && commandID == "" {
-		err = soundparsing.ErrNotFoundIdCommandAndIdControlled
+		err = soundparsing.ErrNotFoundIDCommandAndIDControlled
 	}
 	if controlledID == 0 {
-		err = soundparsing.ErrNotFoundIdControlled
+		err = soundparsing.ErrNotFoundIDControlled
 	}
 	if commandID == "" {
-		err = soundparsing.ErrNotFoundIdCommand
+		err = soundparsing.ErrNotFoundIDCommand
 	}
 
 	return controlled.RequestToControlled(models.GetСontrolled(controlledID), models.GetCommandRecord(commandID))

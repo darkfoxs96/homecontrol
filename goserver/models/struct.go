@@ -21,6 +21,6 @@ type Сontrolled struct {
 	Host string `json:"host"`
 	Port string `json:"port"`
 	// CommonBuffer 1 - Yes, 0 - No
-	CommonBuffer int `json:"common_buffer"`
+	CommonBuffer  int `json:"common_buffer"`
 	HomeControlID int `json:"home_control_id"`
 }

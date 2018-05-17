@@ -13,7 +13,7 @@ import (
 	"homecontrol/goserver/models"
 )
 
-// Reply with Yandex, format: xml
+// RecognitionResults Reply with Yandex, format: xml
 type RecognitionResults struct {
 	XMLName xml.Name `xml:"recognitionResults"`
 	Variant []string `xml:"variant"`
@@ -47,25 +47,6 @@ func CompareCommand(commandControlled, commandRecord string) (controlledID int, 
 	return
 }
 
-func init() {
-	raw, err := ioutil.ReadFile(models.Path + "uuid.txt")
-	if err == nil {
-		UUID = string(raw)
-	}
-	raw, err = ioutil.ReadFile(models.Path + "key.txt")
-	if err == nil {
-		KEY = string(raw)
-	}
-	raw, err = ioutil.ReadFile(models.Path + "queries.txt")
-	if err == nil {
-		QUERIES = string(raw)
-	}
-	raw, err = ioutil.ReadFile(models.Path + "lang.txt")
-	if err == nil {
-		LANG = string(raw)
-	}
-}
-
 var (
 	UUID    = ""
 	KEY     = ""
@@ -73,10 +54,75 @@ var (
 	LANG    = ""
 )
 
-//  GetIDCommandANDControlledBySound get ID controlled and command
+func init() {
+	raw, err := ioutil.ReadFile(models.Path + "soundparsing/uuid.txt")
+	if err == nil {
+		UUID = string(raw)
+	}
+	raw, err = ioutil.ReadFile(models.Path + "soundparsing/key.txt")
+	if err == nil {
+		KEY = string(raw)
+	}
+	raw, err = ioutil.ReadFile(models.Path + "soundparsing/queries.txt")
+	if err == nil {
+		QUERIES = string(raw)
+	}
+	raw, err = ioutil.ReadFile(models.Path + "soundparsing/lang.txt")
+	if err == nil {
+		LANG = string(raw)
+	}
+}
+
+// SetSettings sets the settings for parsing the sound on the server
+func SetSettings(uuid, key, queries, lang string) error {
+	if uuid != "" {
+		err := ioutil.WriteFile("soundparsing/uuid.txt", []byte(uuid), 0666)
+		if err != nil {
+			return err
+		}
+		UUID = uuid
+	}
+	if key != "" {
+		err := ioutil.WriteFile("soundparsing/key.txt", []byte(key), 0666)
+		if err != nil {
+			return err
+		}
+		KEY = key
+	}
+	if queries != "" {
+		err := ioutil.WriteFile("soundparsing/queries.txt", []byte(queries), 0666)
+		if err != nil {
+			return err
+		}
+		QUERIES = queries
+	}
+	if lang != "" {
+		err := ioutil.WriteFile("soundparsing/lang.txt", []byte(lang), 0666)
+		if err != nil {
+			return err
+		}
+		LANG = lang
+	}
+	return nil
+}
+
+// GetSettings returns sound parsing settings
+func GetSettings() (uuid, key, queries, lang string) {
+	uuid = UUID
+	key = KEY
+	queries = QUERIES
+	lang = LANG
+	return
+}
+
+// GetIDCommandANDControlledBySound get ID controlled and command
 func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID string, err error) {
 	if len(sound) < 44 {
 		err = errors.New("SoundParsing: Not sound, size sound - " + strconv.Itoa(len(sound)) + " byte")
+		return
+	}
+	if KEY == "" {
+		err = errors.New("SoundParsing: No KEY for Yandex")
 		return
 	}
 
@@ -117,15 +163,15 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 	}
 
 	if controlledID == 0 && commandID == "" {
-		err = ErrNotFoundIdCommandAndIdControlled
+		err = ErrNotFoundIDCommandAndIDControlled
 		return
 	}
 	if controlledID == 0 {
-		err = ErrNotFoundIdControlled
+		err = ErrNotFoundIDControlled
 		return
 	}
 	if commandID == "" {
-		err = ErrNotFoundIdCommand
+		err = ErrNotFoundIDCommand
 		return
 	}
 
@@ -134,7 +180,7 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 
 // Errors for func GetIDCommandANDControlledBySound
 var (
-	ErrNotFoundIdCommand                = errors.New("SoundParsing: Not found id command")
-	ErrNotFoundIdControlled             = errors.New("SoundParsing: Not found id controlled")
-	ErrNotFoundIdCommandAndIdControlled = errors.New("SoundParsing: Not found id controlled and id command")
+	ErrNotFoundIDCommand                = errors.New("SoundParsing: Not found id command")
+	ErrNotFoundIDControlled             = errors.New("SoundParsing: Not found id controlled")
+	ErrNotFoundIDCommandAndIDControlled = errors.New("SoundParsing: Not found id controlled and id command")
 )
