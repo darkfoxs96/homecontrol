@@ -4,9 +4,9 @@ import (
 	"errors"
 	"strings"
 
-	"homecontrol/goserver/models"	
-	"homecontrol/goserver/soundparsing"	
-	"homecontrol/goserver/services/controlled"	
+	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/controlled"
+	"homecontrol/goserver/soundparsing"
 )
 
 // Record struct for commandrecord
@@ -23,7 +23,7 @@ type Record struct {
 // AddOrUpdateRecord create or update Record
 func AddOrUpdateRecord(record *Record) (err error) {
 	if record.ID == "" {
-		err = errors.New("SoundParsing: No ID")
+		err = errors.New("No commandID")
 		return
 	}
 
@@ -58,10 +58,10 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 	controlledID, commandID, _ := soundparsing.CompareCommand(commands[0], strings.Join(commands[1:], " "))
 
 	if controlledID == 0 && commandID == "" {
-		err = soundparsing.ErrNotFoundIdCommandAndIdControlled	
+		err = soundparsing.ErrNotFoundIdCommandAndIdControlled
 	}
 	if controlledID == 0 {
-		err = soundparsing.ErrNotFoundIdControlled		
+		err = soundparsing.ErrNotFoundIdControlled
 	}
 	if commandID == "" {
 		err = soundparsing.ErrNotFoundIdCommand
