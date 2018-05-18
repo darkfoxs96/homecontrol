@@ -14,7 +14,7 @@ type ControlSystemHome interface {
 	GetInfoJSON() (json string, err error)
 	GetInfoString() (str string, err error)
 	GetInfoObjectString(objectID string) (str string, err error)
-	GetListObjectJSON() (json string, err error)
+	GetListObjectsJSON() (json string, err error)
 	GetListCommandsJSON() (json string, err error)
 	IsSupporting() (msg string, err bool)
 }
@@ -52,8 +52,8 @@ func GetInfoObjectString(objectID string) (str string, err error) {
 	return
 }
 
-// GetListObjectJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
-func GetListObjectJSON() (json string, err error) {
+// GetListObjectsJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
+func GetListObjectsJSON() (json string, err error) {
 	return
 }
 
