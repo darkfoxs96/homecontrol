@@ -44,26 +44,6 @@ func GetInfoJSON() (json string, err error) {
 
 // GetInfoString return in arbitrary format
 func GetInfoString() (str string, err error) {
-	strStart := "Info third-party home management systems:\n"
-	controlleds := models.GetСontrolleds()
-
-	for _, controlled := range controlleds {
-		if controlled.HomeControlID == "" {
-			continue
-		}
-		info, err := ControlSystemHomeInterfaces[controlled.HomeControlID].GetInfoString()
-		if err == nil {
-			str += controlled.Name + ":\n" + info + "\n"
- 		} else {
-			str += controlled.Name + ": Not work\n"
-		}
-	}
-
-	if str == "" {
-		str += "No third-party home management systems\n"
-	}
-	
-	str = strStart + str
 	return
 }
 
@@ -84,5 +64,30 @@ func GetListCommandsJSON() (json string, err error) {
 
 // IsSupporting system ?
 func IsSupporting() (msg string, err bool) {
+	return
+}
+
+// GetInfoControlSystemHomeInterfaces return in arbitrary format
+func GetInfoControlSystemHomeInterfaces() (str string, err error) {
+	strStart := "Info third-party home management systems:\n"
+	controlleds := models.GetСontrolleds()
+
+	for _, controlled := range controlleds {
+		if controlled.HomeControlID == "" {
+			continue
+		}
+		info, err := ControlSystemHomeInterfaces[controlled.HomeControlID].GetInfoString()
+		if err == nil {
+			str += controlled.Name + ":\n" + info + "\n"
+ 		} else {
+			str += controlled.Name + ": Not work\n"
+		}
+	}
+
+	if str == "" {
+		str += "No third-party home management systems\n"
+	}
+	
+	str = strStart + str
 	return
 }
