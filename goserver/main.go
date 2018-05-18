@@ -4,13 +4,10 @@ import (
 	"github.com/astaxie/beego"
 
 	_ "homecontrol/goserver/gosession"
-	_ "homecontrol/goserver/routers"
 	"homecontrol/goserver/models"
-	
+	_ "homecontrol/goserver/routers"
 	// Third-party home control
-
 	// Bot messeger
-
 )
 
 func main() {

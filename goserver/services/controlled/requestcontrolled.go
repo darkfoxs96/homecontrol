@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	"homecontrol/goserver/models"
-	"homecontrol/goserver/services/controlsystemhome"	
+	"homecontrol/goserver/services/controlsystemhome"
 )
 
 // RequestToControlled action request
@@ -84,7 +84,7 @@ func GetInfoControlledsString() (str string, err error) {
 	strStart := "Information on controlled:\n"
 	controlleds := models.GetСontrolleds()
 	command := &models.CommandRecord{
-		Command:       12,
+		Command: 12,
 	}
 
 	for _, controlled := range controlleds {
@@ -102,7 +102,7 @@ func GetInfoControlledsString() (str string, err error) {
 	if str == "" {
 		str += "No controlled\n"
 	}
-	
+
 	str = strStart + str
 	return
 }

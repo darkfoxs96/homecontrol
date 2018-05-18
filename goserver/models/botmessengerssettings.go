@@ -1,8 +1,6 @@
 package models
 
-import (
-
-)
+import ()
 
 func SetSettingsBotMessenger(record *interface{}, ID string) (err error) {
 	locker.Lock()

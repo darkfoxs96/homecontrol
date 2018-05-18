@@ -89,7 +89,7 @@ func InMessage(controlSystemID, msg string) (outServerMsg string, err error) {
 }
 
 // GetListControlSystemHome return list
-func GetListControlSystemHome() (listControlSystemHome []*ListControlSystemHome){
+func GetListControlSystemHome() (listControlSystemHome []*ListControlSystemHome) {
 	for key, val := range ControlSystemHomeInterfaces {
 		_, active := val.IsSupporting()
 		listControlSystemHome = append(listControlSystemHome, &ListControlSystemHome{
@@ -112,7 +112,7 @@ func GetInfoControlSystemHomeInterfaces() (str string, err error) {
 		info, err := ControlSystemHomeInterfaces[controlled.HomeControlID].GetInfoString()
 		if err == nil {
 			str += controlled.Name + ":\n" + info + "\n"
- 		} else {
+		} else {
 			str += controlled.Name + ": Not work\n"
 		}
 	}
@@ -120,7 +120,7 @@ func GetInfoControlSystemHomeInterfaces() (str string, err error) {
 	if str == "" {
 		str += "No third-party home management systems\n"
 	}
-	
+
 	str = strStart + str
 	return
 }
