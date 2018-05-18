@@ -16,7 +16,7 @@ type ControlSystemHome interface {
 	GetInfoObjectString(objectID string) (str string, err error)
 	GetListObjectsJSON() (json string, err error)
 	GetListCommandsJSON() (json string, err error)
-	IsSupporting() (msg string, err bool)
+	IsSupporting() (msg string, supporting bool)
 }
 
 // ControlSystemHomeInterfaces map all ControlSystemHome
@@ -63,7 +63,7 @@ func GetListCommandsJSON() (json string, err error) {
 }
 
 // IsSupporting system ?
-func IsSupporting() (msg string, err bool) {
+func IsSupporting() (msg string, supporting bool) {
 	return
 }
 
