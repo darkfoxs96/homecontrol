@@ -1,6 +1,7 @@
 package botmessenger
 
 import (
+	"homecontrol/goserver/models"	
 	"homecontrol/goserver/services/commandrecord"
 	"homecontrol/goserver/services/controlled"
 	"homecontrol/goserver/services/controlsystemhome"
@@ -51,12 +52,12 @@ func SetSettings(tokenAPI string, password string) (msg string, err error) {
 
 // SetSettingsServer set settings from the server
 func SetSettingsServer(messengerID string, settings *interface{}) (err error) {
-	return
+	return models.SetSettingsBotMessenger(settings, messengerID)
 }
 
 // GetSettingsServer get settings from the server
-func GetSettingsServer(messengerID string) (settings *interface{}, err error) {
-	return
+func GetSettingsServer(messengerID string) (settings *interface{}) {
+	return models.GetSettingsBotMessenger(messengerID)
 }
 
 // InMessage receives a message
