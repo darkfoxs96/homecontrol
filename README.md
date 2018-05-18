@@ -23,4 +23,5 @@ and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views        
 Third-party home control systems: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/thirdpartyhomecontrol lang golang
 
 Interpretation command for Third-party home control systems:
-//Command: 1000
+
+//Command: 1000 - 1999 Noolite4
