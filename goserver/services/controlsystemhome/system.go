@@ -4,11 +4,19 @@ import (
 	"homecontrol/goserver/models"
 )
 
+// ListControlSystemHome list
+type ListControlSystemHome struct {
+	NameID string
+	Active bool
+}
+
 // ControlSystemHome implements third-party home management systems
 // used *models.CommandRecord.StringCommand as objectID
 // *models.CommandRecord.Command interpret for oneself
 // *models.Сontrolled.Host and *models.Сontrolled.Port are relevant for ControlSystemHome
+// nameID == controlSystemID
 type ControlSystemHome interface {
+	GetNameID() (nameID string)
 	RequestToHomeControlSystem(controlled *models.Сontrolled, commandRecord *models.CommandRecord) (msg string, err error)
 	GetInfoHTML() (html string, err error)
 	GetInfoJSON() (json string, err error)
@@ -25,6 +33,11 @@ var ControlSystemHomeInterfaces = make(map[string]ControlSystemHome)
 // RegisterControlSystem registers сontrolSystemHome
 func RegisterControlSystem(nameControl string, сontrolSystemHome ControlSystemHome) {
 	ControlSystemHomeInterfaces[nameControl] = сontrolSystemHome
+}
+
+// GetNameID return is the name, this id
+func GetNameID() (nameID string) {
+	return
 }
 
 // RequestToHomeControlSystem action request
@@ -64,6 +77,26 @@ func GetListCommandsJSON() (json string, err error) {
 
 // IsSupporting system ?
 func IsSupporting() (msg string, supporting bool) {
+	return
+}
+
+// InMessage receives a message
+// this function is created for ControlSystemHome
+// do not use for server !
+func InMessage(controlSystemID, msg string) (outServerMsg string, err error) {
+	// TODO: redirect message
+	return
+}
+
+// GetListControlSystemHome return list
+func GetListControlSystemHome() (listControlSystemHome []*ListControlSystemHome){
+	for key, val := range ControlSystemHomeInterfaces {
+		_, active := val.IsSupporting()
+		listControlSystemHome = append(listControlSystemHome, &ListControlSystemHome{
+			NameID: key,
+			Active: active,
+		})
+	}
 	return
 }
 
