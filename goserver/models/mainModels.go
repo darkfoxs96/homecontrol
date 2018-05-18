@@ -13,6 +13,7 @@ type MainModel struct {
 	Сontrolleds                     map[int]*Сontrolled
 	IncrementForInsertСontrolleddID int    `json:"increment_for_insert_controlled_id"`
 	CommonBuffer                    string `json:"common_buffer"`
+	BotMessengersSettings			map[string]*interface{} `json:"bot_messengers_settings"`
 }
 
 const (
