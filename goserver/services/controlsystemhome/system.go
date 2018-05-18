@@ -44,31 +44,6 @@ func GetInfoJSON() (json string, err error) {
 
 // GetInfoString return in arbitrary format
 func GetInfoString() (str string, err error) {
-	return
-}
-
-// GetInfoObjectString return in arbitrary format
-func GetInfoObjectString(objectID string) (str string, err error) {
-	return
-}
-
-// GetListObjectsJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
-func GetListObjectsJSON() (json string, err error) {
-	return
-}
-
-// GetListCommandsJSON return {["commandID", "info command"], ["commandID", "info command"], ["int", ""]...}
-func GetListCommandsJSON() (json string, err error) {
-	return
-}
-
-// IsSupporting system ?
-func IsSupporting() (msg string, err bool) {
-	return
-}
-
-// GetInfoControlSystemHomeInterfaces return in arbitrary format
-func GetInfoControlSystemHomeInterfaces() (str string, err error) {
 	strStart := "Info third-party home management systems:\n"
 	controlleds := models.GetСontrolleds()
 
@@ -89,5 +64,25 @@ func GetInfoControlSystemHomeInterfaces() (str string, err error) {
 	}
 	
 	str = strStart + str
+	return
+}
+
+// GetInfoObjectString return in arbitrary format
+func GetInfoObjectString(objectID string) (str string, err error) {
+	return
+}
+
+// GetListObjectsJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
+func GetListObjectsJSON() (json string, err error) {
+	return
+}
+
+// GetListCommandsJSON return {["commandID", "info command"], ["commandID", "info command"], ["int", ""]...}
+func GetListCommandsJSON() (json string, err error) {
+	return
+}
+
+// IsSupporting system ?
+func IsSupporting() (msg string, err bool) {
 	return
 }
