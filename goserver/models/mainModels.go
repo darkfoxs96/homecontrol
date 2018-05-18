@@ -31,6 +31,7 @@ var (
 	Path string
 	// Test for testing systems
 	Test bool
+	ChOutMessageToAll chan string
 )
 
 // Lock locker

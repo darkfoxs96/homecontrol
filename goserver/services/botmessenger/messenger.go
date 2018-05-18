@@ -1,7 +1,7 @@
 package botmessenger
 
 import (
-	"homecontrol/goserver/models"	
+	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/commandrecord"
 	"homecontrol/goserver/services/controlled"
 	"homecontrol/goserver/services/controlsystemhome"
@@ -30,13 +30,35 @@ func RegisterBotMessenger(nameMessenger string, botMessenger BotMessenger) {
 	BotMessengerInterfaces[nameMessenger] = botMessenger
 }
 
+// TODO: settings chan !
+func init() {
+	go func(ch chan string) {
+		for true {
+			OutMessageToAll(<-ch)
+		}
+	}(models.ChOutMessageToAll)
+}
+
 // GetNameID return is the name, this id
 func GetNameID() (nameID string) {
 	return
 }
 
-// OutMessage sends message to the client
+// OutMessage sends message to the clients
 func OutMessage(message string) (responseMsg string, err error) {
+	return
+}
+
+// OutMessageToAll sends message to all the clients
+func OutMessageToAll(message string) (responseMsg string, err error) {
+	for key, val := range BotMessengerInterfaces {
+		response, errr := val.OutMessage(message)
+		if errr != nil {
+			responseMsg += key + ": message not sent\n"
+		} else {
+			responseMsg += key + ": message sent, response: " + response + "\n"
+		}
+	}
 	return
 }
 

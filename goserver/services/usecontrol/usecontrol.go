@@ -1,7 +1,10 @@
 package usecontrol
 
 import (
+	"errors"
+	"strconv"
 	"time"
+
 	"homecontrol/goserver/models"
 )
 
@@ -52,22 +55,20 @@ func GetDetectedTime() (detectedTime int) {
 	return models.GetDetectedTime()
 }
 
-// TODO: GO code
-// GetDetectedTime get detected time
+// GetLastTime get used last time
 // format millisecond
-func GetLastTime() (detectedTime int) {
-	return models.GetDetectedTime()
+func GetLastTime() (lastTime int) {
+	return models.GetUsedLastTime()
 }
 
-// TODO: GO code
-// SetDetectedTime set detected time
+// SetLastTime set used last time
 // format millisecond
-func SetLastTime(newDetectedTime int) (err error) {
-	err = models.SetDetectedTime(newDetectedTime)
+func SetLastTime(newLastTime int) (err error) {
+	err = models.SetUsedLastTime(newLastTime)
 	if err != nil {
 		return
 	}
-	detectedTime = newDetectedTime
+	lastTime = newLastTime
 	return
 }
 
@@ -81,28 +82,57 @@ func GetLog() []string {
 	return models.GetUsageLog()
 }
 
-// TODO: GO code
 // IncomingMessageDistributor distributes signals
 func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string, err error) {
-	// flagUnauthorizedUse := false
+	IsUnauthorizedUse := false
 	if reportUnauthorizedUse && lastTime + detectedTime < int(time.Now().Unix()) {
-		// flagUnauthorizedUse = true
-
+		IsUnauthorizedUse = true
+		outMsg += "UnauthorizedUse! "
 	}
-
+	err = SetLastTime(int(time.Now().Unix()))
+	if err != nil {
+		return
+	}
 
 	switch deviceID.(type) {
 	case string:
-		err = AppendLog(deviceID.(string) + ": " + msg)
-		if err != nil {
-			return
+		if IsUnauthorizedUse {
+			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + deviceID.(string) + ": " + msg
+			err = AppendLog(outMsg)
+			if err != nil {
+				return
+			}
+		} else {
+			err = AppendLog(strconv.Itoa(int(time.Now().Unix())) + ": " + deviceID.(string) + ": " + msg)
+			if err != nil {
+				return
+			}
+			outMsg = "Ok"
 		}
-		outMsg = "Ok"
 	case int:
-
+		controlled := models.GetСontrolled(deviceID.(int))		
+		if IsUnauthorizedUse {
+			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
+			err = AppendLog(outMsg)
+			if err != nil {
+				return
+			}
+		} else {
+			err = AppendLog(strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg)
+			if err != nil {
+				return
+			}
+			outMsg = "Ok"
+		}
 	default:
-
+		err = errors.New("UseControl: Error unknown interface")
+		return
 	}
+
+	if IsUnauthorizedUse {
+		models.ChOutMessageToAll <- outMsg
+	}
+
 	return
 }
 
