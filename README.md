@@ -16,6 +16,7 @@ Interpretation command for controlled:
 //Command:  6 - Open youtube,   7 - Open vk,   8 - Open ok
 //Command:  9 - Open fecebook, 10 - Open,     11 - Used code in terminal
 //Command: 12 - testWork
+
 //First 4 bytes = Command(int32)
 //Next bytes = stringCommand(string)
 
