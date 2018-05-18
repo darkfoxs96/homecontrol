@@ -48,10 +48,18 @@ func SetDetectedTime(newDetectedTime int) (err error) {
 
 // GetDetectedTime get detected time
 // format millisecond
+func GetDetectedTime() (detectedTime int) {
+	return models.GetDetectedTime()
+}
+
+// TODO: GO code
+// GetDetectedTime get detected time
+// format millisecond
 func GetLastTime() (detectedTime int) {
 	return models.GetDetectedTime()
 }
 
+// TODO: GO code
 // SetDetectedTime set detected time
 // format millisecond
 func SetLastTime(newDetectedTime int) (err error) {
@@ -61,12 +69,6 @@ func SetLastTime(newDetectedTime int) (err error) {
 	}
 	detectedTime = newDetectedTime
 	return
-}
-
-// GetDetectedTime get detected time
-// format millisecond
-func GetDetectedTime() (detectedTime int) {
-	return models.GetDetectedTime()
 }
 
 // AppendLog add a line to the log
@@ -79,6 +81,7 @@ func GetLog() []string {
 	return models.GetUsageLog()
 }
 
+// TODO: GO code
 // IncomingMessageDistributor distributes signals
 func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string, err error) {
 	// flagUnauthorizedUse := false
