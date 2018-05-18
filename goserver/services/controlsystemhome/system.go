@@ -57,7 +57,7 @@ func GetListObjectsJSON() (json string, err error) {
 	return
 }
 
-// GetListCommandsJSON return {[commandID, "info command"], [commandID, "info command"], [int, ""]...}
+// GetListCommandsJSON return {["commandID", "info command"], ["commandID", "info command"], ["int", ""]...}
 func GetListCommandsJSON() (json string, err error) {
 	return
 }
