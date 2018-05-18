@@ -8,6 +8,7 @@ import (
 
 	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/controlsystemhome"
+	"homecontrol/goserver/services/usecontrol"	
 )
 
 // RequestToControlled action request
@@ -105,4 +106,9 @@ func GetInfoControlledsString() (str string, err error) {
 
 	str = strStart + str
 	return
+}
+
+// InMessage receives a message
+func InMessage(controlledID int, msg string) (outServerMsg string, err error) {
+	return usecontrol.IncomingMessageDistributor(controlledID, msg)
 }

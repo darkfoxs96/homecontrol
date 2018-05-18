@@ -26,3 +26,13 @@ type Сontrolled struct {
 	CommonBuffer  int    `json:"common_buffer"`
 	HomeControlID string `json:"home_control_id"`
 }
+
+type UseControl struct {
+	ReportUnauthorizedUse bool `json:"report_unauthorized_use"`
+	// Format millisecond
+	DetectedTime int `json:"detected_time"`
+	// Format millisecond
+	UsageLastTime int `json:"usage_last_time"`
+	// Log for package services/usecontrol
+	UsageLog []string `json:"usage_log"`
+}
