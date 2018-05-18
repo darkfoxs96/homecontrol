@@ -13,6 +13,7 @@ type ListMessengers struct {
 }
 
 // BotMessenger implements bot-messengers
+// nameID == messengerID
 type BotMessenger interface {
 	GetNameID() (nameID string)
 	OutMessage(message string) (responseMsg string, err error)
