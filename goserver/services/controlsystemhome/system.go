@@ -2,6 +2,7 @@ package controlsystemhome
 
 import (
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/usecontrol"
 )
 
 // ListControlSystemHome list
@@ -84,8 +85,7 @@ func IsSupporting() (msg string, supporting bool) {
 // this function is created for ControlSystemHome
 // do not use for server !
 func InMessage(controlSystemID, msg string) (outServerMsg string, err error) {
-	// TODO: redirect message
-	return
+	return usecontrol.IncomingMessageDistributor(controlSystemID, msg)
 }
 
 // GetListControlSystemHome return list

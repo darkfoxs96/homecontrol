@@ -47,7 +47,7 @@ func UsedSoundCommand(sound []byte) (responseMessage string, err error) {
 	if err != nil {
 		return
 	}
-	return controlled.RequestToControlled(models.GetСontrolled(controlledID), models.GetCommandRecord(commandID))
+	return controlled.RequestToControlled(controlled.GetControlled(controlledID), GetCommandRecord(commandID))
 }
 
 // UsedTextCommand used text to command
@@ -67,7 +67,7 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 		err = soundparsing.ErrNotFoundIDCommand
 	}
 
-	return controlled.RequestToControlled(models.GetСontrolled(controlledID), models.GetCommandRecord(commandID))
+	return controlled.RequestToControlled(controlled.GetControlled(controlledID), GetCommandRecord(commandID))
 }
 
 // GetCommandRecords return command record map
