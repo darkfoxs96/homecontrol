@@ -74,7 +74,12 @@ func SetLastTime(newLastTime int) (err error) {
 
 // AppendLog add a line to the log
 func AppendLog(msg string) error {
-	return models.AppendUsageLog(msg)
+	err := models.AppendUsageLog(msg)
+	if err != nil {
+		return err
+	}
+	log = append(log, msg)
+	return nil
 }
 
 // GetLog return log
