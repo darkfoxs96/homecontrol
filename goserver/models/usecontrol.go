@@ -1,8 +1,8 @@
 package models
 
 import (
-	"time"
 	"errors"
+	"time"
 )
 
 func GetReportUnauthorizedUse() bool {
@@ -50,7 +50,7 @@ func SetUsedLastTime(usageLastTime int) error {
 	if usageLastTime < 0 {
 		return errors.New("Models(DB): Time can not be less than 0")
 	}
-	if usageLastTime < int(time.Now().Unix()) - 10000  && usageLastTime > int(time.Now().Unix()) + 10000 {
+	if usageLastTime < int(time.Now().Unix())-10000 && usageLastTime > int(time.Now().Unix())+10000 {
 		return errors.New("Models(DB): when updating 'UsedLastTime' should be in real time")
 	}
 	mainModel.UseControl.UsageLastTime = usageLastTime
@@ -61,7 +61,7 @@ func AppendUsageLog(msg string) error {
 	if msg == "" {
 		return errors.New("Models(DB): entry for the log, can not be empty")
 	}
-	mainModel.UseControl.UsageLog = append(mainModel.UseControl.UsageLog, msg)	
+	mainModel.UseControl.UsageLog = append(mainModel.UseControl.UsageLog, msg)
 	return Save()
 }
 

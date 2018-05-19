@@ -30,13 +30,20 @@ func RegisterBotMessenger(nameMessenger string, botMessenger BotMessenger) {
 	BotMessengerInterfaces[nameMessenger] = botMessenger
 }
 
-// TODO: settings chan !
+// TODO: settings chan  !
 func init() {
-	go func(ch chan string) {
+	go func(ch <-chan string, chClose <-chan struct{}) {
 		for true {
-			OutMessageToAll(<-ch)
+			select {
+			case msg := <-ch:
+				OutMessageToAll(msg)
+			case <-chClose:
+				close(models.CancelChOutMessageToAll)
+				close(models.ChOutMessageToAll)
+				return
+			}
 		}
-	}(models.ChOutMessageToAll)
+	}(models.ChOutMessageToAll, models.CancelChOutMessageToAll)
 }
 
 // GetNameID return is the name, this id

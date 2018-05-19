@@ -12,9 +12,9 @@ var (
 	reportUnauthorizedUse bool
 	// Format second
 	detectedTime int
-	// Format second	
+	// Format second
 	lastTime int
-	log []string
+	log      []string
 )
 
 func init() {
@@ -85,7 +85,7 @@ func GetLog() []string {
 // IncomingMessageDistributor distributes signals
 func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string, err error) {
 	IsUnauthorizedUse := false
-	if reportUnauthorizedUse && lastTime + detectedTime < int(time.Now().Unix()) {
+	if reportUnauthorizedUse && lastTime+detectedTime < int(time.Now().Unix()) {
 		IsUnauthorizedUse = true
 		outMsg += "UnauthorizedUse! "
 	}
@@ -110,7 +110,7 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 			outMsg = "Ok"
 		}
 	case int:
-		controlled := models.GetСontrolled(deviceID.(int))		
+		controlled := models.GetСontrolled(deviceID.(int))
 		if IsUnauthorizedUse {
 			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
 			err = AppendLog(outMsg)
@@ -135,7 +135,3 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 
 	return
 }
-
-
-
-

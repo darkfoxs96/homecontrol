@@ -1,7 +1,6 @@
 package models
 
 import (
-	"time"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -9,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
+	"time"
 )
 
 type MainModel struct {
@@ -31,7 +31,10 @@ var (
 	Path string
 	// Test for testing systems
 	Test bool
+	// ChOutMessageToAll chan for sending a message to everyone via bot-messenger
 	ChOutMessageToAll chan string
+	// CancelChOutMessageToAll closes ChOutMessageToAll
+	CancelChOutMessageToAll chan struct{}	
 )
 
 // Lock locker
@@ -59,10 +62,12 @@ func init() {
 	}
 
 	//Load MainModel
+	ChOutMessageToAll = make(chan string, 3)
+	CancelChOutMessageToAll = make(chan struct{})	
 	useControl := &UseControl{
 		ReportUnauthorizedUse: false,
 		DetectedTime:          30 * 60 * 1000, //30 minute, format millisecond
-		UsageLastTime:		   int(time.Now().Unix()),
+		UsageLastTime:         int(time.Now().Unix()),
 		UsageLog:              []string{},
 	}
 	mainModel = &MainModel{

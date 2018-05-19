@@ -1,8 +1,8 @@
 package controlsystemhome
 
 import (
-	"homecontrol/goserver/services/usecontrol"
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/usecontrol"
 )
 
 // ListControlSystemHome list

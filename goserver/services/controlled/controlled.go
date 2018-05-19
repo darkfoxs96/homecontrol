@@ -8,7 +8,7 @@ import (
 
 	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/controlsystemhome"
-	"homecontrol/goserver/services/usecontrol"	
+	"homecontrol/goserver/services/usecontrol"
 )
 
 // RequestToControlled action request
