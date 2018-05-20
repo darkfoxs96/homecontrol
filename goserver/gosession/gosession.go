@@ -13,6 +13,7 @@ var (
 )
 
 func init() {
+	// TODO: set up a session !
 	config := `{"cookieName":"gosessionid", "gclifetime":3600, "enableSetCookie":true, "providerConfig":"./redis"}`
 	err := json.Unmarshal([]byte(config), conf)
 	if err != nil {
