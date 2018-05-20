@@ -3,10 +3,10 @@ package main
 import (
 	"github.com/astaxie/beego"
 
-	"homecontrol/goserver/models"
-	_ "homecontrol/goserver/services/botmessenger"			
 	_ "homecontrol/goserver/gosession"
+	"homecontrol/goserver/models"
 	_ "homecontrol/goserver/routers"
+	_ "homecontrol/goserver/services/botmessenger"
 	// Third-party home control
 	// Bot messeger
 )
