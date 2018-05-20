@@ -18,8 +18,8 @@ type MainModel struct {
 	IncrementForInsertСontrolleddID int                     `json:"increment_for_insert_controlled_id"`
 	CommonBuffer                    string                  `json:"common_buffer"`
 	BotMessengersSettings           map[string]*interface{} `json:"bot_messengers_settings"`
-	VersionPasswordHash				string					`json:"version_password_hash"`
-	PasswordHash					string					`json:"password_hash"`
+	VersionPasswordHash             string                  `json:"version_password_hash"`
+	PasswordHash                    string                  `json:"password_hash"`
 }
 
 const (
@@ -36,7 +36,7 @@ var (
 	// ChOutMessageToAll chan for sending a message to everyone via bot-messenger
 	ChOutMessageToAll chan string
 	// CancelChOutMessageToAll closes ChOutMessageToAll
-	CancelChOutMessageToAll chan struct{}	
+	CancelChOutMessageToAll chan struct{}
 )
 
 // Lock locker
@@ -65,7 +65,7 @@ func init() {
 
 	//Load MainModel
 	ChOutMessageToAll = make(chan string, 3)
-	CancelChOutMessageToAll = make(chan struct{})	
+	CancelChOutMessageToAll = make(chan struct{})
 	useControl := &UseControl{
 		ReportUnauthorizedUse: false,
 		DetectedTime:          30 * 60 * 1000, //30 minute, format millisecond
@@ -79,8 +79,8 @@ func init() {
 		BotMessengersSettings:           make(map[string]*interface{}),
 		IncrementForInsertСontrolleddID: 0,
 		CommonBuffer:                    "",
-		VersionPasswordHash:			 "",
-		PasswordHash:					 "",
+		VersionPasswordHash:             "",
+		PasswordHash:                    "",
 	}
 	raw, err := ioutil.ReadFile(Path + fileNameMainModel)
 	if err == nil {

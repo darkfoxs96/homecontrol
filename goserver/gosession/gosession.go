@@ -1,9 +1,9 @@
 package gosession
 
 import (
-	"homecontrol/goserver/models"
 	"encoding/json"
 	"fmt"
+	"homecontrol/goserver/models"
 
 	"github.com/astaxie/beego/session"
 )
