@@ -61,7 +61,12 @@ func AppendUsageLog(msg string) error {
 	if msg == "" {
 		return errors.New("Models(DB): entry for the log, can not be empty")
 	}
-	mainModel.UseControl.UsageLog = append(mainModel.UseControl.UsageLog, msg)
+	usegeLog := mainModel.UseControl.UsageLog
+	if len(usegeLog) >= 100 {
+		usegeLog = usegeLog[1:99]
+	}
+	usegeLog = append(usegeLog, msg)
+	mainModel.UseControl.UsageLog = usegeLog
 	return Save()
 }
 
