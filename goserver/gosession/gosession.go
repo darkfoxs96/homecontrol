@@ -1,6 +1,7 @@
 package gosession
 
 import (
+	"homecontrol/goserver/models"
 	"encoding/json"
 	"fmt"
 
@@ -13,8 +14,8 @@ var (
 )
 
 func init() {
-	// TODO: set up a session !
-	config := `{"cookieName":"gosessionid", "gclifetime":3600, "enableSetCookie":true, "providerConfig":"./redis"}`
+	// TODO: set up a session, Path !
+	config := `{"cookieName":"gosessionid", "gclifetime":3600, "enableSetCookie":true, "providerConfig":"` + models.Path + `redis"}`
 	err := json.Unmarshal([]byte(config), conf)
 	if err != nil {
 		fmt.Println("INIT GOSESSION ERROR: json decode error ", err)

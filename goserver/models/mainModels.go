@@ -18,6 +18,8 @@ type MainModel struct {
 	IncrementForInsertСontrolleddID int                     `json:"increment_for_insert_controlled_id"`
 	CommonBuffer                    string                  `json:"common_buffer"`
 	BotMessengersSettings           map[string]*interface{} `json:"bot_messengers_settings"`
+	VersionPasswordHash				string					`json:"version_password_hash"`
+	PasswordHash					string					`json:"password_hash"`
 }
 
 const (
@@ -77,6 +79,8 @@ func init() {
 		BotMessengersSettings:           make(map[string]*interface{}),
 		IncrementForInsertСontrolleddID: 0,
 		CommonBuffer:                    "",
+		VersionPasswordHash:			 "",
+		PasswordHash:					 "",
 	}
 	raw, err := ioutil.ReadFile(Path + fileNameMainModel)
 	if err == nil {
