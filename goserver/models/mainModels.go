@@ -55,7 +55,7 @@ func init() {
 	if err == nil {
 		Path = dir + "/"
 		if Test {
-			Path = ""
+			Path = "/"
 		}
 	} else {
 		fmt.Println("Models(DB): Error load path, msg error: ", err.Error())
