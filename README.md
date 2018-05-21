@@ -34,3 +34,8 @@ Bot messengers:
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/botsmessengers 
 Interface local:
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/botmessenger lang golang
+
+Sound parsings: 
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/soundparsing 
+Interface local: 
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundparsing lang golang
