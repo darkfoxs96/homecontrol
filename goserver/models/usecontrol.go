@@ -5,12 +5,14 @@ import (
 	"time"
 )
 
+// GetReportUnauthorizedUse get ReportUnauthorizedUse
 func GetReportUnauthorizedUse() bool {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.UseControl.ReportUnauthorizedUse
 }
 
+// SetReportUnauthorizedUse set ReportUnauthorizedUse
 func SetReportUnauthorizedUse(reportUnauthorizedUse bool) error {
 	locker.Lock()
 	defer locker.Unlock()
@@ -57,6 +59,7 @@ func SetUsedLastTime(usageLastTime int) error {
 	return Save()
 }
 
+// AppendUsageLog append string to usege log
 func AppendUsageLog(msg string) error {
 	if msg == "" {
 		return errors.New("Models(DB): entry for the log, can not be empty")
@@ -72,6 +75,7 @@ func AppendUsageLog(msg string) error {
 	return Save()
 }
 
+// GetUsageLog get usage log
 func GetUsageLog() []string {
 	locker.Lock()
 	defer locker.Unlock()

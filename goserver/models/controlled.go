@@ -5,6 +5,7 @@ import (
 	"strconv"
 )
 
+// InsertСontrolled added record to DB
 func InsertСontrolled(record *Сontrolled) (ID int, err error) {
 	locker.Lock()
 	defer locker.Unlock()
@@ -49,6 +50,7 @@ func UpdateСontrolled(record *Сontrolled, controlledID int) (controlledAddID i
 	return
 }
 
+// DeleteСontrolled delete controlled
 func DeleteСontrolled(ID int) (err error) {
 	locker.Lock()
 	defer locker.Unlock()
@@ -57,24 +59,28 @@ func DeleteСontrolled(ID int) (err error) {
 	return
 }
 
+// GetСontrolleds get map Controlleds
 func GetСontrolleds() (controlleds map[int]*Сontrolled) {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.Сontrolleds
 }
 
+// GetСontrolled return Сontrolled
 func GetСontrolled(ID int) (controlled *Сontrolled) {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.Сontrolleds[ID]
 }
 
+// GetCommonBuffer return CommonBuffer
 func GetCommonBuffer() string {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.CommonBuffer
 }
 
+// SetCommonBuffer set CommonBuffer
 func SetCommonBuffer(buffer string) error {
 	locker.Lock()
 	defer locker.Unlock()

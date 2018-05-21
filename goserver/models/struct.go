@@ -1,5 +1,6 @@
 package models
 
+// CommandRecord struct to all 'command' !
 type CommandRecord struct {
 	//TypeRcord: 1 - Сontrolled, 2 - Command
 	TypeRecord byte `json:"type_record"`
@@ -18,6 +19,7 @@ type CommandRecord struct {
 	СontrolledID int `json:"controlled_id"`
 }
 
+// Сontrolled struct to all 'controlled' !
 type Сontrolled struct {
 	Name string `json:"name"`
 	Host string `json:"host"`
@@ -27,6 +29,7 @@ type Сontrolled struct {
 	HomeControlID string `json:"home_control_id"`
 }
 
+// UseControl struct for package services/usecontrol
 type UseControl struct {
 	ReportUnauthorizedUse bool `json:"report_unauthorized_use"`
 	// Format millisecond

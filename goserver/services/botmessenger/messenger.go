@@ -79,13 +79,14 @@ func SetSettings(tokenAPI string, password string) (msg string, err error) {
 	return
 }
 
-// SetSettingsServer set settings from the server
-func SetSettingsServer(messengerID string, settings *interface{}) (err error) {
+// SetSettingsServer insert settings to server DB
+func SetSettingsServer(messengerID string, settings interface{}) (err error) {
 	return models.SetSettingsBotMessenger(settings, messengerID)
 }
 
-// GetSettingsServer get settings from the server
-func GetSettingsServer(messengerID string) (settings *interface{}) {
+// GetSettingsServer get settings from the server DB
+// Convert the interface to JSON, then convert JSON to the required structure !
+func GetSettingsServer(messengerID string) (settings interface{}) {
 	return models.GetSettingsBotMessenger(messengerID)
 }
 

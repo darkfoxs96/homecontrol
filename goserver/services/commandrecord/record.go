@@ -6,7 +6,7 @@ import (
 
 	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/controlled"
-	"homecontrol/goserver/soundparsing"
+	"homecontrol/goserver/services/soundparsing"
 )
 
 // Record struct for commandrecord
@@ -43,7 +43,7 @@ func AddOrUpdateRecord(record *Record) (err error) {
 
 // UsedSoundCommand sound to command and used command
 func UsedSoundCommand(sound []byte) (responseMessage string, err error) {
-	controlledID, commandID, err := soundparsing.GetIDCommandANDControlledBySound(sound)
+	controlledID, commandID, err := soundparsing.UseDefaultIDForParsingSound(sound)
 	if err != nil {
 		return
 	}
@@ -55,7 +55,7 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 	command = strings.Replace(command, ",", "", -1)
 	command = strings.Replace(command, ".", "", -1)
 	commands := strings.Split(command, " ")
-	controlledID, commandID, _ := soundparsing.CompareCommand(commands[0], strings.Join(commands[1:], " "))
+	controlledID, commandID, _ := soundparsing.CompareCommand(commands)
 
 	if controlledID == 0 && commandID == "" {
 		err = soundparsing.ErrNotFoundIDCommandAndIDControlled
