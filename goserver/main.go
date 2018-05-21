@@ -3,12 +3,16 @@ package main
 import (
 	"github.com/astaxie/beego"
 
-	_ "homecontrol/goserver/gosession"
 	"homecontrol/goserver/models"
+	_ "homecontrol/goserver/gosession"	
 	_ "homecontrol/goserver/routers"
 	_ "homecontrol/goserver/services/botmessenger"
+	_ "homecontrol/goserver/services/soundparsing"
+	_ "homecontrol/goserver/services/controlsystemhome"
 	// Third-party home control
 	// Bot messeger
+	// Sound parsings
+	_ "homecontrol/goserver/soundparsing/yandex"	
 )
 
 func main() {

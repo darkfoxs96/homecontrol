@@ -9,12 +9,14 @@ const (
 	lengthHash = 10
 )
 
+// GetVersionPasswordHash return versionPasswordHash
 func GetVersionPasswordHash() (versionPasswordHash string) {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.VersionPasswordHash
 }
 
+// GetPasswordHash return passwordHash
 func GetPasswordHash() (passwordHash string) {
 	locker.Lock()
 	defer locker.Unlock()
