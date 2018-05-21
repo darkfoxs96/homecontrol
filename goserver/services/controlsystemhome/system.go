@@ -25,6 +25,7 @@ type ControlSystemHome interface {
 	GetInfoObjectString(objectID string) (str string, err error)
 	GetListObjectsJSON() (json string, err error)
 	GetListCommandsJSON() (json string, err error)
+	GetListCommands() (listCommands *models.ListCommands, err error)
 	IsSupporting() (msg string, supporting bool)
 }
 
@@ -71,8 +72,13 @@ func GetListObjectsJSON() (json string, err error) {
 	return
 }
 
-// GetListCommandsJSON return {["commandID", "info command"], ["commandID", "info command"], ["int", ""]...}
+// GetListCommandsJSON return {[1001, "info command"], [1002, "info command"], [int, ""]...}
 func GetListCommandsJSON() (json string, err error) {
+	return
+}
+
+// GetListCommands return interface commands list
+func GetListCommands() (listCommands *models.ListCommands, err error) {
 	return
 }
 

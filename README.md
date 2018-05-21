@@ -15,7 +15,7 @@ Interpretation command for controlled:
 //Command:  3 - Sound off,  	4 - Sound on,  5 - off
 //Command:  6 - Open youtube,   7 - Open vk,   8 - Open ok
 //Command:  9 - Open fecebook, 10 - Open,     11 - Used code in terminal
-//Command: 12 - testWork
+//Command: 999 - testWork
 
 //First 4 bytes = Command(int32)
 //Next bytes = stringCommand(string)

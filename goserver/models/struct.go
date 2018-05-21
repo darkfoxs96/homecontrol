@@ -7,7 +7,7 @@ type CommandRecord struct {
 	//Command:  3 - Sound off,  	4 - Sound on,  5 - off
 	//Command:  6 - Open youtube,   7 - Open vk,   8 - Open ok
 	//Command:  9 - Open fecebook, 10 - Open,     11 - Used code in terminal
-	//Command: 12 - testWork
+	//Command: 999 - testWork
 	// TODO: commands for Third-party home control systems
 	Command int `json:"command"`
 	//Addition to the command
@@ -35,4 +35,19 @@ type UseControl struct {
 	UsageLastTime int `json:"usage_last_time"`
 	// Log for package services/usecontrol
 	UsageLog []string `json:"usage_log"`
+}
+
+// Command struct for ListCommands
+type Command struct {
+	ID          int    `json:"id"`
+	InfoCommand string `json:"info_command"`
+}
+
+// ListCommands commands list
+// Name = controlSystemID, "controlled" = all controlledID
+type ListCommands struct {
+	Commands             []*Command
+	Name                 string `json:"name_interface"`
+	StartRangeIDCommands int    `json:"start_range_id_commands"`
+	EndRangeIDCommands   int    `json:"end_range_id_commands"`
 }

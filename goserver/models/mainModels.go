@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"golang.org/x/crypto/bcrypt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -81,6 +82,14 @@ func init() {
 		CommonBuffer:                    "",
 		VersionPasswordHash:             "",
 		PasswordHash:                    "",
+	}
+	pasHash, err := bcrypt.GenerateFromPassword([]byte("admin"), bcrypt.DefaultCost)
+	if err != nil {
+		fmt.Println("Models(DB): init models(DB), Error bcrypt.GenerateFromPassword() msg error: ", err.Error())
+	}
+	err = SetPasswordHash(string(pasHash))
+	if err != nil {
+		fmt.Println(err)
 	}
 	raw, err := ioutil.ReadFile(Path + fileNameMainModel)
 	if err == nil {
