@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" name="key" value="{{.Key}}" placeholder="key" id="key_yandex_sp" required>
             </div>
             <div class="row justify-content-center text-center">
-                <div class="col-sm-8 col-md-6 col-lg-5 col-xl-5">
+                <div class="col-sm-8 col-md-6 col-lg-6 col-xl-6">
                     <a href="https://developer.tech.yandex.ru/">Зарегистрировать key от яндекс</a></br>
                     <p style="font-size: 18px; padding: 10px">
                         Зарегистрируйтесь или войдите и выберите ключ для SpeechKit Cloud</br>
