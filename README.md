@@ -18,10 +18,16 @@ Interpretation command for controlled:
 //Command:  9 - Open fecebook, 10 - Open,     11 - Used code in terminal
 //Command: 999 - testWork
 
-//First 4 bytes = Command(int32)
+Controlled HTTP OPEN API:
+
+metod POST '/api/command' 
+
+Body 
+//First 4 bytes = Command(int32) 
 //Next bytes = stringCommand(string)
 
-HTTP OPEN API:
+
+HTTP OPEN API for controlled:
 
 metod POST '/api/controlled' format JSON
 
