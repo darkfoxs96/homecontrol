@@ -25,6 +25,7 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	buffer.Write([]byte(command.StringCommand))
 
 	URL := ""
+	// TODO: http or https ?
 	if controlled.Port != "" {
 		URL = "http://" + controlled.Host + ":" + controlled.Port
 	} else {

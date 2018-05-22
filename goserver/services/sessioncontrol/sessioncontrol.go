@@ -7,6 +7,8 @@ import (
 	"homecontrol/goserver/models"
 )
 
+// TODO: password recovery !
+
 // IsCheckPassword password to passwordHash, is check passwordHash and passwordHash in models(DB)
 func IsCheckPassword(password string) (isCheckPassword bool, err error) {
 	hashPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
