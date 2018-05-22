@@ -27,7 +27,7 @@ Body
 //Next bytes = stringCommand(string)
 
 
-HTTP OPEN API for controlled:
+HTTP OPEN API:
 
 metod POST '/api/controlled' format JSON
 
