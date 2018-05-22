@@ -1,8 +1,8 @@
 package policies
 
 import (
-	"homecontrol/goserver/services/sessioncontrol"
 	"homecontrol/goserver/gosession"
+	"homecontrol/goserver/services/sessioncontrol"
 
 	"github.com/astaxie/beego/context"
 )
@@ -11,9 +11,19 @@ import (
 func IsAuthorized(ctx *context.Context) {
 	sess, err := gosession.GlobalSessions.SessionStart(ctx.ResponseWriter, ctx.Request)
 	if err == nil {
-		defer sess.SessionRelease(ctx.ResponseWriter)	
+		defer sess.SessionRelease(ctx.ResponseWriter)
 	}
-	if err != nil || !sess.Get("IsAutorized").(bool) || !sessioncontrol.IsCheckVersionHashPassword(sess.Get("VersionHashPassword").(string)) {
+	isAutorized, ok := sess.Get("IsAutorized").(bool)
+	if !ok {
+		ctx.Output.SetStatus(401)
+		_ = ctx.Output.Body([]byte(`Unauthorized`))
+	}
+	versionHashPassword, ok := sess.Get("VersionHashPassword").(string)
+	if !ok {
+		ctx.Output.SetStatus(401)
+		_ = ctx.Output.Body([]byte(`Unauthorized`))
+	}
+	if err != nil || !isAutorized || !sessioncontrol.IsCheckVersionHashPassword(versionHashPassword) {
 		ctx.Output.SetStatus(401)
 		_ = ctx.Output.Body([]byte(`Unauthorized`))
 	}

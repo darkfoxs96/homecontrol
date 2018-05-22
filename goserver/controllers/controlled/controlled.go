@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"strconv"
 
-	"github.com/astaxie/beego"	
-	
+	"github.com/astaxie/beego"
+
 	"homecontrol/goserver/services/controlled"
 )
 
@@ -91,6 +91,32 @@ type ResponseControlled struct {
 	HomeControlID string `json:"home_control_id"`
 }
 
+// Get - return favorite controlled
+// @Title Get
+// @Description get controlled
+// @Param	id		int		false		models.Controlled			JSON
+// @Success 200 	[]ResponseControlled		JSON
+// @Failure 400 Can't strconv.Atoi param 'id'
+// @Failure 500 database error
+// @router /:id [get]
+func (c *Controlled) GetOne() {
+	strID := c.Ctx.Input.Param(":id")
+	if strID == "" {
+		c.CustomAbort(400, "No id")
+	}
+
+	controlledID, err := strconv.Atoi(strID)
+	if err != nil {
+		c.CustomAbort(400, "Can't strconv.Atoi param 'id'")
+	}
+
+	controlled := controlled.GetControlled(controlledID)
+
+	c.Data["json"] = controlled
+	c.ServeJSON()
+	return
+}
+
 // Get - return favorite controlled or controlleds
 // @Title Get
 // @Description get controlled or controlleds
@@ -98,20 +124,8 @@ type ResponseControlled struct {
 // @Success 200 	if no ID 			return		[]ResponseControlled		JSON
 // @Failure 400 Can't strconv.Atoi param 'id'
 // @Failure 500 database error
-// @router /:id [get]
+// @router / [get]
 func (c *Controlled) Get() {
-	strID := c.Ctx.Input.Param(":id")
-	if strID != "" {
-		controlledID, err := strconv.Atoi(strID)
-		if err != nil {
-			c.CustomAbort(400, "Can't strconv.Atoi param 'id'")
-		}
-		controlled := controlled.GetControlled(controlledID)
-		c.Data["json"] = controlled
-		c.ServeJSON()
-		return
-	}
-
 	mapControlleds := controlled.GetControlleds()
 	var controlleds []*ResponseControlled
 	for key, val := range mapControlleds {
@@ -168,6 +182,6 @@ func (c *InfoControlled) Get() {
 		c.CustomAbort(500, err.Error())
 	}
 
-	c.Ctx.Output.SetStatus(200)	
+	c.Ctx.Output.SetStatus(200)
 	c.Ctx.Output.Body([]byte(info))
 }

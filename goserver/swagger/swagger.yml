@@ -1,0 +1,115 @@
+swagger: "2.0"
+info: {}
+basePath: /api
+paths:
+  /controlled/:
+    get:
+      tags:
+      - controlled
+      description: get controlled or controlleds
+      operationId: Controlled.Get
+      parameters:
+      - in: int
+        name: id
+        description: JSON
+        schema:
+          $ref: '#/definitions/.false'
+        default: return
+      responses:
+        "200":
+          description: "if no ID \t\t\treturn\t\t[]ResponseControlled\t\tJSON"
+        "400":
+          description: Can't strconv.Atoi param 'id'
+        "500":
+          description: database error
+    put:
+      tags:
+      - controlled
+      description: update controlled
+      operationId: Controlled.Update
+      parameters:
+      - in: body
+        name: body
+        description: The object content
+        schema:
+          $ref: '#/definitions/.Request'
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+    post:
+      tags:
+      - controlled
+      description: create controlled
+      operationId: Controlled.Create
+      parameters:
+      - in: body
+        name: body
+        description: The object content
+        schema:
+          $ref: '#/definitions/.Request'
+      responses:
+        "200":
+          description: int32
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /controlled/{id}:
+    get:
+      tags:
+      - controlled
+      description: get controlled
+      operationId: Controlled.Get
+      parameters:
+      - in: int
+        name: id
+        description: JSON
+        schema:
+          $ref: '#/definitions/.false'
+      responses:
+        "200":
+          description: "[]ResponseControlled\t\tJSON"
+        "400":
+          description: Can't strconv.Atoi param 'id'
+        "500":
+          description: database error
+    delete:
+      tags:
+      - controlled
+      description: delete controlled
+      operationId: Controlled.Delete
+      parameters:
+      - in: int
+        name: id
+        description: The id you want to delete
+        schema:
+          $ref: '#/definitions/.true'
+      responses:
+        "200":
+          description: ""
+        "400":
+          description: id is empty
+        "500":
+          description: database error
+  /controlled/info/:
+    get:
+      tags:
+      - controlled/info
+      description: get information on all controlled
+      operationId: InfoControlled.Get
+      responses:
+        "200":
+          description: string
+        "500":
+          description: database error
+definitions:
+  .Request:
+    type: object
+  .false:
+    type: object
+  .true:
+    type: object
