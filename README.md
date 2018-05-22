@@ -26,9 +26,13 @@ HTTP API:
 metod POST '/api/controlled' format JSON
 
 name            string; 
+
 host            string; //Mandatory
+
 port            string; 
+
 common_buffer   int;    
+
 home_control_id string; 
 
 return int
@@ -36,10 +40,15 @@ return int
 metod PUT '/api/controlled' format JSON
 
 id              int;    //Mandatory 
+
 name            string; 
+
 host            string;
+
 port            string; 
+
 common_buffer   int;    
+
 home_control_id string; 
 
 
