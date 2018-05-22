@@ -37,7 +37,7 @@ host            string; //Mandatory
 
 port            string; 
 
-common_buffer   int;    
+common_buffer   int;    //Mandatory // -1 = field without changes
 
 home_control_id string; 
 
@@ -53,7 +53,7 @@ host            string;
 
 port            string; 
 
-common_buffer   int;    
+common_buffer   int;    //Mandatory // -1 = field without changes
 
 home_control_id string; 
 

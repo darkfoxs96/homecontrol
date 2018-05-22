@@ -1,6 +1,7 @@
 package commonbuffer
 
 import (
+	"homecontrol/goserver/services/controlled"
 	"homecontrol/goserver/models"
 	control "homecontrol/goserver/services/controlled"
 )
@@ -27,7 +28,12 @@ func RequestToControlledBuffer() error {
 }
 
 // UpdateBuffer update models.CommonBuffer and sends a new buffer to all subscribers
-func UpdateBuffer(buffer string) error {
+func UpdateBuffer(ID int, buffer string) error {
+	controlledBuf := controlled.GetControlled(ID)
+	if controlledBuf == nil || controlledBuf.CommonBuffer == 0 {
+		return nil
+	}
+
 	if buffer == models.GetCommonBuffer() {
 		return nil
 	}
