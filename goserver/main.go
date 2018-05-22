@@ -6,6 +6,7 @@ import (
 	"homecontrol/goserver/models"
 	_ "homecontrol/goserver/gosession"	
 	_ "homecontrol/goserver/routers"
+	_ "homecontrol/goserver/policies"
 	_ "homecontrol/goserver/services/botmessenger"
 	_ "homecontrol/goserver/services/soundparsing"
 	_ "homecontrol/goserver/services/controlsystemhome"

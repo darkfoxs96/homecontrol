@@ -4,6 +4,7 @@ Server: https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: gol
 
 HTTP API:
 
+
 Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled lang: java
 
 Controlled android: https://github.com/darkfoxs96/homecontrol/tree/master/androidControlled lang: java
@@ -19,6 +20,28 @@ Interpretation command for controlled:
 
 //First 4 bytes = Command(int32)
 //Next bytes = stringCommand(string)
+
+HTTP API:
+
+metod POST '/api/controlled' format JSON
+
+name            string; 
+host            string; //Mandatory
+port            string; 
+common_buffer   int;    
+home_control_id string; 
+
+return int
+
+metod PUT '/api/controlled' format JSON
+
+id              int;    //Mandatory 
+name            string; 
+host            string;
+port            string; 
+common_buffer   int;    
+home_control_id string; 
+
 
 Control web: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static 
 and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views            lang javascript

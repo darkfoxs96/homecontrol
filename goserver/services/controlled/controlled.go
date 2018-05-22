@@ -105,6 +105,7 @@ func GetInfoControlledsString() (str string, err error) {
 		str += "No controlled\n"
 	}
 
+	err = nil
 	str = strStart + str
 	return
 }
