@@ -35,7 +35,7 @@ common_buffer   int;
 
 home_control_id string; 
 
-return int
+return ID int
 
 metod PUT '/api/controlled' format JSON
 
