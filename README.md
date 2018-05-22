@@ -21,7 +21,7 @@ Interpretation command for controlled:
 //First 4 bytes = Command(int32)
 //Next bytes = stringCommand(string)
 
-HTTP API:
+HTTP OPEN API:
 
 metod POST '/api/controlled' format JSON
 
