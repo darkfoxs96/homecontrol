@@ -10,9 +10,6 @@ import (
 func init() {
 	beego.Router("/", &controllers.MainController{})
 
-	// beego.Router("/api/controlled/info", &controlled.InfoControlled{})
-	// beego.Router("/api/controlled", &controlled.Controlled{})
-
 	ns :=
 		beego.NewNamespace("/api",
 			beego.NSNamespace("/controlled/info",
@@ -20,6 +17,13 @@ func init() {
 					&controlled.InfoControlled{},
 				),
 			),
+
+			beego.NSNamespace("/controlled/message",
+				beego.NSInclude(
+					&controlled.ControlledMessage{},
+				),
+			),
+
 			beego.NSNamespace("/controlled",
 				beego.NSInclude(
 					&controlled.Controlled{},

@@ -55,7 +55,7 @@ func Unlock() {
 
 func init() {
 	//Testing system
-	Test = false
+	Test = true
 	//Get path
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err == nil {

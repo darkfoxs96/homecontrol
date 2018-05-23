@@ -90,7 +90,7 @@ func GetInfoControlledsString() (str string, err error) {
 	}
 
 	for _, controlled := range controlleds {
-		if controlled.HomeControlID != "" {
+		if controlled == nil || controlled.HomeControlID != "" {
 			continue
 		}
 		_, err := RequestToControlled(controlled, command)

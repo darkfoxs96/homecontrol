@@ -1,6 +1,7 @@
 package policies
 
 import (
+	"homecontrol/goserver/models"
 	"homecontrol/goserver/gosession"
 	"homecontrol/goserver/services/sessioncontrol"
 
@@ -9,6 +10,9 @@ import (
 
 // IsAuthorized Policy
 func IsAuthorized(ctx *context.Context) {
+	if models.Test {
+		return
+	}
 	sess, err := gosession.GlobalSessions.SessionStart(ctx.ResponseWriter, ctx.Request)
 	if err == nil {
 		defer sess.SessionRelease(ctx.ResponseWriter)

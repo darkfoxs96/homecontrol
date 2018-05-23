@@ -10,25 +10,17 @@
                 "tags": [
                     "controlled"
                 ],
-                "description": "get controlled or controlleds",
+                "description": "get controlleds",
                 "operationId": "Controlled.Get",
-                "parameters": [
-                    {
-                        "in": "int",
-                        "name": "id",
-                        "description": "JSON",
-                        "schema": {
-                            "$ref": "#/definitions/.false"
-                        },
-                        "default": "return"
-                    }
-                ],
                 "responses": {
                     "200": {
-                        "description": "if no ID \t\t\treturn\t\t[]ResponseControlled\t\tJSON"
-                    },
-                    "400": {
-                        "description": "Can't strconv.Atoi param 'id'"
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/controlled.ResponseControlled"
+                            }
+                        }
                     },
                     "500": {
                         "description": "database error"
@@ -40,14 +32,15 @@
                     "controlled"
                 ],
                 "description": "update controlled",
-                "operationId": "Controlled.Update",
+                "operationId": "Controlled.Put",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
                         "description": "The object content",
+                        "required": true,
                         "schema": {
-                            "$ref": "#/definitions/.Request"
+                            "$ref": "#/definitions/controlled.RequestPut"
                         }
                     }
                 ],
@@ -68,20 +61,21 @@
                     "controlled"
                 ],
                 "description": "create controlled",
-                "operationId": "Controlled.Create",
+                "operationId": "Controlled.Post",
                 "parameters": [
                     {
                         "in": "body",
                         "name": "body",
                         "description": "The object content",
+                        "required": true,
                         "schema": {
-                            "$ref": "#/definitions/.Request"
+                            "$ref": "#/definitions/controlled.RequestPost"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "int32"
+                        "description": "int\t\"controlled ID\""
                     },
                     "400": {
                         "description": "wrong body data"
@@ -101,7 +95,44 @@
                 "operationId": "InfoControlled.Get",
                 "responses": {
                     "200": {
-                        "description": "string"
+                        "description": "string\t\"Info a controlleds\""
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/controlled/message/{controlledid}": {
+            "post": {
+                "tags": [
+                    "controlled/message"
+                ],
+                "description": "message to server",
+                "operationId": "ControlledMessage.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object message",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "controlledid",
+                        "description": "The your id",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "string\t\"out server msg\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
                     },
                     "500": {
                         "description": "database error"
@@ -118,20 +149,23 @@
                 "operationId": "Controlled.Get",
                 "parameters": [
                     {
-                        "in": "int",
+                        "in": "path",
                         "name": "id",
-                        "description": "JSON",
-                        "schema": {
-                            "$ref": "#/definitions/.false"
-                        }
+                        "description": "The controlled you want to receive",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "[]ResponseControlled\t\tJSON"
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Сontrolled"
+                        }
                     },
                     "400": {
-                        "description": "Can't strconv.Atoi param 'id'"
+                        "description": ":object is empty"
                     },
                     "500": {
                         "description": "database error"
@@ -146,12 +180,12 @@
                 "operationId": "Controlled.Delete",
                 "parameters": [
                     {
-                        "in": "int",
+                        "in": "path",
                         "name": "id",
                         "description": "The id you want to delete",
-                        "schema": {
-                            "$ref": "#/definitions/.true"
-                        }
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
                     }
                 ],
                 "responses": {
@@ -169,14 +203,101 @@
         }
     },
     "definitions": {
-        ".Request": {
-            "type": "object"
+        "controlled.RequestPost": {
+            "title": "RequestPost",
+            "type": "object",
+            "properties": {
+                "common_buffer": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "home_control_id": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "string"
+                }
+            }
         },
-        ".false": {
-            "type": "object"
+        "controlled.RequestPut": {
+            "title": "RequestPut",
+            "type": "object",
+            "properties": {
+                "common_buffer": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "home_control_id": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "string"
+                }
+            }
         },
-        ".true": {
-            "type": "object"
+        "controlled.ResponseControlled": {
+            "title": "ResponseControlled",
+            "type": "object",
+            "properties": {
+                "common_buffer": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "home_control_id": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Сontrolled": {
+            "title": "Сontrolled",
+            "type": "object",
+            "properties": {
+                "common_buffer": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "home_control_id": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "string"
+                }
+            }
         }
     }
 }
