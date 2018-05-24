@@ -34,7 +34,7 @@ const (
 
 var (
 	defaultSettings = &Settings{
-		Key:   "",
+		Key:   "d9f018ae-9e18-4fc4-b0dd-3cb3bb8caba6",
 		Lang:  "ru-RU",
 		Topic: "queries",
 		UUID:  "12ae13cb744628b58fb536d496daa2e6",

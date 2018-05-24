@@ -5,6 +5,29 @@
     },
     "basePath": "/api",
     "paths": {
+        "/commands/": {
+            "get": {
+                "tags": [
+                    "commands"
+                ],
+                "description": "get commands",
+                "operationId": "Commands.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ListCommands"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
         "/controlled/": {
             "get": {
                 "tags": [
@@ -228,6 +251,42 @@
                 },
                 "port": {
                     "type": "string"
+                }
+            }
+        },
+        "models.Command": {
+            "title": "Command",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "info_command": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ListCommands": {
+            "title": "ListCommands",
+            "type": "object",
+            "properties": {
+                "Commands": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Command"
+                    }
+                },
+                "end_range_id_commands": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name_interface": {
+                    "type": "string"
+                },
+                "start_range_id_commands": {
+                    "type": "integer",
+                    "format": "int64"
                 }
             }
         },
