@@ -5,7 +5,7 @@ Server:
 ###### golang ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver  
 
-HTTP API:  
+Documentation HTTP API:  
 /swagger
 
 Controlled:
