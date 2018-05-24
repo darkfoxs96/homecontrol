@@ -1,8 +1,10 @@
 package controlled
 
 import (
+	"time"
 	"bytes"
 	"encoding/binary"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 
@@ -35,11 +37,14 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	if err != nil {
 		return
 	}
+	fmt.Println(123555)
 	client := new(http.Client)
+	client.Timeout = 3 * time.Second
 	resp, err := client.Do(req)
 	if err != nil {
 		return
 	}
+	fmt.Println(123)
 	defer resp.Body.Close()
 	responseByte, err := ioutil.ReadAll(resp.Body)
 	responseMessage = string(responseByte)
@@ -86,7 +91,7 @@ func GetInfoControlledsString() (str string, err error) {
 	strStart := "Information on controlled:\n"
 	controlleds := models.GetСontrolleds()
 	command := &models.CommandRecord{
-		Command: 12,
+		Command: 999,
 	}
 
 	for _, controlled := range controlleds {
