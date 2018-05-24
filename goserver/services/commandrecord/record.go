@@ -20,8 +20,8 @@ type Record struct {
 	СontrolledID  int
 }
 
-// AddOrUpdateRecord create or update Record
-func AddOrUpdateRecord(record *Record) (err error) {
+// AddOrUpdateCommand create or update record
+func AddOrUpdateCommand(record *Record) (err error) {
 	if record.ID == "" {
 		err = errors.New("No ID")
 		return
@@ -89,11 +89,6 @@ func GetCommandRecords() (commandRecords map[string]*models.CommandRecord) {
 // GetCommandRecord return command record bu ID
 func GetCommandRecord(ID string) (commandRecord *models.CommandRecord) {
 	return models.GetCommandRecord(ID)
-}
-
-// AddCommandRecord insert command record to storage
-func AddCommandRecord(record *models.CommandRecord, ID string) error {
-	return models.InsertCommandRecord(record, ID)
 }
 
 // DeleteCommandRecord delete command record bu ID
