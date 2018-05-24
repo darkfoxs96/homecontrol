@@ -1,8 +1,8 @@
 package policies
 
 import (
-	"homecontrol/goserver/models"
 	"homecontrol/goserver/gosession"
+	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/sessioncontrol"
 
 	"github.com/astaxie/beego/context"

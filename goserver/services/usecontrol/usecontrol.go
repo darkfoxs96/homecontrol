@@ -112,6 +112,10 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 		}
 	case int:
 		controlled := models.GetСontrolled(deviceID.(int))
+		if controlled == nil {
+			err = errors.New("UseControl: Error: unknown a controlled")
+			return
+		}
 		if IsUnauthorizedUse {
 			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
 			err = AppendLog(outMsg)
@@ -126,7 +130,7 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 			outMsg = "Ok"
 		}
 	default:
-		err = errors.New("UseControl: Error unknown interface")
+		err = errors.New("UseControl: Error: unknown interface")
 		return
 	}
 

@@ -1,10 +1,9 @@
 package controlled
 
 import (
-	"bytes"
-	"encoding/binary"
 	"encoding/json"
-	"fmt"
+	"homecontrol/goserver/models"
+	"io/ioutil"
 	"strconv"
 
 	"github.com/astaxie/beego"
@@ -16,39 +15,26 @@ type Controlled struct {
 	beego.Controller
 }
 
-// RequestPost struct for POST metods
-type RequestPost struct {
-	Name          string `json:"name"`
-	Host          string `json:"host"`
-	Port          string `json:"port"`
-	CommonBuffer  int    `json:"common_buffer"`
-	HomeControlID string `json:"home_control_id"`
-}
-
-// RequestPut struct for PUT metods
-type RequestPut struct {
-	ControlledID  int    `json:"id"`
-	Name          string `json:"name"`
-	Host          string `json:"host"`
-	Port          string `json:"port"`
-	CommonBuffer  int    `json:"common_buffer"`
-	HomeControlID string `json:"home_control_id"`
-}
-
 // Post - create controlled
 // @Title Post
 // @Description create controlled
-// @Param	body	body	controlled.RequestPost	true		"The object content"
-// @Success 200 int	"controlled ID"
+// @Param	body	body	models.Сontrolled	true		"The object content. fields Name and HomeControlID and CommonBuffer not required"
+// @Success 200 string	"controlled ID"
 // @Failure 400 wrong body data
 // @Failure 500 database error
 // @router / [post]
 func (o *Controlled) Post() {
-	request := &RequestPost{}
-	fmt.Println(o.Ctx.Input.RequestBody)
-	err := json.Unmarshal(o.Ctx.Input.RequestBody, request)
+	defer o.Ctx.Request.Body.Close()
+
+	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
 	if err != nil {
-		fmt.Println(213)
+		o.CustomAbort(400, "Wrong read body")
+	}
+	o.Ctx.Request.Body.Close()
+
+	request := &models.Сontrolled{}
+	err = json.Unmarshal(body, request)
+	if err != nil {
 		o.CustomAbort(400, "Can't unmarshal request")
 	}
 
@@ -57,41 +43,50 @@ func (o *Controlled) Post() {
 		o.CustomAbort(500, err.Error())
 	}
 
-	IDbytes := new(bytes.Buffer)
-	err = binary.Write(IDbytes, binary.LittleEndian, controlledID)
-	if err != nil {
-		o.CustomAbort(500, err.Error())
-	}
 	o.Ctx.Output.SetStatus(200)
-	o.Ctx.Output.Body(IDbytes.Bytes())
+	o.Ctx.Output.Body([]byte(strconv.Itoa(controlledID)))
 }
 
 // Put - update controlled
 // @Title Put
 // @Description update controlled
-// @Param	body	body	controlled.RequestPut	true		"The object content"
-// @Success 200
+// @Param	body	body	models.Сontrolled	true	"The object content. CommonBuffer = -1 field remains unchanged, string empty fields remains unchanged"
+// @Param	id		path	int					true	"The controlled you want to update"
+// @Success 200	string	"ok"
 // @Failure 400 wrong body data
 // @Failure 500 database error
-// @router / [put]
+// @router /:id [put]
 func (o *Controlled) Put() {
-	var request *RequestPut
-	err := json.Unmarshal(o.Ctx.Input.RequestBody, request)
+	defer o.Ctx.Request.Body.Close()
+
+	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
+	if err != nil {
+		o.CustomAbort(400, "Wrong read body")
+	}
+	o.Ctx.Request.Body.Close()
+
+	request := &models.Сontrolled{}
+	err = json.Unmarshal(body, request)
 	if err != nil {
 		o.CustomAbort(400, "Can't unmarshal request")
 	}
 
-	if request.ControlledID == 0 {
-		o.CustomAbort(400, "No ID")
+	strID := o.Ctx.Input.Param(":id")
+	if strID == "" {
+		o.CustomAbort(400, "Wrong controlled id")
+	}
+	controlledID, err := strconv.Atoi(strID)
+	if err != nil {
+		o.CustomAbort(400, "Wrong controlled id")
 	}
 
-	request.ControlledID, err = controlled.RegistrationAndUpdateControlled(request.ControlledID, request.Host, request.Port, request.Name, request.CommonBuffer, request.HomeControlID)
+	_, err = controlled.RegistrationAndUpdateControlled(controlledID, request.Host, request.Port, request.Name, request.CommonBuffer, request.HomeControlID)
 	if err != nil {
 		o.CustomAbort(500, err.Error())
 	}
 
-	o.Data["json"] = "Ok"
-	o.ServeJSON()
+	o.Ctx.Output.SetStatus(200)
+	o.Ctx.Output.Body([]byte("ok"))
 }
 
 // ResponseControlled for GET metod, if no :id
@@ -140,6 +135,9 @@ func (o *Controlled) Get() {
 	mapControlleds := controlled.GetControlleds()
 	var controlleds []*ResponseControlled
 	for key, val := range mapControlleds {
+		if val == nil {
+			continue
+		}
 		controlleds = append(controlleds, &ResponseControlled{
 			ID:            key,
 			Name:          val.Name,
@@ -201,28 +199,35 @@ type ControlledMessage struct {
 	beego.Controller
 }
 
+type Message struct {
+	Message      string	`json:"message"`
+	ControlledID int	`json:"controlled_id"`
+}
+
 // Post - message to server
 // @Title Post
 // @Description message to server
-// @Param	body			body	string	true	"The object message"
-// @Param	controlledid	path	int		true	"The your id"
+// @Param	body			body	controlled.Message	true	"The object message"
 // @Success 200 string	"out server msg"
 // @Failure 400 wrong body data
 // @Failure 500 database error
-// @router /:controlledid [post]
+// @router / [post]
 func (o *ControlledMessage) Post() {
-	msg := string(o.Ctx.Input.RequestBody)
-	fmt.Println(msg)
-	if msg == "" {
-		o.CustomAbort(400, "body empty")
+	defer o.Ctx.Request.Body.Close()
+
+	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
+	if err != nil {
+		o.CustomAbort(400, "Wrong read body")
+	}
+	o.Ctx.Request.Body.Close()
+
+	request := &Message{}
+	err = json.Unmarshal(body, request)
+	if err != nil {
+		o.CustomAbort(400, "Can't unmarshal request")
 	}
 
-	controlledID, _ := strconv.Atoi(o.Ctx.Input.Param(":controlledid"))
-	if controlledID < 1 {
-		o.CustomAbort(400, "Wrong id")
-	}
-
-	outMsg, err := controlled.InMessage(controlledID, msg)
+	outMsg, err := controlled.InMessage(request.ControlledID, request.Message)
 	if err != nil {
 		o.CustomAbort(500, err.Error())
 	}

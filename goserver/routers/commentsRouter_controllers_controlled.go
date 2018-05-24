@@ -17,17 +17,17 @@ func init() {
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/controlled:Controlled"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/controlled:Controlled"],
 		beego.ControllerComments{
-			Method: "Put",
+			Method: "Get",
 			Router: `/`,
-			AllowHTTPMethods: []string{"put"},
+			AllowHTTPMethods: []string{"get"},
 			MethodParams: param.Make(),
 			Params: nil})
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/controlled:Controlled"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/controlled:Controlled"],
 		beego.ControllerComments{
-			Method: "Get",
-			Router: `/`,
-			AllowHTTPMethods: []string{"get"},
+			Method: "Put",
+			Router: `/:id`,
+			AllowHTTPMethods: []string{"put"},
 			MethodParams: param.Make(),
 			Params: nil})
 
@@ -50,7 +50,7 @@ func init() {
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/controlled:ControlledMessage"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/controlled:ControlledMessage"],
 		beego.ControllerComments{
 			Method: "Post",
-			Router: `/:controlledid`,
+			Router: `/`,
 			AllowHTTPMethods: []string{"post"},
 			MethodParams: param.Make(),
 			Params: nil})

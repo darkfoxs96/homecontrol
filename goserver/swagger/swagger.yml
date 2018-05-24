@@ -17,25 +17,6 @@ paths:
               $ref: '#/definitions/controlled.ResponseControlled'
         "500":
           description: database error
-    put:
-      tags:
-      - controlled
-      description: update controlled
-      operationId: Controlled.Put
-      parameters:
-      - in: body
-        name: body
-        description: The object content
-        required: true
-        schema:
-          $ref: '#/definitions/controlled.RequestPut'
-      responses:
-        "200":
-          description: ""
-        "400":
-          description: wrong body data
-        "500":
-          description: database error
     post:
       tags:
       - controlled
@@ -44,13 +25,14 @@ paths:
       parameters:
       - in: body
         name: body
-        description: The object content
+        description: The object content. fields Name and HomeControlID and CommonBuffer
+          not required
         required: true
         schema:
-          $ref: '#/definitions/controlled.RequestPost'
+          $ref: '#/definitions/models.Сontrolled'
       responses:
         "200":
-          description: "int\t\"controlled ID\""
+          description: "string\t\"controlled ID\""
         "400":
           description: wrong body data
         "500":
@@ -75,6 +57,32 @@ paths:
             $ref: '#/definitions/models.Сontrolled'
         "400":
           description: :object is empty
+        "500":
+          description: database error
+    put:
+      tags:
+      - controlled
+      description: update controlled
+      operationId: Controlled.Put
+      parameters:
+      - in: body
+        name: body
+        description: The object content. CommonBuffer = -1 field remains unchanged,
+          string empty fields remains unchanged
+        required: true
+        schema:
+          $ref: '#/definitions/models.Сontrolled'
+      - in: path
+        name: id
+        description: The controlled you want to update
+        required: true
+        type: integer
+        format: int64
+      responses:
+        "200":
+          description: "string\t\"ok\""
+        "400":
+          description: wrong body data
         "500":
           description: database error
     delete:
@@ -107,7 +115,7 @@ paths:
           description: "string\t\"Info a controlleds\""
         "500":
           description: database error
-  /controlled/message/{controlledid}:
+  /controlled/message/:
     post:
       tags:
       - controlled/message
@@ -118,13 +126,8 @@ paths:
         name: body
         description: The object message
         required: true
-        type: string
-      - in: path
-        name: controlledid
-        description: The your id
-        required: true
-        type: integer
-        format: int64
+        schema:
+          $ref: '#/definitions/controlled.Message'
       responses:
         "200":
           description: "string\t\"out server msg\""
@@ -133,38 +136,14 @@ paths:
         "500":
           description: database error
 definitions:
-  controlled.RequestPost:
-    title: RequestPost
+  controlled.Message:
+    title: Message
     type: object
     properties:
-      common_buffer:
+      controlled_id:
         type: integer
         format: int64
-      home_control_id:
-        type: string
-      host:
-        type: string
-      name:
-        type: string
-      port:
-        type: string
-  controlled.RequestPut:
-    title: RequestPut
-    type: object
-    properties:
-      common_buffer:
-        type: integer
-        format: int64
-      home_control_id:
-        type: string
-      host:
-        type: string
-      id:
-        type: integer
-        format: int64
-      name:
-        type: string
-      port:
+      message:
         type: string
   controlled.ResponseControlled:
     title: ResponseControlled
