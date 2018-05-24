@@ -54,3 +54,15 @@ type ListCommands struct {
 	StartRangeIDCommands int    `json:"start_range_id_commands"`
 	EndRangeIDCommands   int    `json:"end_range_id_commands"`
 }
+
+// MessageToServer message to server 
+type MessageToServer struct {
+	ControlledID int	`json:"controlled_id"`	
+	Message      string	`json:"message"`
+}
+
+// Message server response message
+type Message struct {
+	Status 		 bool	`json:"status"`	
+	Message      string	`json:"message"`
+}

@@ -90,7 +90,7 @@ func (o *Controlled) Put() {
 }
 
 // ResponseControlled for GET metod, if no :id
-type ResponseControlled struct {
+type InformationСontrolled struct {
 	ID            int    `json:"id"`
 	Name          string `json:"name"`
 	Host          string `json:"host"`
@@ -128,17 +128,17 @@ func (o *Controlled) GetOne() {
 // Get - return favorite controlleds
 // @Title Get
 // @Description get controlleds
-// @Success 200 	{object}	[]controlled.ResponseControlled
+// @Success 200 	{object}	[]controlled.InformationСontrolled
 // @Failure 500 database error
 // @router / [get]
 func (o *Controlled) Get() {
 	mapControlleds := controlled.GetControlleds()
-	var controlleds []*ResponseControlled
+	var controlleds []*InformationСontrolled
 	for key, val := range mapControlleds {
 		if val == nil {
 			continue
 		}
-		controlleds = append(controlleds, &ResponseControlled{
+		controlleds = append(controlleds, &InformationСontrolled{
 			ID:            key,
 			Name:          val.Name,
 			Host:          val.Host,
@@ -199,15 +199,10 @@ type ControlledMessage struct {
 	beego.Controller
 }
 
-type Message struct {
-	Message      string	`json:"message"`
-	ControlledID int	`json:"controlled_id"`
-}
-
 // Post - message to server
 // @Title Post
 // @Description message to server
-// @Param	body			body	controlled.Message	true	"The object message"
+// @Param	body			body	models.MessageToServer	true	"The object message"
 // @Success 200 string	"out server msg"
 // @Failure 400 wrong body data
 // @Failure 500 database error
@@ -221,7 +216,7 @@ func (o *ControlledMessage) Post() {
 	}
 	o.Ctx.Request.Body.Close()
 
-	request := &Message{}
+	request := &models.MessageToServer{}
 	err = json.Unmarshal(body, request)
 	if err != nil {
 		o.CustomAbort(400, "Can't unmarshal request")

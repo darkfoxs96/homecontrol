@@ -14,7 +14,7 @@ paths:
           schema:
             type: array
             items:
-              $ref: '#/definitions/controlled.ResponseControlled'
+              $ref: '#/definitions/controlled.InformationСontrolled'
         "500":
           description: database error
     post:
@@ -127,7 +127,7 @@ paths:
         description: The object message
         required: true
         schema:
-          $ref: '#/definitions/controlled.Message'
+          $ref: '#/definitions/models.MessageToServer'
       responses:
         "200":
           description: "string\t\"out server msg\""
@@ -136,17 +136,8 @@ paths:
         "500":
           description: database error
 definitions:
-  controlled.Message:
-    title: Message
-    type: object
-    properties:
-      controlled_id:
-        type: integer
-        format: int64
-      message:
-        type: string
-  controlled.ResponseControlled:
-    title: ResponseControlled
+  controlled.InformationСontrolled:
+    title: InformationСontrolled
     type: object
     properties:
       common_buffer:
@@ -162,6 +153,15 @@ definitions:
       name:
         type: string
       port:
+        type: string
+  models.MessageToServer:
+    title: MessageToServer
+    type: object
+    properties:
+      controlled_id:
+        type: integer
+        format: int64
+      message:
         type: string
   models.Сontrolled:
     title: Сontrolled

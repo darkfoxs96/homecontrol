@@ -18,7 +18,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/controlled.ResponseControlled"
+                                "$ref": "#/definitions/controlled.InformationСontrolled"
                             }
                         }
                     },
@@ -88,7 +88,7 @@
                         "description": "The object message",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/controlled.Message"
+                            "$ref": "#/definitions/models.MessageToServer"
                         }
                     }
                 ],
@@ -205,21 +205,8 @@
         }
     },
     "definitions": {
-        "controlled.Message": {
-            "title": "Message",
-            "type": "object",
-            "properties": {
-                "controlled_id": {
-                    "type": "integer",
-                    "format": "int64"
-                },
-                "message": {
-                    "type": "string"
-                }
-            }
-        },
-        "controlled.ResponseControlled": {
-            "title": "ResponseControlled",
+        "controlled.InformationСontrolled": {
+            "title": "InformationСontrolled",
             "type": "object",
             "properties": {
                 "common_buffer": {
@@ -240,6 +227,19 @@
                     "type": "string"
                 },
                 "port": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.MessageToServer": {
+            "title": "MessageToServer",
+            "type": "object",
+            "properties": {
+                "controlled_id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "message": {
                     "type": "string"
                 }
             }
