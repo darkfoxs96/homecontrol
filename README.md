@@ -17,10 +17,10 @@ Controlled iOS: https://github.com/darkfoxs96/homecontrol/tree/master/iOSControl
 
 Interpretation command for controlled:
 
-| №       | Command                         | Used stringCommand |
-| ------- | :------------------------------ | ------------------ |
-| 0       | Put buffer                      | used               |
-| 1       | Open page                       | used               |
+| №       | Command                         | Use stringCommand  |
+| ------- | :------------------------------ | :----------------: |
+| 0       | Put buffer                      | +                  |
+| 1       | Open page                       | +                  |
 | 2       | Stop                            |                    |
 | 3       | Sound off                       |                    |
 | 4       | Sound on                        |                    |
@@ -30,7 +30,7 @@ Interpretation command for controlled:
 | 8       | Open ok                         |                    |
 | 9       | Open fecebook                   |                    |
 | 10      | Open                            |                    |
-| 11      | Used code in terminal           | used               |
+| 11      | Used code in terminal           | +                  |
 | 999     | testWork                        |                    |
 
 Controlled HTTP OPEN API:  
@@ -58,7 +58,10 @@ Interface local:
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/controlsystemhome  
 
 Interpretation command for Third-party home control systems:  
-//Commands: 1000 - 1999 for Noolite4
+
+| first command | last command | system home control name |
+| :-----------: | :----------: | ------------------------ |
+| 1000          | 1999         | Noolite4                 |
 
 Bot messengers:
 -------
