@@ -2,7 +2,8 @@
 
 Server:
 -------
-https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: golang
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver  
+######golang######
 
 
 HTTP API:  
@@ -10,9 +11,12 @@ HTTP API:
 
 Controlled:
 -------
-Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled lang: java  
-Controlled android: https://github.com/darkfoxs96/homecontrol/tree/master/androidControlled lang: java  
-Controlled iOS: https://github.com/darkfoxs96/homecontrol/tree/master/iOSControlled lang: java
+Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled
+######java######  
+Controlled android: https://github.com/darkfoxs96/homecontrol/tree/master/androidControlled
+######java######
+Controlled iOS: https://github.com/darkfoxs96/homecontrol/tree/master/iOSControlled
+######java######
 
 Interpretation command for controlled:  
 //Command:  0 - Put buffer,     1 - Open page, 2 - Stop  
