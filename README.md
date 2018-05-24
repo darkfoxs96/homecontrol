@@ -1,7 +1,9 @@
 # homecontrol
 
-Server: https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: golang
-=======
+Server:
+-------
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: golang
+
 
 HTTP API:  
 /swagger
