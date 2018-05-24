@@ -1,22 +1,19 @@
 # homecontrol
 
 Server:
--------
+-------  
+###### golang ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver  
-###### golang ######
-
 
 HTTP API:  
 /swagger
 
 Controlled:
--------
-Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled
-######java######  
-Controlled android: https://github.com/darkfoxs96/homecontrol/tree/master/androidControlled
-######java######
-Controlled iOS: https://github.com/darkfoxs96/homecontrol/tree/master/iOSControlled
-######java######
+-------  
+###### java ######  
+Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled  
+Controlled android: https://github.com/darkfoxs96/homecontrol/tree/master/androidControlled  
+Controlled iOS: https://github.com/darkfoxs96/homecontrol/tree/master/iOSControlled  
 
 Interpretation command for controlled:  
 //Command:  0 - Put buffer,     1 - Open page, 2 - Stop  
@@ -37,27 +34,31 @@ metod PUT '/api/controlled'
 metod POST '/api/controlled/message'
 
 Control web:
--------
+-------  
+###### javascript ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static  
-and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views lang javascript
+and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views  
 
 Third-party home control systems:
 -------
+###### golang ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/thirdpartyhomecontrol   
 Interface local:  
-https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/controlsystemhome lang golang
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/controlsystemhome  
 
 Interpretation command for Third-party home control systems:  
 //Commands: 1000 - 1999 for Noolite4
 
 Bot messengers:
 -------
+###### golang ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/botsmessengers   
 Interface local:  
-https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/botmessenger lang golang
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/botmessenger
 
 Sound parsings:
 -------
+###### golang ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/soundparsing  
 Interface local:  
-https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundparsing lang golang
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundparsing
