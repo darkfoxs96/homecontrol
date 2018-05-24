@@ -20,6 +20,7 @@ var (
 func init() {
 	reportUnauthorizedUse = GetReportUnauthorizedUse()
 	detectedTime = GetDetectedTime()
+	lastTime = GetLastTime()
 	log = GetLog()
 }
 
@@ -56,13 +57,13 @@ func GetDetectedTime() (detectedTime int) {
 }
 
 // GetLastTime get used last time
-// format millisecond
+// format millisecond time.Now().Unix()
 func GetLastTime() (lastTime int) {
 	return models.GetUsedLastTime()
 }
 
 // SetLastTime set used last time
-// format millisecond
+// format millisecond time.Now().Unix()
 func SetLastTime(newLastTime int) (err error) {
 	err = models.SetUsedLastTime(newLastTime)
 	if err != nil {

@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"golang.org/x/crypto/bcrypt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sync"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 // MainModel = DB
@@ -17,13 +18,13 @@ type MainModel struct {
 	CommandRecords                  map[string]*CommandRecord
 	Сontrolleds                     map[int]*Сontrolled
 	UseControl                      *UseControl
-	IncrementForInsertСontrolleddID int                     `json:"increment_for_insert_controlled_id"`
-	CommonBuffer                    string                  `json:"common_buffer"`
-	BotMessengersSettings           map[string]interface{}  `json:"bot_messengers_settings"`
-	SoundParsingsSettings			map[string]interface{}  `json:"sound_parsings_settings"`
-	UsedSoundParsingsID				string					`json:"used_sound_parsings_id"`
-	VersionPasswordHash             string                  `json:"version_password_hash"`
-	PasswordHash                    string                  `json:"password_hash"`
+	IncrementForInsertСontrolleddID int                    `json:"increment_for_insert_controlled_id"`
+	CommonBuffer                    string                 `json:"common_buffer"`
+	BotMessengersSettings           map[string]interface{} `json:"bot_messengers_settings"`
+	SoundParsingsSettings           map[string]interface{} `json:"sound_parsings_settings"`
+	UsedSoundParsingsID             string                 `json:"used_sound_parsings_id"`
+	VersionPasswordHash             string                 `json:"version_password_hash"`
+	PasswordHash                    string                 `json:"password_hash"`
 }
 
 const (
@@ -72,7 +73,7 @@ func init() {
 	CancelChOutMessageToAll = make(chan struct{})
 	useControl := &UseControl{
 		ReportUnauthorizedUse: false,
-		DetectedTime:          30 * 60 * 1000, //30 minute, format millisecond
+		DetectedTime:          30 * 60, //30 minute, format second
 		UsageLastTime:         int(time.Now().Unix()),
 		UsageLog:              []string{},
 	}
@@ -82,7 +83,7 @@ func init() {
 		UseControl:                      useControl,
 		BotMessengersSettings:           make(map[string]interface{}),
 		SoundParsingsSettings:           make(map[string]interface{}),
-		UsedSoundParsingsID:			 "",
+		UsedSoundParsingsID:             "",
 		IncrementForInsertСontrolleddID: 0,
 		CommonBuffer:                    "",
 		VersionPasswordHash:             "",

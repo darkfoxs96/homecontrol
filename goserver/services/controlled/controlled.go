@@ -4,7 +4,6 @@ import (
 	"time"
 	"bytes"
 	"encoding/binary"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
@@ -37,14 +36,12 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	if err != nil {
 		return
 	}
-	fmt.Println(123555)
 	client := new(http.Client)
 	client.Timeout = 3 * time.Second
 	resp, err := client.Do(req)
 	if err != nil {
 		return
 	}
-	fmt.Println(123)
 	defer resp.Body.Close()
 	responseByte, err := ioutil.ReadAll(resp.Body)
 	responseMessage = string(responseByte)
