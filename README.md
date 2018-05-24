@@ -2,8 +2,9 @@
 
 Server: https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: golang
 
-HTTP API:
+HTTP API: /swagger
 
+////////////////////////////
 
 Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled lang: java
 
@@ -20,46 +21,26 @@ Interpretation command for controlled:
 
 Controlled HTTP OPEN API:
 
-metod POST '/api/command' 
+metod POST '/' 
 
 Body 
 //First 4 bytes = Command(int32) 
 //Next bytes = stringCommand(string)
 
-
 HTTP OPEN API:
 
-metod POST '/api/controlled' format JSON
+metod POST '/api/controlled'
 
-name            string; 
+metod PUT '/api/controlled'
 
-host            string; //Mandatory
+metod POST '/api/controlled/message'
 
-port            string; 
-
-common_buffer   int;    //Mandatory // -1 = field without changes
-
-home_control_id string; 
-
-return ID int
-
-metod PUT '/api/controlled' format JSON
-
-id              int;    //Mandatory 
-
-name            string; 
-
-host            string;
-
-port            string; 
-
-common_buffer   int;    //Mandatory // -1 = field without changes
-
-home_control_id string; 
-
+//////////////////////////
 
 Control web: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static 
 and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views            lang javascript
+
+/////////////////////////
 
 Third-party home control systems: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/thirdpartyhomecontrol 
 Interface local:
@@ -68,10 +49,14 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/controls
 Interpretation command for Third-party home control systems:
 //Command: 1000 - 1999 Noolite4
 
+//////////////////////////
+
 Bot messengers: 
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/botsmessengers 
 Interface local:
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/botmessenger lang golang
+
+/////////////////////////
 
 Sound parsings: 
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/soundparsing 
