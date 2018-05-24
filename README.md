@@ -8,8 +8,8 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver lang: golang
 HTTP API:  
 /swagger
 
-////////////////////////////
-
+Controlled:
+-------
 Controlled desktop: https://github.com/darkfoxs96/homecontrol/tree/master/desktopControlled lang: java  
 Controlled android: https://github.com/darkfoxs96/homecontrol/tree/master/androidControlled lang: java  
 Controlled iOS: https://github.com/darkfoxs96/homecontrol/tree/master/iOSControlled lang: java
@@ -32,14 +32,13 @@ metod POST '/api/controlled'
 metod PUT '/api/controlled'  
 metod POST '/api/controlled/message'
 
-//////////////////////////
-
-Control web: https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static  
+Control web:
+-------
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static  
 and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views lang javascript
 
-/////////////////////////
-
-Third-party home control systems:  
+Third-party home control systems:
+-------
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/thirdpartyhomecontrol   
 Interface local:  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/controlsystemhome lang golang
@@ -47,16 +46,14 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/controls
 Interpretation command for Third-party home control systems:  
 //Commands: 1000 - 1999 for Noolite4
 
-//////////////////////////
-
-Bot messengers:  
+Bot messengers:
+-------
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/botsmessengers   
 Interface local:  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/botmessenger lang golang
 
-/////////////////////////
-
-Sound parsings:  
+Sound parsings:
+-------
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/soundparsing  
 Interface local:  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundparsing lang golang
