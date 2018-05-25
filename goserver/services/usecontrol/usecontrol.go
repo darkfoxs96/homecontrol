@@ -99,13 +99,13 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 	switch deviceID.(type) {
 	case string:
 		if IsUnauthorizedUse {
-			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + deviceID.(string) + ": " + msg
+			outMsg = outMsg + time.Now().String() + ": " + deviceID.(string) + ": " + msg
 			err = AppendLog(outMsg)
 			if err != nil {
 				return
 			}
 		} else {
-			err = AppendLog(strconv.Itoa(int(time.Now().Unix())) + ": " + deviceID.(string) + ": " + msg)
+			err = AppendLog(time.Now().String() + ": " + deviceID.(string) + ": " + msg)
 			if err != nil {
 				return
 			}
@@ -118,13 +118,14 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 			return
 		}
 		if IsUnauthorizedUse {
-			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
+
+			outMsg = outMsg + time.Now().String() + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
 			err = AppendLog(outMsg)
 			if err != nil {
 				return
 			}
 		} else {
-			err = AppendLog(strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg)
+			err = AppendLog(time.Now().String() + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg)
 			if err != nil {
 				return
 			}

@@ -93,7 +93,7 @@ func GetSettingsServer(messengerID string) (settings interface{}) {
 // InMessage receives a message
 // this function is created for BotMessenger
 // do not use for server !
-func InMessage(messengerID, msg string) (outServerMsg string, err error) {
+func InMessage(messengerID, msg, stringBuffer string) (outServerMsg string, err error) {
 	if msg == "info" {
 		outServerMsg, err = controlsystemhome.GetInfoControlSystemHomeInterfaces()
 		if err != nil {
@@ -108,10 +108,7 @@ func InMessage(messengerID, msg string) (outServerMsg string, err error) {
 		return
 	}
 
-	outServerMsg, err = commandrecord.UsedTextCommand(msg)
-	if err != nil {
-		return
-	}
+	outServerMsg, err = commandrecord.UsedTextCommand(msg, stringBuffer)
 	return
 }
 

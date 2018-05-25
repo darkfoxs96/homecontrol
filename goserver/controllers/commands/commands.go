@@ -12,7 +12,7 @@ type Commands struct {
 
 // Get - returns all commands
 // @Title Get
-// @Description get commands
+// @Description get all possible commands (for controlled and third-party home control ...)
 // @Success 200 {object}	[]models.ListCommands
 // @Failure 500 database error
 // @router / [get]

@@ -10,7 +10,7 @@
                 "tags": [
                     "commands"
                 ],
-                "description": "get commands",
+                "description": "get all possible commands (for controlled and third-party home control ...)",
                 "operationId": "Commands.Get",
                 "responses": {
                     "200": {
