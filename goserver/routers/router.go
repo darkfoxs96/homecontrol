@@ -1,7 +1,9 @@
 package routers
 
 import (
+	"homecontrol/goserver/controllers/command"
 	"homecontrol/goserver/controllers/commands"
+
 	"github.com/astaxie/beego"
 
 	"homecontrol/goserver/controllers"
@@ -34,6 +36,24 @@ func init() {
 			beego.NSNamespace("/commands",
 				beego.NSInclude(
 					&commands.Commands{},
+				),
+			),
+
+			beego.NSNamespace("/command/used/sound",
+				beego.NSInclude(
+					&command.CommandUsedSound{},
+				),
+			),
+
+			beego.NSNamespace("/command/used/text",
+				beego.NSInclude(
+					&command.CommandUsedText{},
+				),
+			),
+
+			beego.NSNamespace("/command/record",
+				beego.NSInclude(
+					&command.CommandRecord{},
 				),
 			),
 		)

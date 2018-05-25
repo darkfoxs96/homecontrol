@@ -13,7 +13,7 @@ import (
 type Record struct {
 	ID            string
 	Sound         []byte
-	TypeRecord    byte
+	TypeRecord    int
 	Command       int
 	StringCommand string
 	NumberOfWords int
@@ -73,12 +73,21 @@ func UsedTextCommand(command string, buffer string) (responseMessage string, err
 		err = soundparsing.ErrNotFoundIDCommand
 	}
 
+	controlledRecord := controlled.GetControlled(controlledID)
 	commandrecord := GetCommandRecord(commandID)
+	if commandrecord == nil {
+		err = errors.New("CommandRecord: No command record")
+		return
+	}
+	if controlledRecord == nil {
+		err = errors.New("CommandRecord: No controlled record")
+		return
+	}
 	if buffer != "" {
 		commandrecord.StringCommand = buffer
 	}
 
-	return controlled.RequestToControlled(controlled.GetControlled(controlledID), commandrecord)
+	return controlled.RequestToControlled(controlledRecord, commandrecord)
 }
 
 // GetCommandRecords return command record map

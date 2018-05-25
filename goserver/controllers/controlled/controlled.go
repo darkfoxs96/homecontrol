@@ -122,7 +122,6 @@ func (o *Controlled) GetOne() {
 
 	o.Data["json"] = controlled
 	o.ServeJSON()
-	return
 }
 
 // Get - return favorite controlleds
@@ -156,7 +155,7 @@ func (o *Controlled) Get() {
 // @Title Delete
 // @Description delete controlled
 // @Param	id	path	int		true	"The id you want to delete"
-// @Success 200
+// @Success 200 {object} models.Message
 // @Failure 400 id is empty
 // @Failure 500 database error
 // @router /:id [delete]
@@ -171,7 +170,7 @@ func (o *Controlled) Delete() {
 		o.CustomAbort(500, err.Error())
 	}
 
-	o.Data["json"] = "Ok"
+	o.Data["json"] = models.Message{Status: true}
 	o.ServeJSON()
 }
 
@@ -191,8 +190,8 @@ func (o *InfoControlled) Get() {
 		o.CustomAbort(500, err.Error())
 	}
 
-	o.Ctx.Output.SetStatus(200)
-	o.Ctx.Output.Body([]byte(info))
+	o.Data["json"] = models.Message{Status: true, Message: info,}
+	o.ServeJSON()
 }
 
 type ControlledMessage struct {

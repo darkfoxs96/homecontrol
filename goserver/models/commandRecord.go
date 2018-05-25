@@ -1,11 +1,12 @@
 package models
 
-import ()
+import "strings"
 
 // InsertCommandRecord add CommandRecord
 func InsertCommandRecord(record *CommandRecord, ID string) (err error) {
 	locker.Lock()
 	defer locker.Unlock()
+	ID = strings.ToLower(ID)	
 	mainModel.CommandRecords[ID] = record
 	err = Save()
 	return
@@ -15,6 +16,7 @@ func InsertCommandRecord(record *CommandRecord, ID string) (err error) {
 func DeleteCommandRecord(ID string) (err error) {
 	locker.Lock()
 	defer locker.Unlock()
+	ID = strings.ToLower(ID)
 	mainModel.CommandRecords[ID] = nil
 	err = Save()
 	return
@@ -31,5 +33,6 @@ func GetCommandRecords() (commandRecords map[string]*CommandRecord) {
 func GetCommandRecord(ID string) (commandRecord *CommandRecord) {
 	locker.Lock()
 	defer locker.Unlock()
+	ID = strings.ToLower(ID)
 	return mainModel.CommandRecords[ID]
 }

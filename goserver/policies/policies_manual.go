@@ -8,4 +8,5 @@ func init() {
 	beego.Policy("/api/controlled/*", "get", IsAuthorized)
 	beego.Policy("/api/controlled/*", "delete", IsAuthorized)
 	beego.Policy("/api/commands/*", "*", IsAuthorized)	
+	beego.Policy("/api/command/*", "*", IsAuthorized)		
 }

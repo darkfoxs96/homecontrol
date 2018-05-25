@@ -14,6 +14,9 @@ import (
 
 // RequestToControlled action request
 func RequestToControlled(controlled *models.Сontrolled, command *models.CommandRecord) (responseMessage string, err error) {
+	if models.Test {
+		return
+	}
 	if controlled.HomeControlID != "" {
 		responseMessage, err = controlsystemhome.ControlSystemHomeInterfaces[controlled.HomeControlID].RequestToHomeControlSystem(controlled, command)
 		return

@@ -2,8 +2,8 @@ package models
 
 // CommandRecord struct to all 'command' !
 type CommandRecord struct {
-	//TypeRcord: 1 - Сontrolled, 2 - Command
-	TypeRecord byte `json:"type_record"`
+	//TypeRecord: 1 - Сontrolled, 2 - Command
+	TypeRecord int `json:"type_record"`
 	//Command:  0 - Put buffer,     1 - Open page, 2 - Stop
 	//Command:  3 - Sound off,  	4 - Sound on,  5 - off
 	//Command:  6 - Open youtube,   7 - Open vk,   8 - Open ok

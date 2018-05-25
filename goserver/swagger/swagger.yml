@@ -2,6 +2,134 @@ swagger: "2.0"
 info: {}
 basePath: /api
 paths:
+  /command/record/:
+    get:
+      tags:
+      - command/record
+      description: get favorite command records
+      operationId: CommandRecord.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/command.Command'
+        "500":
+          description: database error
+  /command/record/{command}:
+    get:
+      tags:
+      - command/record
+      description: get favorite command record
+      operationId: CommandRecord.Get
+      parameters:
+      - in: path
+        name: command
+        description: The command record you want to receive
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CommandRecord'
+        "500":
+          description: database error
+    post:
+      tags:
+      - command/record
+      description: create and update command record
+      operationId: CommandRecord.Post
+      parameters:
+      - in: body
+        name: body
+        description: 'The object content. Field NumberOfWords not required. TypeRecord:
+          1 - Сontrolled, 2 - Command'
+        required: true
+        schema:
+          $ref: '#/definitions/models.CommandRecord'
+      - in: path
+        name: command
+        description: The command you want to write. '_' will be replaced by ' '
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+    delete:
+      tags:
+      - command/record
+      description: delete a favorite command record
+      operationId: CommandRecord.Delete
+      parameters:
+      - in: path
+        name: command
+        description: The command you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: command is empty
+        "500":
+          description: database error
+  /command/used/sound/:
+    post:
+      tags:
+      - command/used/sound
+      description: use sound command
+      operationId: CommandUsedSound.Post
+      parameters:
+      - in: formData
+        name: soundFile
+        description: sound file
+        required: true
+        type: file
+      - in: formData
+        name: buffer
+        description: buffer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /command/used/text/:
+    post:
+      tags:
+      - command/used/text
+      description: use text command
+      operationId: CommandUsedText.Post
+      parameters:
+      - in: body
+        name: body
+        description: The object content.
+        required: true
+        schema:
+          $ref: '#/definitions/command.UsedText'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
   /commands/:
     get:
       tags:
@@ -116,6 +244,8 @@ paths:
       responses:
         "200":
           description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
         "400":
           description: id is empty
         "500":
@@ -152,6 +282,34 @@ paths:
         "500":
           description: database error
 definitions:
+  command.Command:
+    title: Command
+    type: object
+    properties:
+      command:
+        type: integer
+        format: int64
+      controlled_id:
+        type: integer
+        format: int64
+      id:
+        type: string
+      number_of_words:
+        type: integer
+        format: int64
+      string_command:
+        type: string
+      type_record:
+        type: integer
+        format: int64
+  command.UsedText:
+    title: UsedText
+    type: object
+    properties:
+      buffer:
+        type: string
+      command:
+        type: string
   controlled.InformationСontrolled:
     title: InformationСontrolled
     type: object
@@ -179,6 +337,24 @@ definitions:
         format: int64
       info_command:
         type: string
+  models.CommandRecord:
+    title: CommandRecord
+    type: object
+    properties:
+      command:
+        type: integer
+        format: int64
+      controlled_id:
+        type: integer
+        format: int64
+      number_of_words:
+        type: integer
+        format: int64
+      string_command:
+        type: string
+      type_record:
+        type: integer
+        format: int64
   models.ListCommands:
     title: ListCommands
     type: object
@@ -195,6 +371,14 @@ definitions:
       start_range_id_commands:
         type: integer
         format: int64
+  models.Message:
+    title: Message
+    type: object
+    properties:
+      message:
+        type: string
+      status:
+        type: boolean
   models.MessageToServer:
     title: MessageToServer
     type: object
