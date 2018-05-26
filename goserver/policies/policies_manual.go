@@ -9,4 +9,5 @@ func init() {
 	beego.Policy("/api/controlled/*", "delete", IsAuthorized)
 	beego.Policy("/api/commands/*", "*", IsAuthorized)	
 	beego.Policy("/api/command/*", "*", IsAuthorized)		
+	beego.Policy("/api/usecontrol/*", "*", IsAuthorized)		
 }

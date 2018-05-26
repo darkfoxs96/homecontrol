@@ -22,6 +22,7 @@ type MainModel struct {
 	CommonBuffer                    string                 `json:"common_buffer"`
 	BotMessengersSettings           map[string]interface{} `json:"bot_messengers_settings"`
 	SoundParsingsSettings           map[string]interface{} `json:"sound_parsings_settings"`
+	AdditionControlSystemSettings   map[string]interface{} `json:"addition_control_system_settings"`
 	UsedSoundParsingsID             string                 `json:"used_sound_parsings_id"`
 	VersionPasswordHash             string                 `json:"version_password_hash"`
 	PasswordHash                    string                 `json:"password_hash"`
@@ -73,9 +74,10 @@ func init() {
 	CancelChOutMessageToAll = make(chan struct{})
 	useControl := &UseControl{
 		ReportUnauthorizedUse: false,
-		DetectedTime:          30 * 60, //30 minute, format second
-		UsageLastTime:         int(time.Now().Unix()),
-		UsageLog:              []string{},
+		// TODO: testing time !
+		DetectedTime:  30 * 60, //30 minute, format second
+		UsageLastTime: int(time.Now().Unix()),
+		UsageLog:      []string{},
 	}
 	mainModel = &MainModel{
 		CommandRecords:                  make(map[string]*CommandRecord),
@@ -83,6 +85,7 @@ func init() {
 		UseControl:                      useControl,
 		BotMessengersSettings:           make(map[string]interface{}),
 		SoundParsingsSettings:           make(map[string]interface{}),
+		AdditionControlSystemSettings:   make(map[string]interface{}),
 		UsedSoundParsingsID:             "",
 		IncrementForInsertСontrolleddID: 0,
 		CommonBuffer:                    "",

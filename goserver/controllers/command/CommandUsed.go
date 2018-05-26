@@ -2,6 +2,7 @@ package command
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 
 	"homecontrol/goserver/models"
@@ -42,8 +43,9 @@ func (o *CommandUsedSound) Post() {
 
 	var buffer string
 	if o.Ctx.Request.MultipartForm.Value["buffer"] != nil {
-		buffer = o.Ctx.Request.MultipartForm.Value["buffer"][0]		
+		buffer = o.Ctx.Request.MultipartForm.Value["buffer"][0]
 	}
+	fmt.Println(buffer)
 
 	msg, err := commandrecord.UsedSoundCommand(bufSound, buffer)
 	if err != nil {

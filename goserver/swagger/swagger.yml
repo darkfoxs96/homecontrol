@@ -281,6 +281,140 @@ paths:
           description: wrong body data
         "500":
           description: database error
+  /usecontrol/detectedtime/:
+    get:
+      tags:
+      - usecontrol/detectedtime
+      description: get detected time format(second) string
+      operationId: DetectedTime.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "500":
+          description: database error
+    post:
+      tags:
+      - usecontrol/detectedtime
+      description: set detected time format(second) string
+      operationId: DetectedTime.Post
+      parameters:
+      - in: body
+        name: detectedTime
+        description: detected time format(second) string
+        required: true
+        type: integer
+        format: int64
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /usecontrol/lasttime/:
+    get:
+      tags:
+      - usecontrol/lasttime
+      description: get useLastTime format(int(time.Now().Unix())) string
+      operationId: LastTime.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "500":
+          description: database error
+    post:
+      tags:
+      - usecontrol/lasttime
+      description: set last time format(int(time.Now().Unix())) string
+      operationId: LastTime.Post
+      parameters:
+      - in: body
+        name: lastTime
+        description: last time format(int(time.Now().Unix())) string
+        required: true
+        type: integer
+        format: int64
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /usecontrol/log/:
+    get:
+      tags:
+      - usecontrol/log
+      description: get log
+      operationId: Log.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "500":
+          description: database error
+    post:
+      tags:
+      - usecontrol/log
+      description: append to log
+      operationId: Log.Post
+      parameters:
+      - in: body
+        name: log
+        description: Append to log
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /usecontrol/reportunauthorizeduse/:
+    get:
+      tags:
+      - usecontrol/reportunauthorizeduse
+      description: get field 'ReportUnauthorizedUse' (bool to string)
+      operationId: ReportUnauthorizedUse.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "500":
+          description: database error
+    post:
+      tags:
+      - usecontrol/reportunauthorizeduse
+      description: set report unauthorized use (bool to string)
+      operationId: ReportUnauthorizedUse.Post
+      parameters:
+      - in: body
+        name: reportUnauthorizedUse
+        description: The object content. (bool to string)
+        required: true
+        type: boolean
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
 definitions:
   command.Command:
     title: Command

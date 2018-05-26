@@ -19,7 +19,8 @@ type BotMessenger interface {
 	GetNameID() (nameID string)
 	OutMessage(message string) (responseMsg string, err error)
 	IsSupporting() (msg string, supporting bool)
-	SetSettings(tokenAPI string, password string) (msg string, err error)
+	GetParamHTMLForInsertingSettings() (paramHTML string, err error)
+	SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error)
 }
 
 // BotMessengerInterfaces map all BotMessenger
@@ -74,8 +75,25 @@ func IsSupporting() (msg string, supporting bool) {
 	return
 }
 
-// SetSettings set settings to BotMessenger
-func SetSettings(tokenAPI string, password string) (msg string, err error) {
+// SetSettingsFromTheJSON set settings from the JSON format
+func SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error) {
+	return
+}
+
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface BotMessenger
+/*
+	JSON:
+{
+	["namefield","typefild","value"]
+	["key","string",""]
+	["uuid","string","fdgdgme-sdfsw-asdsa"]
+	["parse","bool","false"] //will return from the client "parse": false
+	["id","int","1990"] //will return from the client "id": 1990
+	["fieldListName","list","value","en","sp","ru"]
+	["lang","list","ru","en","sp","ru"] //will return from the client "lang": "ru" //first field to up
+}
+*/
+func GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
 	return
 }
 

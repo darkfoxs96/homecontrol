@@ -39,7 +39,7 @@ func init() {
 type SoundParsing interface {
 	GetNameID() (nameID string)
 	GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID string, err error)
-	GetHTMLForInsertingSettings() (HTML string, err error)
+	GetParamHTMLForInsertingSettings() (paramHTML string, err error)
 	SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error)
 	IsSupporting() (msg string, supporting bool)
 }
@@ -62,9 +62,20 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 	return
 }
 
-// GetHTMLForInsertingSettings return HTML for inserting settings from the client to interface sound-parsing
-// Uses Bootstrap, jQuery, Ajax
-func GetHTMLForInsertingSettings() (HTML string, err error) {
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface sound-parsing
+/*
+	JSON:
+{
+	["namefield","typefild","value"]
+	["key","string",""]
+	["uuid","string","fdgdgme-sdfsw-asdsa"]
+	["parse","bool","false"] //will return from the client "parse": false
+	["id","int","1990"] //will return from the client "id": 1990
+	["fieldListName","list","value","en","sp","ru"]
+	["lang","list","ru","en","sp","ru"] //will return from the client "lang": "ru" //first field to up
+}
+*/
+func GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
 	return
 }
 

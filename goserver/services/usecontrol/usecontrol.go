@@ -40,7 +40,7 @@ func GetReportUnauthorizedUse() (unauthorizedUse bool) {
 }
 
 // SetDetectedTime set detected time
-// format millisecond
+// format second
 func SetDetectedTime(newDetectedTime int) (err error) {
 	err = models.SetDetectedTime(newDetectedTime)
 	if err != nil {
@@ -51,19 +51,19 @@ func SetDetectedTime(newDetectedTime int) (err error) {
 }
 
 // GetDetectedTime get detected time
-// format millisecond
+// format second
 func GetDetectedTime() (detectedTime int) {
 	return models.GetDetectedTime()
 }
 
 // GetLastTime get used last time
-// format millisecond time.Now().Unix()
+// format second time.Now().Unix()
 func GetLastTime() (lastTime int) {
 	return models.GetUsedLastTime()
 }
 
 // SetLastTime set used last time
-// format millisecond time.Now().Unix()
+// format second time.Now().Unix()
 func SetLastTime(newLastTime int) (err error) {
 	err = models.SetUsedLastTime(newLastTime)
 	if err != nil {

@@ -34,7 +34,7 @@ const (
 
 var (
 	defaultSettings = &Settings{
-		Key:   "d9f018ae-9e18-4fc4-b0dd-3cb3bb8caba6",
+		Key:   "",
 		Lang:  "ru-RU",
 		Topic: "queries",
 		UUID:  "12ae13cb744628b58fb536d496daa2e6",
@@ -155,10 +155,18 @@ func (sp *SoundParsing) GetIDCommandANDControlledBySound(sound []byte) (controll
 	return
 }
 
-// GetHTMLForInsertingSettings return HTML for inserting settings from the client to interface sound-parsing
-// Uses Bootstrap, jQuery, Ajax
-func (sp *SoundParsing) GetHTMLForInsertingSettings() (HTML string, err error) {
-	return sp.getHTML()
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface sound-parsing
+/*
+	this.JSON:
+{
+	["key","string","....."]
+	["uuid","string","....."]
+	["topic","list",".....","queries","maps"]
+	["lang","list",".....","ru-RU","en-US","uk-UK","tr-TR"]
+}
+*/
+func (sp *SoundParsing) GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
+	return sp.getParamHTML()
 }
 
 // SetSettingsFromTheJSON set settings from the JSON format

@@ -19,13 +19,12 @@ type ListControlSystemHome struct {
 type ControlSystemHome interface {
 	GetNameID() (nameID string)
 	RequestToHomeControlSystem(controlled *models.Сontrolled, commandRecord *models.CommandRecord) (msg string, err error)
-	GetInfoHTML() (html string, err error)
 	GetInfoJSON() (json string, err error)
 	GetInfoString() (str string, err error)
-	GetInfoObjectString(objectID string) (str string, err error)
 	GetListObjectsJSON() (json string, err error)
-	GetListCommandsJSON() (json string, err error)
 	GetListCommands() (listCommands *models.ListCommands, err error)
+	GetParamHTMLForInsertingSettings() (paramHTML string, err error)
+	SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error)
 	IsSupporting() (msg string, supporting bool)
 }
 
@@ -47,12 +46,7 @@ func RequestToHomeControlSystem(controlled *models.Сontrolled, commandRecord *m
 	return
 }
 
-// GetInfoHTML return HTML for webApp
-func GetInfoHTML() (html string, err error) {
-	return
-}
-
-// GetInfoJSON return {["name", "info"], ["name", "info"], ["", ""]...}
+// GetInfoJSON return {["info", "info", "info", "info", "info", "info"]}
 func GetInfoJSON() (json string, err error) {
 	return
 }
@@ -62,18 +56,8 @@ func GetInfoString() (str string, err error) {
 	return
 }
 
-// GetInfoObjectString return in arbitrary format
-func GetInfoObjectString(objectID string) (str string, err error) {
-	return
-}
-
 // GetListObjectsJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
 func GetListObjectsJSON() (json string, err error) {
-	return
-}
-
-// GetListCommandsJSON return {[1001, "info command"], [1002, "info command"], [int, ""]...}
-func GetListCommandsJSON() (json string, err error) {
 	return
 }
 
@@ -82,9 +66,42 @@ func GetListCommands() (listCommands *models.ListCommands, err error) {
 	return
 }
 
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface ControlSystemHome
+/*
+	JSON:
+{
+	["namefield","typefild","value"]
+	["key","string",""]
+	["uuid","string","fdgdgme-sdfsw-asdsa"]
+	["parse","bool","false"] //will return from the client "parse": false
+	["id","int","1990"] //will return from the client "id": 1990
+	["fieldListName","list","value","en","sp","ru"]
+	["lang","list","ru","en","sp","ru"] //will return from the client "lang": "ru" //first field to up
+}
+*/
+func GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
+	return
+}
+
+// SetSettingsFromTheJSON set settings from the JSON format
+func SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error) {
+	return
+}
+
 // IsSupporting system ?
 func IsSupporting() (msg string, supporting bool) {
 	return
+}
+
+// SetSettingsServer insert settings to server DB
+func SetSettingsServer(controlSystemID string, settings interface{}) (err error) {
+	return models.SetSettingsAdditionControlSystem(settings, controlSystemID)
+}
+
+// GetSettingsServer get settings from the server DB
+// Convert the interface to JSON, then convert JSON to the required structure !
+func GetSettingsServer(controlSystemID string) (settings interface{}) {
+	return models.GetSettingsAdditionControlSystem(controlSystemID)
 }
 
 // InMessage receives a message

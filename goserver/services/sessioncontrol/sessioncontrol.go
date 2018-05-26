@@ -50,3 +50,8 @@ func NewPassword(oldPassword, newPassword string) (err error) {
 	}
 	return models.SetPasswordHash(string(newPasswordHash))
 }
+
+// GetVersionPasswordHash get version hash
+func GetVersionPasswordHash() (versionPasswordHash string) {
+	return models.GetVersionPasswordHash()
+}

@@ -6,7 +6,7 @@ import (
 )
 
 const (
-	lengthHash = 10
+	lengthHash = 20
 )
 
 // GetVersionPasswordHash return versionPasswordHash
