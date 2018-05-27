@@ -18,14 +18,13 @@ type MainModel struct {
 	CommandRecords                  map[string]*CommandRecord
 	Сontrolleds                     map[int]*Сontrolled
 	UseControl                      *UseControl
+	Session							*Session
 	IncrementForInsertСontrolleddID int                    `json:"increment_for_insert_controlled_id"`
 	CommonBuffer                    string                 `json:"common_buffer"`
 	BotMessengersSettings           map[string]interface{} `json:"bot_messengers_settings"`
 	SoundParsingsSettings           map[string]interface{} `json:"sound_parsings_settings"`
 	AdditionControlSystemSettings   map[string]interface{} `json:"addition_control_system_settings"`
 	UsedSoundParsingsID             string                 `json:"used_sound_parsings_id"`
-	VersionPasswordHash             string                 `json:"version_password_hash"`
-	PasswordHash                    string                 `json:"password_hash"`
 }
 
 const (
@@ -79,18 +78,18 @@ func init() {
 		UsageLastTime: int(time.Now().Unix()),
 		UsageLog:      []string{},
 	}
+	session := &Session{}
 	mainModel = &MainModel{
 		CommandRecords:                  make(map[string]*CommandRecord),
 		Сontrolleds:                     make(map[int]*Сontrolled),
 		UseControl:                      useControl,
+		Session:						 session,
 		BotMessengersSettings:           make(map[string]interface{}),
 		SoundParsingsSettings:           make(map[string]interface{}),
 		AdditionControlSystemSettings:   make(map[string]interface{}),
 		UsedSoundParsingsID:             "",
 		IncrementForInsertСontrolleddID: 0,
 		CommonBuffer:                    "",
-		VersionPasswordHash:             "",
-		PasswordHash:                    "",
 	}
 	raw, err := ioutil.ReadFile(Path + fileNameMainModel)
 	if err == nil {
@@ -102,7 +101,7 @@ func init() {
 	} else {
 		fmt.Println("Models(DB): Error load mainmodel.json, msg error: ", err.Error())
 	}
-	if mainModel.PasswordHash == "" {
+	if mainModel.Session.PasswordHash == "" {
 		pasHash, err := bcrypt.GenerateFromPassword([]byte("admin"), bcrypt.DefaultCost)
 		if err != nil {
 			fmt.Println("Models(DB): init models(DB), Error bcrypt.GenerateFromPassword() msg error: ", err.Error())

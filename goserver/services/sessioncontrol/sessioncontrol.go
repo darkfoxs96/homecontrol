@@ -4,24 +4,85 @@ import (
 	"errors"
 	"golang.org/x/crypto/bcrypt"
 
+	"github.com/darkfoxs96/go_smtp/gomail"
+
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/tools"
 )
 
-// TODO: password recovery !
+// GetSMTPServersNames return all smtp-server name
+func GetSMTPServersNames() []string {
+	smtp := []string{}
+	for key := range gomail.SMTP {
+		smtp = append(smtp, key)
+	}
+	return smtp
+}
 
-// IsCheckPassword password to passwordHash, is check passwordHash and passwordHash in models(DB)
-func IsCheckPassword(password string) (isCheckPassword bool, err error) {
-	hashPassword, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
+// RecoveryPassword send email with new password
+func RecoveryPassword(emailPassword string) (err error) {
+	session := models.GetSession()
+	err = bcrypt.CompareHashAndPassword([]byte(session.EmailPasswordHash), []byte(emailPassword))
+	if err != nil {
+		err = errors.New("SesionControl: emailPassword does not match msg error: " + err.Error())
+		return
+	}
+
+	smtpServer := gomail.SMTP[session.EmailSMTPServer]
+	if smtpServer == nil {
+		err = errors.New("SesionControl: smtp server not found")
+		return
+	}
+
+	newPassword := tools.RandHash(10)
+	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
 	if err != nil {
 		err = errors.New("SesionControl: Error bcrypt.GenerateFromPassword() msg error: " + err.Error())
 		return
 	}
-	if models.GetPasswordHash() == string(hashPassword) {
-		isCheckPassword = true
-	} else {
-		isCheckPassword = false
+	err = models.SetPasswordHash(string(newPasswordHash))
+	if err != nil {
+		return
+	}
+
+	sender := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)
+
+	receiver := []string{session.EmailLogin}
+	subject := "HomeComtrol: password recovery!"
+	message := "Your new password: " + newPassword
+	bodyMessage := sender.WriteHTMLEmail(receiver, subject, message)
+
+	err = sender.SendMail(receiver, subject, bodyMessage)
+	if err != nil {
+		return
 	}
 	return
+}
+
+// SetEmail set login, password, smtp server for email
+func SetEmail(password, emailPassword, emailLogin, smtpServer string) (err error) {
+	isCheckPassword := IsCheckPassword(password)
+	if !isCheckPassword {
+		err = errors.New("SesionControl: Error, password does not match")
+	}
+
+	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(emailPassword), bcrypt.DefaultCost)
+	if err != nil {
+		err = errors.New("SesionControl: Error bcrypt.GenerateFromPassword() msg error: " + err.Error())
+		return
+	}
+
+	emailPasswordHash := string(newPasswordHash)
+	return models.SetEmail(emailPasswordHash, emailLogin, smtpServer)
+}
+
+// IsCheckPassword password to passwordHash, is check passwordHash and passwordHash in models(DB)
+func IsCheckPassword(password string) (isCheckPassword bool) {
+	err := bcrypt.CompareHashAndPassword([]byte(models.GetPasswordHash()), []byte(password))
+	if err != nil {
+		return false
+	}
+	return true
 }
 
 // IsCheckVersionHashPassword is check IsCheckVersionHashPassword and IsCheckVersionHashPassword in models(DB)
@@ -36,10 +97,7 @@ func IsCheckVersionHashPassword(versionHashPassword string) (isCheckVersionHashP
 
 // NewPassword create new passwordHash, save to models(DB)
 func NewPassword(oldPassword, newPassword string) (err error) {
-	isCheckPassword, err := IsCheckPassword(oldPassword)
-	if err != nil {
-		return
-	}
+	isCheckPassword := IsCheckPassword(oldPassword)
 	if !isCheckPassword {
 		err = errors.New("SesionControl: Error, old password does not match")
 	}

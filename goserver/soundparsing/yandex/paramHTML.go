@@ -7,6 +7,7 @@ import (
 func (sp *SoundParsing) getParamHTML() (paramHTML string, err error) {
 	paramHTML = `{
 		["key","string","{{.Key}}"]
+		["Create SpeechKit Cloud key yandex","url","https://developer.tech.yandex.ru/"]
 		["lang","list","{{.Lang}}","ru-RU","en-US","uk-UK","tr-TR"]
 		["topic","list","{{.Topic}}","queries","maps"]
 		["uuid","string","{{.UUID}}"]

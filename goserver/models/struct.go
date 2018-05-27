@@ -55,14 +55,23 @@ type ListCommands struct {
 	EndRangeIDCommands   int    `json:"end_range_id_commands"`
 }
 
-// MessageToServer message to server 
+// MessageToServer message to server
 type MessageToServer struct {
-	ControlledID int	`json:"controlled_id"`	
-	Message      string	`json:"message"`
+	ControlledID int    `json:"controlled_id"`
+	Message      string `json:"message"`
 }
 
 // Message server response message
 type Message struct {
-	Status 		 bool	`json:"status"`	
-	Message      string	`json:"message"`
+	Status  bool   `json:"status"`
+	Message string `json:"message"`
+}
+
+// Session control user
+type Session struct {
+	VersionPasswordHash string `json:"version_password_hash"`
+	PasswordHash        string `json:"password_hash"`
+	EmailPasswordHash   string `json:"email_password_hash"`
+	EmailLogin          string `json:"email_login"`
+	EmailSMTPServer     string `json:"email_smtp_server"`
 }

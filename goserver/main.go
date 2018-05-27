@@ -14,9 +14,16 @@ import (
 	// Bot messeger
 	// Sound parsings
 	_ "homecontrol/goserver/soundparsing/yandex"
+
+
+	"github.com/darkfoxs96/go_smtp/gomail"
 )
 
 func main() {
+
+	gomail.NewSender("","")
+
+
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = models.Path + "swagger"
