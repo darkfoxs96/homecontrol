@@ -1,2 +1,5 @@
-goserver/key.txt
+//goserver:
+goserver/main.go
 goserver/.idea
+
+//
