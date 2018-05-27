@@ -63,8 +63,10 @@ type MessageToServer struct {
 
 // Message server response message
 type Message struct {
-	Status  bool   `json:"status"`
-	Message string `json:"message"`
+	Status      bool   `json:"status"`
+	Message     string `json:"message"`
+	IntMessage  int    `json:"int_message"`
+	BoolMessage bool   `json:"bool_message"`
 }
 
 // Session control user

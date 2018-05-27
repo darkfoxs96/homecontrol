@@ -6,6 +6,7 @@
 package routers
 
 import (
+	"homecontrol/goserver/controllers/soundparsing"
 	"homecontrol/goserver/controllers/user"
 
 	"github.com/astaxie/beego"
@@ -121,6 +122,24 @@ func init() {
 			beego.NSNamespace("/user/email/smtpserver",
 				beego.NSInclude(
 					&user.SMTPServer{},
+				),
+			),
+
+			beego.NSNamespace("/soundparsing/settings",
+				beego.NSInclude(
+					&soundparsing.Settings{},
+				),
+			),
+
+			beego.NSNamespace("/soundparsing/used",
+				beego.NSInclude(
+					&soundparsing.UsedID{},
+				),
+			),
+
+			beego.NSNamespace("/soundparsing",
+				beego.NSInclude(
+					&soundparsing.SoundParsing{},
 				),
 			),
 		)

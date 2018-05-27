@@ -160,6 +160,7 @@ func (sp *SoundParsing) GetIDCommandANDControlledBySound(sound []byte) (controll
 	this.JSON:
 {
 	["key","string","....."]
+	["Create SpeechKit Cloud key yandex","url","......."]
 	["uuid","string","....."]
 	["topic","list",".....","queries","maps"]
 	["lang","list",".....","ru-RU","en-US","uk-UK","tr-TR"]

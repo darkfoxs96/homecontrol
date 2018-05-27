@@ -11,4 +11,5 @@ func init() {
 	beego.Policy("/api/command/*", "*", IsAuthorized)
 	beego.Policy("/api/usecontrol/*", "*", IsAuthorized)
 	beego.Policy("/api/user/*", "*", IsAuthorized)
+	beego.Policy("/api/soundparsing/*", "*", IsAuthorized)
 }

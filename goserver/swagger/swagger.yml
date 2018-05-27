@@ -308,6 +308,119 @@ paths:
           description: wrong body data
         "500":
           description: database error
+  /soundparsing/:
+    get:
+      tags:
+      - soundparsing
+      description: get a fortune all soundparsings
+      operationId: SoundParsing.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/soundparsing.ListSoundParsings'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /soundparsing/{id}:
+    get:
+      tags:
+      - soundparsing
+      description: get a fortune
+      operationId: SoundParsing.Get
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /soundparsing/settings/{id}:
+    get:
+      tags:
+      - soundparsing/settings
+      description: get settings
+      operationId: Settings.Get
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '[][]string'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+    post:
+      tags:
+      - soundparsing/settings
+      description: set settings
+      operationId: Settings.Post
+      parameters:
+      - in: body
+        name: body
+        description: JSON for settings
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to set for settings
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /soundparsing/used/:
+    get:
+      tags:
+      - soundparsing/used
+      description: get used id
+      operationId: UsedID.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+    post:
+      tags:
+      - soundparsing/used
+      description: set used id
+      operationId: UsedID.Post
+      parameters:
+      - in: body
+        name: usedID
+        description: Used id for sound parsing
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
   /usecontrol/detectedtime/:
     get:
       tags:
@@ -636,6 +749,11 @@ definitions:
     title: Message
     type: object
     properties:
+      bool_message:
+        type: boolean
+      int_message:
+        type: integer
+        format: int64
       message:
         type: string
       status:
@@ -663,6 +781,14 @@ definitions:
       name:
         type: string
       port:
+        type: string
+  soundparsing.ListSoundParsings:
+    title: ListSoundParsings
+    type: object
+    properties:
+      Active:
+        type: boolean
+      NameID:
         type: string
   user.NewPasswordClient:
     title: NewPasswordClient

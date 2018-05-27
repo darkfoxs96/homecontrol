@@ -1,5 +1,7 @@
 #goserver:
 goserver/models/*.json
+goserver/*.exec
 goserver/.idea/
+goserver/redis/
 
 #
