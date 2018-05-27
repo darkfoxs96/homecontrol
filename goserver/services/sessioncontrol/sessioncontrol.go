@@ -2,6 +2,8 @@ package sessioncontrol
 
 import (
 	"errors"
+	"strings"
+
 	"golang.org/x/crypto/bcrypt"
 
 	"github.com/darkfoxs96/gosmtp/gomail"
@@ -70,6 +72,20 @@ func SetEmail(password, emailPassword, emailLogin, smtpServer string) (err error
 	if err != nil {
 		err = errors.New("SesionControl: Error bcrypt.GenerateFromPassword() msg error: " + err.Error())
 		return
+	}
+
+	smtp := gomail.SMTP[smtpServer]
+	if smtp == nil {
+		err = errors.New("SesionControl: smtp server not found")
+		return
+	}
+
+	if !strings.HasSuffix(emailLogin, smtpServer) && strings.Index(emailLogin, "@") != -1 {
+		err = errors.New("SesionControl: ! emaillogin@" + smtpServer + " .Wrong: " + emailLogin)
+	}
+
+	if !strings.HasSuffix(emailLogin, smtpServer) {
+		emailLogin += "@" + smtpServer
 	}
 
 	emailPasswordHash := string(newPasswordHash)

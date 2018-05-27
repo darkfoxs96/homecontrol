@@ -1,11 +1,11 @@
 package controlled
 
 import (
-	"time"
 	"bytes"
 	"encoding/binary"
 	"io/ioutil"
 	"net/http"
+	"time"
 
 	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/controlsystemhome"

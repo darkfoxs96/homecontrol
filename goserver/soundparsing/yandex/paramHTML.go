@@ -1,6 +1,6 @@
 package yandex
 
-import (	
+import (
 	"strings"
 )
 

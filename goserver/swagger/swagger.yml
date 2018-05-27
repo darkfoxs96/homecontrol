@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   title: RESTful API for HomeControl
-  description: API developed to work with AngularJS application on front-end
+  description: API developed to work with AngularJS 6 application on front-end
   version: 1.0.0
   contact:
     email: darkfoxs96@gmail.com
@@ -286,6 +286,28 @@ paths:
           description: wrong body data
         "500":
           description: database error
+  /login/:
+    post:
+      tags:
+      - login
+      description: login
+      operationId: Login.Post
+      parameters:
+      - in: body
+        name: body
+        description: User
+        required: true
+        schema:
+          $ref: '#/definitions/controllers.LoginJSON'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
   /usecontrol/detectedtime/:
     get:
       tags:
@@ -420,6 +442,100 @@ paths:
           description: wrong body data
         "500":
           description: database error
+  /user/email/:
+    post:
+      tags:
+      - user/email
+      description: set email
+      operationId: Email.Post
+      parameters:
+      - in: body
+        name: body
+        description: settings email
+        required: true
+        schema:
+          $ref: '#/definitions/user.SetEmail'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /user/email/smtpserver/:
+    get:
+      tags:
+      - user/email/smtpserver
+      description: get all smtp server names
+      operationId: SMTPServer.Get
+      responses:
+        "200":
+          description: '"smtp server names"'
+          schema:
+            type: array
+            items:
+              type: string
+  /user/logout/:
+    get:
+      tags:
+      - user/logout
+      description: logout
+      operationId: Logout.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /user/password/new/:
+    post:
+      tags:
+      - user/password/new
+      description: create new password
+      operationId: NewPassword.Post
+      parameters:
+      - in: body
+        name: body
+        description: old password and new password
+        required: true
+        schema:
+          $ref: '#/definitions/user.NewPasswordClient'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /user/password/recovery/:
+    post:
+      tags:
+      - user/password/recovery
+      description: recovery password
+      operationId: RecoveryPassword.Post
+      parameters:
+      - in: body
+        name: body
+        description: password email
+        required: true
+        schema:
+          $ref: '#/definitions/user.Recovery'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
 definitions:
   command.Command:
     title: Command
@@ -466,6 +582,12 @@ definitions:
       name:
         type: string
       port:
+        type: string
+  controllers.LoginJSON:
+    title: LoginJSON
+    type: object
+    properties:
+      password:
         type: string
   models.Command:
     title: Command
@@ -541,4 +663,30 @@ definitions:
       name:
         type: string
       port:
+        type: string
+  user.NewPasswordClient:
+    title: NewPasswordClient
+    type: object
+    properties:
+      new_password:
+        type: string
+      old_password:
+        type: string
+  user.Recovery:
+    title: Recovery
+    type: object
+    properties:
+      password:
+        type: string
+  user.SetEmail:
+    title: SetEmail
+    type: object
+    properties:
+      login_email:
+        type: string
+      password:
+        type: string
+      password_email:
+        type: string
+      smtp_server:
         type: string

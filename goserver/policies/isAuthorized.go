@@ -11,7 +11,7 @@ import (
 // IsAuthorized Policy
 func IsAuthorized(ctx *context.Context) {
 	if models.Test {
-		return
+		// return
 	}
 	sess, err := gosession.GlobalSessions.SessionStart(ctx.ResponseWriter, ctx.Request)
 	if err == nil {

@@ -1,8 +1,8 @@
 package commonbuffer
 
 import (
-	"homecontrol/goserver/services/controlled"
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/controlled"
 	control "homecontrol/goserver/services/controlled"
 )
 

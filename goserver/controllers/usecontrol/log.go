@@ -1,13 +1,13 @@
 package usecontrol
 
 import (
-	"strings"
 	"io/ioutil"
+	"strings"
 
 	"github.com/astaxie/beego"
 
-	"homecontrol/goserver/services/usecontrol"
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/usecontrol"
 )
 
 type Log struct {

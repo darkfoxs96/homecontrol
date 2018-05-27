@@ -1,9 +1,9 @@
 package soundparsing
 
 import (
+	"errors"
 	"fmt"
 	"strings"
-	"errors"
 
 	"homecontrol/goserver/models"
 )
@@ -91,14 +91,14 @@ func IsSupporting() (msg string, supporting bool) {
 }
 
 // UseDefaultIDForParsingSound use default ID for parsing sound
-func UseDefaultIDForParsingSound(sound []byte) (controlledID int, commandID string, err error){
+func UseDefaultIDForParsingSound(sound []byte) (controlledID int, commandID string, err error) {
 	if usedSoundParsingID == "" {
 		err = errors.New("SoundParsing: Error UseDefaultIDForParsingSound(), no set used sound parsing ID default")
 		return
 	}
 	if msgParsing, active := SoundParsingInterfaces[usedSoundParsingID].IsSupporting(); !active {
 		err = errors.New("SoundParsing: Error UseDefaultIDForParsingSound(), used sound parsing ID not active, " + msgParsing)
-		return 
+		return
 	}
 	controlledID, commandID, err = SoundParsingInterfaces[usedSoundParsingID].GetIDCommandANDControlledBySound(sound)
 	return

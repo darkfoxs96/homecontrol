@@ -1,8 +1,6 @@
 package models
 
-import (
-
-)
+import ()
 
 // SetSettingsSoundParsing insert settings to DB
 func SetSettingsSoundParsing(record interface{}, ID string) (err error) {

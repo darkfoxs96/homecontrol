@@ -18,7 +18,7 @@ type MainModel struct {
 	CommandRecords                  map[string]*CommandRecord
 	Сontrolleds                     map[int]*Сontrolled
 	UseControl                      *UseControl
-	Session							*Session
+	Session                         *Session
 	IncrementForInsertСontrolleddID int                    `json:"increment_for_insert_controlled_id"`
 	CommonBuffer                    string                 `json:"common_buffer"`
 	BotMessengersSettings           map[string]interface{} `json:"bot_messengers_settings"`
@@ -83,7 +83,7 @@ func init() {
 		CommandRecords:                  make(map[string]*CommandRecord),
 		Сontrolleds:                     make(map[int]*Сontrolled),
 		UseControl:                      useControl,
-		Session:						 session,
+		Session:                         session,
 		BotMessengersSettings:           make(map[string]interface{}),
 		SoundParsingsSettings:           make(map[string]interface{}),
 		AdditionControlSystemSettings:   make(map[string]interface{}),

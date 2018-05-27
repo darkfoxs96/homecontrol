@@ -6,7 +6,7 @@ import "strings"
 func InsertCommandRecord(record *CommandRecord, ID string) (err error) {
 	locker.Lock()
 	defer locker.Unlock()
-	ID = strings.ToLower(ID)	
+	ID = strings.ToLower(ID)
 	mainModel.CommandRecords[ID] = record
 	err = Save()
 	return

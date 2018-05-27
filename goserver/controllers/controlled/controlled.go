@@ -190,7 +190,7 @@ func (o *InfoControlled) Get() {
 		o.CustomAbort(500, err.Error())
 	}
 
-	o.Data["json"] = models.Message{Status: true, Message: info,}
+	o.Data["json"] = models.Message{Status: true, Message: info}
 	o.ServeJSON()
 }
 

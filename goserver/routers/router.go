@@ -1,11 +1,13 @@
 // Package routers contain API routs
 // @APIVersion 1.0.0
 // @Title RESTful API for HomeControl
-// @Description API developed to work with AngularJS application on front-end
+// @Description API developed to work with AngularJS 6 application on front-end
 // @Contact darkfoxs96@gmail.com
 package routers
 
 import (
+	"homecontrol/goserver/controllers/user"
+
 	"github.com/astaxie/beego"
 
 	"homecontrol/goserver/controllers"
@@ -83,6 +85,42 @@ func init() {
 			beego.NSNamespace("/usecontrol/reportunauthorizeduse",
 				beego.NSInclude(
 					&usecontrol.ReportUnauthorizedUse{},
+				),
+			),
+
+			beego.NSNamespace("/login",
+				beego.NSInclude(
+					&controllers.Login{},
+				),
+			),
+
+			beego.NSNamespace("/user/logout",
+				beego.NSInclude(
+					&controllers.Logout{},
+				),
+			),
+
+			beego.NSNamespace("/user/password/recovery",
+				beego.NSInclude(
+					&user.RecoveryPassword{},
+				),
+			),
+
+			beego.NSNamespace("/user/password/new",
+				beego.NSInclude(
+					&user.NewPassword{},
+				),
+			),
+
+			beego.NSNamespace("/user/email",
+				beego.NSInclude(
+					&user.Email{},
+				),
+			),
+
+			beego.NSNamespace("/user/email/smtpserver",
+				beego.NSInclude(
+					&user.SMTPServer{},
 				),
 			),
 		)
