@@ -1,5 +1,5 @@
-//goserver:
-.json*
-goserver/.idea
+#goserver:
+goserver/models/*.json
+goserver/.idea/
 
-//
+#
