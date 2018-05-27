@@ -1,5 +1,5 @@
 //goserver:
-goserver/main.go
+.json*
 goserver/.idea
 
 //
