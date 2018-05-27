@@ -77,9 +77,11 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver/soundparsing
 Interface local:  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundparsing
 
+
+To all interfaces:
+========
 Interpretation settings:  
 func GetParamHTMLForInsertingSettings()  
-GET api/soundparsing/settings
 
 | Name          | type         | value                    | result                      |
 | :------------ | :----------: | :----------------------- | :-------------------------- |
