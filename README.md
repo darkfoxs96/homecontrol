@@ -46,7 +46,7 @@ metod POST '/api/controlled/message'
 
 Control web:
 -------  
-###### javascript ######  
+###### AngularJS 6 ######  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static  
 and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views  
 
@@ -76,7 +76,6 @@ Sound parsings:
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/soundparsing  
 Interface local:  
 https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundparsing
-
 
 ### To all interfaces: ###
 Interpretation settings:  
