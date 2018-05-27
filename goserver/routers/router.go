@@ -1,13 +1,18 @@
+// Package routers contain API routs
+// @APIVersion 1.0.0
+// @Title RESTful API for HomeControl
+// @Description API developed to work with AngularJS application on front-end
+// @Contact darkfoxs96@gmail.com
 package routers
 
 import (
 	"github.com/astaxie/beego"
 
 	"homecontrol/goserver/controllers"
-	"homecontrol/goserver/controllers/controlled"
-	"homecontrol/goserver/controllers/usecontrol"
 	"homecontrol/goserver/controllers/command"
 	"homecontrol/goserver/controllers/commands"
+	"homecontrol/goserver/controllers/controlled"
+	"homecontrol/goserver/controllers/usecontrol"
 )
 
 func init() {

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/darkfoxs96/go_smtp/gomail"
+	"github.com/darkfoxs96/gosmtp/gomail"
 
 	"homecontrol/goserver/models"
 	"homecontrol/goserver/tools"

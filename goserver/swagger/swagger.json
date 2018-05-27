@@ -1,7 +1,12 @@
 {
     "swagger": "2.0",
     "info": {
-        "contact": {}
+        "title": "RESTful API for HomeControl",
+        "description": "API developed to work with AngularJS application on front-end",
+        "version": "1.0.0",
+        "contact": {
+            "email": "darkfoxs96@gmail.com"
+        }
     },
     "basePath": "/api",
     "paths": {
