@@ -37,17 +37,8 @@ func RecoveryPassword(emailPassword string) (err error) {
 	}
 
 	newPassword := tools.RandHash(10)
-	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
-	if err != nil {
-		err = errors.New("SesionControl: Error bcrypt.GenerateFromPassword() msg error: " + err.Error())
-		return
-	}
-	err = models.SetPasswordHash(string(newPasswordHash))
-	if err != nil {
-		return
-	}
 
-	sender := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)
+	sender := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)		
 
 	receiver := []string{session.EmailLogin}
 	subject := "HomeComtrol: password recovery!"
@@ -58,6 +49,17 @@ func RecoveryPassword(emailPassword string) (err error) {
 	if err != nil {
 		return
 	}
+
+	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
+	if err != nil {
+		err = errors.New("SesionControl: Error bcrypt.GenerateFromPassword() msg error: " + err.Error())
+		return
+	}
+	err = models.SetPasswordHash(string(newPasswordHash))
+	if err != nil {
+		return
+	}
+
 	return
 }
 

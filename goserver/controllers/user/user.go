@@ -1,6 +1,8 @@
 package user
 
 import (
+	"strconv"
+	"time"
 	"encoding/json"
 	"io/ioutil"
 
@@ -28,6 +30,16 @@ type Recovery struct {
 // @Failure 500 database error
 // @router / [post]
 func (o *RecoveryPassword) Post() {
+	if models.StopServer {
+		end := models.TimeEndStopServer - int(time.Now().Unix())
+		if end < 0 {
+			models.StopServer = false
+			models.TimeEndStopServer = 0
+			models.CountBadConnect = 0
+		} else {
+			o.CustomAbort(401, "Server close. Will be opened through: " + strconv.Itoa(end) + " seconds")
+		}
+	}
 	defer o.Ctx.Request.Body.Close()
 
 	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
@@ -44,6 +56,11 @@ func (o *RecoveryPassword) Post() {
 
 	err = sessioncontrol.RecoveryPassword(request.Password)
 	if err != nil {
+		models.CountBadConnect++
+		if models.CountBadConnect > 2 {
+			models.StopServer = true
+			models.TimeEndStopServer += int(time.Now().Unix()) + 30 // second
+		}
 		o.CustomAbort(500, err.Error())
 	}
 

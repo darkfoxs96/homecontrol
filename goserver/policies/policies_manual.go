@@ -10,6 +10,10 @@ func init() {
 	beego.Policy("/api/commands/*", "*", IsAuthorized)
 	beego.Policy("/api/command/*", "*", IsAuthorized)
 	beego.Policy("/api/usecontrol/*", "*", IsAuthorized)
-	beego.Policy("/api/user/*", "*", IsAuthorized)
+	beego.Policy("/api/user/logout/*", "*", IsAuthorized)
+	beego.Policy("/api/user/password/new/*", "*", IsAuthorized)
+	beego.Policy("/api/user/email/smtpserver/*", "*", IsAuthorized)
+	beego.Policy("/api/user/email/*", "*", IsAuthorized)
 	beego.Policy("/api/soundparsing/*", "*", IsAuthorized)
+	beego.Policy("/api/botmessanger/*", "*", IsAuthorized)	
 }

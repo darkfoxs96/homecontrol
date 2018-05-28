@@ -3,6 +3,8 @@ package controllers
 import (
 	"encoding/json"
 	"io/ioutil"
+	"strconv"
+	"time"
 
 	"github.com/astaxie/beego"
 
@@ -28,6 +30,16 @@ type LoginJSON struct {
 // @Failure 500 database error
 // @router / [post]
 func (o *Login) Post() {
+	if models.StopServer {
+		end := models.TimeEndStopServer - int(time.Now().Unix())
+		if end < 0 {
+			models.StopServer = false
+			models.TimeEndStopServer = 0
+			models.CountBadConnect = 0
+		} else {
+			o.CustomAbort(401, "Server close. Will be opened through: "+strconv.Itoa(end)+" seconds")
+		}
+	}
 	defer o.Ctx.Request.Body.Close()
 
 	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
@@ -44,7 +56,12 @@ func (o *Login) Post() {
 
 	check := sessioncontrol.IsCheckPassword(request.Password)
 	if !check {
-		o.CustomAbort(401, "Unauthorized")
+		models.CountBadConnect++
+		if models.CountBadConnect > 2 {
+			models.StopServer = true
+			models.TimeEndStopServer += int(time.Now().Unix()) + 30 // second
+		}
+		o.CustomAbort(401, "Unauthorized2")
 	}
 
 	sess, err := gosession.GlobalSessions.SessionStart(o.Ctx.ResponseWriter, o.Ctx.Request)

@@ -7,6 +7,135 @@ info:
     email: darkfoxs96@gmail.com
 basePath: /api
 paths:
+  /botmessanger/:
+    get:
+      tags:
+      - botmessanger
+      description: get a fortune all bot-messegers
+      operationId: BotMesseger.Get
+      responses:
+        "200":
+          description: ""
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/botmessenger.ListMessengers'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /botmessanger/{id}:
+    get:
+      tags:
+      - botmessanger
+      description: get a fortune
+      operationId: BotMesseger.Get
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /botmessanger/message/:
+    post:
+      tags:
+      - botmessanger/message
+      description: send a message through all messengers
+      operationId: Message.Post
+      parameters:
+      - in: body
+        name: message
+        description: Message
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /botmessanger/message/{id}:
+    post:
+      tags:
+      - botmessanger/message
+      description: send a message
+      operationId: Message.Post
+      parameters:
+      - in: body
+        name: message
+        description: Message
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want the messenger message
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+  /botmessanger/settings/{id}:
+    get:
+      tags:
+      - botmessanger/settings
+      description: get settings
+      operationId: Settings.Get
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to get
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '[][]string'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
+    post:
+      tags:
+      - botmessanger/settings
+      description: set settings
+      operationId: Settings.Post
+      parameters:
+      - in: body
+        name: body
+        description: JSON for settings
+        required: true
+        type: string
+      - in: path
+        name: id
+        description: The id you want to set for settings
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
+        "400":
+          description: wrong body data
+        "500":
+          description: database error
   /command/record/:
     get:
       tags:
@@ -650,6 +779,14 @@ paths:
         "500":
           description: database error
 definitions:
+  botmessenger.ListMessengers:
+    title: ListMessengers
+    type: object
+    properties:
+      Active:
+        type: boolean
+      NameID:
+        type: string
   command.Command:
     title: Command
     type: object
