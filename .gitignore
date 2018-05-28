@@ -2,7 +2,7 @@
 goserver/models/*.json
 goserver/*.exec
 goserver/*.tmp
-goserver/*.DS_Store
+*.DS_Store
 goserver/goserver
 goserver/.idea/
 goserver/redis/
