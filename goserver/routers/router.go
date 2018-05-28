@@ -8,14 +8,14 @@ package routers
 import (
 	"github.com/astaxie/beego"
 
-	botmessanger "homecontrol/goserver/controllers/botmessanger"
-	"homecontrol/goserver/controllers/soundparsing"
-	"homecontrol/goserver/controllers/user"
 	"homecontrol/goserver/controllers"
+	botmessanger "homecontrol/goserver/controllers/botmessanger"
 	"homecontrol/goserver/controllers/command"
 	"homecontrol/goserver/controllers/commands"
 	"homecontrol/goserver/controllers/controlled"
+	"homecontrol/goserver/controllers/soundparsing"
 	"homecontrol/goserver/controllers/usecontrol"
+	"homecontrol/goserver/controllers/user"
 )
 
 func init() {

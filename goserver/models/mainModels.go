@@ -43,11 +43,11 @@ var (
 	// CancelChOutMessageToAll closes ChOutMessageToAll
 	CancelChOutMessageToAll chan struct{}
 	// StopServer not connect client to server
-	StopServer 				bool
+	StopServer bool
 	// TimeEndStopServer not connect client to server. Format second
-	TimeEndStopServer		int
+	TimeEndStopServer int
 	// CountBadConnect count error login
-	CountBadConnect			int
+	CountBadConnect int
 )
 
 // Lock locker

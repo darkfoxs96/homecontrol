@@ -38,7 +38,7 @@ func RecoveryPassword(emailPassword string) (err error) {
 
 	newPassword := tools.RandHash(10)
 
-	sender := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)		
+	sender := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)
 
 	receiver := []string{session.EmailLogin}
 	subject := "HomeComtrol: password recovery!"

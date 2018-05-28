@@ -1,10 +1,10 @@
 package user
 
 import (
-	"strconv"
-	"time"
 	"encoding/json"
 	"io/ioutil"
+	"strconv"
+	"time"
 
 	"github.com/astaxie/beego"
 
@@ -37,7 +37,7 @@ func (o *RecoveryPassword) Post() {
 			models.TimeEndStopServer = 0
 			models.CountBadConnect = 0
 		} else {
-			o.CustomAbort(401, "Server close. Will be opened through: " + strconv.Itoa(end) + " seconds")
+			o.CustomAbort(401, "Server close. Will be opened through: "+strconv.Itoa(end)+" seconds")
 		}
 	}
 	defer o.Ctx.Request.Body.Close()

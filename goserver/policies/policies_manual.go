@@ -15,5 +15,5 @@ func init() {
 	beego.Policy("/api/user/email/smtpserver/*", "*", IsAuthorized)
 	beego.Policy("/api/user/email/*", "*", IsAuthorized)
 	beego.Policy("/api/soundparsing/*", "*", IsAuthorized)
-	beego.Policy("/api/botmessanger/*", "*", IsAuthorized)	
+	beego.Policy("/api/botmessanger/*", "*", IsAuthorized)
 }
