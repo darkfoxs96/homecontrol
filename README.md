@@ -81,7 +81,7 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundpar
 
 ### To all interfaces: ###
 Interpretation settings:  
-func GetParamHTMLForInsertingSettings()  
+```func GetParamHTMLForInsertingSettings()```
 
 | Name          | type         | value                    | result                      | JSON from the client |
 | :------------ | :----------: | :----------------------- | :-------------------------- | :------------------- |
