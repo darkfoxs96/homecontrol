@@ -8,6 +8,8 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver
 Documentation HTTP API:  
 /swagger
 
+LOCAL SYSTEM!!!
+
 Controlled:
 -------  
 ###### java ######  
