@@ -57,7 +57,7 @@ func (o *Login) Post() {
 	check := sessioncontrol.IsCheckPassword(request.Password)
 	if !check {
 		models.CountBadConnect++
-		if models.CountBadConnect > 2 {
+		if models.CountBadConnect > 19 {
 			models.StopServer = true
 			models.TimeEndStopServer += int(time.Now().Unix()) + 30 // second
 		}

@@ -57,7 +57,7 @@ func (o *RecoveryPassword) Post() {
 	err = sessioncontrol.RecoveryPassword(request.Password)
 	if err != nil {
 		models.CountBadConnect++
-		if models.CountBadConnect > 2 {
+		if models.CountBadConnect > 19 {
 			models.StopServer = true
 			models.TimeEndStopServer += int(time.Now().Unix()) + 30 // second
 		}
