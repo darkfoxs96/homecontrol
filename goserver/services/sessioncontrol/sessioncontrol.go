@@ -38,7 +38,10 @@ func RecoveryPassword(emailPassword string) (err error) {
 
 	newPassword := tools.RandHash(10)
 
-	sender := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)
+	sender, err := gomail.NewSender(session.EmailLogin, emailPassword, smtpServer.Host, smtpServer.Port)
+	if err != nil {
+		return
+	}
 
 	receiver := []string{session.EmailLogin}
 	subject := "HomeComtrol: password recovery!"
@@ -68,6 +71,10 @@ func SetEmail(password, emailPassword, emailLogin, smtpServer string) (err error
 	isCheckPassword := IsCheckPassword(password)
 	if !isCheckPassword {
 		err = errors.New("SesionControl: Error, password does not match")
+	}
+
+	if emailPassword == "" || emailLogin == "" {
+		err = errors.New("SesionControl: emailPassword or emailLogin empty")
 	}
 
 	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(emailPassword), bcrypt.DefaultCost)

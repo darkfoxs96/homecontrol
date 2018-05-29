@@ -46,7 +46,7 @@ func RequestToHomeControlSystem(controlled *models.Сontrolled, commandRecord *m
 	return
 }
 
-// GetInfoJSON return {["info", "info", "info", "info", "info", "info"]}
+// GetInfoJSON return ["info", "info", "info", "info", "info", "info"]
 func GetInfoJSON() (json string, err error) {
 	return
 }

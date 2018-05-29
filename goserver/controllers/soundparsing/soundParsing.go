@@ -1,12 +1,12 @@
 package soundparsing
 
 import (
-	"homecontrol/goserver/services/soundparsing"
 	"io/ioutil"
 
 	"github.com/astaxie/beego"
 
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/soundparsing"
 )
 
 type UsedID struct {

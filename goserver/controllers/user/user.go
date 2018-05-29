@@ -18,7 +18,7 @@ type RecoveryPassword struct {
 }
 
 type Recovery struct {
-	Password string `json:"password"`
+	PasswordEmail string `json:"password_email"`
 }
 
 // Post - recovery password
@@ -54,7 +54,7 @@ func (o *RecoveryPassword) Post() {
 		o.CustomAbort(400, "Can't unmarshal request")
 	}
 
-	err = sessioncontrol.RecoveryPassword(request.Password)
+	err = sessioncontrol.RecoveryPassword(request.PasswordEmail)
 	if err != nil {
 		models.CountBadConnect++
 		if models.CountBadConnect > 19 {

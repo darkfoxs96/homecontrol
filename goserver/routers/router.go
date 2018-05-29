@@ -6,6 +6,8 @@
 package routers
 
 import (
+	"homecontrol/goserver/controllers/tphomecontrol"
+
 	"github.com/astaxie/beego"
 
 	"homecontrol/goserver/controllers"
@@ -137,6 +139,31 @@ func init() {
 			beego.NSNamespace("/botmessanger",
 				beego.NSInclude(
 					&botmessanger.BotMesseger{},
+				),
+			),
+			beego.NSNamespace("/tphomecontrol/settings",
+				beego.NSInclude(
+					&tphomecontrol.Settings{},
+				),
+			),
+			beego.NSNamespace("/tphomecontrol/info",
+				beego.NSInclude(
+					&tphomecontrol.Info{},
+				),
+			),
+			beego.NSNamespace("/tphomecontrol/objects",
+				beego.NSInclude(
+					&tphomecontrol.Objects{},
+				),
+			),
+			beego.NSNamespace("/tphomecontrol/commands",
+				beego.NSInclude(
+					&tphomecontrol.Commands{},
+				),
+			),
+			beego.NSNamespace("/tphomecontrol",
+				beego.NSInclude(
+					&tphomecontrol.TPHomeControl{},
 				),
 			),
 		)
