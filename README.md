@@ -82,10 +82,10 @@ https://github.com/darkfoxs96/homecontrol/tree/master/goserver/services/soundpar
 ### To all interfaces: ###
 Interpretation settings:  
 ```func GetParamHTMLForInsertingSettings()```  
-HTTP:
-```GET api/botmessanger/settings```
-```GET api/soundparsing/settings```
-```GET api/tphomecontrol/settings```
+HTTP:  
+```GET api/botmessanger/settings```  
+```GET api/soundparsing/settings```  
+```GET api/tphomecontrol/settings```  
 
 | Name          | type         | value                    | result                      | JSON from the client |
 | :------------ | :----------: | :----------------------- | :-------------------------- | :------------------- |
