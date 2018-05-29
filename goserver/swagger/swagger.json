@@ -1,0 +1,1680 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "RESTful API for HomeControl",
+        "description": "API developed to work with AngularJS 6 application on front-end",
+        "version": "1.0.0",
+        "contact": {
+            "email": "darkfoxs96@gmail.com"
+        }
+    },
+    "basePath": "/api",
+    "paths": {
+        "/botmessanger/": {
+            "get": {
+                "tags": [
+                    "botmessanger"
+                ],
+                "description": "get a fortune all bot-messegers",
+                "operationId": "BotMesseger.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/botmessenger.ListMessengers"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/botmessanger/message/": {
+            "post": {
+                "tags": [
+                    "botmessanger/message"
+                ],
+                "description": "send a message through all messengers",
+                "operationId": "Message.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "message",
+                        "description": "Message",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/botmessanger/message/{id}": {
+            "post": {
+                "tags": [
+                    "botmessanger/message"
+                ],
+                "description": "send a message",
+                "operationId": "Message.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "message",
+                        "description": "Message",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want the messenger message",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/botmessanger/settings/{id}": {
+            "get": {
+                "tags": [
+                    "botmessanger/settings"
+                ],
+                "description": "get settings",
+                "operationId": "Settings.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "[][]string"
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "botmessanger/settings"
+                ],
+                "description": "set settings",
+                "operationId": "Settings.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "JSON for settings",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to set for settings",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/botmessanger/{id}": {
+            "get": {
+                "tags": [
+                    "botmessanger"
+                ],
+                "description": "get a fortune",
+                "operationId": "BotMesseger.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/command/record/": {
+            "get": {
+                "tags": [
+                    "command/record"
+                ],
+                "description": "get favorite command records",
+                "operationId": "CommandRecord.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/command.Command"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/command/record/{command}": {
+            "get": {
+                "tags": [
+                    "command/record"
+                ],
+                "description": "get favorite command record",
+                "operationId": "CommandRecord.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "command",
+                        "description": "The command record you want to receive",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.CommandRecord"
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "command/record"
+                ],
+                "description": "create and update command record",
+                "operationId": "CommandRecord.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object content. Field NumberOfWords not required. TypeRecord: 1 - Сontrolled, 2 - Command",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.CommandRecord"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "command",
+                        "description": "The command you want to write. '_' will be replaced by ' '",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "command/record"
+                ],
+                "description": "delete a favorite command record",
+                "operationId": "CommandRecord.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "command",
+                        "description": "The command you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "command is empty"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/command/used/sound/": {
+            "post": {
+                "tags": [
+                    "command/used/sound"
+                ],
+                "description": "use sound command",
+                "operationId": "CommandUsedSound.Post",
+                "parameters": [
+                    {
+                        "in": "formData",
+                        "name": "soundFile",
+                        "description": "sound file",
+                        "required": true,
+                        "type": "file"
+                    },
+                    {
+                        "in": "formData",
+                        "name": "buffer",
+                        "description": "buffer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/command/used/text/": {
+            "post": {
+                "tags": [
+                    "command/used/text"
+                ],
+                "description": "use text command",
+                "operationId": "CommandUsedText.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object content.",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/command.UsedText"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/commands/": {
+            "get": {
+                "tags": [
+                    "commands"
+                ],
+                "description": "get all possible commands (for controlled and third-party home control ...)",
+                "operationId": "Commands.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.ListCommands"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/controlled/": {
+            "get": {
+                "tags": [
+                    "controlled"
+                ],
+                "description": "get controlleds",
+                "operationId": "Controlled.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/controlled.InformationСontrolled"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "controlled"
+                ],
+                "description": "create controlled",
+                "operationId": "Controlled.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object content. fields Name and HomeControlID and CommonBuffer not required",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Сontrolled"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "string\t\"controlled ID\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/controlled/info/": {
+            "get": {
+                "tags": [
+                    "controlled/info"
+                ],
+                "description": "get information on all controlled",
+                "operationId": "InfoControlled.Get",
+                "responses": {
+                    "200": {
+                        "description": "string\t\"Info a controlleds\""
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/controlled/message/": {
+            "post": {
+                "tags": [
+                    "controlled/message"
+                ],
+                "description": "message to server",
+                "operationId": "ControlledMessage.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object message",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.MessageToServer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "string\t\"out server msg\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/controlled/{id}": {
+            "get": {
+                "tags": [
+                    "controlled"
+                ],
+                "description": "get controlled",
+                "operationId": "Controlled.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The controlled you want to receive",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Сontrolled"
+                        }
+                    },
+                    "400": {
+                        "description": ":object is empty"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "controlled"
+                ],
+                "description": "update controlled",
+                "operationId": "Controlled.Put",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object content. CommonBuffer = -1 field remains unchanged, string empty fields remains unchanged",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Сontrolled"
+                        }
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The controlled you want to update",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "string\t\"ok\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "controlled"
+                ],
+                "description": "delete controlled",
+                "operationId": "Controlled.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to delete",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "id is empty"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/login/": {
+            "post": {
+                "tags": [
+                    "login"
+                ],
+                "description": "login",
+                "operationId": "Login.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "User",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controllers.LoginJSON"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/soundparsing/": {
+            "get": {
+                "tags": [
+                    "soundparsing"
+                ],
+                "description": "get a fortune all soundparsings",
+                "operationId": "SoundParsing.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/soundparsing.ListSoundParsings"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/soundparsing/settings/{id}": {
+            "get": {
+                "tags": [
+                    "soundparsing/settings"
+                ],
+                "description": "get settings",
+                "operationId": "Settings.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "[][]string"
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "soundparsing/settings"
+                ],
+                "description": "set settings",
+                "operationId": "Settings.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "JSON for settings",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to set for settings",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/soundparsing/used/": {
+            "get": {
+                "tags": [
+                    "soundparsing/used"
+                ],
+                "description": "get used id",
+                "operationId": "UsedID.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "soundparsing/used"
+                ],
+                "description": "set used id",
+                "operationId": "UsedID.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "usedID",
+                        "description": "Used id for sound parsing",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/soundparsing/{id}": {
+            "get": {
+                "tags": [
+                    "soundparsing"
+                ],
+                "description": "get a fortune",
+                "operationId": "SoundParsing.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/": {
+            "get": {
+                "tags": [
+                    "tphomecontrol"
+                ],
+                "description": "get a fortune all ControlSystemHome",
+                "operationId": "TPHomeControl.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/controlsystemhome.ListControlSystemHome"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/commands/{id}": {
+            "get": {
+                "tags": [
+                    "tphomecontrol/commands"
+                ],
+                "description": "get commands",
+                "operationId": "Commands.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "models.ListCommands"
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/info/": {
+            "get": {
+                "tags": [
+                    "tphomecontrol/info"
+                ],
+                "description": "get info all interface",
+                "operationId": "Info.Get",
+                "responses": {
+                    "200": {
+                        "description": "string"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/info/{id}": {
+            "get": {
+                "tags": [
+                    "tphomecontrol/info"
+                ],
+                "description": "get info",
+                "operationId": "Info.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "type",
+                        "description": "json or string",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "string\t\"JSON or String\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/objects/{id}": {
+            "get": {
+                "tags": [
+                    "tphomecontrol/objects"
+                ],
+                "description": "get objects",
+                "operationId": "Objects.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "[][]string\t\"JSON\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/settings/{id}": {
+            "get": {
+                "tags": [
+                    "tphomecontrol/settings"
+                ],
+                "description": "get settings",
+                "operationId": "Settings.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "[][]string\t\"JSON\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "tphomecontrol/settings"
+                ],
+                "description": "set settings",
+                "operationId": "Settings.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "JSON for settings",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to set for settings",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/tphomecontrol/{id}": {
+            "get": {
+                "tags": [
+                    "tphomecontrol"
+                ],
+                "description": "get a fortune",
+                "operationId": "TPHomeControl.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "description": "The id you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/usecontrol/detectedtime/": {
+            "get": {
+                "tags": [
+                    "usecontrol/detectedtime"
+                ],
+                "description": "get detected time format(second) string",
+                "operationId": "DetectedTime.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "usecontrol/detectedtime"
+                ],
+                "description": "set detected time format(second) string",
+                "operationId": "DetectedTime.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "detectedTime",
+                        "description": "detected time format(second) string",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/usecontrol/lasttime/": {
+            "get": {
+                "tags": [
+                    "usecontrol/lasttime"
+                ],
+                "description": "get useLastTime format(int(time.Now().Unix())) string",
+                "operationId": "LastTime.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "usecontrol/lasttime"
+                ],
+                "description": "set last time format(int(time.Now().Unix())) string",
+                "operationId": "LastTime.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "lastTime",
+                        "description": "last time format(int(time.Now().Unix())) string",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/usecontrol/log/": {
+            "get": {
+                "tags": [
+                    "usecontrol/log"
+                ],
+                "description": "get log",
+                "operationId": "Log.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "usecontrol/log"
+                ],
+                "description": "append to log",
+                "operationId": "Log.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "log",
+                        "description": "Append to log",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/usecontrol/reportunauthorizeduse/": {
+            "get": {
+                "tags": [
+                    "usecontrol/reportunauthorizeduse"
+                ],
+                "description": "get field 'ReportUnauthorizedUse' (bool to string)",
+                "operationId": "ReportUnauthorizedUse.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "usecontrol/reportunauthorizeduse"
+                ],
+                "description": "set report unauthorized use (bool to string)",
+                "operationId": "ReportUnauthorizedUse.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "reportUnauthorizedUse",
+                        "description": "The object content. (bool to string)",
+                        "required": true,
+                        "type": "boolean"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/user/email/": {
+            "post": {
+                "tags": [
+                    "user/email"
+                ],
+                "description": "set email",
+                "operationId": "Email.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "settings email",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.SetEmail"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/user/email/smtpserver/": {
+            "get": {
+                "tags": [
+                    "user/email/smtpserver"
+                ],
+                "description": "get all smtp server names",
+                "operationId": "SMTPServer.Get",
+                "responses": {
+                    "200": {
+                        "description": "\"smtp server names\"",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user/logout/": {
+            "get": {
+                "tags": [
+                    "user/logout"
+                ],
+                "description": "logout",
+                "operationId": "Logout.Get",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/user/password/new/": {
+            "post": {
+                "tags": [
+                    "user/password/new"
+                ],
+                "description": "create new password",
+                "operationId": "NewPassword.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "old password and new password",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.NewPasswordClient"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
+        "/user/password/recovery/": {
+            "post": {
+                "tags": [
+                    "user/password/recovery"
+                ],
+                "description": "recovery password",
+                "operationId": "RecoveryPassword.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "password email",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/user.Recovery"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "botmessenger.ListMessengers": {
+            "title": "ListMessengers",
+            "type": "object",
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "NameID": {
+                    "type": "string"
+                }
+            }
+        },
+        "command.Command": {
+            "title": "Command",
+            "type": "object",
+            "properties": {
+                "command": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "controlled_id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "number_of_words": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "string_command": {
+                    "type": "string"
+                },
+                "type_record": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "command.UsedText": {
+            "title": "UsedText",
+            "type": "object",
+            "properties": {
+                "buffer": {
+                    "type": "string"
+                },
+                "command": {
+                    "type": "string"
+                }
+            }
+        },
+        "controlled.InformationСontrolled": {
+            "title": "InformationСontrolled",
+            "type": "object",
+            "properties": {
+                "common_buffer": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "home_control_id": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "string"
+                }
+            }
+        },
+        "controllers.LoginJSON": {
+            "title": "LoginJSON",
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "controlsystemhome.ListControlSystemHome": {
+            "title": "ListControlSystemHome",
+            "type": "object",
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "NameID": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Command": {
+            "title": "Command",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "info_command": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.CommandRecord": {
+            "title": "CommandRecord",
+            "type": "object",
+            "properties": {
+                "command": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "controlled_id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "number_of_words": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "string_command": {
+                    "type": "string"
+                },
+                "type_record": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.ListCommands": {
+            "title": "ListCommands",
+            "type": "object",
+            "properties": {
+                "Commands": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/models.Command"
+                    }
+                },
+                "end_range_id_commands": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name_interface": {
+                    "type": "string"
+                },
+                "start_range_id_commands": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Message": {
+            "title": "Message",
+            "type": "object",
+            "properties": {
+                "bool_message": {
+                    "type": "boolean"
+                },
+                "int_message": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "models.MessageToServer": {
+            "title": "MessageToServer",
+            "type": "object",
+            "properties": {
+                "controlled_id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "message": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Сontrolled": {
+            "title": "Сontrolled",
+            "type": "object",
+            "properties": {
+                "common_buffer": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "home_control_id": {
+                    "type": "string"
+                },
+                "host": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "port": {
+                    "type": "string"
+                }
+            }
+        },
+        "soundparsing.ListSoundParsings": {
+            "title": "ListSoundParsings",
+            "type": "object",
+            "properties": {
+                "Active": {
+                    "type": "boolean"
+                },
+                "NameID": {
+                    "type": "string"
+                }
+            }
+        },
+        "user.NewPasswordClient": {
+            "title": "NewPasswordClient",
+            "type": "object",
+            "properties": {
+                "new_password": {
+                    "type": "string"
+                },
+                "old_password": {
+                    "type": "string"
+                }
+            }
+        },
+        "user.Recovery": {
+            "title": "Recovery",
+            "type": "object",
+            "properties": {
+                "password_email": {
+                    "type": "string"
+                }
+            }
+        },
+        "user.SetEmail": {
+            "title": "SetEmail",
+            "type": "object",
+            "properties": {
+                "login_email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "password_email": {
+                    "type": "string"
+                },
+                "smtp_server": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

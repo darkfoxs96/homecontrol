@@ -19,7 +19,8 @@ type BotMessenger interface {
 	GetNameID() (nameID string)
 	OutMessage(message string) (responseMsg string, err error)
 	IsSupporting() (msg string, supporting bool)
-	SetSettings(tokenAPI string, password string) (msg string, err error)
+	GetParamHTMLForInsertingSettings() (paramHTML string, err error)
+	SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error)
 }
 
 // BotMessengerInterfaces map all BotMessenger
@@ -74,8 +75,24 @@ func IsSupporting() (msg string, supporting bool) {
 	return
 }
 
-// SetSettings set settings to BotMessenger
-func SetSettings(tokenAPI string, password string) (msg string, err error) {
+// SetSettingsFromTheJSON set settings from the JSON format
+func SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error) {
+	return
+}
+
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface BotMessenger
+/*
+	JSON:
+["namefield","typefild","value"],
+["key","string",""],
+["uuid","string","fdgdgme-sdfsw-asdsa"],
+["parse","bool","false"], //will return from the client "parse": false
+["id","int","1990"], //will return from the client "id": 1990
+["fieldListName","list","value","en","sp","ru"],
+["lang","list","ru","en","sp","ru"], //will return from the client "lang": "ru" //first field to up
+["create key google","url","https://google.com"]
+*/
+func GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
 	return
 }
 
@@ -93,7 +110,7 @@ func GetSettingsServer(messengerID string) (settings interface{}) {
 // InMessage receives a message
 // this function is created for BotMessenger
 // do not use for server !
-func InMessage(messengerID, msg string) (outServerMsg string, err error) {
+func InMessage(messengerID, msg, stringBuffer string) (outServerMsg string, err error) {
 	if msg == "info" {
 		outServerMsg, err = controlsystemhome.GetInfoControlSystemHomeInterfaces()
 		if err != nil {
@@ -108,10 +125,7 @@ func InMessage(messengerID, msg string) (outServerMsg string, err error) {
 		return
 	}
 
-	outServerMsg, err = commandrecord.UsedTextCommand(msg)
-	if err != nil {
-		return
-	}
+	outServerMsg, err = commandrecord.UsedTextCommand(msg, stringBuffer)
 	return
 }
 

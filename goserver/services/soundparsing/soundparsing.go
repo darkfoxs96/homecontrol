@@ -1,9 +1,9 @@
 package soundparsing
 
 import (
+	"errors"
 	"fmt"
 	"strings"
-	"errors"
 
 	"homecontrol/goserver/models"
 )
@@ -39,7 +39,7 @@ func init() {
 type SoundParsing interface {
 	GetNameID() (nameID string)
 	GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID string, err error)
-	GetHTMLForInsertingSettings() (HTML string, err error)
+	GetParamHTMLForInsertingSettings() (paramHTML string, err error)
 	SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error)
 	IsSupporting() (msg string, supporting bool)
 }
@@ -62,9 +62,19 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 	return
 }
 
-// GetHTMLForInsertingSettings return HTML for inserting settings from the client to interface sound-parsing
-// Uses Bootstrap, jQuery, Ajax
-func GetHTMLForInsertingSettings() (HTML string, err error) {
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface sound-parsing
+/*
+	JSON:
+["namefield","typefild","value"],
+["key","string",""],
+["uuid","string","fdgdgme-sdfsw-asdsa"],
+["parse","bool","false"], //will return from the client "parse": false
+["id","int","1990"], //will return from the client "id": 1990
+["fieldListName","list","value","en","sp","ru"],
+["lang","list","ru","en","sp","ru"], //will return from the client "lang": "ru" //first field to up
+["create key google","url","https://google.com"]
+*/
+func GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
 	return
 }
 
@@ -79,14 +89,14 @@ func IsSupporting() (msg string, supporting bool) {
 }
 
 // UseDefaultIDForParsingSound use default ID for parsing sound
-func UseDefaultIDForParsingSound(sound []byte) (controlledID int, commandID string, err error){
+func UseDefaultIDForParsingSound(sound []byte) (controlledID int, commandID string, err error) {
 	if usedSoundParsingID == "" {
 		err = errors.New("SoundParsing: Error UseDefaultIDForParsingSound(), no set used sound parsing ID default")
 		return
 	}
 	if msgParsing, active := SoundParsingInterfaces[usedSoundParsingID].IsSupporting(); !active {
 		err = errors.New("SoundParsing: Error UseDefaultIDForParsingSound(), used sound parsing ID not active, " + msgParsing)
-		return 
+		return
 	}
 	controlledID, commandID, err = SoundParsingInterfaces[usedSoundParsingID].GetIDCommandANDControlledBySound(sound)
 	return
@@ -95,6 +105,9 @@ func UseDefaultIDForParsingSound(sound []byte) (controlledID int, commandID stri
 // GetListSoundParsing return list
 func GetListSoundParsing() (listMessengers []*ListSoundParsings) {
 	for key, val := range SoundParsingInterfaces {
+		if val == nil {
+			continue
+		}
 		_, active := val.IsSupporting()
 		listMessengers = append(listMessengers, &ListSoundParsings{
 			NameID: key,

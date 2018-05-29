@@ -13,15 +13,15 @@ import (
 type Record struct {
 	ID            string
 	Sound         []byte
-	TypeRecord    byte
+	TypeRecord    int
 	Command       int
 	StringCommand string
 	NumberOfWords int
 	СontrolledID  int
 }
 
-// AddOrUpdateRecord create or update Record
-func AddOrUpdateRecord(record *Record) (err error) {
+// AddOrUpdateCommand create or update record
+func AddOrUpdateCommand(record *Record) (err error) {
 	if record.ID == "" {
 		err = errors.New("No ID")
 		return
@@ -42,16 +42,22 @@ func AddOrUpdateRecord(record *Record) (err error) {
 }
 
 // UsedSoundCommand sound to command and used command
-func UsedSoundCommand(sound []byte) (responseMessage string, err error) {
+func UsedSoundCommand(sound []byte, buffer string) (responseMessage string, err error) {
 	controlledID, commandID, err := soundparsing.UseDefaultIDForParsingSound(sound)
 	if err != nil {
 		return
 	}
-	return controlled.RequestToControlled(controlled.GetControlled(controlledID), GetCommandRecord(commandID))
+
+	commandrecord := GetCommandRecord(commandID)
+	if buffer != "" {
+		commandrecord.StringCommand = buffer
+	}
+
+	return controlled.RequestToControlled(controlled.GetControlled(controlledID), commandrecord)
 }
 
 // UsedTextCommand used text to command
-func UsedTextCommand(command string) (responseMessage string, err error) {
+func UsedTextCommand(command string, buffer string) (responseMessage string, err error) {
 	command = strings.Replace(command, ",", "", -1)
 	command = strings.Replace(command, ".", "", -1)
 	commands := strings.Split(command, " ")
@@ -67,7 +73,21 @@ func UsedTextCommand(command string) (responseMessage string, err error) {
 		err = soundparsing.ErrNotFoundIDCommand
 	}
 
-	return controlled.RequestToControlled(controlled.GetControlled(controlledID), GetCommandRecord(commandID))
+	controlledRecord := controlled.GetControlled(controlledID)
+	commandrecord := GetCommandRecord(commandID)
+	if commandrecord == nil {
+		err = errors.New("CommandRecord: No command record")
+		return
+	}
+	if controlledRecord == nil {
+		err = errors.New("CommandRecord: No controlled record")
+		return
+	}
+	if buffer != "" {
+		commandrecord.StringCommand = buffer
+	}
+
+	return controlled.RequestToControlled(controlledRecord, commandrecord)
 }
 
 // GetCommandRecords return command record map
@@ -80,11 +100,6 @@ func GetCommandRecord(ID string) (commandRecord *models.CommandRecord) {
 	return models.GetCommandRecord(ID)
 }
 
-// AddCommandRecord insert command record to storage
-func AddCommandRecord(record *models.CommandRecord, ID string) error {
-	return models.InsertCommandRecord(record, ID)
-}
-
 // DeleteCommandRecord delete command record bu ID
 func DeleteCommandRecord(ID string) error {
 	return models.DeleteCommandRecord(ID)
@@ -92,6 +107,7 @@ func DeleteCommandRecord(ID string) error {
 
 // GetListCommands return controlled commands list
 func GetListCommands() (commandsList *models.ListCommands) {
+	commandsList = &models.ListCommands{}
 	commandsList.Name = "controlled"
 	commandsList.StartRangeIDCommands = 0
 	commandsList.EndRangeIDCommands = 999

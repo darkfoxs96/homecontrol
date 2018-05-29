@@ -5,6 +5,7 @@ import (
 	"encoding/binary"
 	"io/ioutil"
 	"net/http"
+	"time"
 
 	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/controlsystemhome"
@@ -13,6 +14,9 @@ import (
 
 // RequestToControlled action request
 func RequestToControlled(controlled *models.Сontrolled, command *models.CommandRecord) (responseMessage string, err error) {
+	if models.Test {
+		return
+	}
 	if controlled.HomeControlID != "" {
 		responseMessage, err = controlsystemhome.ControlSystemHomeInterfaces[controlled.HomeControlID].RequestToHomeControlSystem(controlled, command)
 		return
@@ -36,6 +40,7 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 		return
 	}
 	client := new(http.Client)
+	client.Timeout = 3 * time.Second
 	resp, err := client.Do(req)
 	if err != nil {
 		return
@@ -86,11 +91,11 @@ func GetInfoControlledsString() (str string, err error) {
 	strStart := "Information on controlled:\n"
 	controlleds := models.GetСontrolleds()
 	command := &models.CommandRecord{
-		Command: 12,
+		Command: 999,
 	}
 
 	for _, controlled := range controlleds {
-		if controlled.HomeControlID != "" {
+		if controlled == nil || controlled.HomeControlID != "" {
 			continue
 		}
 		_, err := RequestToControlled(controlled, command)
@@ -105,6 +110,7 @@ func GetInfoControlledsString() (str string, err error) {
 		str += "No controlled\n"
 	}
 
+	err = nil
 	str = strStart + str
 	return
 }

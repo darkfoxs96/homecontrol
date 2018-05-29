@@ -2,8 +2,8 @@ package models
 
 // CommandRecord struct to all 'command' !
 type CommandRecord struct {
-	//TypeRcord: 1 - Сontrolled, 2 - Command
-	TypeRecord byte `json:"type_record"`
+	//TypeRecord: 1 - Сontrolled, 2 - Command
+	TypeRecord int `json:"type_record"`
 	//Command:  0 - Put buffer,     1 - Open page, 2 - Stop
 	//Command:  3 - Sound off,  	4 - Sound on,  5 - off
 	//Command:  6 - Open youtube,   7 - Open vk,   8 - Open ok
@@ -53,4 +53,27 @@ type ListCommands struct {
 	Name                 string `json:"name_interface"`
 	StartRangeIDCommands int    `json:"start_range_id_commands"`
 	EndRangeIDCommands   int    `json:"end_range_id_commands"`
+}
+
+// MessageToServer message to server
+type MessageToServer struct {
+	ControlledID int    `json:"controlled_id"`
+	Message      string `json:"message"`
+}
+
+// Message server response message
+type Message struct {
+	Status      bool   `json:"status"`
+	Message     string `json:"message"`
+	IntMessage  int    `json:"int_message"`
+	BoolMessage bool   `json:"bool_message"`
+}
+
+// Session control user
+type Session struct {
+	VersionPasswordHash string `json:"version_password_hash"`
+	PasswordHash        string `json:"password_hash"`
+	EmailPasswordHash   string `json:"email_password_hash"`
+	EmailLogin          string `json:"email_login"`
+	EmailSMTPServer     string `json:"email_smtp_server"`
 }

@@ -155,10 +155,19 @@ func (sp *SoundParsing) GetIDCommandANDControlledBySound(sound []byte) (controll
 	return
 }
 
-// GetHTMLForInsertingSettings return HTML for inserting settings from the client to interface sound-parsing
-// Uses Bootstrap, jQuery, Ajax
-func (sp *SoundParsing) GetHTMLForInsertingSettings() (HTML string, err error) {
-	return sp.getHTML()
+// GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface sound-parsing
+/*
+	this.JSON:
+{
+	["key","string","....."]
+	["Create SpeechKit Cloud key yandex","url","......."]
+	["uuid","string","....."]
+	["topic","list",".....","queries","maps"]
+	["lang","list",".....","ru-RU","en-US","uk-UK","tr-TR"]
+}
+*/
+func (sp *SoundParsing) GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
+	return sp.getParamHTML()
 }
 
 // SetSettingsFromTheJSON set settings from the JSON format

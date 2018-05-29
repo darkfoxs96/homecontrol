@@ -1,2 +1,11 @@
-goserver/key.txt
-goserver/.idea
+*.DS_Store
+
+#goserver:
+goserver/models/*.json
+goserver/*.exec
+goserver/*.tmp
+goserver/goserver
+goserver/.idea/
+goserver/redis/
+
+#

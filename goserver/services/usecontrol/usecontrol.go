@@ -20,6 +20,7 @@ var (
 func init() {
 	reportUnauthorizedUse = GetReportUnauthorizedUse()
 	detectedTime = GetDetectedTime()
+	lastTime = GetLastTime()
 	log = GetLog()
 }
 
@@ -39,7 +40,7 @@ func GetReportUnauthorizedUse() (unauthorizedUse bool) {
 }
 
 // SetDetectedTime set detected time
-// format millisecond
+// format second
 func SetDetectedTime(newDetectedTime int) (err error) {
 	err = models.SetDetectedTime(newDetectedTime)
 	if err != nil {
@@ -50,19 +51,19 @@ func SetDetectedTime(newDetectedTime int) (err error) {
 }
 
 // GetDetectedTime get detected time
-// format millisecond
+// format second
 func GetDetectedTime() (detectedTime int) {
 	return models.GetDetectedTime()
 }
 
 // GetLastTime get used last time
-// format millisecond
+// format second time.Now().Unix()
 func GetLastTime() (lastTime int) {
 	return models.GetUsedLastTime()
 }
 
 // SetLastTime set used last time
-// format millisecond
+// format second time.Now().Unix()
 func SetLastTime(newLastTime int) (err error) {
 	err = models.SetUsedLastTime(newLastTime)
 	if err != nil {
@@ -98,13 +99,13 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 	switch deviceID.(type) {
 	case string:
 		if IsUnauthorizedUse {
-			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + deviceID.(string) + ": " + msg
+			outMsg = outMsg + time.Now().String() + ": " + deviceID.(string) + ": " + msg
 			err = AppendLog(outMsg)
 			if err != nil {
 				return
 			}
 		} else {
-			err = AppendLog(strconv.Itoa(int(time.Now().Unix())) + ": " + deviceID.(string) + ": " + msg)
+			err = AppendLog(time.Now().String() + ": " + deviceID.(string) + ": " + msg)
 			if err != nil {
 				return
 			}
@@ -112,21 +113,26 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 		}
 	case int:
 		controlled := models.GetСontrolled(deviceID.(int))
+		if controlled == nil {
+			err = errors.New("UseControl: Error: unknown a controlled")
+			return
+		}
 		if IsUnauthorizedUse {
-			outMsg = outMsg + strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
+
+			outMsg = outMsg + time.Now().String() + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg
 			err = AppendLog(outMsg)
 			if err != nil {
 				return
 			}
 		} else {
-			err = AppendLog(strconv.Itoa(int(time.Now().Unix())) + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg)
+			err = AppendLog(time.Now().String() + ": " + strconv.Itoa(deviceID.(int)) + " " + controlled.Name + ": " + msg)
 			if err != nil {
 				return
 			}
 			outMsg = "Ok"
 		}
 	default:
-		err = errors.New("UseControl: Error unknown interface")
+		err = errors.New("UseControl: Error: unknown interface")
 		return
 	}
 

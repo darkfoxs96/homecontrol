@@ -4,12 +4,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"golang.org/x/crypto/bcrypt"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sync"
 	"time"
+
+	"golang.org/x/crypto/bcrypt"
 )
 
 // MainModel = DB
@@ -17,13 +18,13 @@ type MainModel struct {
 	CommandRecords                  map[string]*CommandRecord
 	Сontrolleds                     map[int]*Сontrolled
 	UseControl                      *UseControl
-	IncrementForInsertСontrolleddID int                     `json:"increment_for_insert_controlled_id"`
-	CommonBuffer                    string                  `json:"common_buffer"`
-	BotMessengersSettings           map[string]interface{}  `json:"bot_messengers_settings"`
-	SoundParsingsSettings			map[string]interface{}  `json:"sound_parsings_settings"`
-	UsedSoundParsingsID				string					`json:"used_sound_parsings_id"`
-	VersionPasswordHash             string                  `json:"version_password_hash"`
-	PasswordHash                    string                  `json:"password_hash"`
+	Session                         *Session
+	IncrementForInsertСontrolleddID int                    `json:"increment_for_insert_controlled_id"`
+	CommonBuffer                    string                 `json:"common_buffer"`
+	BotMessengersSettings           map[string]interface{} `json:"bot_messengers_settings"`
+	SoundParsingsSettings           map[string]interface{} `json:"sound_parsings_settings"`
+	AdditionControlSystemSettings   map[string]interface{} `json:"addition_control_system_settings"`
+	UsedSoundParsingsID             string                 `json:"used_sound_parsings_id"`
 }
 
 const (
@@ -41,6 +42,12 @@ var (
 	ChOutMessageToAll chan string
 	// CancelChOutMessageToAll closes ChOutMessageToAll
 	CancelChOutMessageToAll chan struct{}
+	// StopServer not connect client to server
+	StopServer bool
+	// TimeEndStopServer not connect client to server. Format second
+	TimeEndStopServer int
+	// CountBadConnect count error login
+	CountBadConnect int
 )
 
 // Lock locker
@@ -55,7 +62,7 @@ func Unlock() {
 
 func init() {
 	//Testing system
-	Test = false
+	Test = true
 	//Get path
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err == nil {
@@ -72,21 +79,23 @@ func init() {
 	CancelChOutMessageToAll = make(chan struct{})
 	useControl := &UseControl{
 		ReportUnauthorizedUse: false,
-		DetectedTime:          30 * 60 * 1000, //30 minute, format millisecond
-		UsageLastTime:         int(time.Now().Unix()),
-		UsageLog:              []string{},
+		// TODO: testing time !
+		DetectedTime:  30 * 60, //30 minute, format second
+		UsageLastTime: int(time.Now().Unix()),
+		UsageLog:      []string{},
 	}
+	session := &Session{}
 	mainModel = &MainModel{
 		CommandRecords:                  make(map[string]*CommandRecord),
 		Сontrolleds:                     make(map[int]*Сontrolled),
 		UseControl:                      useControl,
+		Session:                         session,
 		BotMessengersSettings:           make(map[string]interface{}),
 		SoundParsingsSettings:           make(map[string]interface{}),
-		UsedSoundParsingsID:			 "",
+		AdditionControlSystemSettings:   make(map[string]interface{}),
+		UsedSoundParsingsID:             "",
 		IncrementForInsertСontrolleddID: 0,
 		CommonBuffer:                    "",
-		VersionPasswordHash:             "",
-		PasswordHash:                    "",
 	}
 	raw, err := ioutil.ReadFile(Path + fileNameMainModel)
 	if err == nil {
@@ -98,7 +107,7 @@ func init() {
 	} else {
 		fmt.Println("Models(DB): Error load mainmodel.json, msg error: ", err.Error())
 	}
-	if mainModel.PasswordHash == "" {
+	if mainModel.Session.PasswordHash == "" {
 		pasHash, err := bcrypt.GenerateFromPassword([]byte("admin"), bcrypt.DefaultCost)
 		if err != nil {
 			fmt.Println("Models(DB): init models(DB), Error bcrypt.GenerateFromPassword() msg error: ", err.Error())

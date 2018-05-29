@@ -20,14 +20,14 @@ func SetReportUnauthorizedUse(reportUnauthorizedUse bool) error {
 	return Save()
 }
 
-// GetDetectedTime format millisecond
+// GetDetectedTime format second
 func GetDetectedTime() int {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.UseControl.DetectedTime
 }
 
-// SetDetectedTime format millisecond
+// SetDetectedTime format second
 func SetDetectedTime(detectedTime int) error {
 	if detectedTime < 0 {
 		return errors.New("Models(DB): Time can not be less than 0")
@@ -38,14 +38,14 @@ func SetDetectedTime(detectedTime int) error {
 	return Save()
 }
 
-// GetUsedLastTime format millisecond
+// GetUsedLastTime format second time.Now().Unix()
 func GetUsedLastTime() int {
 	locker.Lock()
 	defer locker.Unlock()
 	return mainModel.UseControl.UsageLastTime
 }
 
-// SetUsedLastTime format millisecond
+// SetUsedLastTime format second time.Now().Unix()
 func SetUsedLastTime(usageLastTime int) error {
 	if usageLastTime < 0 {
 		return errors.New("Models(DB): Time can not be less than 0")
