@@ -10,9 +10,9 @@ import (
 	_ "homecontrol/goserver/services/botmessenger"
 	_ "homecontrol/goserver/services/controlsystemhome"
 	_ "homecontrol/goserver/services/soundparsing"
-	// Third-party home control
-	// Bot messeger
-	// Sound parsings
+	// Third-party home control:
+	// Bot messeger:
+	// Sound parsings:
 	_ "homecontrol/goserver/soundparsing/yandex"
 )
 
@@ -24,7 +24,8 @@ func main() {
 
 	if !models.Test {
 		beego.SetViewsPath(models.Path + "views")
-		beego.SetStaticPath("/static/", models.Path+"static")
+		beego.SetStaticPath("/static/", models.Path+"a4frontend")
 	}
+
 	beego.Run()
 }
