@@ -49,8 +49,7 @@ metod POST '/api/controlled/message'
 Control web:
 -------  
 ###### AngularJS 6 ######  
-https://github.com/darkfoxs96/homecontrol/tree/master/goserver/static  
-and https://github.com/darkfoxs96/homecontrol/tree/master/goserver/views  
+https://github.com/darkfoxs96/homecontrol/tree/master/goserver/webhomecontrol
 
 Third-party home control systems:
 -------
