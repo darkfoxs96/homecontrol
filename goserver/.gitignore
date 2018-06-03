@@ -1,0 +1,6 @@
+#goserver:
+models/*.json
+*.exec
+*.tmp
+.idea/
+redis/
