@@ -17,14 +17,16 @@ import (
 )
 
 func main() {
+	// swagger
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
 		beego.BConfig.WebConfig.StaticDir["/swagger"] = models.Path + "swagger"
 	}
 
+	// frontend
 	if !models.Test {
-		beego.SetViewsPath(models.Path + "views")
-		beego.SetStaticPath("/static/", models.Path+"a4frontend")
+		beego.SetViewsPath(models.Path + "webhomecontrol/dist/webhomecontrol")
+		beego.SetStaticPath("/static/", models.Path+"webhomecontrol/dist/webhomecontrol")
 	}
 
 	beego.Run()
