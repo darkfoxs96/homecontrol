@@ -9,6 +9,6 @@ start server:
 API Documentation:  
 -------  
 ###### swagger ######  
-```host:port/swagger```
+```host:port/swagger```  
 Build documentation:  
 ```bee run -downdoc=true -gendoc=true```
