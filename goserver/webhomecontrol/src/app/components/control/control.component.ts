@@ -11,5 +11,4 @@ export class ControlComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
