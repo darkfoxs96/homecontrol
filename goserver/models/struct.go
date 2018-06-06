@@ -49,10 +49,10 @@ type Command struct {
 // ListCommands commands list
 // Name = controlSystemID, "controlled" = all controlledID
 type ListCommands struct {
-	Commands             []*Command
-	Name                 string `json:"name_interface"`
-	StartRangeIDCommands int    `json:"start_range_id_commands"`
-	EndRangeIDCommands   int    `json:"end_range_id_commands"`
+	Commands             []*Command `json:"commands"`
+	Name                 string     `json:"name_interface"`
+	StartRangeIDCommands int        `json:"start_range_id_commands"`
+	EndRangeIDCommands   int        `json:"end_range_id_commands"`
 }
 
 // MessageToServer message to server
