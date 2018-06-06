@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AppLang } from '../../app.lang';
+import { LangService } from '../../services/lang.service';
 
 
 @Component({
@@ -9,13 +8,12 @@ import { AppLang } from '../../app.lang';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  appLang = new AppLang();
-
   visible_control = true;
   visible_settings = false;
   visible_commands = false;
 
-  constructor() { }
+  constructor(public text: LangService) {
+  }
 
   ngOnInit() {
   }

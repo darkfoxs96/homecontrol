@@ -1,21 +1,21 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
       <a class="nav-item nav-link badge-light" [class.active]="visible_control" [class.navbar_bg_color_use_item]="visible_control"
          href="javascript:void(null);" (click)="visibleControl()">
-        <a class="navbar_visible_text">{{ appLang.GetWord('Control') }} </a>
+        <a class="navbar_visible_text">{{ text.GetWords('Control') }} </a>
         <i class="fa fa-microphone fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 
       <a class="nav-item nav-link badge-light" [class.active]="visible_settings" [class.navbar_bg_color_use_item]="visible_settings"
          href="javascript:void(null);" (click)="visibleSettings()">
-        <a class="navbar_visible_text">{{ appLang.GetWord('Settings') }} </a>
+        <a class="navbar_visible_text">{{ text.GetWords('Settings') }} </a>
         <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 
       <a class="nav-item nav-link badge-light" [class.active]="visible_commands" [class.navbar_bg_color_use_item]="visible_commands"
          href="javascript:void(null);" (click)="visibleCommands()">
-        <a class="navbar_visible_text">{{ appLang.GetWord('Commands') }} </a>
+        <a class="navbar_visible_text">{{ text.GetWords('Commands') }} </a>
         <i class="fa fa-list fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>

@@ -2,7 +2,6 @@ package policies
 
 import (
 	"homecontrol/goserver/gosession"
-	"homecontrol/goserver/models"
 	"homecontrol/goserver/services/sessioncontrol"
 
 	"github.com/astaxie/beego/context"
@@ -10,9 +9,8 @@ import (
 
 // IsAuthorized Policy
 func IsAuthorized(ctx *context.Context) {
-	if models.Test {
-		// return
-	}
+	ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
+	return
 	sess, err := gosession.GlobalSessions.SessionStart(ctx.ResponseWriter, ctx.Request)
 	if err == nil {
 		defer sess.SessionRelease(ctx.ResponseWriter)
