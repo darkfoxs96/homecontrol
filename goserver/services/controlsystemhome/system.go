@@ -8,7 +8,7 @@ import (
 // ListControlSystemHome list
 type ListControlSystemHome struct {
 	NameID string `json:"name_id"`
-	Active bool	  `json:"active"`
+	Active bool   `json:"active"`
 }
 
 // ControlSystemHome implements third-party home management systems

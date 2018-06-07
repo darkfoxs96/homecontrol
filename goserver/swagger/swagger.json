@@ -10,10 +10,10 @@
     },
     "basePath": "/api",
     "paths": {
-        "/botmessanger/": {
+        "/botmessenger/": {
             "get": {
                 "tags": [
-                    "botmessanger"
+                    "botmessenger"
                 ],
                 "description": "get a fortune all bot-messegers",
                 "operationId": "BotMesseger.Get",
@@ -36,10 +36,10 @@
                 }
             }
         },
-        "/botmessanger/message/": {
+        "/botmessenger/message/": {
             "post": {
                 "tags": [
-                    "botmessanger/message"
+                    "botmessenger/message"
                 ],
                 "description": "send a message through all messengers",
                 "operationId": "Message.Post",
@@ -68,10 +68,10 @@
                 }
             }
         },
-        "/botmessanger/message/{id}": {
+        "/botmessenger/message/{id}": {
             "post": {
                 "tags": [
-                    "botmessanger/message"
+                    "botmessenger/message"
                 ],
                 "description": "send a message",
                 "operationId": "Message.Post",
@@ -107,10 +107,10 @@
                 }
             }
         },
-        "/botmessanger/settings/{id}": {
+        "/botmessenger/settings/{id}": {
             "get": {
                 "tags": [
-                    "botmessanger/settings"
+                    "botmessenger/settings"
                 ],
                 "description": "get settings",
                 "operationId": "Settings.Get",
@@ -137,7 +137,7 @@
             },
             "post": {
                 "tags": [
-                    "botmessanger/settings"
+                    "botmessenger/settings"
                 ],
                 "description": "set settings",
                 "operationId": "Settings.Post",
@@ -173,10 +173,10 @@
                 }
             }
         },
-        "/botmessanger/{id}": {
+        "/botmessenger/{id}": {
             "get": {
                 "tags": [
-                    "botmessanger"
+                    "botmessenger"
                 ],
                 "description": "get a fortune",
                 "operationId": "BotMesseger.Get",
@@ -1421,10 +1421,10 @@
             "title": "ListMessengers",
             "type": "object",
             "properties": {
-                "Active": {
+                "active": {
                     "type": "boolean"
                 },
-                "NameID": {
+                "name_id": {
                     "type": "string"
                 }
             }
@@ -1508,10 +1508,10 @@
             "title": "ListControlSystemHome",
             "type": "object",
             "properties": {
-                "Active": {
+                "active": {
                     "type": "boolean"
                 },
-                "NameID": {
+                "name_id": {
                     "type": "string"
                 }
             }
@@ -1635,10 +1635,10 @@
             "title": "ListSoundParsings",
             "type": "object",
             "properties": {
-                "Active": {
+                "active": {
                     "type": "boolean"
                 },
-                "NameID": {
+                "name_id": {
                     "type": "string"
                 }
             }

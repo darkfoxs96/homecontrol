@@ -10,6 +10,7 @@ import { ControlledService } from "./services/controlled.service";
 import { UseControlService } from "./services/use-control.service";
 import { UserService } from "./services/user.service";
 import { SoundParsingService } from "./services/sound-parsing.service";
+import { BotMessengerService } from "./services/bot-messenger.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -37,7 +38,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ControlledService,
     UseControlService,
     UserService,
-    SoundParsingService
+    SoundParsingService,
+    BotMessengerService
   ],
   bootstrap: [AppComponent]
 })

@@ -49,7 +49,8 @@ export class SoundParsingService {
     return this.httpClient.get<StatusInterfaceServer[]>('/api/soundparsing');
   }
 
-  getSoundParsing(sound_parsing_id: string): Observable<StatusInterfaceServer> {
-    return this.httpClient.get<StatusInterfaceServer>('/api/soundparsing/' + sound_parsing_id);
+  // getSoundParsing return: field 'message', 'bool_message'
+  getSoundParsing(sound_parsing_id: string): Observable<MessageServer> {
+    return this.httpClient.get<MessageServer>('/api/soundparsing/' + sound_parsing_id);
   }
 }

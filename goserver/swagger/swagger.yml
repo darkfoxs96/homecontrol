@@ -7,10 +7,10 @@ info:
     email: darkfoxs96@gmail.com
 basePath: /api
 paths:
-  /botmessanger/:
+  /botmessenger/:
     get:
       tags:
-      - botmessanger
+      - botmessenger
       description: get a fortune all bot-messegers
       operationId: BotMesseger.Get
       responses:
@@ -24,10 +24,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/{id}:
+  /botmessenger/{id}:
     get:
       tags:
-      - botmessanger
+      - botmessenger
       description: get a fortune
       operationId: BotMesseger.Get
       parameters:
@@ -45,10 +45,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/message/:
+  /botmessenger/message/:
     post:
       tags:
-      - botmessanger/message
+      - botmessenger/message
       description: send a message through all messengers
       operationId: Message.Post
       parameters:
@@ -66,10 +66,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/message/{id}:
+  /botmessenger/message/{id}:
     post:
       tags:
-      - botmessanger/message
+      - botmessenger/message
       description: send a message
       operationId: Message.Post
       parameters:
@@ -92,10 +92,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/settings/{id}:
+  /botmessenger/settings/{id}:
     get:
       tags:
-      - botmessanger/settings
+      - botmessenger/settings
       description: get settings
       operationId: Settings.Get
       parameters:
@@ -113,7 +113,7 @@ paths:
           description: database error
     post:
       tags:
-      - botmessanger/settings
+      - botmessenger/settings
       description: set settings
       operationId: Settings.Post
       parameters:
@@ -942,9 +942,9 @@ definitions:
     title: ListMessengers
     type: object
     properties:
-      Active:
+      active:
         type: boolean
-      NameID:
+      name_id:
         type: string
   command.Command:
     title: Command
@@ -1002,9 +1002,9 @@ definitions:
     title: ListControlSystemHome
     type: object
     properties:
-      Active:
+      active:
         type: boolean
-      NameID:
+      name_id:
         type: string
   models.Command:
     title: Command
@@ -1090,9 +1090,9 @@ definitions:
     title: ListSoundParsings
     type: object
     properties:
-      Active:
+      active:
         type: boolean
-      NameID:
+      name_id:
         type: string
   user.NewPasswordClient:
     title: NewPasswordClient
