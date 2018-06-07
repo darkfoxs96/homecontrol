@@ -24,6 +24,12 @@ export class LangService {
   GetWords(word: string): string {
     return this.words_map[this.lang][word];
   }
+
+  setLang(lang_use: string) {
+    if(isLang(lang_use)) {
+      this.lang = lang_use;
+    }
+  }
 }
 
 let listLang = ['en-US', 'ru-RU'];
@@ -32,6 +38,9 @@ let localStorageLang = localStorage.getItem('lang_use');
 let lang = 'en-US';
 if(localStorageLang && localStorageLang != '' && isLang(localStorageLang)) {
   lang = localStorageLang;
+}
+if(localStorageLang == '') {
+  localStorage.setItem('lang_use', 'en-US')
 }
 
 function isLang(lang: string): boolean {
