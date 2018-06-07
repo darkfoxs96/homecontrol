@@ -9,6 +9,7 @@ import { CommandService } from "./services/command.service";
 import { ControlledService } from "./services/controlled.service";
 import { UseControlService } from "./services/use-control.service";
 import { UserService } from "./services/user.service";
+import { SoundParsingService } from "./services/sound-parsing.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -35,7 +36,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CommandService,
     ControlledService,
     UseControlService,
-    UserService
+    UserService,
+    SoundParsingService
   ],
   bootstrap: [AppComponent]
 })

@@ -9,8 +9,8 @@ import (
 
 // ListMessengers list
 type ListMessengers struct {
-	NameID string
-	Active bool
+	NameID string `json:"name_id"`
+	Active bool	  `json:"active"`
 }
 
 // BotMessenger implements bot-messengers
