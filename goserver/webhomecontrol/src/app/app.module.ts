@@ -5,6 +5,13 @@ import { HttpClientModule } from "@angular/common/http";
 // Services:
 import { LangService } from './services/lang.service';
 import { CommandRecordService } from "./services/command-record.service";
+import { CommandService } from "./services/command.service";
+import { ControlledService } from "./services/controlled.service";
+import { UseControlService } from "./services/use-control.service";
+import { UserService } from "./services/user.service";
+import { SoundParsingService } from "./services/sound-parsing.service";
+import { BotMessengerService } from "./services/bot-messenger.service";
+import { TPHomeControlService } from "./services/t-p-home-control.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -28,6 +35,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   providers: [
     LangService,
     CommandRecordService,
+    CommandService,
+    ControlledService,
+    UseControlService,
+    UserService,
+    SoundParsingService,
+    BotMessengerService,
+    TPHomeControlService
   ],
   bootstrap: [AppComponent]
 })

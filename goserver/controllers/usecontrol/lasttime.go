@@ -47,13 +47,13 @@ func (o *LastTime) Post() {
 
 // Get - get useLastTime
 // @Title Get
-// @Description get useLastTime format(int(time.Now().Unix())) string
+// @Description get useLastTime format second (int(time.Now().Unix())) in 'int_message'
 // @Success 200 {object} models.Message
 // @Failure 500 database error
 // @router / [get]
 func (o *LastTime) Get() {
 	lastTime := usecontrol.GetLastTime()
 
-	o.Data["json"] = models.Message{Status: true, Message: strconv.Itoa(lastTime)}
+	o.Data["json"] = models.Message{Status: true, IntMessage: lastTime}
 	o.ServeJSON()
 }

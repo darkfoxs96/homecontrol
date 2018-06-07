@@ -7,8 +7,8 @@ import (
 
 // ListControlSystemHome list
 type ListControlSystemHome struct {
-	NameID string
-	Active bool
+	NameID string `json:"name_id"`
+	Active bool   `json:"active"`
 }
 
 // ControlSystemHome implements third-party home management systems
@@ -56,7 +56,7 @@ func GetInfoString() (str string, err error) {
 	return
 }
 
-// GetListObjectsJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
+// GetListObjectsJSON return [["objectID", "info object"], ["objectID", "info object"], ["", ""]...]
 func GetListObjectsJSON() (json string, err error) {
 	return
 }

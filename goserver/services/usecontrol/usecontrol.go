@@ -95,6 +95,7 @@ func IncomingMessageDistributor(deviceID interface{}, msg string) (outMsg string
 		IsUnauthorizedUse = true
 		outMsg += "UnauthorizedUse! "
 	}
+	SetLastTime(int(time.Now().Unix()))
 
 	switch deviceID.(type) {
 	case string:

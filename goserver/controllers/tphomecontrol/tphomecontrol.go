@@ -197,7 +197,7 @@ type Info struct {
 // @Description get info
 // @Param	id		path	string		true	"The id you want to get"
 // @Param	type	query	string		true	"json or string"
-// @Success 200 string	"JSON or String"
+// @Success 200 string	"JSON or String. JSON: ["info", "info", "info", "info"...]. String: all info..."
 // @Failure 400 wrong body data
 // @Failure 500 database error
 // @router /:id [get]

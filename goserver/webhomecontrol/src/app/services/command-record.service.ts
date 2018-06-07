@@ -21,7 +21,7 @@ export class CommandRecordService {
     return this.httpClient.get<CommandRecord>('/api/command/record/' + id);
   }
 
-  addCommandRecord(command_record: CommandRecord): Observable<MessageServer> {
+  addOrUpdateCommandRecord(command_record: CommandRecord): Observable<MessageServer> {
     return this.httpClient.post<MessageServer>('/api/command/record/' + command_record.id, {
       type_record:     command_record.type_record,
       command:         command_record.command,
@@ -41,6 +41,7 @@ export class CommandRecordService {
   }
 
   // TODO: settings !
+  // sound - byte[]
   useSound(sound: number[], stringCommand: string): Observable<MessageServer> {
     return this.httpClient.post<MessageServer>('/api/command/used/sound', sound);
   }

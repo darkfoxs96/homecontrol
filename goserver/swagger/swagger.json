@@ -10,10 +10,10 @@
     },
     "basePath": "/api",
     "paths": {
-        "/botmessanger/": {
+        "/botmessenger/": {
             "get": {
                 "tags": [
-                    "botmessanger"
+                    "botmessenger"
                 ],
                 "description": "get a fortune all bot-messegers",
                 "operationId": "BotMesseger.Get",
@@ -36,10 +36,10 @@
                 }
             }
         },
-        "/botmessanger/message/": {
+        "/botmessenger/message/": {
             "post": {
                 "tags": [
-                    "botmessanger/message"
+                    "botmessenger/message"
                 ],
                 "description": "send a message through all messengers",
                 "operationId": "Message.Post",
@@ -68,10 +68,10 @@
                 }
             }
         },
-        "/botmessanger/message/{id}": {
+        "/botmessenger/message/{id}": {
             "post": {
                 "tags": [
-                    "botmessanger/message"
+                    "botmessenger/message"
                 ],
                 "description": "send a message",
                 "operationId": "Message.Post",
@@ -107,10 +107,10 @@
                 }
             }
         },
-        "/botmessanger/settings/{id}": {
+        "/botmessenger/settings/{id}": {
             "get": {
                 "tags": [
-                    "botmessanger/settings"
+                    "botmessenger/settings"
                 ],
                 "description": "get settings",
                 "operationId": "Settings.Get",
@@ -137,7 +137,7 @@
             },
             "post": {
                 "tags": [
-                    "botmessanger/settings"
+                    "botmessenger/settings"
                 ],
                 "description": "set settings",
                 "operationId": "Settings.Post",
@@ -173,10 +173,10 @@
                 }
             }
         },
-        "/botmessanger/{id}": {
+        "/botmessenger/{id}": {
             "get": {
                 "tags": [
-                    "botmessanger"
+                    "botmessenger"
                 ],
                 "description": "get a fortune",
                 "operationId": "BotMesseger.Get",
@@ -482,7 +482,10 @@
                 "operationId": "InfoControlled.Get",
                 "responses": {
                     "200": {
-                        "description": "string\t\"Info a controlleds\""
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
                     },
                     "500": {
                         "description": "database error"
@@ -510,7 +513,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "string\t\"out server msg\""
+                        "description": "string\t\"to server msg\""
                     },
                     "400": {
                         "description": "wrong body data"
@@ -580,7 +583,10 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "string\t\"ok\""
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Message"
+                        }
                     },
                     "400": {
                         "description": "wrong body data"
@@ -924,7 +930,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "string\t\"JSON or String\""
+                        "description": "string\t\"JSON or String. JSON: [\"info\", \"info\", \"info\", \"info\"...]. String: all info...\""
                     },
                     "400": {
                         "description": "wrong body data"
@@ -1067,7 +1073,7 @@
                 "tags": [
                     "usecontrol/detectedtime"
                 ],
-                "description": "get detected time format(second) string",
+                "description": "get detected time format(second) in 'int_message'",
                 "operationId": "DetectedTime.Get",
                 "responses": {
                     "200": {
@@ -1118,7 +1124,7 @@
                 "tags": [
                     "usecontrol/lasttime"
                 ],
-                "description": "get useLastTime format(int(time.Now().Unix())) string",
+                "description": "get useLastTime format second (int(time.Now().Unix())) in 'int_message'",
                 "operationId": "LastTime.Get",
                 "responses": {
                     "200": {
@@ -1219,7 +1225,7 @@
                 "tags": [
                     "usecontrol/reportunauthorizeduse"
                 ],
-                "description": "get field 'ReportUnauthorizedUse' (bool to string)",
+                "description": "get field 'ReportUnauthorizedUse' in 'bool_message'",
                 "operationId": "ReportUnauthorizedUse.Get",
                 "responses": {
                     "200": {
@@ -1415,10 +1421,10 @@
             "title": "ListMessengers",
             "type": "object",
             "properties": {
-                "Active": {
+                "active": {
                     "type": "boolean"
                 },
-                "NameID": {
+                "name_id": {
                     "type": "string"
                 }
             }
@@ -1502,10 +1508,10 @@
             "title": "ListControlSystemHome",
             "type": "object",
             "properties": {
-                "Active": {
+                "active": {
                     "type": "boolean"
                 },
-                "NameID": {
+                "name_id": {
                     "type": "string"
                 }
             }
@@ -1552,7 +1558,7 @@
             "title": "ListCommands",
             "type": "object",
             "properties": {
-                "Commands": {
+                "commands": {
                     "type": "array",
                     "items": {
                         "$ref": "#/definitions/models.Command"
@@ -1629,10 +1635,10 @@
             "title": "ListSoundParsings",
             "type": "object",
             "properties": {
-                "Active": {
+                "active": {
                     "type": "boolean"
                 },
-                "NameID": {
+                "name_id": {
                     "type": "string"
                 }
             }

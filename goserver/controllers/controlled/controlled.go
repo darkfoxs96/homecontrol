@@ -24,6 +24,7 @@ type Controlled struct {
 // @Failure 500 database error
 // @router / [post]
 func (o *Controlled) Post() {
+	o.Ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
 	defer o.Ctx.Request.Body.Close()
 
 	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
@@ -52,11 +53,12 @@ func (o *Controlled) Post() {
 // @Description update controlled
 // @Param	body	body	models.Сontrolled	true	"The object content. CommonBuffer = -1 field remains unchanged, string empty fields remains unchanged"
 // @Param	id		path	int					true	"The controlled you want to update"
-// @Success 200	string	"ok"
+// @Success 200	{object} models.Message
 // @Failure 400 wrong body data
 // @Failure 500 database error
 // @router /:id [put]
 func (o *Controlled) Put() {
+	o.Ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
 	defer o.Ctx.Request.Body.Close()
 
 	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
@@ -85,8 +87,8 @@ func (o *Controlled) Put() {
 		o.CustomAbort(500, err.Error())
 	}
 
-	o.Ctx.Output.SetStatus(200)
-	o.Ctx.Output.Body([]byte("ok"))
+	o.Data["json"] = models.Message{Status: true}
+	o.ServeJSON()
 }
 
 // ResponseControlled for GET metod, if no :id
@@ -181,7 +183,7 @@ type InfoControlled struct {
 // Get - return: information on all controlled
 // @Title Get
 // @Description get information on all controlled
-// @Success 200	string	"Info a controlleds"
+// @Success 200	{object} models.Message
 // @Failure 500 database error
 // @router / [get]
 func (o *InfoControlled) Get() {
@@ -202,7 +204,7 @@ type ControlledMessage struct {
 // @Title Post
 // @Description message to server
 // @Param	body			body	models.MessageToServer	true	"The object message"
-// @Success 200 string	"out server msg"
+// @Success 200 string	"to server msg"
 // @Failure 400 wrong body data
 // @Failure 500 database error
 // @router / [post]

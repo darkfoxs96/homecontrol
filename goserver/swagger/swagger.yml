@@ -7,10 +7,10 @@ info:
     email: darkfoxs96@gmail.com
 basePath: /api
 paths:
-  /botmessanger/:
+  /botmessenger/:
     get:
       tags:
-      - botmessanger
+      - botmessenger
       description: get a fortune all bot-messegers
       operationId: BotMesseger.Get
       responses:
@@ -24,10 +24,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/{id}:
+  /botmessenger/{id}:
     get:
       tags:
-      - botmessanger
+      - botmessenger
       description: get a fortune
       operationId: BotMesseger.Get
       parameters:
@@ -45,10 +45,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/message/:
+  /botmessenger/message/:
     post:
       tags:
-      - botmessanger/message
+      - botmessenger/message
       description: send a message through all messengers
       operationId: Message.Post
       parameters:
@@ -66,10 +66,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/message/{id}:
+  /botmessenger/message/{id}:
     post:
       tags:
-      - botmessanger/message
+      - botmessenger/message
       description: send a message
       operationId: Message.Post
       parameters:
@@ -92,10 +92,10 @@ paths:
           description: wrong body data
         "500":
           description: database error
-  /botmessanger/settings/{id}:
+  /botmessenger/settings/{id}:
     get:
       tags:
-      - botmessanger/settings
+      - botmessenger/settings
       description: get settings
       operationId: Settings.Get
       parameters:
@@ -113,7 +113,7 @@ paths:
           description: database error
     post:
       tags:
-      - botmessanger/settings
+      - botmessenger/settings
       description: set settings
       operationId: Settings.Post
       parameters:
@@ -358,7 +358,9 @@ paths:
         format: int64
       responses:
         "200":
-          description: "string\t\"ok\""
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
         "400":
           description: wrong body data
         "500":
@@ -392,7 +394,9 @@ paths:
       operationId: InfoControlled.Get
       responses:
         "200":
-          description: "string\t\"Info a controlleds\""
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
         "500":
           description: database error
   /controlled/message/:
@@ -410,7 +414,7 @@ paths:
           $ref: '#/definitions/models.MessageToServer'
       responses:
         "200":
-          description: "string\t\"out server msg\""
+          description: "string\t\"to server msg\""
         "400":
           description: wrong body data
         "500":
@@ -637,7 +641,8 @@ paths:
         type: string
       responses:
         "200":
-          description: "string\t\"JSON or String\""
+          description: "string\t\"JSON or String. JSON: [\"info\", \"info\", \"info\",
+            \"info\"...]. String: all info...\""
         "400":
           description: wrong body data
         "500":
@@ -709,7 +714,7 @@ paths:
     get:
       tags:
       - usecontrol/detectedtime
-      description: get detected time format(second) string
+      description: get detected time format(second) in 'int_message'
       operationId: DetectedTime.Get
       responses:
         "200":
@@ -743,7 +748,7 @@ paths:
     get:
       tags:
       - usecontrol/lasttime
-      description: get useLastTime format(int(time.Now().Unix())) string
+      description: get useLastTime format second (int(time.Now().Unix())) in 'int_message'
       operationId: LastTime.Get
       responses:
         "200":
@@ -810,7 +815,7 @@ paths:
     get:
       tags:
       - usecontrol/reportunauthorizeduse
-      description: get field 'ReportUnauthorizedUse' (bool to string)
+      description: get field 'ReportUnauthorizedUse' in 'bool_message'
       operationId: ReportUnauthorizedUse.Get
       responses:
         "200":
@@ -938,9 +943,9 @@ definitions:
     title: ListMessengers
     type: object
     properties:
-      Active:
+      active:
         type: boolean
-      NameID:
+      name_id:
         type: string
   command.Command:
     title: Command
@@ -998,9 +1003,9 @@ definitions:
     title: ListControlSystemHome
     type: object
     properties:
-      Active:
+      active:
         type: boolean
-      NameID:
+      name_id:
         type: string
   models.Command:
     title: Command
@@ -1033,7 +1038,7 @@ definitions:
     title: ListCommands
     type: object
     properties:
-      Commands:
+      commands:
         type: array
         items:
           $ref: '#/definitions/models.Command'
@@ -1086,9 +1091,9 @@ definitions:
     title: ListSoundParsings
     type: object
     properties:
-      Active:
+      active:
         type: boolean
-      NameID:
+      name_id:
         type: string
   user.NewPasswordClient:
     title: NewPasswordClient

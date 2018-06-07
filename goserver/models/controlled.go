@@ -7,6 +7,9 @@ import (
 
 // InsertСontrolled added record to DB
 func InsertСontrolled(record *Сontrolled) (ID int, err error) {
+	if record.CommonBuffer == -1 {
+		record.CommonBuffer = 0
+	}
 	locker.Lock()
 	defer locker.Unlock()
 	mainModel.IncrementForInsertСontrolleddID++

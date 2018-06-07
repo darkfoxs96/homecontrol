@@ -126,17 +126,17 @@ func init() {
 					&soundparsing.SoundParsing{},
 				),
 			),
-			beego.NSNamespace("/botmessanger/message",
+			beego.NSNamespace("/botmessenger/message",
 				beego.NSInclude(
 					&botmessanger.Message{},
 				),
 			),
-			beego.NSNamespace("/botmessanger/settings",
+			beego.NSNamespace("/botmessenger/settings",
 				beego.NSInclude(
 					&botmessanger.Settings{},
 				),
 			),
-			beego.NSNamespace("/botmessanger",
+			beego.NSNamespace("/botmessenger",
 				beego.NSInclude(
 					&botmessanger.BotMesseger{},
 				),

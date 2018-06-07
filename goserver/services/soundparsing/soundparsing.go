@@ -10,8 +10,8 @@ import (
 
 // ListSoundParsings list
 type ListSoundParsings struct {
-	NameID string
-	Active bool
+	NameID string `json:"name_id"`
+	Active bool   `json:"active"`
 }
 
 var (
