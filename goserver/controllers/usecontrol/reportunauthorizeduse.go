@@ -52,13 +52,13 @@ func (o *ReportUnauthorizedUse) Post() {
 
 // Get - get field 'ReportUnauthorizedUse'
 // @Title Get
-// @Description get field 'ReportUnauthorizedUse' (bool to string)
+// @Description get field 'ReportUnauthorizedUse' in 'bool_message'
 // @Success 200 	{object} models.Message
 // @Failure 500 database error
 // @router / [get]
 func (o *ReportUnauthorizedUse) Get() {
 	reportUnauthorizedUse := usecontrol.GetReportUnauthorizedUse()
 
-	o.Data["json"] = models.Message{Status: true, Message: strconv.FormatBool(reportUnauthorizedUse)}
+	o.Data["json"] = models.Message{Status: true, BoolMessage: reportUnauthorizedUse}
 	o.ServeJSON()
 }

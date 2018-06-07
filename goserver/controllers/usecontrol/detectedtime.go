@@ -47,13 +47,13 @@ func (o *DetectedTime) Post() {
 
 // Get - get detected time format(second)
 // @Title Get
-// @Description get detected time format(second) string
+// @Description get detected time format(second) in 'int_message'
 // @Success 200 {object} models.Message
 // @Failure 500 database error
 // @router / [get]
 func (o *DetectedTime) Get() {
 	detectedTime := usecontrol.GetDetectedTime()
 
-	o.Data["json"] = models.Message{Status: true, Message: strconv.Itoa(detectedTime)}
+	o.Data["json"] = models.Message{Status: true, IntMessage: detectedTime}
 	o.ServeJSON()
 }

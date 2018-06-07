@@ -1073,7 +1073,7 @@
                 "tags": [
                     "usecontrol/detectedtime"
                 ],
-                "description": "get detected time format(second) string",
+                "description": "get detected time format(second) in 'int_message'",
                 "operationId": "DetectedTime.Get",
                 "responses": {
                     "200": {
@@ -1124,7 +1124,7 @@
                 "tags": [
                     "usecontrol/lasttime"
                 ],
-                "description": "get useLastTime format(int(time.Now().Unix())) string",
+                "description": "get useLastTime format second (int(time.Now().Unix())) in 'int_message'",
                 "operationId": "LastTime.Get",
                 "responses": {
                     "200": {
@@ -1225,7 +1225,7 @@
                 "tags": [
                     "usecontrol/reportunauthorizeduse"
                 ],
-                "description": "get field 'ReportUnauthorizedUse' (bool to string)",
+                "description": "get field 'ReportUnauthorizedUse' in 'bool_message'",
                 "operationId": "ReportUnauthorizedUse.Get",
                 "responses": {
                     "200": {

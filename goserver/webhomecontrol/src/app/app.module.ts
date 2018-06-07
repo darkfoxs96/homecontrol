@@ -7,6 +7,7 @@ import { LangService } from './services/lang.service';
 import { CommandRecordService } from "./services/command-record.service";
 import { CommandService } from "./services/command.service";
 import { ControlledService } from "./services/controlled.service";
+import { UseControlService } from "./services/use-control.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -31,7 +32,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LangService,
     CommandRecordService,
     CommandService,
-    ControlledService
+    ControlledService,
+    UseControlService
   ],
   bootstrap: [AppComponent]
 })
