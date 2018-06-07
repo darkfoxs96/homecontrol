@@ -56,7 +56,7 @@ func GetInfoString() (str string, err error) {
 	return
 }
 
-// GetListObjectsJSON return {["objectID", "info object"], ["objectID", "info object"], ["", ""]...}
+// GetListObjectsJSON return [["objectID", "info object"], ["objectID", "info object"], ["", ""]...]
 func GetListObjectsJSON() (json string, err error) {
 	return
 }

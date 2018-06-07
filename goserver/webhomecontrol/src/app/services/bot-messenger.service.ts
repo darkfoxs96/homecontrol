@@ -36,12 +36,12 @@ export class BotMessengerService {
     return this.httpClient.post<MessageServer>('/api/botmessenger/settings/' + bot_messenger_id, settings);
   }
 
-  getBotMessengers(): Observable<StatusInterfaceServer[]> {
+  getStatusBotMessengers(): Observable<StatusInterfaceServer[]> {
     return this.httpClient.get<StatusInterfaceServer[]>('/api/botmessenger');
   }
 
   // getBotMessenger return: field 'message', 'bool_message'
-  getBotMessenger(bot_messenger_id: string): Observable<MessageServer> {
+  getStatusBotMessenger(bot_messenger_id: string): Observable<MessageServer> {
     return this.httpClient.get<MessageServer>('/api/botmessenger/' + bot_messenger_id);
   }
 

@@ -930,7 +930,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "string\t\"JSON or String\""
+                        "description": "string\t\"JSON or String. JSON: [\"info\", \"info\", \"info\", \"info\"...]. String: all info...\""
                     },
                     "400": {
                         "description": "wrong body data"

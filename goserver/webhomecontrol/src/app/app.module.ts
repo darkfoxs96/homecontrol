@@ -11,6 +11,7 @@ import { UseControlService } from "./services/use-control.service";
 import { UserService } from "./services/user.service";
 import { SoundParsingService } from "./services/sound-parsing.service";
 import { BotMessengerService } from "./services/bot-messenger.service";
+import { TPHomeControlService } from "./services/t-p-home-control.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -39,7 +40,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     UseControlService,
     UserService,
     SoundParsingService,
-    BotMessengerService
+    BotMessengerService,
+    TPHomeControlService
   ],
   bootstrap: [AppComponent]
 })

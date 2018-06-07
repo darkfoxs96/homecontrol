@@ -41,6 +41,7 @@ export class CommandRecordService {
   }
 
   // TODO: settings !
+  // sound - byte[]
   useSound(sound: number[], stringCommand: string): Observable<MessageServer> {
     return this.httpClient.post<MessageServer>('/api/command/used/sound', sound);
   }
