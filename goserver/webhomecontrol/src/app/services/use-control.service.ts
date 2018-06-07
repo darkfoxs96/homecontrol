@@ -16,8 +16,8 @@ export class UseControlService {
     return this.httpClient.get<MessageServer>('/api/usecontrol/reportunauthorizeduse');
   }
 
-  setReportUnauthorizedUse(reportUnauthorizedUse: boolean): Observable<MessageServer> {
-    return this.httpClient.post<MessageServer>('/api/usecontrol/reportunauthorizeduse', '' + reportUnauthorizedUse);
+  setReportUnauthorizedUse(report_unauthorized_use: boolean): Observable<MessageServer> {
+    return this.httpClient.post<MessageServer>('/api/usecontrol/reportunauthorizeduse', '' + report_unauthorized_use);
   }
 
   // getDetectedTime return: field 'int_message' format second
@@ -26,8 +26,8 @@ export class UseControlService {
   }
 
   // setDetectedTime format second
-  setDetectedTime(detectedTime: number): Observable<MessageServer> {
-    return this.httpClient.post<MessageServer>('/api/usecontrol/detectedtime', '' + detectedTime);
+  setDetectedTime(detected_time: number): Observable<MessageServer> {
+    return this.httpClient.post<MessageServer>('/api/usecontrol/detectedtime', '' + detected_time);
   }
 
   // getLog return: field 'message'
