@@ -25,7 +25,7 @@ func main() {
 
 	// frontend
 	if !models.Test {
-		beego.SetViewsPath(models.Path + "webhomecontrol/dist/webhomecontrol")
+		beego.SetViewsPath(models.Path + "views")
 		beego.SetStaticPath("/static/", models.Path+"webhomecontrol/dist/webhomecontrol")
 	}
 

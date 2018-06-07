@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { CommandRecordService } from "../../services/command-record.service";
-import { CommandRecord } from "../../models/command-record.model";
-
 
 @Component({
   selector: 'app-control',
