@@ -1,4 +1,5 @@
 export class Controlled {
+  id:              number = 0;
   name:            string = '';
   host:            string = '';
   port:            string = '';
