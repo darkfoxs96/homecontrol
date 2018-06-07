@@ -19,6 +19,7 @@ type Logout struct {
 // @Failure 500 database error
 // @router / [get]
 func (o *Logout) Get() {
+	o.Ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
 	sess, err := gosession.GlobalSessions.SessionStart(o.Ctx.ResponseWriter, o.Ctx.Request)
 	if err == nil {
 		defer sess.SessionRelease(o.Ctx.ResponseWriter)

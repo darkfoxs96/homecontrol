@@ -358,7 +358,9 @@ paths:
         format: int64
       responses:
         "200":
-          description: "string\t\"ok\""
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
         "400":
           description: wrong body data
         "500":
@@ -392,7 +394,9 @@ paths:
       operationId: InfoControlled.Get
       responses:
         "200":
-          description: "string\t\"Info a controlleds\""
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Message'
         "500":
           description: database error
   /controlled/message/:
@@ -410,7 +414,7 @@ paths:
           $ref: '#/definitions/models.MessageToServer'
       responses:
         "200":
-          description: "string\t\"out server msg\""
+          description: "string\t\"to server msg\""
         "400":
           description: wrong body data
         "500":
@@ -1033,7 +1037,7 @@ definitions:
     title: ListCommands
     type: object
     properties:
-      Commands:
+      commands:
         type: array
         items:
           $ref: '#/definitions/models.Command'

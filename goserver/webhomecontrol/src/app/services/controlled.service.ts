@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs/index";
 
 import { Controlled } from "../models/controlled.model";
-import {MessageServer} from "../models/message-server.model";
+import { MessageServer } from "../models/message-server.model";
 
 @Injectable({
   providedIn: 'root'
@@ -31,9 +31,8 @@ export class ControlledService {
     })
   }
 
-  // updateControlled return: status string `ok`
-  updateControlled(controlled: Controlled): Observable<string> {
-    return this.httpClient.put<string>('/api/controlled/' + controlled.id, {
+  updateControlled(controlled: Controlled): Observable<MessageServer> {
+    return this.httpClient.put<MessageServer>('/api/controlled/' + controlled.id, {
       common_buffer:   controlled.common_buffer,
       home_control_id: controlled.home_control_id,
       host:            controlled.host,
@@ -44,5 +43,9 @@ export class ControlledService {
 
   deleteControlled(id: number): Observable<MessageServer> {
     return this.httpClient.delete<MessageServer>('/api/controlled/' + id);
+  }
+
+  getControlledsInfo(): Observable<MessageServer> {
+    return this.httpClient.get<MessageServer>('/api/controlled/info');
   }
 }

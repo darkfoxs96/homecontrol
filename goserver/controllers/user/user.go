@@ -30,6 +30,7 @@ type Recovery struct {
 // @Failure 500 database error
 // @router / [post]
 func (o *RecoveryPassword) Post() {
+	o.Ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
 	if models.StopServer {
 		end := models.TimeEndStopServer - int(time.Now().Unix())
 		if end < 0 {
