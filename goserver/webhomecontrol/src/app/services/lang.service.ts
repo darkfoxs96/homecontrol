@@ -11,17 +11,21 @@ export class LangService {
       ['Control']: 'Управление',
       ['Settings']: 'Настройки',
       ['Commands']: 'Команды',
+      ['Reload microphone']: 'Перезагрузить микрофон',
+        ['Text to the command']: 'Текст к команде',
     },
     ['en-US']: {
       ['Control']: 'Control',
       ['Settings']: 'Settings',
       ['Commands']: 'Commands',
+      ['Reload microphone']: 'Reload microphone',
+      ['Text to the command']: 'Text to the command',
     },
   };
 
   constructor() { }
 
-  GetWords(word: string): string {
+  T(word: string): string {
     return this.words_map[this.lang][word];
   }
 

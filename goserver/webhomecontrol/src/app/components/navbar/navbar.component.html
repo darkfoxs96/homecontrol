@@ -1,28 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center">
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+     style="border-bottom: 1px solid #1b1e21">
       <a class="nav-item nav-link badge-light" [class.active]="visible_control" [class.navbar_bg_color_use_item]="visible_control"
          href="javascript:void(null);" (click)="visibleControl()">
-        <a class="navbar_visible_text">{{ text.GetWords('Control') }} </a>
+        <a class="navbar_visible_text">{{ t.T('Control') }} </a>
         <i class="fa fa-microphone fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 
       <a class="nav-item nav-link badge-light" [class.active]="visible_settings" [class.navbar_bg_color_use_item]="visible_settings"
          href="javascript:void(null);" (click)="visibleSettings()">
-        <a class="navbar_visible_text">{{ text.GetWords('Settings') }} </a>
+        <a class="navbar_visible_text">{{ t.T('Settings') }} </a>
         <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 
       <a class="nav-item nav-link badge-light" [class.active]="visible_commands" [class.navbar_bg_color_use_item]="visible_commands"
          href="javascript:void(null);" (click)="visibleCommands()">
-        <a class="navbar_visible_text">{{ text.GetWords('Commands') }} </a>
+        <a class="navbar_visible_text">{{ t.T('Commands') }} </a>
         <i class="fa fa-list fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 </nav>
 
 <main>
-  <app-control *ngIf="visible_control"></app-control>
+  <app-control  *ngIf="visible_control"></app-control>
   <app-settings *ngIf="visible_settings"></app-settings>
   <app-commands *ngIf="visible_commands"></app-commands>
 </main>

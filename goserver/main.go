@@ -1,6 +1,8 @@
 package main
 
 import (
+	"io/ioutil"
+
 	"github.com/astaxie/beego"
 
 	_ "homecontrol/goserver/gosession"
@@ -25,9 +27,28 @@ func main() {
 
 	// frontend
 	if !models.Test {
-		beego.SetViewsPath(models.Path + "views")
-		beego.SetStaticPath("/static/", models.Path+"webhomecontrol/dist/webhomecontrol")
+		beego.SetViewsPath(models.Path + "webhomecontrol/dist/webhomecontrol")
+		settingsStatic()
 	}
 
 	beego.Run()
+}
+
+func settingsStatic() {
+	files, _ := ioutil.ReadDir(models.Path + "webhomecontrol/dist/webhomecontrol")
+	for _, f := range files {
+		beego.SetStaticPath("/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/"+f.Name())
+	}
+	files, _ = ioutil.ReadDir(models.Path + "webhomecontrol/dist/webhomecontrol/assets/script")
+	for _, f := range files {
+		beego.SetStaticPath("/assets/script/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/assets/script/"+f.Name())
+	}
+	files, _ = ioutil.ReadDir(models.Path + "webhomecontrol/dist/webhomecontrol/assets/sound")
+	for _, f := range files {
+		beego.SetStaticPath("/assets/sound/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/assets/sound/"+f.Name())
+	}
+	files, _ = ioutil.ReadDir(models.Path + "webhomecontrol/dist/webhomecontrol/assets/style")
+	for _, f := range files {
+		beego.SetStaticPath("/assets/style/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/assets/style/"+f.Name())
+	}
 }

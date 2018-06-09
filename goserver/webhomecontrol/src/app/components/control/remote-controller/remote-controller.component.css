@@ -1,0 +1,32 @@
+.btn_remote_controller {
+  min-width: 155px;
+  min-height: 50px;
+  background-color: #5c5d5f;
+  color: #dbdbdb;
+}
+
+.btn_remote_controller:active {
+  transform: scale(0.95, 0.95);
+}
+
+@media (max-width: 799px) and (min-width: 453px) {
+  .btn_remote_controller {
+    font-size: 14px;
+    min-width: 150px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 452px) {
+  .btn_remote_controller {
+    font-size: 11px;
+    min-width: 120px;
+    min-height: 35px;
+  }
+}
+
+.element_center_col {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
