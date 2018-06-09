@@ -1,6 +1,7 @@
 package controlled
 
 import (
+	"errors"
 	"bytes"
 	"encoding/binary"
 	"io/ioutil"
@@ -37,12 +38,14 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	}
 	req, err := http.NewRequest("POST", URL, buffer)
 	if err != nil {
+		err = errors.New(controlled.Name + ": no connection. " + err.Error())
 		return
 	}
 	client := new(http.Client)
 	client.Timeout = 3 * time.Second
 	resp, err := client.Do(req)
 	if err != nil {
+		err = errors.New(controlled.Name + ": no connection. " + err.Error())		
 		return
 	}
 	defer resp.Body.Close()

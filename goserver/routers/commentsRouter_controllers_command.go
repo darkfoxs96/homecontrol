@@ -9,50 +9,50 @@ func init() {
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"],
 		beego.ControllerComments{
-			Method:           "Get",
-			Router:           `/`,
+			Method: "Get",
+			Router: `/`,
 			AllowHTTPMethods: []string{"get"},
-			MethodParams:     param.Make(),
-			Params:           nil})
+			MethodParams: param.Make(),
+			Params: nil})
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"],
 		beego.ControllerComments{
-			Method:           "Post",
-			Router:           `/:command`,
+			Method: "Post",
+			Router: `/:command`,
 			AllowHTTPMethods: []string{"post"},
-			MethodParams:     param.Make(),
-			Params:           nil})
+			MethodParams: param.Make(),
+			Params: nil})
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"],
 		beego.ControllerComments{
-			Method:           "GetOne",
-			Router:           `/:command`,
+			Method: "GetOne",
+			Router: `/:command`,
 			AllowHTTPMethods: []string{"get"},
-			MethodParams:     param.Make(),
-			Params:           nil})
+			MethodParams: param.Make(),
+			Params: nil})
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandRecord"],
 		beego.ControllerComments{
-			Method:           "Delete",
-			Router:           `/:command`,
+			Method: "Delete",
+			Router: `/:command`,
 			AllowHTTPMethods: []string{"delete"},
-			MethodParams:     param.Make(),
-			Params:           nil})
+			MethodParams: param.Make(),
+			Params: nil})
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandUsedSound"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandUsedSound"],
 		beego.ControllerComments{
-			Method:           "Post",
-			Router:           `/`,
+			Method: "Post",
+			Router: `/`,
 			AllowHTTPMethods: []string{"post"},
-			MethodParams:     param.Make(),
-			Params:           nil})
+			MethodParams: param.Make(),
+			Params: nil})
 
 	beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandUsedText"] = append(beego.GlobalControllerRouter["homecontrol/goserver/controllers/command:CommandUsedText"],
 		beego.ControllerComments{
-			Method:           "Post",
-			Router:           `/`,
+			Method: "Post",
+			Router: `/`,
 			AllowHTTPMethods: []string{"post"},
-			MethodParams:     param.Make(),
-			Params:           nil})
+			MethodParams: param.Make(),
+			Params: nil})
 
 }

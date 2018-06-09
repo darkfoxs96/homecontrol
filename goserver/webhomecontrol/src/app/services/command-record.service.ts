@@ -36,8 +36,11 @@ export class CommandRecordService {
     return this.httpClient.delete<MessageServer>('/api/command/record/' + id);
   }
 
-  useText(command: string): Observable<MessageServer> {
-    return this.httpClient.post<MessageServer>('/api/command/used/text', command);
+  useText(command: string, buffer: string): Observable<MessageServer> {
+    return this.httpClient.post<MessageServer>('/api/command/used/text', {
+      buffer: buffer,
+      command: command
+    });
   }
 
   // TODO: settings !

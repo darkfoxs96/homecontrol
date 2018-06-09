@@ -19,6 +19,7 @@ import { ControlComponent } from './components/control/control.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { CommandsComponent } from './components/commands/commands.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { RemoteControllerComponent } from './components/control/remote-controller/remote-controller.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ControlComponent,
     SettingsComponent,
     CommandsComponent,
-    NavbarComponent
+    NavbarComponent,
+    RemoteControllerComponent
   ],
   imports: [
     BrowserModule,

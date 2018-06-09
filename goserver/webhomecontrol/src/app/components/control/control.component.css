@@ -1,0 +1,30 @@
+.element_center_col {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.microphone {
+  background-color: white;
+  color: #b9bbbe;
+  outline: none;
+  border: 5px solid black;
+  border-radius: 45px;
+}
+
+.microphone:hover {
+  cursor: pointer;
+}
+
+.active {
+  color: #123760;
+  -moz-box-shadow: 0 0 10px #1a4f89;
+  -webkit-box-shadow: 0 0 10px #1a4f89;
+  box-shadow: 0 0 10px #1a4f89;
+  transform: scale(1.07, 1.07);
+}
+
+.form_luminescence:focus {
+  border-color: rgba(18, 55, 96, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(26, 79, 137, 0.6);
+  outline: 0 none; }
