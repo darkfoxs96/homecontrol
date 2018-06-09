@@ -12,7 +12,11 @@ export class LangService {
       ['Settings']: 'Настройки',
       ['Commands']: 'Команды',
       ['Reload microphone']: 'Перезагрузить микрофон',
-        ['Text to the command']: 'Текст к команде',
+      ['Text to the command']: 'Текст к команде',
+      ['Auxiliary command']: 'Вспомогател. команда',
+      ['Name']: 'Название',
+      ['Command']: 'Команда',
+      ['Controlled?']: 'Контролируемый?',
     },
     ['en-US']: {
       ['Control']: 'Control',
@@ -20,6 +24,10 @@ export class LangService {
       ['Commands']: 'Commands',
       ['Reload microphone']: 'Reload microphone',
       ['Text to the command']: 'Text to the command',
+      ['Auxiliary command']: 'Auxiliary command',
+      ['Name']: 'Name',
+      ['Command']: 'Command',
+      ['Controlled?']: 'Controlled?',
     },
   };
 

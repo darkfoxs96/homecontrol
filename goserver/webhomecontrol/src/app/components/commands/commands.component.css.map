@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,iBAAkB;EAChB,YAAY,EAAE,qBAAqB;EACnC,UAAU,EAAE,oEAAoE;EAChF,OAAO,EAAE,MAAM",
+"sources": ["commands.component.scss"],
+"names": [],
+"file": "commands.component.css"
+}

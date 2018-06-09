@@ -1,3 +1,34 @@
-<p>
-  commands works!
-</p>
+
+
+
+
+<div (window:resize)="onResize($event)"></div>
+<table class="table table-hover"
+       [class.table-sm]="table_sm">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">{{ t.T('Name') }}</th>
+      <th scope="col">{{ t.T('Command') }}</th>
+      <th scope="col">{{ t.T('Auxiliary command') }}</th>
+      <th scope="col">{{ t.T('Controlled?') }}</th>
+      <th scope="col"> </th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let record of listRecord; let i = index"
+        class="table-row" [class.table-primary]="record.is_controlled">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ record.id }}</td>
+      <td>{{ record.command }}</td>
+      <td>{{ record.string_command }}</td>
+      <td>{{ record.controlled }}</td>
+      <td><a href="javascript:void(null);" style="color: #1d2124">
+          <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+          </a></td>
+    </tr>
+
+
+  </tbody>
+</table>

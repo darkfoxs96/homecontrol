@@ -10,7 +10,7 @@ import { CommandRecord } from "../../../models/command-record.model";
 
 interface IListCommand {
   id_command_record_controlled: string;
-  list_id_command_record: string[];
+  list_id_command_record:       string[];
 }
 
 @Component({
