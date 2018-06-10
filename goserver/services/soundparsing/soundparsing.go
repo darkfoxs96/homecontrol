@@ -158,10 +158,12 @@ func compare(commandControlled, commandRecord string) (controlledID int, command
 
 	getCommandRecord := models.GetCommandRecord(commandControlled)
 	if getCommandRecord == nil {
+		fmt.Println(123)
 		err = errors.New("SoundParsing: Not found controlledID")
 	} else {
 		controlledID = getCommandRecord.СontrolledID
-		if getCommandRecord.TypeRecord != 1 {
+		if getCommandRecord.СontrolledID == 0 {
+			fmt.Println(456)
 			err = errors.New("SoundParsing: Not found controlledID")
 		}
 	}

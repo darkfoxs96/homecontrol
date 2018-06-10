@@ -183,4 +183,10 @@ export class RemoteControllerComponent implements OnInit {
       }
     );
   }
+
+  goScroll() {
+    setTimeout(() => {
+      window.scrollTo(0, document.getElementById('remote_controller_header').offsetTop);
+    }, 250);
+  }
 }

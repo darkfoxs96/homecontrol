@@ -1,34 +1,130 @@
-
-
-
+<!-- Button trigger modal -->
+<div class="col-12 mt-2">
+  <div style="text-align: center" class="element_center_col add_command_icon">
+    <i class="fa fa-plus-square fa-4x add_command" aria-hidden="true"
+       data-toggle="modal" data-target="#modal_add_command"></i>
+  </div>
+</div>
 
 <div (window:resize)="onResize($event)"></div>
-<table class="table table-hover"
-       [class.table-sm]="table_sm">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">{{ t.T('Name') }}</th>
-      <th scope="col">{{ t.T('Command') }}</th>
-      <th scope="col">{{ t.T('Auxiliary command') }}</th>
-      <th scope="col">{{ t.T('Controlled?') }}</th>
-      <th scope="col"> </th>
-    </tr>
-  </thead>
-  <tbody>
 
-    <tr *ngFor="let record of listRecord; let i = index"
-        class="table-row" [class.table-primary]="record.is_controlled">
-      <th scope="row">{{ i + 1 }}</th>
-      <td>{{ record.id }}</td>
-      <td>{{ record.command }}</td>
-      <td>{{ record.string_command }}</td>
-      <td>{{ record.controlled }}</td>
-      <td><a href="javascript:void(null);" style="color: #1d2124">
-          <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
-          </a></td>
-    </tr>
+<div [class.col-10]="table_p"
+     [class.element_center_col]="table_p">
+  <table class="table table-hover table-text-size mt-2"
+         [class.table-sm]="table_sm"
+         >
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{ t.T('Name') }}</th>
+        <th scope="col">{{ t.T('Command') }}</th>
+        <th scope="col">{{ t.T('Auxiliary command') }}</th>
+        <th scope="col">{{ t.T('Controlled?') }}</th>
+        <th scope="col"> </th>
+      </tr>
+    </thead>
+    <tbody>
 
+      <tr *ngFor="let record of listRecord; let i = index"
+          class="table-row" [class.table-primary]="record.is_controlled" id="list_command_row_{{ record.id }}">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ record.id }}</td>
+        <td>{{ record.command }}</td>
+        <td>{{ record.string_command }}</td>
+        <td>{{ record.controlled }}</td>
+        <td><a href="javascript:void(null);" class="table-icon-size" style="color: #1d2124">
+            <i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteCommand(record.id)"></i>
+            </a></td>
+      </tr>
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_add_command" tabindex="-1" role="dialog" aria-labelledby="modal_add_command_label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_add_command_label">{{ t.T('Add command') }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- Example single danger button -->
+        <div class="btn-group mt-1">
+          <button type="button" id="type_command_button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ t.T('Add command') }}
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="javascript:void(null);" (click)="typeCommandControlButton('command', t.T('Add command'))">{{ t.T('Add command') }}</a>
+            <a class="dropdown-item" href="javascript:void(null);" (click)="typeCommandControlButton('callsign', t.T('Add callsign'))">{{ t.T('Add callsign') }}</a>
+          </div>
+        </div>
+
+        <div *ngIf="visibl_add_command">
+
+          <!-- Example single danger button -->
+          <div class="btn-group mt-2">
+            <button type="button" id="name_interface_for_command" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ t.T('Controlled') }}
+            </button>
+            <div class="dropdown-menu">
+
+              <a *ngFor="let name_inteface of list_inteface" class="dropdown-item" href="javascript:void(null);"
+                 (click)="goSelectInterface(name_inteface)">{{ name_inteface }}</a>
+
+            </div>
+          </div><br>
+
+          <div class="btn-group mt-2">
+            <button type="button" id="select_id_command_button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ t.T('Command') }}
+            </button>
+            <div class="dropdown-menu">
+
+              <a *ngFor="let command of map_command_info[select_interface]" class="dropdown-item" href="javascript:void(null);"
+                 (click)="goSelectCommandID(command.id, command.info_command)">{{ command.info_command }}</a>
+
+            </div>
+          </div><br>
+
+          <form action="javascript:void(null);" class="mt-2">
+            <div class="form-group">
+              <input type="text" class="form-control form_luminescence" id="add_command_string_input" name="buffer" placeholder="{{ t.T('Text to the command') }}">
+            </div>
+          </form>
+
+        </div>
+
+        <div *ngIf="visibl_add_callsign">
+          <div class="btn-group mt-2">
+            <button type="button" id="select_id_controlled_button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {{ t.T('Name') }}
+            </button>
+            <div class="dropdown-menu">
+
+              <a *ngFor="let controlled of list_controlled" class="dropdown-item" href="javascript:void(null);"
+                 (click)="goSelectControlledID(controlled.id, controlled.name)">{{ controlled.name }} id: {{ controlled.id }}</a>
+
+            </div>
+          </div><br>
+          <p class="mt-1">{{ t.T('No more than one word') }}</p>
+        </div>
+
+        <form action="javascript:void(null);" class="mt-2">
+          <div class="form-group">
+            <input type="text" class="form-control form_luminescence" id="add_command_name_input" name="buffer" placeholder="{{ t.T('Command') }}">
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ t.T('Close') }}</button>
+        <button type="button" class="btn btn-light" (click)="addCommand()">{{ t.T('Save') }}</button>
+      </div>
+    </div>
+  </div>
+</div>
