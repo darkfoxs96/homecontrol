@@ -1,11 +1,11 @@
-<div class="container-fluid bg-light"
+<div class="container-fluid bg-light" id="remote_controller_header"
      style="border-bottom: 1px solid #1b1e21; border-top: 1px solid #1b1e21">
   <div class="row justify-content-center align-items-center">
 
       <div *ngFor="let command_list of ListCommand"
            class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 mt-1 mb-1">
         <button class="btn btn-light btn_remote_controller element_center_col remote_controller_accordion"
-                data-toggle="collapse" role="button" (click)="audio.play()"
+                data-toggle="collapse" role="button" (click)="audio.play(); goScroll();"
                 aria-expanded="false" name="remote_controller_{{ command_list.id_command_record_controlled }}">
                 {{ command_list.id_command_record_controlled }}</button>
       </div>

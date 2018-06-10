@@ -20,10 +20,18 @@ func GetAllListsCommands() (listsCommands []*models.ListCommands) {
 		listsCommands = append(listsCommands, list)
 	}
 	// TODO: For testing frontend !
+	commands := []*models.Command{
+		&models.Command{
+			ID:          1001,
+			InfoCommand: "Close door",
+		},
+	}
+
 	listsCommands = append(listsCommands, &models.ListCommands{
 		Name:                 "noolite4",
 		StartRangeIDCommands: 1000,
 		EndRangeIDCommands:   1999,
+		Commands:             commands,
 	})
 	return
 }
