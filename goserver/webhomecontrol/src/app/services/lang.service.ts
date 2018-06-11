@@ -21,9 +21,12 @@ export class LangService {
       ['Add command']: 'Добавить команду',
       ['Save']: 'Сохранить',
       ['Add callsign']: 'Добавить позывной',
-      ['Controlled']: 'Контролируемый',
+      ['Controlled']: 'Контролиру.',
       ['No more than one word']: 'Не больше одного слова',
       ['Empty command']: 'Введите комманду',
+      ['Main']: 'Глав.',
+      ['Interfaces']: 'Интерф.',
+      ['Email']: 'Email',
     },
     ['en-US']: {
       ['Control']: 'Control',
@@ -42,18 +45,27 @@ export class LangService {
       ['Controlled']: 'Controlled',
       ['No more than one word']: 'No more than one word',
       ['Empty command']: 'Empty command',
+      ['Main']: 'Main',
+      ['Interfaces']: 'Interfaces',
+      ['Email']: 'Email',
     },
   };
 
   constructor() { }
 
   T(word: string): string {
-    return this.words_map[this.lang][word];
+    let return_words = this.words_map[this.lang][word];
+    if(return_words) {
+      return return_words;
+    } else {
+      return '';
+    }
   }
 
   setLang(lang_use: string) {
     if(isLang(lang_use)) {
       this.lang = lang_use;
+      localStorage.setItem('lang_use', lang_use);
     }
   }
 }

@@ -20,15 +20,23 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { CommandsComponent } from './components/commands/commands.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RemoteControllerComponent } from './components/control/remote-controller/remote-controller.component';
+import { SettingsHomeComponent } from './components/settings/settings-home/settings-home.component';
+import { SettingsEmailComponent } from './components/settings/settings-email/settings-email.component';
+import { SettingsInterfacesComponent } from './components/settings/settings-interfaces/settings-interfaces.component';
+import { SettingsControlledsComponent } from './components/settings/settings-controlleds/settings-controlleds.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ControlComponent,
-    SettingsComponent,
-    CommandsComponent,
     NavbarComponent,
-    RemoteControllerComponent
+    CommandsComponent,
+    ControlComponent,
+    RemoteControllerComponent,
+    SettingsComponent,
+    SettingsHomeComponent,
+    SettingsEmailComponent,
+    SettingsInterfacesComponent,
+    SettingsControlledsComponent,
   ],
   imports: [
     BrowserModule,

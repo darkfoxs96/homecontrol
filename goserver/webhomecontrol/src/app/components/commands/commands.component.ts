@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-declare var jquery:any;
+import { Component, Input, OnInit } from '@angular/core';
 declare var $ :any;
 
 import { LangService } from "../../services/lang.service";
@@ -19,20 +18,17 @@ interface IRecord {
   is_controlled:  boolean,
 }
 
-interface INameInterface {
-  controlled_id:  number,
-  name_interface: string,
-}
-
 @Component({
   selector: 'app-commands',
   templateUrl: './commands.component.html',
   styleUrls: ['./commands.component.scss']
 })
 export class CommandsComponent implements OnInit {
+  @Input() t: LangService;
+
   // Add command
-  visibl_add_command  = true;
-  command_id          = 0;
+  visibl_add_command      = true;
+  command_id              = 0;
   list_inteface: string[] = [];
   select_interface        = '';
   map_command_info: {[key: string]: Command[]} = {['']: []};
@@ -53,7 +49,6 @@ export class CommandsComponent implements OnInit {
   private list_command_record: CommandRecord[] = [];
 
   constructor(
-    public  t: LangService,
     private commandRecord: CommandRecordService,
     private controlled: ControlledService,
     private commandService: CommandService,
@@ -142,12 +137,15 @@ export class CommandsComponent implements OnInit {
 
   getNameCommand(command_id: number): string {
     let command_name = 'id: ' + command_id;
+    let first_name = command_name;
     this.list_commands.forEach((commands) => {
       commands.commands.forEach((command) => {
         if(command.id == command_id) {
           command_name = command.info_command;
+          return;
         }
       });
+      if(first_name != command_name) return;
     });
     return command_name;
   }
@@ -157,12 +155,13 @@ export class CommandsComponent implements OnInit {
     this.list_controlled.forEach((controlled) => {
       if(controlled.id == controlled_id) {
         controlled_name = controlled.name;
+        return;
       }
     });
     return controlled_name;
   }
 
-  onResize(event) {
+  onResize(event): void {
     if(event.target.innerWidth < 700) {
       this.table_sm = true;
     } else {
@@ -230,7 +229,7 @@ export class CommandsComponent implements OnInit {
     document.getElementById('select_id_controlled_button').innerHTML = controlled_name;
   }
 
-  addCommand() {
+  addCommand(): void {
     let id = (<any>document.getElementById('add_command_name_input')).value;
     if(id == '') {
       alert(this.t.T('Empty command'))

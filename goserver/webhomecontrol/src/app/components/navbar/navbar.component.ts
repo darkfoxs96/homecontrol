@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
 import { LangService } from '../../services/lang.service';
-
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +7,13 @@ import { LangService } from '../../services/lang.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  @Input() t: LangService;
+
   visible_control = true;
   visible_settings = false;
   visible_commands = false;
 
-  constructor(public t: LangService) {
+  constructor() {
   }
 
   ngOnInit() {
@@ -41,9 +42,10 @@ export class NavbarComponent implements OnInit {
   langers() {
     if(localStorage.getItem('lang_use') == 'en-US' || localStorage.getItem('lang_use') == '') {
       localStorage.setItem('lang_use', 'ru-RU');
+      this.t.setLang('ru-RU');
     } else {
       localStorage.setItem('lang_use', 'en-US');
+      this.t.setLang('en-US');
     }
-    location.reload();
   }
 }

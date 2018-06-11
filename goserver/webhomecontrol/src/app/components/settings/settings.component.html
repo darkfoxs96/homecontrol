@@ -1,3 +1,35 @@
-<p>
-  settings works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+     style="border-bottom: 1px solid #1b1e21">
+  <a class="nav-item nav-link badge-light" [class.active]="visible_home" [class.navbar_bg_color_use_item]="visible_home"
+     href="javascript:void(null);" (click)="visibleHome()">
+    <a class="navbar_visible_text">{{ t.T('Main') }} </a>
+    <i class="fa fa-user fa-lg" aria-hidden="true"></i>
+    <span class="sr-only">(current)</span>
+  </a>
+
+  <a class="nav-item nav-link badge-light" [class.active]="visible_email" [class.navbar_bg_color_use_item]="visible_email"
+     href="javascript:void(null);" (click)="visibleEmail()">
+    <a class="navbar_visible_text">{{ t.T('Email') }} </a>
+    <i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+    <span class="sr-only">(current)</span>
+  </a>
+
+  <a class="nav-item nav-link badge-light" [class.active]="visible_controlleds" [class.navbar_bg_color_use_item]="visible_controlleds"
+     href="javascript:void(null);" (click)="visibleControlleds()">
+    <a class="navbar_visible_text">{{ t.T('Controlled') }} </a>
+    <i class="fa fa-american-sign-language-interpreting fa-lg" aria-hidden="true"></i>
+    <span class="sr-only">(current)</span>
+  </a>
+
+  <a class="nav-item nav-link badge-light" [class.active]="visible_interfaces" [class.navbar_bg_color_use_item]="visible_interfaces"
+     href="javascript:void(null);" (click)="visibleInterfaces()">
+    <a class="navbar_visible_text">{{ t.T('Interfaces') }} </a>
+    <i class="fa fa-plug fa-lg" aria-hidden="true"></i>
+    <span class="sr-only">(current)</span>
+  </a>
+</nav>
+
+<app-settings-home        [t]="t" *ngIf="visible_home"></app-settings-home>
+<app-settings-email       [t]="t" *ngIf="visible_email"></app-settings-email>
+<app-settings-interfaces  [t]="t" *ngIf="visible_interfaces"></app-settings-interfaces>
+<app-settings-controlleds [t]="t" *ngIf="visible_controlleds"></app-settings-controlleds>

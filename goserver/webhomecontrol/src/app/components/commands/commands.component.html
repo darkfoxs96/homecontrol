@@ -1,10 +1,14 @@
-<!-- Button trigger modal -->
-<div class="col-12 mt-2">
-  <div style="text-align: center" class="element_center_col add_command_icon">
-    <i class="fa fa-plus-square fa-4x add_command" aria-hidden="true"
-       data-toggle="modal" data-target="#modal_add_command"></i>
-  </div>
-</div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+     style="border-bottom: 1px solid #1b1e21">
+  <a class="nav-item nav-link badge-light"
+     href="javascript:void(null);">
+    <a aria-hidden="true" data-toggle="modal" data-target="#modal_add_command">
+      <a class="navbar_visible_text">{{ t.T('Add command') }} </a>
+      <i class="fa fa-plus-square fa-lg"></i>
+    </a>
+    <span class="sr-only">(current)</span>
+  </a>
+</nav>
 
 <div (window:resize)="onResize($event)"></div>
 
@@ -53,7 +57,7 @@
       </div>
       <div class="modal-body">
 
-        <!-- Example single danger button -->
+        <!-- Example single button -->
         <div class="btn-group mt-1">
           <button type="button" id="type_command_button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ t.T('Add command') }}
@@ -66,7 +70,7 @@
 
         <div *ngIf="visibl_add_command">
 
-          <!-- Example single danger button -->
+          <!-- Example single button -->
           <div class="btn-group mt-2">
             <button type="button" id="name_interface_for_command" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               {{ t.T('Controlled') }}
