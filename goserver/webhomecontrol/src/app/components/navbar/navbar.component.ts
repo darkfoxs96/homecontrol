@@ -13,8 +13,7 @@ export class NavbarComponent implements OnInit {
   visible_settings = false;
   visible_commands = false;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
   }

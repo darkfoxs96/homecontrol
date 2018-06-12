@@ -4,7 +4,8 @@ declare var $ :any;
 import { LangService } from "../../services/lang.service";
 import { CommandRecordService } from "../../services/command-record.service";
 import { ControlledService } from "../../services/controlled.service";
-import { CommandService } from "../../services/command.service";
+import { LoadArrayService } from "../../services/load-array.service";
+import { GO_RELOAD_ARRAY } from "../../store/actions/appActions";
 
 import { Controlled } from "../../models/controlled.model";
 import { CommandRecord } from "../../models/command-record.model";
@@ -26,64 +27,45 @@ interface IRecord {
 export class CommandsComponent implements OnInit {
   @Input() t: LangService;
 
+  public  listRecord: IRecord[] = [];
+
   // Add command
   visibl_add_command      = true;
   command_id              = 0;
   list_inteface: string[] = [];
   select_interface        = '';
+
   map_command_info: {[key: string]: Command[]} = {['']: []};
-
   visibl_add_callsign  = false;
-  select_controlled_id = 0;
 
+  select_controlled_id = 0;
   // Table
   public  table_sm = false;
   public  table_p = false;
 
   public  map_command_record: {[key: string]: CommandRecord} = {['']: new CommandRecord()};
-  public  listRecord: IRecord[] = [];
-  private is_ready: number[] = [];
 
   private list_commands: ListCommands[] = [];
   public  list_controlled: Controlled[] = [];
   private list_command_record: CommandRecord[] = [];
 
-  constructor(
-    private commandRecord: CommandRecordService,
-    private controlled: ControlledService,
-    private commandService: CommandService,
-  ) { }
+  constructor(private storeArray: LoadArrayService,
+              private commandRecord: CommandRecordService,
+              private controlled: ControlledService,
+  ) {
+    this.storeArray.getStore().listener_store.subscribe(
+      (data) => {
+        if(data.type == GO_RELOAD_ARRAY) { return; }
+        this.list_commands       = data.list_commands;
+        this.list_controlled     = data.list_controlled;
+        this.list_command_record = data.list_command_record;
+        this.createListRecord();
+      }
+    );
+  }
 
   ngOnInit() {
-    this.commandService.getCommands().subscribe(
-      (data) => {
-        this.list_commands = data;
-        this.createListRecord();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.controlled.getControlleds().subscribe(
-      (data) => {
-        this.list_controlled = data;
-        this.createListRecord();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.commandRecord.getCommandRecords().subscribe(
-      (data) => {
-        this.list_command_record = data;
-        this.createListRecord();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
+    this.storeArray.getStore().load_array();
 
     let w = window.innerWidth;
     if(w < 700) {
@@ -100,10 +82,7 @@ export class CommandsComponent implements OnInit {
 
   // createListRecord
   private createListRecord(): void {
-    if (this.is_ready.length != 2) {
-      this.is_ready.push(0);
-      return;
-    }
+    let list_create_record:IRecord[] = [];
 
     this.list_command_record.forEach((command_record) => {
       this.map_command_record[command_record.id] = command_record;
@@ -122,7 +101,7 @@ export class CommandsComponent implements OnInit {
         is_controlled = true;
       }
 
-      this.listRecord.push({
+      list_create_record.push({
         id:             command_record.id,
         command:        command,
         string_command: string_command,
@@ -130,6 +109,8 @@ export class CommandsComponent implements OnInit {
         is_controlled:  is_controlled,
       });
     });
+
+    this.listRecord = list_create_record;
 
     //Create list for add command
     this.createListNameInterface();
@@ -188,16 +169,20 @@ export class CommandsComponent implements OnInit {
 
   // Add command
   createListNameInterface(): void {
+    let list_create_inteface: string[] = [];
+
     this.list_controlled.forEach((controlled) => {
       if(controlled.home_control_id != '') {
-        this.list_inteface.push(controlled.home_control_id)
+        list_create_inteface.push(controlled.home_control_id)
       }
     });
-    this.list_inteface.push('controlled');
+    list_create_inteface.push('controlled');
 
     this.list_commands.forEach((commands) => {
       this.map_command_info[commands.name_interface] = commands.commands;
     });
+
+    this.list_inteface = list_create_inteface;
   }
 
   typeCommandControlButton(type: string, name: string): void {
@@ -253,6 +238,7 @@ export class CommandsComponent implements OnInit {
             controlled: '',
             is_controlled: false,
           });
+          this.storeArray.getStore().load_array();
         },
         (err) => {
           alert(err.error)
@@ -281,6 +267,7 @@ export class CommandsComponent implements OnInit {
             controlled: this.getNameControlled(this.select_controlled_id),
             is_controlled: true,
           });
+          this.storeArray.getStore().load_array();
       },
         (err) => {
           alert(err.error)

@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommandService } from "../../../services/command.service";
 import { ControlledService } from "../../../services/controlled.service";
 import { CommandRecordService } from "../../../services/command-record.service";
+import { LoadArrayService } from "../../../services/load-array.service";
+import { GO_RELOAD_ARRAY } from "../../../store/actions/appActions";
 
 import { ListCommands } from "../../../models/list-commands.model";
 import { Controlled } from "../../../models/controlled.model";
@@ -21,45 +23,23 @@ interface IListCommand {
 export class RemoteControllerComponent implements OnInit {
   public audio = new Audio();
   ListCommand: IListCommand[] = [];
-  is_ready: number[] = [];
 
-  public list_commands: ListCommands[] = [];
-  public list_controlled: Controlled[] = [];
+  public list_commands:       ListCommands[] = [];
+  public list_controlled:     Controlled[] = [];
   public list_command_record: CommandRecord[] = [];
 
-  constructor(private commandService: CommandService,
+  constructor(private storeArray: LoadArrayService,
+              private commandService: CommandService,
               private controlled: ControlledService,
               private commandRecord: CommandRecordService
-  ) { }
-
-  ngOnInit() {
-    this.commandService.getCommands().subscribe(
+  ) {
+    this.storeArray.getStore().listener_store.subscribe(
       (data) => {
-        this.list_commands = data;
+        if(data.type == GO_RELOAD_ARRAY) { return; }
+        this.list_commands       = data.list_commands;
+        this.list_controlled     = data.list_controlled;
+        this.list_command_record = data.list_command_record;
         this.createListCommand();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.controlled.getControlleds().subscribe(
-      (data) => {
-        this.list_controlled = data;
-        this.createListCommand();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.commandRecord.getCommandRecords().subscribe(
-      (data) => {
-        this.list_command_record = data;
-        this.createListCommand();
-      },
-      (err) => {
-        alert(err.error)
       }
     );
 
@@ -67,16 +47,17 @@ export class RemoteControllerComponent implements OnInit {
     this.audio.load();
   }
 
+  ngOnInit() {
+    this.storeArray.getStore().load_array();
+  }
+
   // createListCommand
   private createListCommand() {
-    if (this.is_ready.length != 2) {
-      this.is_ready.push(0);
-      return;
-    }
+    let ListCommand: IListCommand[] = [];
 
     this.list_command_record.forEach((command_record) => {
       if (command_record.controlled_id != 0) {
-        this.ListCommand.push({
+        ListCommand.push({
           id_command_record_controlled: command_record.id,
           list_id_command_record: [],
         });
@@ -96,31 +77,34 @@ export class RemoteControllerComponent implements OnInit {
     this.list_command_record.forEach((command_record) => {
       if (command_record.controlled_id == 0) {
         if(this.isCommandForControlled(command_record.command)) {
-          this.ListCommand.forEach((command, index) =>{
+          ListCommand.forEach((command, index) =>{
             let id_thhomecontrol: string =  map_controlled[map_command[command.id_command_record_controlled].controlled_id].home_control_id;
             if(id_thhomecontrol == '') {
               if(command_record.id.length > 15) {
-                this.ListCommand[index].list_id_command_record.push(command_record.id.slice(0, 15));
+                ListCommand[index].list_id_command_record.push(command_record.id.slice(0, 15));
               } else {
-                this.ListCommand[index].list_id_command_record.push(command_record.id);
+                ListCommand[index].list_id_command_record.push(command_record.id);
               }
             }
           });
         } else {
           let nameTPHomeControl = this.getNameTPHomeControl(command_record.command);
-          this.ListCommand.forEach((command, index) => {
+          ListCommand.forEach((command, index) => {
             let name = map_controlled[map_command[command.id_command_record_controlled].controlled_id].home_control_id;
             if(name == nameTPHomeControl) {
               if(command_record.id.length > 15) {
-                this.ListCommand[index].list_id_command_record.push(command_record.id.slice(0, 15));
+                ListCommand[index].list_id_command_record.push(command_record.id.slice(0, 15));
               } else {
-                this.ListCommand[index].list_id_command_record.push(command_record.id);
+                ListCommand[index].list_id_command_record.push(command_record.id);
               }
             }
           });
         }
       }
     });
+
+    this.ListCommand = ListCommand;
+
     // add attribute
     this.setAttribute()
   }

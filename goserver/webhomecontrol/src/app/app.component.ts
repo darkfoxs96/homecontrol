@@ -8,4 +8,6 @@ import { LangService } from "./services/lang.service";
 })
 export class AppComponent {
   t: LangService = new LangService();
+
+  constructor() { }
 }

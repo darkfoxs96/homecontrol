@@ -1,6 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
+
+// Redux
+import { StoreModule } from "@ngrx/store";
+import { Reducers } from "./store/reducers";
 
 // Services:
 import { LangService } from './services/lang.service';
@@ -12,6 +16,7 @@ import { UserService } from "./services/user.service";
 import { SoundParsingService } from "./services/sound-parsing.service";
 import { BotMessengerService } from "./services/bot-messenger.service";
 import { TPHomeControlService } from "./services/t-p-home-control.service";
+import { LoadArrayService } from "./services/load-array.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -41,6 +46,7 @@ import { SettingsControlledsComponent } from './components/settings/settings-con
   imports: [
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot(Reducers, {}),
   ],
   providers: [
     LangService,
@@ -51,7 +57,8 @@ import { SettingsControlledsComponent } from './components/settings/settings-con
     UserService,
     SoundParsingService,
     BotMessengerService,
-    TPHomeControlService
+    TPHomeControlService,
+    LoadArrayService,
   ],
   bootstrap: [AppComponent]
 })
