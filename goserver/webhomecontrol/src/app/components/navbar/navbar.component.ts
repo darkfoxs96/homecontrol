@@ -35,16 +35,4 @@ export class NavbarComponent implements OnInit {
     this.visible_settings = false;
     this.visible_commands = true;
   }
-
-
-// Testing
-  langers() {
-    if(localStorage.getItem('lang_use') == 'en-US' || localStorage.getItem('lang_use') == '') {
-      localStorage.setItem('lang_use', 'ru-RU');
-      this.t.setLang('ru-RU');
-    } else {
-      localStorage.setItem('lang_use', 'en-US');
-      this.t.setLang('en-US');
-    }
-  }
 }

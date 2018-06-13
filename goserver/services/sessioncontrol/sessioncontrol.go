@@ -104,10 +104,7 @@ func SetEmail(password, emailPassword, emailLogin, smtpServer string) (err error
 // IsCheckPassword password to passwordHash, is check passwordHash and passwordHash in models(DB)
 func IsCheckPassword(password string) (isCheckPassword bool) {
 	err := bcrypt.CompareHashAndPassword([]byte(models.GetPasswordHash()), []byte(password))
-	if err != nil {
-		return false
-	}
-	return true
+	return err == nil
 }
 
 // IsCheckVersionHashPassword is check IsCheckVersionHashPassword and IsCheckVersionHashPassword in models(DB)
@@ -125,6 +122,7 @@ func NewPassword(oldPassword, newPassword string) (err error) {
 	isCheckPassword := IsCheckPassword(oldPassword)
 	if !isCheckPassword {
 		err = errors.New("SesionControl: Error, old password does not match")
+		return
 	}
 	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(newPassword), bcrypt.DefaultCost)
 	if err != nil {

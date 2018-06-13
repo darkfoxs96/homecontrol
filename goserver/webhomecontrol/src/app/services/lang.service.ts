@@ -27,6 +27,12 @@ export class LangService {
       ['Main']: 'Глав.',
       ['Interfaces']: 'Интерф.',
       ['Email']: 'Email',
+      ['Error: your language not found']: 'Ошибка: ваш язык не найден',
+      ['Language']: 'Язык',
+      ['Set sample rate']: 'Установить sample rate',
+      ['New password']: 'Новый пороль',
+      ['Old password']: 'Старый пороль',
+      ['Logout']: 'Выход',
     },
     ['en-US']: {
       ['Control']: 'Control',
@@ -48,6 +54,12 @@ export class LangService {
       ['Main']: 'Main',
       ['Interfaces']: 'Interfaces',
       ['Email']: 'Email',
+      ['Error: your language not found']: 'Error: your language not found',
+      ['Language']: 'Language',
+      ['Set sample rate']: 'Set sample rate',
+      ['New password']: 'New password',
+      ['Old password']: 'Old password',
+      ['Logout']: 'Logout',
     },
   };
 
@@ -62,11 +74,18 @@ export class LangService {
     }
   }
 
-  setLang(lang_use: string) {
+  setLang(lang_use: string): Error {
     if(isLang(lang_use)) {
       this.lang = lang_use;
       localStorage.setItem('lang_use', lang_use);
+      return null;
+    } {
+      return new Error(this.T('Error: your language not found'));
     }
+  }
+
+  getLang(): string {
+    return this.lang;
   }
 }
 

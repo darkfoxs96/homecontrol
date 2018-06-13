@@ -1,3 +1,36 @@
-<p>
-  settings-home works!
-</p>
+<div class="ml-4">
+
+  <p class="mt-4" style="font-size: 18px">{{ t.T('Language') }}:</p>
+  <div class="btn-group mb-1">
+    <button type="button" id="select_use_lang" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{ t.getLang() }}
+    </button>
+    <div class="dropdown-menu">
+      <a *ngFor="let lang of t.list_lang" class="dropdown-item" href="javascript:void(null);" (click)="setLang(lang)">{{ lang }}</a>
+    </div>
+  </div>
+  <div style="border-bottom: 1px solid #d0cdd0"></div>
+
+  <p class="mt-4" style="font-size: 18px">{{ t.T('Set sample rate') }}:</p>
+  <form action="javascript:void(null);" (submit)="setSampleRate()"
+        style="border-bottom: 1px solid #d0cdd0">
+    <div class="form-group">
+      <input style="max-width: 400px" type="number" class="form-control form_luminescence" id="recording_used_sample_rate" value="{{ getSampleRate() }}">
+    </div>
+    <button type="submit" class="btn btn-secondary mb-1">{{ t.T('Save') }}</button>
+  </form>
+
+  <p class="mt-4" style="font-size: 18px">{{ t.T('New password') }}:</p>
+  <form action="javascript:void(null);" (submit)="newPassword()" name="form_new_password_create"
+        style="border-bottom: 1px solid #d0cdd0">
+    <div class="form-group">
+      <input style="max-width: 400px" type="password" class="form-control form_luminescence" name="old_password" placeholder="{{ t.T('Old password') }}">
+      <input style="max-width: 400px" type="password" class="form-control form_luminescence mt-2" name="new_password" placeholder="{{ t.T('New password') }}">
+    </div>
+    <button type="submit" class="btn btn-secondary mb-1">{{ t.T('Save') }}</button>
+  </form>
+
+  <p class="mt-4" style="font-size: 18px">{{ t.T('Logout') }}:</p>
+  <button type="button" class="btn btn-secondary mb-1" (click)="logout()">{{ t.T('Logout') }}</button>
+
+</div>

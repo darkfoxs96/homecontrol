@@ -20,6 +20,25 @@ if(recording_local_out_sample_rate && recording_local_out_sample_rate != '') {
   localStorage.setItem('recording_out_sample_rate', '' + 16000);
 }
 
+function recordingSetSampleRate(sample_rate) {
+  if(sample_rate) {
+    if(sample_rate < 8000) {
+      return new Error('Error: sample_rate < 8000');
+    }
+    if(sample_rate > 41000) {
+      return new Error('Error: sample_rate > 41000');
+    }
+    recording_local_out_sample_rate = sample_rate;
+    localStorage.setItem('recording_out_sample_rate', '' + sample_rate);
+    return null;
+  }
+  return new Error('Error: sample_rate empty');
+}
+
+function recordingGetSampleRate() {
+  return recording_local_out_sample_rate;
+}
+
 // Load recording
 recordingLoadRecording();
 function recordingLoadRecording() {
