@@ -24,8 +24,8 @@
   <form action="javascript:void(null);" (submit)="newPassword()" name="form_new_password_create"
         style="border-bottom: 1px solid #d0cdd0">
     <div class="form-group">
-      <input style="max-width: 400px" type="password" class="form-control form_luminescence" name="old_password" placeholder="{{ t.T('Old password') }}">
-      <input style="max-width: 400px" type="password" class="form-control form_luminescence mt-2" name="new_password" placeholder="{{ t.T('New password') }}">
+      <input style="max-width: 400px" type="password" autocomplete="password" class="form-control form_luminescence" name="old_password" placeholder="{{ t.T('Old password') }}">
+      <input style="max-width: 400px" type="password" autocomplete="password" class="form-control form_luminescence mt-2" name="new_password" placeholder="{{ t.T('New password') }}">
     </div>
     <button type="submit" class="btn btn-secondary mb-1">{{ t.T('Save') }}</button>
   </form>

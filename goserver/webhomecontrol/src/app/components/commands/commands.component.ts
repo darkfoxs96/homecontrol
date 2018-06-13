@@ -25,8 +25,6 @@ interface IRecord {
   styleUrls: ['./commands.component.scss']
 })
 export class CommandsComponent implements OnInit {
-  @Input() t: LangService;
-
   public  listRecord: IRecord[] = [];
 
   // Add command
@@ -41,17 +39,18 @@ export class CommandsComponent implements OnInit {
   select_controlled_id = 0;
   // Table
   public  table_sm = false;
-  public  table_p = false;
+  public  table_p  = false;
 
   public  map_command_record: {[key: string]: CommandRecord} = {['']: new CommandRecord()};
 
-  private list_commands: ListCommands[] = [];
-  public  list_controlled: Controlled[] = [];
+  private list_commands:       ListCommands[]  = [];
+  public  list_controlled:     Controlled[]    = [];
   private list_command_record: CommandRecord[] = [];
 
-  constructor(private storeArray: LoadArrayService,
+  constructor(public  t:             LangService,
+              private storeArray:    LoadArrayService,
               private commandRecord: CommandRecordService,
-              private controlled: ControlledService,
+              private controlled:    ControlledService,
   ) {
     this.storeArray.getStore().listener_store.subscribe(
       (data) => {

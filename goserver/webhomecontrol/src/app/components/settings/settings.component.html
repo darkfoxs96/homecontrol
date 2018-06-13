@@ -29,7 +29,7 @@
   </a>
 </nav>
 
-<app-settings-home        [t]="t" *ngIf="visible_home"></app-settings-home>
-<app-settings-email       [t]="t" *ngIf="visible_email"></app-settings-email>
-<app-settings-interfaces  [t]="t" *ngIf="visible_interfaces"></app-settings-interfaces>
-<app-settings-controlleds [t]="t" *ngIf="visible_controlleds"></app-settings-controlleds>
+<app-settings-home        *ngIf="visible_home"></app-settings-home>
+<app-settings-email       *ngIf="visible_email"></app-settings-email>
+<app-settings-interfaces  *ngIf="visible_interfaces"></app-settings-interfaces>
+<app-settings-controlleds *ngIf="visible_controlleds"></app-settings-controlleds>

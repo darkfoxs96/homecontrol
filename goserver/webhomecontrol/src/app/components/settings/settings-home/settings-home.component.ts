@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 declare var recordingSetSampleRate: (sample_rate: number) => Error;
 declare var recordingGetSampleRate: () => number;
@@ -12,9 +12,9 @@ import { UserService } from "../../../services/user.service";
   styleUrls: ['./settings-home.component.css']
 })
 export class SettingsHomeComponent implements OnInit {
-  @Input() t: LangService;
 
-  constructor(private user: UserService,
+  constructor(public  t:    LangService,
+              private user: UserService,
   ) { }
 
   ngOnInit() {
@@ -61,7 +61,9 @@ export class SettingsHomeComponent implements OnInit {
 
   logout(): void {
     this.user.logout().subscribe(
-      () => {},
+      () => {
+        alert('Ok');
+      },
       (err) => {
         alert(err.error);
       }

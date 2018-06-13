@@ -1,4 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LangService } from '../../services/lang.service';
 
 @Component({
@@ -7,13 +7,12 @@ import { LangService } from '../../services/lang.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  @Input() t: LangService;
-
   visible_control = true;
   visible_settings = false;
   visible_commands = false;
 
-  constructor() { }
+  constructor(public t: LangService,
+  ) { }
 
   ngOnInit() {
   }

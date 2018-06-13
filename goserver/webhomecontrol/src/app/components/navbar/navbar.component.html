@@ -33,19 +33,19 @@
   <div id="navbar_accordion">
     <div class="collapse multi-collapse show" id="visible_control_accordion" data-parent="#navbar_accordion">
       <div class="card">
-            <app-control  *ngIf="visible_control"  [t]="t"></app-control>
+            <app-control  *ngIf="visible_control"></app-control>
       </div>
     </div>
 
     <div class="collapse multi-collapse" id="visible_settings_accordion" data-parent="#navbar_accordion">
       <div class="card">
-            <app-settings *ngIf="visible_settings" [t]="t"></app-settings>
+            <app-settings *ngIf="visible_settings"></app-settings>
       </div>
     </div>
 
     <div class="collapse multi-collapse" id="visible_commands_accordion" data-parent="#navbar_accordion">
       <div class="card">
-            <app-commands *ngIf="visible_commands" [t]="t"></app-commands>
+            <app-commands *ngIf="visible_commands"></app-commands>
       </div>
     </div>
   </div>

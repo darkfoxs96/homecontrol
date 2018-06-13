@@ -71,10 +71,12 @@ func SetEmail(password, emailPassword, emailLogin, smtpServer string) (err error
 	isCheckPassword := IsCheckPassword(password)
 	if !isCheckPassword {
 		err = errors.New("SesionControl: Error, password does not match")
+		return
 	}
 
 	if emailPassword == "" || emailLogin == "" {
 		err = errors.New("SesionControl: emailPassword or emailLogin empty")
+		return
 	}
 
 	newPasswordHash, err := bcrypt.GenerateFromPassword([]byte(emailPassword), bcrypt.DefaultCost)
@@ -91,6 +93,7 @@ func SetEmail(password, emailPassword, emailLogin, smtpServer string) (err error
 
 	if !strings.HasSuffix(emailLogin, smtpServer) && strings.Index(emailLogin, "@") != -1 {
 		err = errors.New("SesionControl: ! emaillogin@" + smtpServer + " .Wrong: " + emailLogin)
+		return
 	}
 
 	if !strings.HasSuffix(emailLogin, smtpServer) {

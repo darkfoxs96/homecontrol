@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LangService } from "./services/lang.service";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +6,5 @@ import { LangService } from "./services/lang.service";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  t: LangService = new LangService();
-
   constructor() { }
 }

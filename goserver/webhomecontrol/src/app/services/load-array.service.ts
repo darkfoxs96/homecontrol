@@ -15,15 +15,6 @@ import { ListCommands } from "../models/list-commands.model";
   providedIn: 'root'
 })
 export class LoadArrayService {
-  private status_http = {
-    list_controlled:     false,
-    list_commands:       false,
-    list_command_record: false,
-  };
-
-  private list_controlled:     Controlled[];
-  private list_commands:       ListCommands[];
-  private list_command_record: CommandRecord[];
 
   constructor(private store:          Store<IAppReducerState>,
               private commandService: CommandService,
@@ -40,64 +31,41 @@ export class LoadArrayService {
   }
 
   private loadArray(): void {
-    this.commandService.getCommands().subscribe(
-      (data) => {
-        this.list_commands = data;
-        this.status_http.list_commands = true;
-        this.appendStore();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
+    let list_controlled:     Controlled[]    = [];
+    let list_commands:       ListCommands[]  = [];
+    let list_command_record: CommandRecord[] = [];
 
-    this.controlled.getControlleds().subscribe(
-      (data) => {
-        this.list_controlled = data;
-        this.status_http.list_controlled = true;
-        this.appendStore();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.commandRecord.getCommandRecords().subscribe(
-      (data) => {
-        this.list_command_record = data;
-        this.status_http.list_command_record = true;
-        this.appendStore();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-  }
-
-  private appendStore(): void {
-    if(this.status_http.list_commands       == false ||
-       this.status_http.list_controlled     == false ||
-       this.status_http.list_command_record == false) {
-      return;
-    }
-
-    this.store.dispatch({
-      type:                RELOAD_ARRAY,
-      list_controlled:     this.list_controlled,
-      list_commands:       this.list_commands,
-      list_command_record: this.list_command_record,
+    Promise.all([
+      this.commandRecord.getCommandRecords().forEach(
+        (data) => {
+          list_command_record = data;
+        }
+      ),
+      this.controlled.getControlleds().forEach(
+        (data) => {
+          list_controlled = data;
+        }
+      ),
+      this.commandService.getCommands().forEach(
+        (data) => {
+          list_commands = data;
+        }
+      ),
+    ]).then(() => {
+      this.store.dispatch<IAppReducerState>({
+        type:                RELOAD_ARRAY,
+        list_controlled:     list_controlled,
+        list_commands:       list_commands,
+        list_command_record: list_command_record,
+      });
     });
-
-    this.status_http.list_commands       = false;
-    this.status_http.list_controlled     = false;
-    this.status_http.list_command_record = false;
   }
 
   getStore() {
     return {
       listener_store: this.store.select<IAppReducerState>('appReducer'),
-      load_array: () => {
-        this.store.dispatch({
+      load_array: (): void => {
+        this.store.dispatch<IAppReducerState>({
           type:                GO_RELOAD_ARRAY,
           list_controlled:     [],
           list_commands:       [],

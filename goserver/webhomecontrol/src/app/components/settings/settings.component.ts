@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LangService } from "../../services/lang.service";
 
@@ -8,15 +8,14 @@ import { LangService } from "../../services/lang.service";
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  @Input() t: LangService;
-
   // Visible components
   visible_home        = true;
   visible_email       = false;
   visible_controlleds = false;
   visible_interfaces  = false;
 
-  constructor() { }
+  constructor(public t: LangService,
+  ) { }
 
   ngOnInit() {
   }

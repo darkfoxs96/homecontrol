@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LangService } from "../../../services/lang.service";
 
@@ -8,9 +8,9 @@ import { LangService } from "../../../services/lang.service";
   styleUrls: ['./settings-controlleds.component.css']
 })
 export class SettingsControlledsComponent implements OnInit {
-  @Input() t: LangService;
 
-  constructor() { }
+  constructor(public  t:    LangService,
+  ) { }
 
   ngOnInit() {
   }

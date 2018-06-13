@@ -30,9 +30,14 @@ export class LangService {
       ['Error: your language not found']: 'Ошибка: ваш язык не найден',
       ['Language']: 'Язык',
       ['Set sample rate']: 'Установить sample rate',
-      ['New password']: 'Новый пороль',
-      ['Old password']: 'Старый пороль',
+      ['New password']: 'Новый пароль',
+      ['Old password']: 'Старый пароль',
       ['Logout']: 'Выход',
+      ['There is an empty field']: 'Есть пустое поле',
+      ['E-mail setup, for password recovery']: 'Настройки электронной почты, для восстановления пароля',
+      ['Password']: 'Пароль',
+      ['Email password']: 'Пароль от email',
+      ['Email login']: 'Логин от email',
     },
     ['en-US']: {
       ['Control']: 'Control',
@@ -60,6 +65,11 @@ export class LangService {
       ['New password']: 'New password',
       ['Old password']: 'Old password',
       ['Logout']: 'Logout',
+      ['There is an empty field']: 'There is an empty field',
+      ['E-mail setup, for password recovery']: 'E-mail setup, for password recovery',
+      ['Password']: 'Password',
+      ['Email password']: 'Email password',
+      ['Email login']: 'Email login',
     },
   };
 
