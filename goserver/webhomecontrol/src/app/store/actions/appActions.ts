@@ -1,0 +1,2 @@
+export const RELOAD_ARRAY = 'RELOAD_ARRAY';
+export const GO_RELOAD_ARRAY = 'GO_RELOAD_ARRAY';

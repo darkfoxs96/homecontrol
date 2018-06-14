@@ -65,15 +65,16 @@ func GetIDCommandANDControlledBySound(sound []byte) (controlledID int, commandID
 // GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface sound-parsing
 /*
 	JSON:
-["namefield","typefild","value"],
+[["namefield","typefild","value"],
 ["key","string",""],
 ["uuid","string","fdgdgme-sdfsw-asdsa"],
 ["parse","bool","false"], //will return from the client "parse": false
 ["id","int","1990"], //will return from the client "id": 1990
 ["fieldListName","list","value","en","sp","ru"],
 ["lang","list","ru","en","sp","ru"], //will return from the client "lang": "ru" //first field to up
-["create key google","url","https://google.com"]
+["create key google","url","https://google.com"]]
 */
+// https://github.com/darkfoxs96/homecontrol#to-all-interfaces
 func GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
 	return
 }

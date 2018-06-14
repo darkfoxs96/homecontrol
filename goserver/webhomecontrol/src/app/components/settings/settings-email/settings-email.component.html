@@ -1,0 +1,27 @@
+<div class="ml-4">
+
+  <p class="mt-4" style="font-size: 18px">{{ t.T('E-mail setup, for password recovery') }}:</p>
+  <form action="javascript:void(null);" (submit)="setEmail()"
+        style="border-bottom: 1px solid #d0cdd0" name="form_set_email">
+    <div class="input-group">
+      <input style="max-width: 400px" type="password" autocomplete="password" class="form-control form_luminescence" name="password" placeholder="{{ t.T('Password') }}">
+    </div>
+    <div class="input-group">
+      <input style="max-width: 400px" type="password" autocomplete="password" class="form-control form_luminescence mt-2" name="email_password" placeholder="{{ t.T('Email password') }}">
+    </div>
+    <div class="input-group">
+      <input style="max-width: 400px" type="text" autocomplete="email" class="form-control form_luminescence mt-2" name="email_login" placeholder="{{ t.T('Email login') }}">
+      <div class="input-group-prepend">
+        <div class="btn-group mt-2">
+          <button type="button" id="select_smtp_server" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+          style="max-height: 40px"></button>
+          <div class="dropdown-menu">
+            <a *ngFor="let smtp of smtp_list" class="dropdown-item" href="javascript:void(null);" (click)="selectSMTPServer(smtp)">{{ smtp }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-secondary mb-1 mt-2">{{ t.T('Save') }}</button>
+  </form>
+
+</div>

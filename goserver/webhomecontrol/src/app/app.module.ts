@@ -1,6 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
+
+// Redux
+import { StoreModule } from "@ngrx/store";
+import { Reducers } from "./store/reducers";
 
 // Services:
 import { LangService } from './services/lang.service';
@@ -12,6 +16,7 @@ import { UserService } from "./services/user.service";
 import { SoundParsingService } from "./services/sound-parsing.service";
 import { BotMessengerService } from "./services/bot-messenger.service";
 import { TPHomeControlService } from "./services/t-p-home-control.service";
+import { LoadArrayService } from "./services/load-array.service";
 
 // Components:
 import { AppComponent } from './app.component';
@@ -20,19 +25,28 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { CommandsComponent } from './components/commands/commands.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { RemoteControllerComponent } from './components/control/remote-controller/remote-controller.component';
+import { SettingsHomeComponent } from './components/settings/settings-home/settings-home.component';
+import { SettingsEmailComponent } from './components/settings/settings-email/settings-email.component';
+import { SettingsInterfacesComponent } from './components/settings/settings-interfaces/settings-interfaces.component';
+import { SettingsControlledsComponent } from './components/settings/settings-controlleds/settings-controlleds.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ControlComponent,
-    SettingsComponent,
-    CommandsComponent,
     NavbarComponent,
-    RemoteControllerComponent
+    CommandsComponent,
+    ControlComponent,
+    RemoteControllerComponent,
+    SettingsComponent,
+    SettingsHomeComponent,
+    SettingsEmailComponent,
+    SettingsInterfacesComponent,
+    SettingsControlledsComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot(Reducers, {}),
   ],
   providers: [
     LangService,
@@ -43,7 +57,8 @@ import { RemoteControllerComponent } from './components/control/remote-controlle
     UserService,
     SoundParsingService,
     BotMessengerService,
-    TPHomeControlService
+    TPHomeControlService,
+    LoadArrayService,
   ],
   bootstrap: [AppComponent]
 })

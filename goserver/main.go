@@ -51,4 +51,8 @@ func settingsStatic() {
 	for _, f := range files {
 		beego.SetStaticPath("/assets/style/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/assets/style/"+f.Name())
 	}
+	files, _ = ioutil.ReadDir(models.Path + "webhomecontrol/dist/webhomecontrol/assets/fonts")
+	for _, f := range files {
+		beego.SetStaticPath("/assets/fonts/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/assets/fonts/"+f.Name())
+	}
 }

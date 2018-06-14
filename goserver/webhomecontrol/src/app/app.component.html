@@ -1,1 +1,26 @@
 <app-navbar></app-navbar>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_login_user" tabindex="-1" role="dialog" aria-labelledby="modal_login_user_label" aria-hidden="true" data-backdrop="static">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_login_user_label">{{ t.T('Login') }}</h5>
+      </div>
+      <div class="modal-body">
+
+        <form action="javascript:void(null);">
+
+          <div class="input-group mb-1">
+            <input id="login_password_user" style="max-width: 400px" type="password" autocomplete="password" class="form-control form_luminescence mt-2" placeholder="{{ t.T('Password') }}">
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="login()">{{ t.T('Login') }}</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,10 @@
 @media (max-width: 500px) {
+  .navbar_visible_text {
+    display: none; } }
+.navbar_bg_color_use_item {
+  background-color: #e0e6eb; }
+
+@media (max-width: 500px) {
   .table-text-size {
     font-size: 10px; }
 

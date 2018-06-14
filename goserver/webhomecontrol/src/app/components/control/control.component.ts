@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { LangService } from "../../services/lang.service";
 
@@ -11,7 +11,8 @@ export class ControlComponent implements OnInit {
   use_microphone = false;
   private audio = new Audio();
 
-  constructor(public t: LangService) { }
+  constructor(public t:LangService,
+  ) { }
 
   ngOnInit() {
     this.audio.src = "../../../assets/sound/record.mp3";

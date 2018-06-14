@@ -1,21 +1,27 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
      style="border-bottom: 1px solid #1b1e21">
       <a class="nav-item nav-link badge-light" [class.active]="visible_control" [class.navbar_bg_color_use_item]="visible_control"
-         href="javascript:void(null);" (click)="visibleControl()">
+         href="javascript:void(null);" (click)="visibleControl()"
+         data-toggle="collapse" role="button" aria-expanded="false"
+          href="#visible_control_accordion" aria-controls="visible_control_accordion">
         <a class="navbar_visible_text">{{ t.T('Control') }} </a>
         <i class="fa fa-microphone fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 
       <a class="nav-item nav-link badge-light" [class.active]="visible_settings" [class.navbar_bg_color_use_item]="visible_settings"
-         href="javascript:void(null);" (click)="visibleSettings()">
+         href="javascript:void(null);" (click)="visibleSettings()"
+         data-toggle="collapse" role="button" aria-expanded="false"
+         href="#visible_settings_accordion" aria-controls="visible_settings_accordion">
         <a class="navbar_visible_text">{{ t.T('Settings') }} </a>
         <i class="fa fa-cog fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
       </a>
 
       <a class="nav-item nav-link badge-light" [class.active]="visible_commands" [class.navbar_bg_color_use_item]="visible_commands"
-         href="javascript:void(null);" (click)="visibleCommands()">
+         href="javascript:void(null);" (click)="visibleCommands()"
+         data-toggle="collapse" role="button" aria-expanded="false"
+         href="#visible_commands_accordion" aria-controls="visible_commands_accordion">
         <a class="navbar_visible_text">{{ t.T('Commands') }} </a>
         <i class="fa fa-list fa-lg" aria-hidden="true"></i>
         <span class="sr-only">(current)</span>
@@ -23,12 +29,25 @@
 </nav>
 
 <main>
-  <app-control  *ngIf="visible_control"></app-control>
-  <app-settings *ngIf="visible_settings"></app-settings>
-  <app-commands *ngIf="visible_commands"></app-commands>
+
+  <div id="navbar_accordion">
+    <div class="collapse multi-collapse show" id="visible_control_accordion" data-parent="#navbar_accordion">
+      <div class="card">
+            <app-control  *ngIf="visible_control"></app-control>
+      </div>
+    </div>
+
+    <div class="collapse multi-collapse" id="visible_settings_accordion" data-parent="#navbar_accordion">
+      <div class="card">
+            <app-settings *ngIf="visible_settings"></app-settings>
+      </div>
+    </div>
+
+    <div class="collapse multi-collapse" id="visible_commands_accordion" data-parent="#navbar_accordion">
+      <div class="card">
+            <app-commands *ngIf="visible_commands"></app-commands>
+      </div>
+    </div>
+  </div>
+
 </main>
-
-
-
-<!--Testing-->
-<button (click)="langers()">Toggle</button>

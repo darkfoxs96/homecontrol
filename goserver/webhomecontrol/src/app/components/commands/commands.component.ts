@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-declare var jquery:any;
+import { Component, Input, OnInit } from '@angular/core';
 declare var $ :any;
 
 import { LangService } from "../../services/lang.service";
 import { CommandRecordService } from "../../services/command-record.service";
 import { ControlledService } from "../../services/controlled.service";
-import { CommandService } from "../../services/command.service";
+import { LoadArrayService } from "../../services/load-array.service";
+import { GO_RELOAD_ARRAY } from "../../store/actions/appActions";
 
 import { Controlled } from "../../models/controlled.model";
 import { CommandRecord } from "../../models/command-record.model";
@@ -19,76 +19,52 @@ interface IRecord {
   is_controlled:  boolean,
 }
 
-interface INameInterface {
-  controlled_id:  number,
-  name_interface: string,
-}
-
 @Component({
   selector: 'app-commands',
   templateUrl: './commands.component.html',
   styleUrls: ['./commands.component.scss']
 })
 export class CommandsComponent implements OnInit {
+  public  listRecord: IRecord[] = [];
+
   // Add command
-  visibl_add_command  = true;
-  command_id          = 0;
+  visibl_add_command      = true;
+  command_id              = 0;
   list_inteface: string[] = [];
   select_interface        = '';
+
   map_command_info: {[key: string]: Command[]} = {['']: []};
-
   visibl_add_callsign  = false;
-  select_controlled_id = 0;
 
+  select_controlled_id = 0;
   // Table
   public  table_sm = false;
-  public  table_p = false;
+  public  table_p  = false;
 
   public  map_command_record: {[key: string]: CommandRecord} = {['']: new CommandRecord()};
-  public  listRecord: IRecord[] = [];
-  private is_ready: number[] = [];
 
-  private list_commands: ListCommands[] = [];
-  public  list_controlled: Controlled[] = [];
+  private list_commands:       ListCommands[]  = [];
+  public  list_controlled:     Controlled[]    = [];
   private list_command_record: CommandRecord[] = [];
 
-  constructor(
-    public  t: LangService,
-    private commandRecord: CommandRecordService,
-    private controlled: ControlledService,
-    private commandService: CommandService,
-  ) { }
+  constructor(public  t:             LangService,
+              private storeArray:    LoadArrayService,
+              private commandRecord: CommandRecordService,
+              private controlled:    ControlledService,
+  ) {
+    this.storeArray.getStore().listener_store.subscribe(
+      (data) => {
+        if(data.type == GO_RELOAD_ARRAY) { return; }
+        this.list_commands       = data.list_commands;
+        this.list_controlled     = data.list_controlled;
+        this.list_command_record = data.list_command_record;
+        this.createListRecord();
+      }
+    );
+  }
 
   ngOnInit() {
-    this.commandService.getCommands().subscribe(
-      (data) => {
-        this.list_commands = data;
-        this.createListRecord();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.controlled.getControlleds().subscribe(
-      (data) => {
-        this.list_controlled = data;
-        this.createListRecord();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
-
-    this.commandRecord.getCommandRecords().subscribe(
-      (data) => {
-        this.list_command_record = data;
-        this.createListRecord();
-      },
-      (err) => {
-        alert(err.error)
-      }
-    );
+    this.storeArray.getStore().load_array();
 
     let w = window.innerWidth;
     if(w < 700) {
@@ -105,10 +81,7 @@ export class CommandsComponent implements OnInit {
 
   // createListRecord
   private createListRecord(): void {
-    if (this.is_ready.length != 2) {
-      this.is_ready.push(0);
-      return;
-    }
+    let list_create_record:IRecord[] = [];
 
     this.list_command_record.forEach((command_record) => {
       this.map_command_record[command_record.id] = command_record;
@@ -127,7 +100,7 @@ export class CommandsComponent implements OnInit {
         is_controlled = true;
       }
 
-      this.listRecord.push({
+      list_create_record.push({
         id:             command_record.id,
         command:        command,
         string_command: string_command,
@@ -136,18 +109,23 @@ export class CommandsComponent implements OnInit {
       });
     });
 
+    this.listRecord = list_create_record;
+
     //Create list for add command
     this.createListNameInterface();
   }
 
   getNameCommand(command_id: number): string {
     let command_name = 'id: ' + command_id;
+    let first_name = command_name;
     this.list_commands.forEach((commands) => {
       commands.commands.forEach((command) => {
         if(command.id == command_id) {
           command_name = command.info_command;
+          return;
         }
       });
+      if(first_name != command_name) return;
     });
     return command_name;
   }
@@ -157,12 +135,13 @@ export class CommandsComponent implements OnInit {
     this.list_controlled.forEach((controlled) => {
       if(controlled.id == controlled_id) {
         controlled_name = controlled.name;
+        return;
       }
     });
     return controlled_name;
   }
 
-  onResize(event) {
+  onResize(event): void {
     if(event.target.innerWidth < 700) {
       this.table_sm = true;
     } else {
@@ -189,16 +168,20 @@ export class CommandsComponent implements OnInit {
 
   // Add command
   createListNameInterface(): void {
+    let list_create_inteface: string[] = [];
+
     this.list_controlled.forEach((controlled) => {
       if(controlled.home_control_id != '') {
-        this.list_inteface.push(controlled.home_control_id)
+        list_create_inteface.push(controlled.home_control_id)
       }
     });
-    this.list_inteface.push('controlled');
+    list_create_inteface.push('controlled');
 
     this.list_commands.forEach((commands) => {
       this.map_command_info[commands.name_interface] = commands.commands;
     });
+
+    this.list_inteface = list_create_inteface;
   }
 
   typeCommandControlButton(type: string, name: string): void {
@@ -230,7 +213,7 @@ export class CommandsComponent implements OnInit {
     document.getElementById('select_id_controlled_button').innerHTML = controlled_name;
   }
 
-  addCommand() {
+  addCommand(): void {
     let id = (<any>document.getElementById('add_command_name_input')).value;
     if(id == '') {
       alert(this.t.T('Empty command'))
@@ -254,6 +237,7 @@ export class CommandsComponent implements OnInit {
             controlled: '',
             is_controlled: false,
           });
+          this.storeArray.getStore().load_array();
         },
         (err) => {
           alert(err.error)
@@ -282,6 +266,7 @@ export class CommandsComponent implements OnInit {
             controlled: this.getNameControlled(this.select_controlled_id),
             is_controlled: true,
           });
+          this.storeArray.getStore().load_array();
       },
         (err) => {
           alert(err.error)

@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+     style="border-bottom: 1px solid #1b1e21">
+  <div class="btn-group">
+    <button type="button" id="select_type_interface_button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            style="max-height: 40px">Sound parsing</button>
+    <div class="dropdown-menu">
+
+      <a class="ml-1" href="javascript:void(null);" (click)="selectTypeInterface('Sound parsing')">Sound parsing</a><br>
+      <a class="ml-1" href="javascript:void(null);" (click)="selectTypeInterface('TP home control')">TP home control</a><br>
+      <a class="ml-1" href="javascript:void(null);" (click)="selectTypeInterface('Bot messenger')">Bot messenger</a>
+
+    </div>
+  </div>:
+
+  <div class="btn-group ml-2">
+    <button type="button" id="select_name_interface_button" class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+            style="max-height: 40px">Sound parsing</button>
+    <div class="dropdown-menu">
+
+      <div *ngFor="let interface_status of map_interface[select_type_interface]">
+        <a *ngIf="interface_status.active" class="ml-1" href="javascript:void(null);" (click)="selectNameInterface(interface_status.name_id)">{{ interface_status.name_id }}</a><br>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<form class="ml-4 mt-2" action="javascript:void(null);" (submit)="setSettings()"
+      style="border-bottom: 1px solid #d0cdd0" name="form_settings_interface">
+
+  <div *ngFor="let settings of list_field_settings">
+
+    <div [ngSwitch]="settings[1]">
+
+      <ng-template ngSwitchCase="string">
+        <div class="form-group">
+          <label>{{ settings[0] }}:</label>
+          <input type="text" class="form-control mt-2" name="{{ settings[0] }}" value="{{ settings[2] }}" style="max-width: 400px">
+        </div>
+      </ng-template>
+
+      <ng-template ngSwitchCase="int">
+        <div class="form-group">
+          <label>{{ settings[0] }}:</label>
+          <input type="number" class="form-control mt-2" name="{{ settings[0] }}" value="{{ settings[2] }}" style="max-width: 400px">
+        </div>
+      </ng-template>
+
+      <ng-template ngSwitchCase="bool">
+        <div class="form-group">
+          <label>{{ settings[0] }}:</label>
+          <input *ngIf="settings[2] == 'true'" type="checkbox" class="form-control mt-2" name="{{ settings[0] }}" style="max-width: 400px" checked>
+          <input *ngIf="settings[2] != 'true'" type="checkbox" class="form-control mt-2" name="{{ settings[0] }}" style="max-width: 400px">
+        </div>
+      </ng-template>
+
+      <ng-template ngSwitchCase="url">
+        <a href="{{ settings[2] }}">{{ settings[0] }}</a><br>
+        <br>
+      </ng-template>
+
+      <ng-template ngSwitchCase="list">
+        <div class="form-group">
+          <label>{{ settings[0] }}:</label>
+          <select class="form-control" name="{{ settings[0] }}" value="{{ settings[2] }}" style="max-width: 400px">
+
+            <option *ngFor="let settings_value of settings.slice(3, settings.length - 1)" value="{{ settings_value }}">{{ settings_value }}</option>
+
+          </select>
+        </div>
+      </ng-template>
+
+    </div>
+
+
+  </div>
+
+  <button type="submit" class="btn btn-secondary mb-1 mt-2">{{ t.T('Save') }}</button>
+</form>
