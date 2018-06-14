@@ -1,4 +1,4 @@
-# homecontrol
+# homecontrol 1.0.0
 
 Server:
 -------  
