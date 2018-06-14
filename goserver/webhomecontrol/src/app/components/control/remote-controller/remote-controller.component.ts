@@ -78,7 +78,7 @@ export class RemoteControllerComponent implements OnInit {
       if (command_record.controlled_id == 0) {
         if(this.isCommandForControlled(command_record.command)) {
           ListCommand.forEach((command, index) =>{
-            let id_thhomecontrol: string =  map_controlled[map_command[command.id_command_record_controlled].controlled_id].home_control_id;
+            let id_thhomecontrol: string = map_controlled[map_command[command.id_command_record_controlled].controlled_id].home_control_id;
             if(id_thhomecontrol == '') {
               if(command_record.id.length > 15) {
                 ListCommand[index].list_id_command_record.push(command_record.id.slice(0, 15));

@@ -47,7 +47,7 @@ export class TPHomeControlService {
     return this.httpClient.get<StatusInterfaceServer[]>('/api/tphomecontrol');
   }
 
-  // getTPHomeControl return: field 'message', 'bool_message'
+  // getStatusTPHomeControl return: field 'message', 'bool_message'
   getStatusTPHomeControl(t_p_home_control_id: string): Observable<MessageServer> {
     return this.httpClient.get<MessageServer>('/api/tphomecontrol/' + t_p_home_control_id);
   }

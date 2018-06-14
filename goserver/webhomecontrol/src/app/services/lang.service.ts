@@ -38,6 +38,9 @@ export class LangService {
       ['Password']: 'Пароль',
       ['Email password']: 'Пароль от email',
       ['Email login']: 'Логин от email',
+      ['TPHC']: 'ССКД',
+      ['Common buffer']: 'Общ. buffer обмена',
+      ['Add controlled']: 'Добавить контролируемого',
     },
     ['en-US']: {
       ['Control']: 'Control',
@@ -70,6 +73,9 @@ export class LangService {
       ['Password']: 'Password',
       ['Email password']: 'Email password',
       ['Email login']: 'Email login',
+      ['TPHC']: 'TPHC',
+      ['Common buffer']: 'Common buffer',
+      ['Add controlled']: 'Add controlled',
     },
   };
 

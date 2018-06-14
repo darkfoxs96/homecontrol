@@ -1,0 +1,40 @@
+@media (max-width: 500px) {
+  .navbar_visible_text {
+    display: none;
+  }
+}
+
+.navbar_bg_color_use_item {
+  background-color: #e0e6eb;
+}
+
+@media (max-width: 500px) {
+  .table-text-size {
+    font-size: 10px;
+  }
+  .table-icon-size {
+    font-size: 14px;
+  }
+  .add_command_icon {
+    font-size: 12px;
+  }
+}
+
+.element_center_col {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
+
+.add_command:hover {
+  cursor: pointer;
+}
+
+.add_command:active {
+  transform: scale(0.95, 0.95);
+}
+
+.form_luminescence:focus {
+  border-color: rgba(18, 55, 96, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(26, 79, 137, 0.6);
+  outline: 0 none; }

@@ -1,3 +1,119 @@
-<p>
-  settings-controlleds works!
-</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-center"
+     style="border-bottom: 1px solid #1b1e21">
+  <a class="nav-item nav-link badge-light"
+     href="javascript:void(null);"
+     aria-hidden="true" data-toggle="modal" data-target="#modal_add_controlled"
+     (click)="selectParam(0, '', '', '', 0, '')">
+    <a>
+      <a class="navbar_visible_text">{{ t.T('Add controlled') }} </a>
+      <i class="fa fa-plus-square fa-lg"></i>
+    </a>
+    <span class="sr-only">(current)</span>
+  </a>
+</nav>
+
+<div (window:resize)="onResize($event)"></div>
+
+<div [class.col-10]="table_p"
+     [class.element_center_col]="table_p">
+  <table class="table table-hover table-text-size mt-2"
+         [class.table-sm]="table_sm"
+  >
+    <thead class="thead-light">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">{{ t.T('Name') }}</th>
+      <th scope="col">Host</th>
+      <th scope="col">Port</th>
+      <th scope="col">{{ t.T('Common buffer') }}?</th>
+      <th scope="col">{{ t.T('TPHC') }}?</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <tr *ngFor="let record of list_controlled; let i = index"
+        class="table-row" [class.table-primary]="record.home_control_id != ''">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ record.name }}</td>
+      <td>{{ record.host }}</td>
+      <td>{{ record.port }}</td>
+      <td>{{ record.common_buffer == 1 }}</td>
+      <td>{{ record.home_control_id }}</td>
+      <td><a href="javascript:void(null);" class="table-icon-size" style="color: #1d2124"
+             aria-hidden="true" data-toggle="modal" data-target="#modal_add_controlled">
+        <i class="fa fa-pencil fa-lg" aria-hidden="true"
+           (click)="selectParam(record.id, record.name, record.host, record.port, record.common_buffer, record.home_control_id)"></i>
+      </a></td>
+      <td><a href="javascript:void(null);" class="table-icon-size" style="color: #1d2124">
+        <i class="fa fa-trash fa-lg" aria-hidden="true" (click)="deleteControlled(record.id)"></i>
+      </a></td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal_add_controlled" tabindex="-1" role="dialog" aria-labelledby="modal_add_controlled_label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_add_controlled_label">{{ t.T('Add controlled') }}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form action="javascript:void(null);" style="border-bottom: 1px solid #d0cdd0" name="form_add_or_edit_controlled">
+
+          <div class="input-group">
+            <input style="max-width: 400px" type="text" class="form-control form_luminescence" name="name" placeholder="{{ t.T('Name') }}" [value]="controlled_name">
+          </div>
+
+          <div class="input-group">
+            <input style="max-width: 400px" type="text" class="form-control form_luminescence mt-2" name="host" placeholder="Host" [value]="controlled_host">
+          </div>
+
+          <div class="input-group">
+            <input style="max-width: 400px" type="text" class="form-control form_luminescence mt-2" name="port" placeholder="Port" [value]="controlled_port">
+          </div>
+
+          <div class="form-check row">
+            <label class="col-5 col-form-label">{{ t.T('Common buffer') }}:</label>
+            <input *ngIf="controlled_common_buffer"  type="checkbox" class="form-check-input mt-2 col-7" name="common_buffer" checked>
+            <input *ngIf="!controlled_common_buffer" type="checkbox" class="form-check-input mt-2 col-7" name="common_buffer">
+          </div>
+
+          <div class="input-group row mb-2 ml-2">
+            <label class="col-2 col-form-label">{{ t.T('TPHC') }}:</label>
+            <div class="btn-group mt-2 col-10">
+              <button type="button" id="select_id_home_control_button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ controlled_home_control_id }}
+              </button>
+              <div class="dropdown-menu">
+
+                <div *ngFor="let record of list_t_p_home_control">
+                  <a *ngIf="record.active" class="dropdown-item" href="javascript:void(null);"
+                     (click)="selectHomeControlID(record.name_id)">{{ record.name_id }}</a>
+                </div>
+
+                  <a class="dropdown-item" href="javascript:void(null);"
+                     (click)="selectHomeControlID('')"></a>
+
+              </div>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ t.T('Close') }}</button>
+        <button type="button" class="btn btn-light" (click)="goFormControlled()">{{ t.T('Save') }}</button>
+      </div>
+    </div>
+  </div>
+</div>
