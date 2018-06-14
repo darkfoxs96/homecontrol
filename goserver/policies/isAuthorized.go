@@ -10,7 +10,7 @@ import (
 // IsAuthorized Policy
 func IsAuthorized(ctx *context.Context) {
 	ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
-	return
+	// return
 	sess, err := gosession.GlobalSessions.SessionStart(ctx.ResponseWriter, ctx.Request)
 	if err == nil {
 		defer sess.SessionRelease(ctx.ResponseWriter)

@@ -41,6 +41,7 @@ export class LangService {
       ['TPHC']: 'ССКД',
       ['Common buffer']: 'Общ. buffer обмена',
       ['Add controlled']: 'Добавить контролируемого',
+      ['Login']: 'Вход',
     },
     ['en-US']: {
       ['Control']: 'Control',
@@ -76,6 +77,7 @@ export class LangService {
       ['TPHC']: 'TPHC',
       ['Common buffer']: 'Common buffer',
       ['Add controlled']: 'Add controlled',
+      ['Login']: 'Login',
     },
   };
 

@@ -62,7 +62,7 @@ export class SettingsHomeComponent implements OnInit {
   logout(): void {
     this.user.logout().subscribe(
       () => {
-        alert('Ok');
+        location.reload();
       },
       (err) => {
         alert(err.error);

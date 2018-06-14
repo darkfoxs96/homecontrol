@@ -123,7 +123,7 @@ func (sp *SoundParsing) GetIDCommandANDControlledBySound(sound []byte) (controll
 	} else {
 		xml.Unmarshal(body, &recognitionResults)
 	}
-
+	fmt.Println(recognitionResults.Variant)
 	for _, variant := range recognitionResults.Variant {
 		variant = strings.Replace(variant, ",", "", -1)
 		variant = strings.Replace(variant, ".", "", -1)
@@ -158,13 +158,13 @@ func (sp *SoundParsing) GetIDCommandANDControlledBySound(sound []byte) (controll
 // GetParamHTMLForInsertingSettings return param field for HTML for inserting settings from the client to interface sound-parsing
 /*
 	this.JSON:
-{
+[
 	["key","string","....."]
 	["Create SpeechKit Cloud key yandex","url","......."]
 	["uuid","string","....."]
 	["topic","list",".....","queries","maps"]
 	["lang","list",".....","ru-RU","en-US","uk-UK","tr-TR"]
-}
+]
 */
 func (sp *SoundParsing) GetParamHTMLForInsertingSettings() (paramHTML string, err error) {
 	return sp.getParamHTML()
@@ -172,7 +172,7 @@ func (sp *SoundParsing) GetParamHTMLForInsertingSettings() (paramHTML string, er
 
 // SetSettingsFromTheJSON set settings from the JSON format
 func (sp *SoundParsing) SetSettingsFromTheJSON(settingsJSON []byte) (msg string, err error) {
-	var settings *Settings
+	settings := &Settings{}
 	err = json.Unmarshal(settingsJSON, settings)
 	if err != nil {
 		err = errors.New("yandex SoundParsing: " + err.Error())

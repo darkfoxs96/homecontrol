@@ -29,7 +29,7 @@ export class SoundParsingService {
   ["uuid","string","fdgdgme-sdfsw-asdsa"],
   ["parse","bool","false"], //will return from the client "parse": false
   ["id","int","1990"], //will return from the client "id": 1990
-  ["fieldListName","list","value","en","sp","ru"],
+  ["field_list_name","list","value","en","sp","ru"],
   ["lang","list","ru","en","sp","ru"], //will return from the client "lang": "ru" //first field to up
   ["create key google","url","https://google.com"]
 
