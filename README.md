@@ -91,5 +91,6 @@ HTTP:
 | key           | string       | sdfd                     | input, string, value=sdfd   | "key": "sdfd"        |
 | year          | int          | 1910                     | input, number, value=1910   | "year": 1910         |
 | lang          | list         | uk-UK,ru-RU,en-US,uk-UK  | select, first act. "uk-UK"  | "lang": "uk-UK"      |
-| used          | bool         | true                     | radio button, active        | "used": true         |
+| used          | bool         | true                     | radio button, active        | "used": "on"         |
+| usse          | bool         | false                    | radio button, no active     | empty                |
 | SpeechKit     | url          | https://developer/       | a, href=value, html=Name    |                      |
