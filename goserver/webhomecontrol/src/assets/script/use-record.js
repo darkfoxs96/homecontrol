@@ -78,7 +78,7 @@ function recordingStartRecording() {
   setTimeout(function() {
     recording_recorder.setOutSampelRate(recording_out_sample_rate);
     recording_recorder && recording_recorder.record();
-  }, 1300)
+  }, 1000)
 }
 
 function recordingStopRecording() {

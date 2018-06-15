@@ -106,8 +106,8 @@
                         var recLength = 0,
                             recBuffers = [],
                             sampleRate = undefined,
-                            numChannels = undefined;
-                        outSampelRate = 1;
+                            numChannels = undefined,
+                            outSampelRate = 1;
 
                         self.onmessage = function(e) {
                             switch (e.data.command) {
