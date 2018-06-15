@@ -1,4 +1,4 @@
 export class StatusInterfaceServer {
-  name_id: string = '';
+  name_id: string  = '';
   active:  boolean = false;
 }
