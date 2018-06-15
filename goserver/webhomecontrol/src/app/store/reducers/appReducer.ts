@@ -35,7 +35,7 @@ export function reducer(state = initalSate, action): IAppReducerState {
         list_controlled:     state.list_controlled,
         list_commands:       state.list_commands,
         list_command_record: state.list_command_record,
-      }
+      };
     default:
       return state;
   }
