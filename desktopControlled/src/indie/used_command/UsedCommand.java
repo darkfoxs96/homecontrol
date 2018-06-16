@@ -1,12 +1,11 @@
-package used_command;
-
-import sun.jvm.hotspot.runtime.Bytes;
+package indie.used_command;
 
 import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
-import java.util.ArrayList;
+
+import indie.HomeControlControlled;
 
 public class UsedCommand {
     private String  OSName = "";
@@ -27,10 +26,11 @@ public class UsedCommand {
 
     // putBuffer: command ID = 0
     private void putBuffer(String newBuffer) {
+        HomeControlControlled.setIsServerBuffer(true);
+
         Clipboard cp = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection s = new StringSelection(newBuffer);
         cp.setContents(s,s);
-
     }
 
     // openPage: command ID = 1

@@ -1,4 +1,7 @@
-import connect_to_server.ConnectToServer;
+package indie;
+
+import indie.common_buffer.CommonBuffer;
+import indie.connect_to_server.ConnectToServer;
 
 import java.io.IOException;
 
@@ -33,7 +36,7 @@ public class HomeControlControlled {
     public static boolean getIsWorkMyServer() { return isWorkMyServer; }
 
     public static void main(String[] args) {
-
+//        initCommonBuffer();
         initUI();
     }
 
@@ -101,13 +104,10 @@ public class HomeControlControlled {
 
     // COMMON BUFFER
     public static void initCommonBuffer() {
-
+        new CommonBuffer();
     }
 
     public static boolean getIsServerBuffer() { return isServerBuffer; }
 
-    public static void setIsServerBuffer(boolean isServerBuffer) {
-        HomeControlControlled.isServerBuffer = isServerBuffer;
-    }
-
+    public static void setIsServerBuffer(boolean isServerBuffer) { HomeControlControlled.isServerBuffer = isServerBuffer; }
 }

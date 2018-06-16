@@ -1,4 +1,4 @@
-package connect_to_server;
+package indie.connect_to_server;
 
 import java.io.*;
 import java.net.*;
@@ -25,7 +25,7 @@ public class ConnectToServer {
         }
 
         String JSONToServer = "{" +
-                "\"common_buffer\": 0," +
+                "\"indie.common_buffer\": 0," +
                 "\"home_control_id\": \"\"," +
                 "\"host\": \"" + myHost + "\"," +
                 "\"name\": \"" + name   + "\"," +
