@@ -40,14 +40,23 @@ public class HomeControlControlled {
 
     public static void main(String[] args) {
 //        initCommonBuffer();
-        initUseControl();
+//        initUseControl();
 //        initUI();
 
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        usedCommand();
+
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     // HTTP LISTENER
@@ -107,10 +116,11 @@ public class HomeControlControlled {
 
 
     // USED COMMAND
-    public static void usedCommand(int commandID, String stringCommandBuffer) {
+    public static void usedCommand() {
         if(usedCommand == null) {
             usedCommand = new UsedCommand();
         }
+
 
 
     }

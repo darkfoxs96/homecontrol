@@ -25,7 +25,9 @@ public class CommonBuffer extends Thread {
                 }
 
                 Thread.sleep(1000);
-            } catch (UnsupportedFlavorException | IOException | InterruptedException e) { }
+            } catch (UnsupportedFlavorException | IOException | InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -37,6 +39,8 @@ public class CommonBuffer extends Thread {
 
         try {
             HomeControlControlled.updateBufferToServer(buffer);
-        } catch (IOException e) { }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
