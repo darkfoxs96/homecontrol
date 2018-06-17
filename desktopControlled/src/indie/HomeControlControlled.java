@@ -1,9 +1,11 @@
 package indie;
 
+import java.io.IOException;
+
 import indie.common_buffer.CommonBuffer;
 import indie.connect_to_server.ConnectToServer;
-
-import java.io.IOException;
+import indie.use_control.UseControl;
+import indie.used_command.UsedCommand;
 
 public class HomeControlControlled {
     static private String  serverHost     = "";
@@ -15,6 +17,7 @@ public class HomeControlControlled {
 
     // SERVICES
     static private ConnectToServer connectToServer = null;
+    static private UsedCommand     usedCommand     = null;
 
     // ERROR
     private static final Error ERROR_MY_SERVER_NOT_WORK = new Error("the controlled not work");
@@ -37,7 +40,14 @@ public class HomeControlControlled {
 
     public static void main(String[] args) {
 //        initCommonBuffer();
-        initUI();
+        initUseControl();
+//        initUI();
+
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
     // HTTP LISTENER
@@ -92,12 +102,16 @@ public class HomeControlControlled {
 
     // USE CONTROL
     public static void initUseControl() {
-
+        new UseControl();
     }
 
 
     // USED COMMAND
     public static void usedCommand(int commandID, String stringCommandBuffer) {
+        if(usedCommand == null) {
+            usedCommand = new UsedCommand();
+        }
+
 
     }
 
