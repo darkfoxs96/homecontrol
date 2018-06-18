@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import javax.sound.sampled.*;
-
 import com.sun.glass.events.KeyEvent;
+
 import indie.HomeControlControlled;
 
 public class UsedCommand {

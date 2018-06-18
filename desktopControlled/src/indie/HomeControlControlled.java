@@ -50,6 +50,11 @@ public class HomeControlControlled {
                     try {
                         connectToServer.connect(myServerHost, myServerPort, myServerName);
                         uiСurl = true;
+
+                        initUseControl();
+                        initCommonBuffer();
+
+                        save();
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }

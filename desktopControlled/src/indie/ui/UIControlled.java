@@ -1,14 +1,12 @@
 package indie.ui;
 
-import indie.HomeControlControlled;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.File;
 import java.io.IOException;
 
+import indie.HomeControlControlled;
 
 public class UIControlled extends JFrame{
     private JTextField textField1;
@@ -109,6 +107,7 @@ public class UIControlled extends JFrame{
         });
 
         if(HomeControlControlled.getUIСurl()) {
+            outError.setText("Work");
             setVisible(false);
             addT();
         }
