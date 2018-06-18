@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import javax.sound.sampled.*;
 
 import com.sun.glass.events.KeyEvent;
@@ -25,10 +27,86 @@ public class UsedCommand {
         }
     }
 
-    public void used() throws IOException {
+    public String used(byte[] command) throws IOException {
+        ArrayList<Byte> commandByteList = new ArrayList<Byte>(command.length);
 
+        for(int i = 0; i < command.length; i++) {
+            commandByteList.add(command[i]);
+        }
 
+        ArrayList<Byte> commandIDByteList = new ArrayList<Byte>();
+        ArrayList<Byte> commandStringByteList = new ArrayList<Byte>();
 
+        for(int i = 0; i < commandByteList.size(); i++) {
+            if(i < 4) {
+                commandIDByteList.add(commandByteList.get(i));
+            } else {
+                commandStringByteList.add(commandByteList.get(i));
+            }
+        }
+
+        int commandID = 0;
+        for(int i = 0; i < commandIDByteList.size(); i++){
+            int n = (commandIDByteList.get(i)<0?(int)commandIDByteList.get(i)+256:(int)commandIDByteList.get(i))<<(8*i);
+            commandID += n;
+        }
+
+        byte[] commandStringBytes = new byte[commandStringByteList.size()];
+        for(int i = 0; i < commandStringByteList.size(); i++) {
+            commandStringBytes[i] = commandStringByteList.get(i).byteValue();
+        }
+
+        String commandString = new String(commandStringBytes, StandardCharsets.UTF_8);
+
+        return goCommand(commandID, commandString);
+    }
+
+    private String goCommand(int commandID, String commandString) throws IOException {
+        switch (commandID) {
+            case 0:
+                putBuffer(commandString);
+                break;
+            case 1:
+                openPage(commandString);
+                break;
+            case 2:
+                stopPlay();
+                break;
+            case 3:
+                valueOff();
+                break;
+            case 4:
+                valueOn();
+                break;
+            case 5:
+                off();
+                break;
+            case 6:
+                openYoutube();
+                break;
+            case 7:
+                openVk();
+                break;
+            case 8:
+                openOk();
+                break;
+            case 9:
+                openFecebook();
+                break;
+            case 10:
+                open();
+                break;
+            case 11:
+                usedCodeInTerminal(commandString);
+                break;
+            case 999:
+                boolean isWork = testWork();
+                if(!isWork) {
+                    throw new Error("controlled not work");
+                }
+                break;
+        }
+        return "Ok";
     }
 
     // putBuffer: command ID = 0
