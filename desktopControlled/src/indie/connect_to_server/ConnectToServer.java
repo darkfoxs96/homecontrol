@@ -22,9 +22,9 @@ public class ConnectToServer {
     public int getControlledID() { return controlledID; }
 
     // connect: add or update controlled to server
-    public void connect(String myHost, int myPort, String name) throws IOException {
+    public void connect(String myHost, int myPort, String name) throws IOException, RuntimeException {
         if(this.serverHost.equals("") || this.serverPort == 0) {
-            new Error("serverHost or serverPort is empty");
+            throw new Error("serverHost or serverPort is empty");
         }
 
         String JSONToServer = "{" +
@@ -35,6 +35,7 @@ public class ConnectToServer {
                 "\"port\": \"" + myPort + "\"" +
                 "}";
 
+        this.controlledID = HomeControlControlled.getMyServerID();
         if(this.controlledID == 0) {
             this.requestToServer(JSONToServer, "POST", "/controlled");
         } else {
@@ -43,17 +44,17 @@ public class ConnectToServer {
     }
 
     // report to server
-    public void report(String msg) throws IOException {
+    public void report(String msg) throws IOException, RuntimeException {
         String JSONToServer = "{" +
                 "\"controlled_id\": " + this.controlledID + "," +
                 "\"message\": \"" + msg + "\"" +
                 "}";
 
-        this.requestToServer(JSONToServer, "POST", "controlled/message");
+        this.requestToServer(JSONToServer, "POST", "/controlled/message");
     }
 
     //update buffer
-    public void updateBuffer(String newBuffer) throws IOException {
+    public void updateBuffer(String newBuffer) throws IOException, RuntimeException {
         String JSONToServer = "{" +
                 "\"buffer\": \"" + newBuffer + "\"" +
                 "}";
@@ -62,7 +63,7 @@ public class ConnectToServer {
 //        this.requestToServer(JSONToServer, "POST", "/controlled/buffer");
     }
 
-    public void requestToServer(String body, String method, String apiURL) throws IOException {
+    public void requestToServer(String body, String method, String apiURL) throws IOException, RuntimeException {
         Socket socet = null;
 
         socet = new Socket(this.serverHost, this.serverPort);
@@ -101,7 +102,7 @@ public class ConnectToServer {
         String status = response.toString().substring(9, 12);
 
         if(!status.equals("200")) {
-            throw new Error(ERROR_STATUS_BAD.toString() + " " + status + " msg: " + bodyResponse.toString());
+            throw new IllegalArgumentException("server response bad status " + status + ": " + bodyResponse.toString());
         }
 
         if(apiURL.equals("/controlled")) {

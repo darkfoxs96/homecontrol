@@ -58,6 +58,8 @@ public class UsedCommand {
 
         String commandString = new String(commandStringBytes, StandardCharsets.UTF_8);
 
+        System.out.println(commandString + commandID);
+
         return goCommand(commandID, commandString);
     }
 
@@ -154,6 +156,7 @@ public class UsedCommand {
 
     // valueOff: command ID = 3
     private void valueOff() {
+        System.out.println(1234);
         Mixer.Info[] infos = AudioSystem.getMixerInfo();
 
         for (Mixer.Info info: infos) {
