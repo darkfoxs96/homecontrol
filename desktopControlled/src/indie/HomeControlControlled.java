@@ -1,9 +1,11 @@
 package indie;
 
 import java.io.IOException;
+import java.net.InetAddress;
 
 import indie.common_buffer.CommonBuffer;
 import indie.connect_to_server.ConnectToServer;
+import indie.http_listener.HTTPListener;
 import indie.use_control.UseControl;
 import indie.used_command.UsedCommand;
 
@@ -12,12 +14,16 @@ public class HomeControlControlled {
     static private int     serverPort     = 0;
     static private String  myServerHost   = "";
     static private int     myServerPort   = 0;
+    static private int     myServerID     = 0;
     static private boolean isWorkMyServer = false;
     static private boolean isServerBuffer = false;
 
     // SERVICES
     static private ConnectToServer connectToServer = null;
-    static private UsedCommand     usedCommand     = null;
+    static private UsedCommand     goUsedCommand   = null;
+    static private HTTPListener    httpListener    = null;
+    static private CommonBuffer    commonBuffer    = null;
+    static private UseControl      useControl      = null;
 
     // ERROR
     private static final Error ERROR_MY_SERVER_NOT_WORK = new Error("the controlled not work");
@@ -39,19 +45,15 @@ public class HomeControlControlled {
     public static boolean getIsWorkMyServer() { return isWorkMyServer; }
 
     public static void main(String[] args) {
-//        initCommonBuffer();
-        initUseControl();
-//        initUI();
-
-//        try {
-//            Thread.sleep(10000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            createHTTPListener("192.168.111.182", 8085, "SuperPC");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // HTTP LISTENER
-    public static void createHTTPListener(String host, int port) {
+    public static void createHTTPListener(String host, int port, String name) throws IOException {
         if(host.equals("") || port == 0) {
             throw ERROR_FIELD_IS_EMPTY;
         }
@@ -59,9 +61,22 @@ public class HomeControlControlled {
         serverHost = host;
         serverPort = port;
 
+        if(httpListener != null) {
+            httpListener.stop();
+        }
 
+        httpListener = new HTTPListener();
+
+        myServerHost = InetAddress.getLocalHost().getHostAddress();
+
+        isWorkMyServer = true;
+
+        connectToServer(myServerHost, myServerPort, name);
     }
 
+    public static void setMyServerPort(int myServerPort) {
+        HomeControlControlled.myServerPort = myServerPort;
+    }
 
     // CONNECT TO SERVER
     public static void connectToServer(String myHost, int myPort, String name) throws IOException {
@@ -80,7 +95,12 @@ public class HomeControlControlled {
         connectToServer.connect(myHost, myPort, name);
 
         initUseControl();
+        initCommonBuffer();
     }
+
+    public static int getMyServerID() { return myServerID; }
+
+    public static void setMyServerID(int myServerID) { HomeControlControlled.myServerID = myServerID; }
 
     public static void reportUseControlToServer(String report) throws IOException {
         if(connectToServer != null) {
@@ -99,29 +119,41 @@ public class HomeControlControlled {
 
     }
 
-
     // USE CONTROL
     public static void initUseControl() {
-        new UseControl();
-    }
-
-
-    // USED COMMAND
-    public static void usedCommand(int commandID, String stringCommandBuffer) {
-        if(usedCommand == null) {
-            usedCommand = new UsedCommand();
+        if(useControl != null) {
+            useControl.stop();
         }
 
-
+        useControl = new UseControl();
     }
 
+    // USED COMMAND
+    public static String usedCommand(byte[] command) throws IOException {
+        if(goUsedCommand == null) {
+            goUsedCommand = new UsedCommand();
+        }
+
+        return goUsedCommand.used(command);
+    }
 
     // COMMON BUFFER
     public static void initCommonBuffer() {
-        new CommonBuffer();
+        if(commonBuffer != null) {
+            commonBuffer.stop();
+        }
+
+        commonBuffer = new CommonBuffer();
     }
 
     public static boolean getIsServerBuffer() { return isServerBuffer; }
 
     public static void setIsServerBuffer(boolean isServerBuffer) { HomeControlControlled.isServerBuffer = isServerBuffer; }
+
+    // CLOSE
+    public static void close() {
+        commonBuffer.stop();
+        httpListener.stop();
+        useControl.stop();
+    }
 }

@@ -1,9 +1,9 @@
 package controlled
 
 import (
-	"errors"
 	"bytes"
 	"encoding/binary"
+	"errors"
 	"io/ioutil"
 	"net/http"
 	"time"
@@ -32,9 +32,9 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	URL := ""
 	// TODO: http or https ?
 	if controlled.Port != "" {
-		URL = "http://" + controlled.Host + ":" + controlled.Port
+		URL = "http://" + controlled.Host + ":" + controlled.Port + "/used/command"
 	} else {
-		URL = "http://" + controlled.Host
+		URL = "http://" + controlled.Host + "/used/command"
 	}
 	req, err := http.NewRequest("POST", URL, buffer)
 	if err != nil {
@@ -45,13 +45,17 @@ func RequestToControlled(controlled *models.Сontrolled, command *models.Command
 	client.Timeout = 3 * time.Second
 	resp, err := client.Do(req)
 	if err != nil {
-		err = errors.New(controlled.Name + ": no connection. " + err.Error())		
+		err = errors.New(controlled.Name + ": no connection. " + err.Error())
 		return
 	}
 	defer resp.Body.Close()
 	responseByte, err := ioutil.ReadAll(resp.Body)
 	responseMessage = string(responseByte)
 	if err != nil {
+		return
+	}
+	if resp.StatusCode != 200 {
+		err = errors.New(controlled.Name + " error: " + responseMessage)
 		return
 	}
 	return

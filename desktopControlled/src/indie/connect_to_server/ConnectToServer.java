@@ -3,6 +3,8 @@ package indie.connect_to_server;
 import java.io.*;
 import java.net.*;
 
+import indie.HomeControlControlled;
+
 public class ConnectToServer {
     private String serverHost   = "";
     private int    serverPort   = 0;
@@ -12,6 +14,7 @@ public class ConnectToServer {
     private static final Error ERROR_STATUS_BAD = new Error("server response bad status");
 
     public ConnectToServer(String serverHost, int serverPort) {
+        this.controlledID = HomeControlControlled.getMyServerID();
         this.serverHost = serverHost;
         this.serverPort = serverPort;
     }
@@ -56,7 +59,7 @@ public class ConnectToServer {
                 "}";
 
         // TODO: settings
-        this.requestToServer(JSONToServer, "POST", "/controlled/buffer");
+//        this.requestToServer(JSONToServer, "POST", "/controlled/buffer");
     }
 
     public void requestToServer(String body, String method, String apiURL) throws IOException {
@@ -103,6 +106,7 @@ public class ConnectToServer {
 
         if(apiURL.equals("/controlled")) {
             this.controlledID = Integer.parseInt(bodyResponse.toString());
+            HomeControlControlled.setMyServerID(this.controlledID);
         }
     }
 }

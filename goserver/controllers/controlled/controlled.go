@@ -2,6 +2,7 @@ package controlled
 
 import (
 	"encoding/json"
+	"fmt"
 	"homecontrol/goserver/models"
 	"io/ioutil"
 	"strconv"
@@ -32,6 +33,8 @@ func (o *Controlled) Post() {
 		o.CustomAbort(400, "Wrong read body")
 	}
 	o.Ctx.Request.Body.Close()
+
+	fmt.Println(body)
 
 	request := &models.Сontrolled{}
 	err = json.Unmarshal(body, request)
