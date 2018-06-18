@@ -14,8 +14,8 @@ public class HTTPListener extends Thread{
     private int port = 8086;
 
     public HTTPListener() {
-        start();
         HomeControlControlled.setMyServerPort(port);
+        start();
     }
 
     public void run() {
