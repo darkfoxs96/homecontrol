@@ -2,6 +2,7 @@ package indie;
 
 import java.io.IOException;
 import java.net.InetAddress;
+import java.util.prefs.Preferences;
 
 import indie.common_buffer.CommonBuffer;
 import indie.connect_to_server.ConnectToServer;
@@ -15,8 +16,10 @@ public class HomeControlControlled {
     static private String  myServerHost   = "";
     static private int     myServerPort   = 0;
     static private int     myServerID     = 0;
+    static private String  myServerName   = "";
     static private boolean isWorkMyServer = false;
     static private boolean isServerBuffer = false;
+    static private boolean uiСurl         = false;
 
     // SERVICES
     static private ConnectToServer connectToServer = null;
@@ -24,32 +27,36 @@ public class HomeControlControlled {
     static private HTTPListener    httpListener    = null;
     static private CommonBuffer    commonBuffer    = null;
     static private UseControl      useControl      = null;
+    static private Preferences     settings        = null;
 
     // ERROR
     private static final Error ERROR_MY_SERVER_NOT_WORK = new Error("the controlled not work");
     private static final Error ERROR_FIELD_IS_EMPTY     = new Error("field is empty");
 
-    // GET
-    public static String getServerHost() {
-        return serverHost;
-    }
-
-    public static int getServerPort() {
-        return serverPort;
-    }
-
-    public static String getMyServerHost() { return myServerHost; }
-
-    public static int getMyServerPort() { return myServerPort; }
-
-    public static boolean getIsWorkMyServer() { return isWorkMyServer; }
-
     public static void main(String[] args) {
-        try {
-            createHTTPListener("192.168.111.182", 8085, "SuperPC");
-        } catch (IOException e) {
-            e.printStackTrace();
+        load();
+
+        if(myServerID != 0 &&  serverHost != "" && serverPort != 0) {
+            try {
+                createHTTPListener(serverHost, serverPort, myServerName);
+                uiСurl = true;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
+        initUI();
+    }
+
+    private static void load() {
+        if(settings == null) {
+            settings = Preferences.userRoot().node(SettingsHCControlled.class.getName());
+        }
+
+        myServerName = settings.get   ("myServerName", "");
+        myServerID   = settings.getInt("myServerID", 0);
+        serverHost   = settings.get   ("serverHost", "");
+        serverPort   = settings.getInt("serverPort", 0);
     }
 
     // HTTP LISTENER
@@ -68,8 +75,8 @@ public class HomeControlControlled {
         httpListener = new HTTPListener();
 
         myServerHost = InetAddress.getLocalHost().getHostAddress();
-
         isWorkMyServer = true;
+        myServerName = name;
 
         connectToServer(myServerHost, myServerPort, name);
     }
@@ -119,6 +126,8 @@ public class HomeControlControlled {
 
     }
 
+    public static boolean getUIСurl() { return uiСurl; }
+
     // USE CONTROL
     public static void initUseControl() {
         if(useControl != null) {
@@ -155,5 +164,18 @@ public class HomeControlControlled {
         commonBuffer.stop();
         httpListener.stop();
         useControl.stop();
+
+        save();
+    }
+
+    public static void save() {
+        if(settings == null) {
+            settings = Preferences.userRoot().node(SettingsHCControlled.class.getName());
+        }
+
+        settings.put   ("myServerName", myServerName);
+        settings.putInt("myServerID", myServerID);
+        settings.put   ("serverHost", serverHost);
+        settings.putInt("serverPort", serverPort);
     }
 }
