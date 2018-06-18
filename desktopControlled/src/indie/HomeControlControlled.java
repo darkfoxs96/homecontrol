@@ -7,6 +7,7 @@ import java.util.prefs.Preferences;
 import indie.common_buffer.CommonBuffer;
 import indie.connect_to_server.ConnectToServer;
 import indie.http_listener.HTTPListener;
+import indie.ui.UIControlled;
 import indie.use_control.UseControl;
 import indie.used_command.UsedCommand;
 
@@ -27,11 +28,12 @@ public class HomeControlControlled {
     static private HTTPListener    httpListener    = null;
     static private CommonBuffer    commonBuffer    = null;
     static private UseControl      useControl      = null;
+    // Store
     static private Preferences     settings        = null;
 
     // ERROR
-    private static final Error ERROR_MY_SERVER_NOT_WORK = new Error("the controlled not work");
-    private static final Error ERROR_FIELD_IS_EMPTY     = new Error("field is empty");
+    static private final Error ERROR_MY_SERVER_NOT_WORK = new Error("the controlled not work");
+    static private final Error ERROR_FIELD_IS_EMPTY     = new Error("field is empty");
 
     public static void main(String[] args) {
         load();
@@ -42,6 +44,18 @@ public class HomeControlControlled {
                 uiСurl = true;
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (RuntimeException e) {
+                if(e.getMessage().equals("server response bad status 500: Models: Not found record 'Controlled' for update")) {
+                    myServerID = 0;
+                    try {
+                        connectToServer.connect(myServerHost, myServerPort, myServerName);
+                        uiСurl = true;
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                } else {
+                    e.printStackTrace();
+                }
             }
         }
 
@@ -68,17 +82,15 @@ public class HomeControlControlled {
         serverHost = host;
         serverPort = port;
 
-        if(httpListener != null) {
-            httpListener.stop();
+        if(httpListener == null) {
+            httpListener = new HTTPListener();
         }
-
-        httpListener = new HTTPListener();
 
         myServerHost = InetAddress.getLocalHost().getHostAddress();
         isWorkMyServer = true;
         myServerName = name;
 
-        connectToServer(myServerHost, myServerPort, name);
+        connectToServer(myServerHost, myServerPort, myServerName);
     }
 
     public static void setMyServerPort(int myServerPort) {
@@ -101,8 +113,11 @@ public class HomeControlControlled {
 
         connectToServer.connect(myHost, myPort, name);
 
+
         initUseControl();
         initCommonBuffer();
+
+        save();
     }
 
     public static int getMyServerID() { return myServerID; }
@@ -123,19 +138,23 @@ public class HomeControlControlled {
 
     // UI
     public static void initUI() {
-
+        new UIControlled("HomeControl: controlled");
     }
 
     public static boolean getUIСurl() { return uiСurl; }
 
     // USE CONTROL
     public static void initUseControl() {
-        if(useControl != null) {
-            useControl.stop();
+        if(useControl == null) {
+            useControl = new UseControl();
         }
-
-        useControl = new UseControl();
     }
+
+    public static String getServerHost() { return serverHost; }
+
+    public static int getServerPort() { return serverPort; }
+
+    public static String getMyServerName() { return myServerName; }
 
     // USED COMMAND
     public static String usedCommand(byte[] command) throws IOException {
@@ -148,11 +167,9 @@ public class HomeControlControlled {
 
     // COMMON BUFFER
     public static void initCommonBuffer() {
-        if(commonBuffer != null) {
-            commonBuffer.stop();
+        if(commonBuffer == null) {
+            commonBuffer = new CommonBuffer();
         }
-
-        commonBuffer = new CommonBuffer();
     }
 
     public static boolean getIsServerBuffer() { return isServerBuffer; }
@@ -161,9 +178,9 @@ public class HomeControlControlled {
 
     // CLOSE
     public static void close() {
-        commonBuffer.stop();
-        httpListener.stop();
-        useControl.stop();
+        if(httpListener != null) {
+            httpListener.serverStop();
+        }
 
         save();
     }

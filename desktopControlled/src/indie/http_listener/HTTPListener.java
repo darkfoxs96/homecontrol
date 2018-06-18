@@ -11,7 +11,8 @@ import org.glassfish.grizzly.http.server.Response;
 import indie.HomeControlControlled;
 
 public class HTTPListener extends Thread{
-    private int port = 8086;
+    private int        port   = 8086;
+    private HttpServer server = null;
 
     public HTTPListener() {
         HomeControlControlled.setMyServerPort(port);
@@ -19,7 +20,7 @@ public class HTTPListener extends Thread{
     }
 
     public void run() {
-        HttpServer server = HttpServer.createSimpleServer("localhost", port);
+        server = HttpServer.createSimpleServer("localhost", port);
         server.getServerConfiguration().addHttpHandler(
                 new HttpHandler() {
                     public void service(Request request, Response response) throws IOException {
@@ -64,6 +65,12 @@ public class HTTPListener extends Thread{
             System.in.read();
         } catch (Exception e) {
             System.err.println(e);
+        }
+    }
+
+    public void serverStop() {
+        if(server != null) {
+            server.stop();
         }
     }
 }
