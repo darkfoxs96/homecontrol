@@ -1,6 +1,6 @@
 # HomeControl
 
-Dowload:  
+Dowload v1.0.0:  
 -------  
 ###### server ######  
 [linux x64](https://yadi.sk/d/SuqQyuHC3Y7PEH)  
