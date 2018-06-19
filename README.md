@@ -14,7 +14,7 @@ Server open web control: ip:8085/
 ip = device ip  
 
 ###### controlled desktop ######  
-[linux, windows, mac & all JVM java](https://yadi.sk/d/3zSRdf5y3Y7E73)  
+[linux, windows, mac & all JVM java](https://yadi.sk/d/ybvc1Ng23Y8TyP)  
 put port = 8086
 
 ###### controlled mobile ######  
