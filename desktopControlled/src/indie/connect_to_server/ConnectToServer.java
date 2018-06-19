@@ -56,11 +56,11 @@ public class ConnectToServer {
     //update buffer
     public void updateBuffer(String newBuffer) throws IOException, RuntimeException {
         String JSONToServer = "{" +
+                "\"controlled_id\": " + this.controlledID + "," +
                 "\"buffer\": \"" + newBuffer + "\"" +
                 "}";
 
-        // TODO: settings
-//        this.requestToServer(JSONToServer, "POST", "/controlled/buffer");
+        this.requestToServer(JSONToServer, "POST", "/controlled/buffer");
     }
 
     public void requestToServer(String body, String method, String apiURL) throws IOException, RuntimeException {

@@ -159,7 +159,9 @@ export class RemoteControllerComponent implements OnInit {
   public goTextCommandToServer(button) {
     this.audio.play();
     let buffer = (<any>document.getElementById('recording_string_command_input')).value;
+    (<any>document.getElementById('recording_string_command_input')).value = "";
     let command = button.target.getAttribute('name');
+
     this.commandRecord.useText(command, buffer).subscribe(
       (data) => {},
       (err) => {

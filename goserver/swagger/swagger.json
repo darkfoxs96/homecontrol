@@ -473,6 +473,37 @@
                 }
             }
         },
+        "/controlled/buffer/": {
+            "post": {
+                "tags": [
+                    "controlled/buffer"
+                ],
+                "description": "new buffer to all controlled",
+                "operationId": "CommonBuffer.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "The object message",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/controlled.Buffer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "string\t\"Ok\""
+                    },
+                    "400": {
+                        "description": "wrong body data"
+                    },
+                    "500": {
+                        "description": "database error"
+                    }
+                }
+            }
+        },
         "/controlled/info/": {
             "get": {
                 "tags": [
@@ -1466,6 +1497,19 @@
                 },
                 "command": {
                     "type": "string"
+                }
+            }
+        },
+        "controlled.Buffer": {
+            "title": "Buffer",
+            "type": "object",
+            "properties": {
+                "buffer": {
+                    "type": "string"
+                },
+                "controlled_id": {
+                    "type": "integer",
+                    "format": "int64"
                 }
             }
         },

@@ -3,6 +3,7 @@ package controlled
 import (
 	"encoding/json"
 	"homecontrol/goserver/models"
+	"homecontrol/goserver/services/commonbuffer"
 	"io/ioutil"
 	"strconv"
 
@@ -230,4 +231,48 @@ func (o *ControlledMessage) Post() {
 
 	o.Ctx.Output.SetStatus(200)
 	o.Ctx.Output.Body([]byte(outMsg))
+}
+
+type CommonBuffer struct {
+	beego.Controller
+}
+
+type Buffer struct {
+	ControlledID int    `json:"controlled_id"`
+	Buffer       string `json:"buffer"`
+}
+
+// Post - new buffer to all controlled
+// @Title Post
+// @Description new buffer to all controlled
+// @Param	body			body	controlled.Buffer	true	"The object message"
+// @Success 200 string	"Ok"
+// @Failure 400 wrong body data
+// @Failure 500 database error
+// @router / [post]
+func (o *CommonBuffer) Post() {
+	o.Ctx.ResponseWriter.Header().Add("Access-Control-Allow-Origin", "*")
+	defer o.Ctx.Request.Body.Close()
+
+	body, err := ioutil.ReadAll(o.Ctx.Request.Body)
+	if err != nil {
+		o.CustomAbort(400, "Wrong read body")
+	}
+	o.Ctx.Request.Body.Close()
+
+	request := &Buffer{}
+	err = json.Unmarshal(body, request)
+	if err != nil {
+		o.CustomAbort(400, "Can't unmarshal request")
+	}
+
+	if request.Buffer != "" {
+		err = commonbuffer.UpdateBuffer(request.ControlledID, request.Buffer)
+		if err != nil {
+			o.CustomAbort(500, err.Error())
+		}
+	}
+
+	o.Ctx.Output.SetStatus(200)
+	o.Ctx.Output.Body([]byte("Ok"))
 }

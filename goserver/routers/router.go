@@ -35,6 +35,11 @@ func init() {
 					&controlled.ControlledMessage{},
 				),
 			),
+			beego.NSNamespace("/controlled/buffer",
+				beego.NSInclude(
+					&controlled.CommonBuffer{},
+				),
+			),
 			beego.NSNamespace("/controlled",
 				beego.NSInclude(
 					&controlled.Controlled{},
