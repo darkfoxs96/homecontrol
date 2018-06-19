@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed0b0d2e-3a70-4db9-8887-69bac9373bbd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/goserver/key.txt" beforeDir="false" afterPath="$PROJECT_DIR$/goserver/key.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goserver/models/commandRecord.go" beforeDir="false" afterPath="$PROJECT_DIR$/goserver/models/commandRecord.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goserver/models/controlled.go" beforeDir="false" afterPath="$PROJECT_DIR$/goserver/models/controlled.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goserver/models/mainModels.go" beforeDir="false" afterPath="$PROJECT_DIR$/goserver/models/mainModels.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goserver/models/mainmodel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,12 +14,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="mainModels.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/goserver/models/mainModels.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="342">
+                <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -37,6 +38,8 @@
       <list>
         <option value="$PROJECT_DIR$/goserver/models/controlled.go" />
         <option value="$PROJECT_DIR$/goserver/models/mainModels.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -46,8 +49,1319 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/architect/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/architect/test/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/build-angular/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/build-optimizer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/build-optimizer/webpack-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/core/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular-devkit/schematics/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/animations/browser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/animations/browser/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/animations/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/cli/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/cli/node_modules/yargs-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/cli/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/common/http/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/common/http/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/common/locales/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/common/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/common/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/anymatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/chokidar/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler-cli/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/compiler/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/core/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/core/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/forms/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/http/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/http/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/language-service/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/platform-browser-dynamic/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/platform-browser-dynamic/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/platform-browser/animations/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/platform-browser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/platform-browser/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/router/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/router/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@angular/router/upgrade/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@ngrx/store/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@ngtools/webpack/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@schematics/angular/library/files/__projectRoot__/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@schematics/angular/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@schematics/angular/workspace/files/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@schematics/update/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@types/jasmine/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@types/jasminewd2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@types/node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@types/q/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@types/selenium-webdriver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/ast/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/ast/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/floating-point-hex-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-buffer/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-code-frame/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-fsm/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-wasm-bytecode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-wasm-section/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/helper-wasm-section/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/leb128/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/validation/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wasm-edit/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wasm-edit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wasm-gen/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wasm-opt/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wasm-opt/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wasm-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wast-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/@webassemblyjs/wast-printer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/accepts/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/acorn-dynamic-import/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/acorn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/addressparser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/adm-zip/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/after/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/agent-base/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ajv-keywords/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/align-text/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/align-text/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/amdefine/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/amqplib/examples/tutorials/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/amqplib/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/amqplib/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/amqplib/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/amqplib/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ansi-html/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/anymatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/app-root-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/append-transform/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/aproba/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/are-we-there-yet/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/argparse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/arr-flatten/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/arr-union/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-find-index/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-includes/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-slice/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-union/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-uniq/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/arraybuffer.slice/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/arrify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/asap/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/asn1.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/asn1/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/assert-plus/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/assert/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/assign-symbols/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ast-types/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/async-each/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/async-foreach/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/async-limiter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/asynckit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/atob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/autoprefixer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/aws-sign2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/aws4/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/axios/node_modules/follow-redirects/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/axios/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-code-frame/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-code-frame/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-code-frame/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-code-frame/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-generator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-messages/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-runtime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-template/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-traverse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babel-types/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/babylon/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/backo2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base64-arraybuffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base64-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/base64id/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/batch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bcrypt-pbkdf/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/better-assert/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/big.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/binary-extensions/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bitsyntax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bl/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bl/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bl/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/blob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/block-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/blocking-proxy/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/blocking-proxy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bluebird/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bn.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/body-parser/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/body-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bonjour/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/boolbase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/boom/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/braces/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/brorand/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserify-aes/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserify-cipher/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserify-des/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserify-rsa/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserify-sign/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserify-zlib/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/browserslist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buffer-from/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buffer-indexof/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buffer-more-ints/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buffer-xor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buildmail/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/buildmail/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/builtin-modules/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/builtin-status-codes/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/builtins/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/bytes/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cacache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cache-base/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cache-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/callsite/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/camel-case/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/camelcase-keys/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/camelcase-keys/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/caniuse-lite/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/caseless/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/center-align/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/chalk/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/chalk/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/chokidar/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/chrome-trace-event/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cipher-base/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/circular-dependency-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/circular-json/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/class-utils/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/class-utils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/clean-css/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cliui/node_modules/wordwrap/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/clone-deep/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/clone/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/co/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/codelyzer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/collection-visit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/color-convert/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/color-name/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/colors/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/combine-lists/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/combined-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/commander/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/commondir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/compare-versions/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/component-bind/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/component-emitter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/component-inherit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/compressible/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/compression/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/compression/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/concat-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/connect-history-api-fallback/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/connect/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/connect/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/connect/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/console-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/console-control-strings/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/constants-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/content-disposition/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/content-type/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/convert-source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cookie-signature/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cookie/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/copy-concurrently/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/copy-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/copy-webpack-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cosmiconfig/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cosmiconfig/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/create-ecdh/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/create-hash/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/create-hmac/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cross-spawn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cryptiles/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/crypto-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/css-parse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/css-select/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/css-selector-tokenizer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/css-what/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cssauron/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cssesc/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cuint/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/currently-unhandled/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/custom-event/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/cyclist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/d/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dashdash/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/data-uri-to-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/date-format/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/date-now/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/decamelize/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/decode-uri-component/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/deep-is/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/default-require-extensions/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/define-properties/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/define-property/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/define-property/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/define-property/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/degenerator/node_modules/esprima/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/degenerator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/del/node_modules/globby/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/del/node_modules/globby/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/del/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/delayed-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/delegates/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/des.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/destroy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/detect-indent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/detect-node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/di/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/diff/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/diffie-hellman/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dir-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dns-equal/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dns-packet/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dns-txt/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dom-converter/node_modules/utila/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dom-converter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dom-serialize/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dom-serializer/node_modules/domelementtype/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/dom-serializer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/domain-browser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/domelementtype/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/domhandler/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/domutils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/double-ended-queue/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/duplexify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ecc-jsbn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ee-first/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ejs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/electron-to-chromium/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/elliptic/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/emojis-list/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/encodeurl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/end-of-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io-client/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io-client/node_modules/ultron/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io-client/node_modules/ws/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io-client/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io/node_modules/ultron/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io/node_modules/ws/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/engine.io/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/enhanced-resolve/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/entities/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/errno/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/error-ex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es-abstract/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es-to-primitive/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es5-ext/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es6-iterator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es6-promise/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es6-promisify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/es6-symbol/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/escape-html/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/escape-string-regexp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/escodegen/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/escodegen/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/eslint-scope/node_modules/estraverse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/eslint-scope/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/esprima/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/esrecurse/node_modules/estraverse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/esrecurse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/estraverse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/esutils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/etag/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/eventemitter3/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/events/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/eventsource/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/evp_bytestokey/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/execa/node_modules/cross-spawn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/execa/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/exit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-braces/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-braces/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-braces/node_modules/expand-range/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-braces/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-braces/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-braces/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-brackets/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-brackets/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-range/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-range/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-range/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-range/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/expand-range/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/express/node_modules/array-flatten/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/express/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/express/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/express/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extend-shallow/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extend/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extglob/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extglob/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extglob/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extglob/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extglob/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/extsprintf/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fast-deep-equal/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fast-json-stable-stringify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fast-levenshtein/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fastparse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/faye-websocket/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/file-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/file-uri-to-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/filename-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fileset/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fill-range/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fill-range/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/finalhandler/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/find-cache-dir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/flush-write-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/follow-redirects/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/follow-redirects/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/for-own/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/foreach/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/forever-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/forwarded/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fragment-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fresh/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/from2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fs-access/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fs-write-stream-atomic/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/abbrev/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/aproba/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/are-we-there-yet/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/balanced-match/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/brace-expansion/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/chownr/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/code-point-at/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/concat-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/console-control-strings/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/core-util-is/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/deep-extend/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/delegates/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/detect-libc/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/fs-minipass/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/fs.realpath/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/gauge/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/has-unicode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/ignore-walk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/minipass/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/minizlib/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/needle/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/node-pre-gyp/lib/util/nw-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/node-pre-gyp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/npm-bundled/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/npm-packlist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/npmlog/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/os-homedir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/osenv/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/rc/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/rc/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/safer-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/strip-json-comments/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/tar/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fsevents/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/fstream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ftp/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ftp/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ftp/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ftp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/function-bind/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/gauge/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/gaze/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/generate-function/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/generate-object-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/get-caller-file/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/get-stdin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/get-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/get-uri/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/get-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/getpass/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob-base/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob-base/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob-base/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob-base/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob-parent/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/globals/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/globby/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/globule/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/graceful-fs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/handle-thing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/handlebars/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/handlebars/node_modules/uglify-js/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/handlebars/node_modules/uglify-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/handlebars/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/har-schema/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/har-validator/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/har-validator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-ansi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-binary2/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-binary2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-cors/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-symbols/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-unicode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-values/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/has/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hash-base/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hash.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hawk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/he/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hipchat-notifier/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hmac-drbg/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hoek/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hosted-git-info/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/hpack.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/html-entities/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/html-minifier/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/html-webpack-plugin/node_modules/loader-utils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/html-webpack-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/htmlparser2/node_modules/domutils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/htmlparser2/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/htmlparser2/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/htmlparser2/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/htmlparser2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-deceiver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-parser-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-proxy-agent/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-proxy-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-proxy-middleware/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-proxy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/http-signature/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/httpntlm/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/httpreq/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/https-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/https-proxy-agent/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/https-proxy-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ieee754/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/iferr/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ignore/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/image-size/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/immediate/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/import-local/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/imurmurhash/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/in-publish/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/in-publish/test/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/indent-string/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/indexof/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/inflection/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/inflight/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ini/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/internal-ip/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/invariant/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/invert-kv/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ip/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ipaddr.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-accessor-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-arrayish/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-binary-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-builtin-module/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-callable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-data-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-date-object/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-descriptor/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-directory/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-dotfile/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-equal-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-finite/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-my-ip-valid/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-my-json-valid/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-number/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-odd/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-odd/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-path-cwd/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-path-in-cwd/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-path-inside/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-plain-object/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-posix-bracket/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-primitive/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-symbol/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-typedarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-utf8/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-windows/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/is-wsl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/isbinaryfile/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/isexe/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/isstream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-api/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-api/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-instrumenter-loader/node_modules/ajv/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-instrumenter-loader/node_modules/schema-utils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-instrumenter-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-coverage/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-hook/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-instrument/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-report/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-report/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-report/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-source-maps/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-lib-source-maps/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul-reports/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/has-flag/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/test/module_dir/zmodules/bbb/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/test/pathfilter/deep_ref/node_modules/deep/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/test/resolver/baz/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/test/resolver/biz/node_modules/garply/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/test/resolver/incorrect_main/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/resolve/test/subdirs/node_modules/a/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/istanbul/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine-core/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine-spec-reporter/examples/node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine-spec-reporter/examples/protractor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine-spec-reporter/examples/typescript/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine-spec-reporter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine/node_modules/jasmine-core/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasmine/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jasminewd2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jquery/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/js-base64/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/js-tokens/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/js-yaml/node_modules/esprima/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/js-yaml/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jsbn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jsesc/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/json-schema-traverse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/json-schema/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/json-stringify-safe/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/json3/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/json5/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jsonpointer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jsprim/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jszip/node_modules/core-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jszip/node_modules/es6-promise/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jszip/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jszip/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jszip/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/jszip/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma-chrome-launcher/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma-coverage-istanbul-reporter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma-jasmine-html-reporter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma-jasmine/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma-source-map-support/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/anymatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/arr-diff/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/array-unique/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/braces/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/chokidar/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/expand-brackets/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/glob-parent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/karma/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/killable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lazy-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lcid/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/leb/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/less-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/less/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/less/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/less/test/import-module/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/levn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/libbase64/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/libmime/node_modules/iconv-lite/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/libmime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/libqp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/license-webpack-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lie/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/load-json-file/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/load-json-file/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loader-runner/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loader-utils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/locate-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lodash.assign/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lodash.clonedeep/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lodash.mergewith/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lodash.tail/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lodash/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/log-symbols/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/log4js/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/log4js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/assert-plus/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/aws-sign2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/caseless/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/har-validator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/http-signature/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/node-uuid/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/request/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/node_modules/tunnel-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loggly/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loglevel/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loglevelnext/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/long/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/longest/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loose-envify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/loud-rejection/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lower-case/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mailcomposer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mailgun-js/node_modules/async/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mailgun-js/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mailgun-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/make-dir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/make-error/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/map-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/map-obj/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/map-visit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/math-random/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/md5.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/media-typer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mem/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/memory-fs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/meow/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/meow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/merge-descriptors/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/methods/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/micromatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/miller-rabin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mime-db/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mime-types/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mimic-fn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mini-css-extract-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/minimalistic-assert/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/minimalistic-crypto-utils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/minimatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mississippi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mixin-deep/node_modules/is-extendable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mixin-deep/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mixin-object/node_modules/for-in/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mixin-object/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/mkdirp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/move-concurrently/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ms/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/multicast-dns-service-types/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/multicast-dns/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nan/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nan/tools/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nanomatch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/negotiator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/neo-async/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/netmask/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/next-tick/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/no-case/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-forge/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-gyp/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-gyp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-libs-browser/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-libs-browser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/assert-plus/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/aws-sign2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/caseless/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/form-data/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/har-validator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/http-signature/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/request/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/node_modules/tunnel-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/node-sass/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer-direct-transport/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer-fetch/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer-shared/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer-smtp-pool/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer-smtp-transport/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer-wellknown/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer/node_modules/socks/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nodemailer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nopt/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/normalize-package-data/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/normalize-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/normalize-range/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/npm-package-arg/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/npm-registry-client/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/npm-run-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/npmlog/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/nth-check/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/null-check/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/num2fraction/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/number-is-nan/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/oauth-sign/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-assign/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-component/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-copy/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-copy/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-copy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-keys/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object-visit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object.assign/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object.getownpropertydescriptors/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object.omit/node_modules/for-own/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object.omit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/object.pick/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/obuf/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/on-finished/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/on-headers/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/once/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/opn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/optimist/node_modules/wordwrap/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/optimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/optionator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/options/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/original/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/os-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/os-homedir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/os-locale/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/os-tmpdir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/osenv/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/p-finally/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/p-limit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/p-locate/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/p-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/p-try/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pac-proxy-agent/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pac-proxy-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pac-resolver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pako/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parallel-transform/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/param-case/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parse-asn1/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parse-glob/node_modules/is-extglob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parse-glob/node_modules/is-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parse-glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parse-json/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parse5/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parseqs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parseuri/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/parseurl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pascalcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-dirname/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-is-absolute/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-is-inside/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-key/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-parse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-proxy/node_modules/inflection/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-proxy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-to-regexp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/path-type/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pbkdf2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/performance-now/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pinkie-promise/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pinkie/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pkg-dir/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/portfinder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/posix-character-classes/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-import/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-load-config/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-load-options/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-load-plugins/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-url/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss-value-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/postcss/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/prelude-ls/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/preserve/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pretty-error/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/process-nextick-args/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/process/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/promise-inflight/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/promise/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/promisify-call/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/exampleTypescript/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/@types/node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/adm-zip/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/ansi-styles/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/del/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/globby/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/source-map-support/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/webdriver-manager/built/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/node_modules/webdriver-manager/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/protractor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/proxy-addr/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/proxy-agent/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/proxy-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/proxy-from-env/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/prr/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pseudomap/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/public-encrypt/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pump/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/pumpify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/q/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/qjobs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/qs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/querystring-es3/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/querystring/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/querystringify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/randomatic/node_modules/is-number/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/randomatic/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/randombytes/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/randomfill/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/range-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/raw-body/node_modules/depd/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/raw-body/node_modules/http-errors/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/raw-body/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/raw-body/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/raw-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-cache/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-pkg-up/node_modules/find-up/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-pkg-up/node_modules/path-exists/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-pkg-up/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-pkg/node_modules/path-type/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-pkg/node_modules/pify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/read-pkg/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/readable-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/readdirp/examples/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/readdirp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/redent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/redis-commands/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/redis-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/redis/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/reflect-metadata/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regenerate/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regenerator-runtime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regex-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regex-not/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regexpu-core/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regjsgen/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regjsparser/node_modules/jsesc/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/regjsparser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/relateurl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/remove-trailing-separator/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/renderkid/node_modules/utila/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/renderkid/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/repeat-element/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/repeat-string/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/repeating/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/request/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/requestretry/node_modules/when/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/requestretry/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/require-directory/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/require-from-string/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/require-main-filename/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/requires-port/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve-cwd/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve-from/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve-url/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/test/module_dir/zmodules/bbb/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/test/resolver/baz/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/test/resolver/browser_field/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/test/resolver/dot_main/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/test/resolver/dot_slash_main/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/resolve/test/resolver/incorrect_main/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ret/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/retry/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/right-align/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rimraf/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ripemd160/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/run-queue/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/ajax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/internal-compatibility/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/operators/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/src/ajax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/src/internal-compatibility/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/src/operators/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/src/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/src/webSocket/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/testing/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/rxjs/webSocket/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/safe-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/safe-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sass-graph/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sass-graph/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sass-graph/node_modules/y18n/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sass-graph/node_modules/yargs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sass-graph/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sass-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/saucelabs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/schema-utils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/scss-tokenizer/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/scss-tokenizer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/select-hose/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/selenium-webdriver/node_modules/tmp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/selenium-webdriver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/selfsigned/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/semver-dsl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/semver-intersect/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/semver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/send/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/send/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/serialize-javascript/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/serve-index/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/serve-static/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/set-blocking/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/set-immediate-shim/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/set-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/setimmediate/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/setprototypeof/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sha.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/shallow-clone/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/shallow-clone/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/shebang-command/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/shebang-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/signal-exit/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/silent-error/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/slack-node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/slash/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/slide/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/smart-buffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/smtp-connection/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-node/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-node/node_modules/is-accessor-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-node/node_modules/is-data-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-node/node_modules/is-descriptor/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-util/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon-util/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/snapdragon/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sntp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socket.io-adapter/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socket.io-client/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socket.io-parser/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socket.io-parser/node_modules/isarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socket.io-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socket.io/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs-client/node_modules/faye-websocket/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs-client/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/examples/echo/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/examples/express-3.x/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/examples/express/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/examples/hapi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/examples/koa/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/examples/multiplex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sockjs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socks-proxy-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/socks/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/source-list-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/source-map-resolve/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/source-map-support/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/source-map-support/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/source-map-url/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/spdx-correct/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/spdx-exceptions/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/spdx-expression-parse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/spdx-license-ids/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/spdy-transport/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/spdy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/split-string/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sprintf-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/sshpk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ssri/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/static-extend/node_modules/define-property/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/static-extend/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stats-webpack-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/statuses/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stdout-stream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stream-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stream-each/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stream-http/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stream-http/test/browser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stream-shift/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/streamroller/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/streamroller/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/string_decoder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stringstream/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/strip-bom/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/strip-eof/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/strip-indent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/style-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stylus-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stylus/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stylus/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/stylus/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/supports-color/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/symbol-observable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tapable/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tar/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/through/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/through2/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/thunkify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/thunky/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/timers-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/timespan/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tmp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-array/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-arraybuffer/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-fast-properties/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-object-path/node_modules/kind-of/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-object-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-regex-range/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/to-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/toposort/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tough-cookie/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tough-cookie/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tree-kill/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/trim-newlines/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/trim-right/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/true-case-path/node_modules/glob/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/true-case-path/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ts-node/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ts-node/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ts-node/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tsickle/node_modules/minimist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tsickle/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tsickle/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tslib/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tslint/node_modules/chalk/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tslint/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tsscmp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tsutils/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tty-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tunnel-agent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/tweetnacl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/type-check/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/type-is/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/typedarray/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/typescript/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglify-js/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglify-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglify-to-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglifyjs-webpack-plugin/node_modules/commander/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglifyjs-webpack-plugin/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglifyjs-webpack-plugin/node_modules/uglify-es/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uglifyjs-webpack-plugin/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ultron/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/underscore/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/union-value/node_modules/extend-shallow/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/union-value/node_modules/set-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/union-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unique-filename/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unique-slug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unpipe/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unset-value/node_modules/has-value/node_modules/isobject/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unset-value/node_modules/has-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unset-value/node_modules/has-values/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/unset-value/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/upath/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/upper-case/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uri-js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/urix/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/url-join/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/url-loader/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/url-loader/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/url-parse/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/url/node_modules/punycode/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/url/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/use/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/useragent/node_modules/lru-cache/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/useragent/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/util-deprecate/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/util.promisify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/util/node_modules/inherits/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/util/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/utila/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/utils-merge/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uuid/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/uws/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/validate-npm-package-license/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/validate-npm-package-name/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/vary/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/verror/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/vm-browserify/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/void-elements/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/watchpack/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/wbuf/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webassemblyjs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webdriver-js-extender/built/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webdriver-js-extender/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webdriver-js-extender/node_modules/selenium-webdriver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webdriver-js-extender/node_modules/tmp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webdriver-js-extender/node_modules/xml2js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webdriver-js-extender/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-core/node_modules/source-list-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-core/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-core/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-middleware/node_modules/mime/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-middleware/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/ansi-regex/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/cliui/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/cliui/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/debug/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/is-fullwidth-code-point/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/os-locale/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/string-width/node_modules/strip-ansi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/string-width/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/which-module/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/y18n/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/yargs-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/node_modules/yargs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-dev-server/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-log/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-merge/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-sources/node_modules/source-map/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-sources/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack-subresource-integrity/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/webpack/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/websocket-driver/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/websocket-extensions/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/when/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/which-module/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/which/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/wide-align/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/window-size/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/with-callback/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/wordwrap/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/worker-farm/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/wrap-ansi/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/wrappy/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/ws/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xml2js/node_modules/sax/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xml2js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xmlbuilder/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xmlhttprequest-ssl/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xregexp/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xtend/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/xxhashjs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/y18n/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/yallist/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/yargs-parser/node_modules/camelcase/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/yargs-parser/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/yargs/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/yeast/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/yn/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/node_modules/zone.js/package.json" />
+      <path value="$PROJECT_DIR$/goserver/webhomecontrol/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
@@ -58,7 +1372,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -66,27 +1379,18 @@
               <item name="homecontrol" type="b2602c69:ProjectViewProjectNode" />
               <item name="homecontrol" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="homecontrol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homecontrol" type="462c0819:PsiDirectoryNode" />
-              <item name="goserver" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="homecontrol" type="b2602c69:ProjectViewProjectNode" />
-              <item name="homecontrol" type="462c0819:PsiDirectoryNode" />
-              <item name="goserver" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -102,28 +1406,46 @@
       </list>
     </option>
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ed0b0d2e-3a70-4db9-8887-69bac9373bbd" name="Default" comment="" />
+      <created>1529397332963</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1529397332963</updated>
+      <workItem from="1529397334939" duration="535000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="535000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14517266" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +1455,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/goserver/models/mainModels.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/goserver/models/controlled.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -144,6 +1473,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="342">
+            <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

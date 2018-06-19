@@ -1,4 +1,25 @@
-# HomeControl 1.0.0
+# HomeControl
+
+Dowload:  
+-------  
+###### server ######  
+[linux x64](https://yadi.sk/d/SuqQyuHC3Y7PEH)  
+[linux x32](https://yadi.sk/d/yjL1okW33Y7PFm)  
+[windows x64](https://yadi.sk/d/ZEG0APdd3Y7PNL)  
+[windows x32](https://yadi.sk/d/v-Q8YzUt3Y7PLN)  
+[mac x64](https://yadi.sk/d/_G4_maT83Y7PH5)  
+[mac x32](https://yadi.sk/d/itYOF9c73Y7PK7)  
+Run file  
+Server open web control: ip:8085/  
+ip = device ip  
+
+###### controlled desktop ######  
+[linux, windows, mac & all JVM java](https://yadi.sk/d/3zSRdf5y3Y7E73)  
+put port = 8086
+
+###### controlled mobile ######  
+[androidOS not](/)  
+[iOS not](/)  
 
 Server:
 -------  
@@ -36,15 +57,15 @@ Interpretation command for controlled:
 | 999     | testWork                        |                    |
 
 Controlled HTTP OPEN API:  
-metod POST '/'  
+method POST '/used/command'  
 Body request:  
 //First 4 bytes = Command(int32)   
 //Next bytes = stringCommand(string)
 
 HTTP OPEN API for controlled:  
-metod POST '/api/controlled'  
-metod PUT '/api/controlled'  
-metod POST '/api/controlled/message'
+method POST '/api/controlled'  
+method PUT '/api/controlled'  
+method POST '/api/controlled/message'
 
 Control web:
 -------  
