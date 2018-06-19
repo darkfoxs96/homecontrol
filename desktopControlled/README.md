@@ -1,4 +1,4 @@
-# ControlledDesktopHomeControl
+# DesktopControlledHomeControl
 
 Http server:
 -------
