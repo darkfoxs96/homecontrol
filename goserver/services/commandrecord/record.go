@@ -50,7 +50,14 @@ func UsedSoundCommand(sound []byte, buffer string) (responseMessage string, err 
 
 	commandrecord := GetCommandRecord(commandID)
 	if buffer != "" {
-		commandrecord.StringCommand = buffer
+		commandrecordNewStringCommand := &models.CommandRecord{
+			Command:       commandrecord.Command,
+			NumberOfWords: commandrecord.NumberOfWords,
+			StringCommand: buffer,
+			TypeRecord:    commandrecord.TypeRecord,
+			СontrolledID:  commandrecord.СontrolledID,
+		}
+		return controlled.RequestToControlled(controlled.GetControlled(controlledID), commandrecordNewStringCommand)
 	}
 
 	return controlled.RequestToControlled(controlled.GetControlled(controlledID), commandrecord)
@@ -83,8 +90,16 @@ func UsedTextCommand(command string, buffer string) (responseMessage string, err
 		err = errors.New("CommandRecord: No controlled record")
 		return
 	}
+
 	if buffer != "" {
-		commandrecord.StringCommand = buffer
+		commandrecordNewStringCommand := &models.CommandRecord{
+			Command:       commandrecord.Command,
+			NumberOfWords: commandrecord.NumberOfWords,
+			StringCommand: buffer,
+			TypeRecord:    commandrecord.TypeRecord,
+			СontrolledID:  commandrecord.СontrolledID,
+		}
+		return controlled.RequestToControlled(controlledRecord, commandrecordNewStringCommand)
 	}
 
 	return controlled.RequestToControlled(controlledRecord, commandrecord)

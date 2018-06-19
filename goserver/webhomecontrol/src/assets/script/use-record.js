@@ -102,6 +102,7 @@ function recordingWAVToServer(blob) {
   xhr.onreadystatechange = function() {
     if (this.readyState == 4) {
       if (this.status == 200) {
+        document.getElementById('recording_string_command_input').value = "";
       } else {
         alert('error: ' + this.responseText);
       }

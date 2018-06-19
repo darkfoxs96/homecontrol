@@ -78,7 +78,7 @@ function recordingStartRecording() {
   setTimeout(function() {
     recording_recorder.setOutSampelRate(recording_out_sample_rate);
     recording_recorder && recording_recorder.record();
-  }, 1300)
+  }, 1000)
 }
 
 function recordingStopRecording() {
@@ -102,6 +102,7 @@ function recordingWAVToServer(blob) {
   xhr.onreadystatechange = function() {
     if (this.readyState == 4) {
       if (this.status == 200) {
+        document.getElementById('recording_string_command_input').value = "";
       } else {
         alert('error: ' + this.responseText);
       }

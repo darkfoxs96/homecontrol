@@ -794,6 +794,7 @@ var RemoteControllerComponent = /** @class */ (function () {
     RemoteControllerComponent.prototype.goTextCommandToServer = function (button) {
         this.audio.play();
         var buffer = document.getElementById('recording_string_command_input').value;
+        document.getElementById('recording_string_command_input').value = "";
         var command = button.target.getAttribute('name');
         this.commandRecord.useText(command, buffer).subscribe(function (data) { }, function (err) {
             alert(err.error);
@@ -1016,6 +1017,7 @@ var SettingsControlledsComponent = /** @class */ (function () {
     SettingsControlledsComponent.prototype.deleteControlled = function (controlled_id) {
         var _this = this;
         this.controlled.deleteControlled(controlled_id).subscribe(function () {
+            _this.storeArray.getStore().load_array();
             var array_promise = [];
             _this.list_command_record.forEach(function (record) {
                 if (record.controlled_id == controlled_id) {
