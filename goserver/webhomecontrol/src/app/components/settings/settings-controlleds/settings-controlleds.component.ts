@@ -80,6 +80,7 @@ export class SettingsControlledsComponent implements OnInit {
   deleteControlled(controlled_id: number): void {
     this.controlled.deleteControlled(controlled_id).subscribe(
       () => {
+        this.storeArray.getStore().load_array();
         let array_promise: Promise<void>[] = [];
         this.list_command_record.forEach((record) => {
           if(record.controlled_id == controlled_id) {
