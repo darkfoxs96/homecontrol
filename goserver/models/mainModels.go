@@ -1,6 +1,7 @@
 package models
 
 import (
+	"strings"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -66,6 +67,7 @@ func init() {
 	//Get path
 	dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
 	if err == nil {
+		dir = strings.Replace(dir, `\`, `/`, -1)
 		Path = dir + "/"
 		if Test {
 			Path = "./"
