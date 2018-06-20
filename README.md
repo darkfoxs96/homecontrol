@@ -9,7 +9,7 @@ Dowload v1.0.0 alpha:
 [windows x32](https://yadi.sk/d/hU1hXCag3YAyLz)  
 [mac x64](https://yadi.sk/d/jlfZuvYe3YAyHQ)  
 [mac x32](https://yadi.sk/d/_aS3I8tL3YAyGM)  
-Run file  
+Run file mac_server_start & linux_server_start & win_server_start.bat  
 Server open web control: ip:8085/  
 ip = device ip  
 
