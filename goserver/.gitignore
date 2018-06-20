@@ -4,3 +4,7 @@ models/*.json
 *.tmp
 .idea/
 redis/
+build/dist/
+goserver
+goserver.exe
+goserver.exec
