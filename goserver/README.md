@@ -16,5 +16,5 @@ Build documentation:
 Build:  
 -------  
 ###### bash-script ######  
-build server to /build/dist/: mac.zip, mac_x64.zip, linux.zip, linux_x64.zip, win.zip, win_x64.zip
+build server to `/build/dist/`: `mac.zip, mac_x64.zip, linux.zip, linux_x64.zip, win.zip, win_x64.zip`  
 Run file `bash_build_project`
