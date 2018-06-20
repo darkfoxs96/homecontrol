@@ -39,7 +39,7 @@ public class UseControl extends Thread {
 
             try {
                 Thread.sleep(3000);
-            } catch (InterruptedException e) {
+            } catch (InterruptedException | IllegalArgumentException e) {
                 e.printStackTrace();
             }
         }
@@ -50,7 +50,7 @@ public class UseControl extends Thread {
             try {
                 HomeControlControlled.reportUseControlToServer("Moved the mouse");
                 iterating = 101;
-            } catch (IOException e) {
+            } catch (IOException | IllegalArgumentException e) {
                 e.printStackTrace();
             }
         }
