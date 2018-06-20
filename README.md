@@ -3,12 +3,12 @@
 Dowload v1.0.0 alpha:  
 -------  
 ###### server ######  
-[linux x64](https://yadi.sk/d/-gZ0Ukfo3YAyEY)  
-[linux x32](https://yadi.sk/d/0klunNZ43YAyDY)  
-[windows x64](https://yadi.sk/d/4kPHF7sW3YAyN4)  
-[windows x32](https://yadi.sk/d/hU1hXCag3YAyLz)  
-[mac x64](https://yadi.sk/d/jlfZuvYe3YAyHQ)  
-[mac x32](https://yadi.sk/d/_aS3I8tL3YAyGM)  
+[linux x64](https://yadi.sk/d/rafUixFC3YBFEG)  
+[linux x32](https://yadi.sk/d/tPTurI2K3YBFDq)  
+[windows x64](https://yadi.sk/d/0OEBBPe73YBFF2)  
+[windows x32](https://yadi.sk/d/I3m-FtWx3YBFEc)  
+[mac x64](https://yadi.sk/d/73rT_rae3YBFFg)  
+[mac x32](https://yadi.sk/d/m7nqL7Rm3YBFFP)  
 Run file: `mac_server_start` & `linux_server_start` & `win_server_start.bat`  
 Server open web control: `ip:8085/`  
 ip = device ip  
