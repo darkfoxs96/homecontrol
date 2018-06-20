@@ -67,6 +67,7 @@ public class ConnectToServer {
         Socket socet = null;
 
         socet = new Socket(this.serverHost, this.serverPort);
+        socet.setSoTimeout(3000);
 
         OutputStream wr = socet.getOutputStream();
 

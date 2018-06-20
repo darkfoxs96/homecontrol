@@ -1,12 +1,11 @@
 package indie.http_listener;
 
 import java.io.IOException;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 
 import org.glassfish.grizzly.Buffer;
-import org.glassfish.grizzly.http.server.HttpHandler;
-import org.glassfish.grizzly.http.server.HttpServer;
-import org.glassfish.grizzly.http.server.Request;
-import org.glassfish.grizzly.http.server.Response;
+import org.glassfish.grizzly.http.server.*;
 
 import indie.HomeControlControlled;
 
@@ -20,7 +19,19 @@ public class HTTPListener extends Thread{
     }
 
     public void run() {
-        server = HttpServer.createSimpleServer("localhost", port);
+        String host = "localhost";
+        try {
+            host = InetAddress.getLocalHost().getHostAddress();
+        } catch (UnknownHostException e) {
+            e.printStackTrace();
+        }
+        System.out.println("controlled ip: " + host);
+
+        server = HttpServer.createSimpleServer(host, port);
+
+        NetworkListener listener = new NetworkListener("grizzly", host, port);
+        server.addListener(listener);
+
         server.getServerConfiguration().addHttpHandler(
                 new HttpHandler() {
                     public void service(Request request, Response response) throws IOException {
@@ -28,7 +39,7 @@ public class HTTPListener extends Thread{
                         Buffer body = null;
 
                         try {
-                            body = request.getPostBody(10000);
+                            body = request.getPostBody(100000);
                         } catch (IOException e) {
                             msg = "error: body reading";
                             response.setContentType("text/plain");
@@ -40,6 +51,14 @@ public class HTTPListener extends Thread{
 
                         byte[] bodyBytes = new byte[body.remaining()];
                         body.get(bodyBytes);
+                        if(bodyBytes.length == 0) {
+                            msg = "error: body empty";
+                            response.setContentType("text/plain");
+                            response.setContentLength(msg.length());
+                            response.setStatus(400);
+                            response.getWriter().write(msg);
+                            return;
+                        }
 
                         try {
                             msg = HomeControlControlled.usedCommand(bodyBytes);

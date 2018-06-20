@@ -9,16 +9,17 @@ import java.io.IOException;
 import indie.HomeControlControlled;
 
 public class UIControlled extends JFrame{
-    private JTextField textField1;
-    private JButton playButton;
-    private JTextField textField2;
-    private JPanel panel;
-    private JTextField textField3;
-    private JLabel outError;
     public static UIControlled app;
-    private TrayIcon iconTr;
-    private SystemTray sT = SystemTray.getSystemTray();
     public boolean chetTray = false; //переменная, чтобы был вывод сообщения в трее только при первом сворачивании
+
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JLabel     outError;
+    private JButton    playButton;
+    private JPanel     panel;
+    private TrayIcon   iconTr;
+    private SystemTray sT = SystemTray.getSystemTray();
 
     public UIControlled(String name){
         super(name);
@@ -42,7 +43,7 @@ public class UIControlled extends JFrame{
                 try {
                     HomeControlControlled.createHTTPListener(textField1.getText(),Integer.parseInt(textField2.getText()), textField3.getText());
                     outError.setText("Work");
-                } catch (IOException e1) {
+                } catch (IOException | IllegalArgumentException e1) {
                     e1.printStackTrace();
                     outError.setText(e1.getMessage());
                 }

@@ -9,23 +9,25 @@ import indie.HomeControlControlled;
 public class CommonBuffer extends Thread {
     private String    buffer = "";
     private Clipboard clip   = Toolkit.getDefaultToolkit().getSystemClipboard();
+    private String    newBuf =  "";
 
     public CommonBuffer() {
         start();
     }
 
     public void run() {
-        String newBuf = "";
         while (true) {
             try {
+                Thread.sleep(1000);
+
                 newBuf = (String) clip.getData(DataFlavor.stringFlavor);
+
                 if(!newBuf.equals(buffer)) {
                     buffer = newBuf;
+
                     newBuffer();
                 }
-
-                Thread.sleep(1000);
-            } catch (UnsupportedFlavorException | IOException | InterruptedException e) {
+            } catch (UnsupportedFlavorException | IOException | InterruptedException | IllegalArgumentException e) {
                 e.printStackTrace();
             }
         }
@@ -39,7 +41,7 @@ public class CommonBuffer extends Thread {
 
         try {
             HomeControlControlled.updateBufferToServer(buffer);
-        } catch (IOException e) {
+        } catch (IOException | IllegalArgumentException e) {
             e.printStackTrace();
         }
     }

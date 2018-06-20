@@ -58,8 +58,6 @@ public class UsedCommand {
 
         String commandString = new String(commandStringBytes, StandardCharsets.UTF_8);
 
-        System.out.println(commandString + commandID);
-
         return goCommand(commandID, commandString);
     }
 
@@ -122,12 +120,13 @@ public class UsedCommand {
 
     // openPage: command ID = 1
     private void openPage(String urlPage) throws IOException {
-        if (OSName.contains("win")) {
+        System.out.println(OSName);
+        if (OSName.contains("win") || OSName.contains("Win")) {
             // не поддерживаются ссылки формата "leodev.html#someTag"
             rt.exec("rundll32 url.dll,FileProtocolHandler " + urlPage); // если windows, открываем урлу через командную строку
-        } else if (OSName.contains("mac")) {
+        } else if (OSName.contains("mac") || OSName.contains("Mac")) {
             rt.exec("open " + urlPage); // аналогично в MAC
-        } else if (OSName.contains("nix") || OSName.contains("nux")) {
+        } else if (OSName.contains("nix") || OSName.contains("Nix") || OSName.contains("nux") || OSName.contains("Nux")) {
             // c nix системами все несколько проблемотичнее
             String[] browsers = {"epiphany", "firefox", "mozilla", "konqueror", "netscape", "opera", "links", "lynx", "chrome"};
 
@@ -143,8 +142,6 @@ public class UsedCommand {
         }
     }
 
-
-    // TODO: not work mac
     // stop: command ID = 2
     private void stopPlay() {
         robot.setAutoWaitForIdle(true);
@@ -156,7 +153,6 @@ public class UsedCommand {
 
     // valueOff: command ID = 3
     private void valueOff() {
-        System.out.println(1234);
         Mixer.Info[] infos = AudioSystem.getMixerInfo();
 
         for (Mixer.Info info: infos) {
