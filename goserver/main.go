@@ -1,7 +1,9 @@
 package main
 
 import (
+	"fmt"
 	"io/ioutil"
+	"net"
 
 	"github.com/astaxie/beego"
 
@@ -19,6 +21,8 @@ import (
 )
 
 func main() {
+	iPAdressPrintLn()
+
 	// swagger
 	if beego.BConfig.RunMode == "dev" {
 		beego.BConfig.WebConfig.DirectoryIndex = true
@@ -54,5 +58,20 @@ func settingsStatic() {
 	files, _ = ioutil.ReadDir(models.Path + "webhomecontrol/dist/webhomecontrol/assets/fonts")
 	for _, f := range files {
 		beego.SetStaticPath("/assets/fonts/"+f.Name(), models.Path+"webhomecontrol/dist/webhomecontrol/assets/fonts/"+f.Name())
+	}
+}
+
+func iPAdressPrintLn() {
+	addrs, err := net.InterfaceAddrs()
+	if err != nil {
+		fmt.Println("Oops: " + err.Error() + "\n")
+	}
+
+	for _, a := range addrs {
+		if ipnet, ok := a.(*net.IPNet); ok && !ipnet.IP.IsLoopback() {
+			if ipnet.IP.To4() != nil {
+				fmt.Println("SITE OPEN: http://" + ipnet.IP.String() + ":8085")
+			}
+		}
 	}
 }

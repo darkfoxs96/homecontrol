@@ -19,6 +19,7 @@ LINUX="$OUTDIR/linux_"$VERSERVER"_home_control_server"
 WINSTART="win_start_server.bat"
 MACSTART="mac_start_server"
 LINUXSTART="linux_start_server"
+CONFIG="app.conf"
 
 # START
 mkdir $OUTDIR
@@ -35,6 +36,7 @@ cp -R $HOMEDIR/conf $MAC64/conf
 cp -R $HOMEDIR/static $MAC64/static
 cp -R $HOMEDIR/views $MAC64/views
 cp -R $HOMEDIR/webhomecontrol/dist $MAC64/webhomecontrol/dist
+cp $LOADFILESDIR/$CONFIG $MAC64/conf/$CONFIG
 
 GOOS=darwin GOARCH=amd64 go build -o GSHC
 cp -R $HOMEDIR/GSHC $MAC64/GSHC
@@ -56,6 +58,7 @@ cp -R $HOMEDIR/conf $MAC/conf
 cp -R $HOMEDIR/static $MAC/static
 cp -R $HOMEDIR/views $MAC/views
 cp -R $HOMEDIR/webhomecontrol/dist $MAC/webhomecontrol/dist
+cp $LOADFILESDIR/$CONFIG $MAC/conf/$CONFIG
 
 GOOS=darwin GOARCH=386 go build -o GSHC
 cp -R $HOMEDIR/GSHC $MAC/GSHC
@@ -80,6 +83,7 @@ cp -R $HOMEDIR/conf $WIN64/conf
 cp -R $HOMEDIR/static $WIN64/static
 cp -R $HOMEDIR/views $WIN64/views
 cp -R $HOMEDIR/webhomecontrol/dist $WIN64/webhomecontrol/dist
+cp $LOADFILESDIR/$CONFIG $WIN64/conf/$CONFIG
 
 GOOS=windows GOARCH=amd64 go build -o GSHC.exe
 cp -R $HOMEDIR/GSHC.exe $WIN64/GSHC.exe
@@ -101,6 +105,7 @@ cp -R $HOMEDIR/conf $WIN/conf
 cp -R $HOMEDIR/static $WIN/static
 cp -R $HOMEDIR/views $WIN/views
 cp -R $HOMEDIR/webhomecontrol/dist $WIN/webhomecontrol/dist
+cp $LOADFILESDIR/$CONFIG $WIN/conf/$CONFIG
 
 GOOS=windows GOARCH=386 go build -o GSHC.exe
 cp -R $HOMEDIR/GSHC.exe $WIN/GSHC.exe
@@ -125,6 +130,7 @@ cp -R $HOMEDIR/conf $LINUX64/conf
 cp -R $HOMEDIR/static $LINUX64/static
 cp -R $HOMEDIR/views $LINUX64/views
 cp -R $HOMEDIR/webhomecontrol/dist $LINUX64/webhomecontrol/dist
+cp $LOADFILESDIR/$CONFIG $LINUX64/conf/$CONFIG
 
 GOOS=linux GOARCH=amd64 go build -o GSHC
 cp -R $HOMEDIR/GSHC $LINUX64/GSHC
@@ -146,6 +152,7 @@ cp -R $HOMEDIR/conf $LINUX/conf
 cp -R $HOMEDIR/static $LINUX/static
 cp -R $HOMEDIR/views $LINUX/views
 cp -R $HOMEDIR/webhomecontrol/dist $LINUX/webhomecontrol/dist
+cp $LOADFILESDIR/$CONFIG $LINUX/conf/$CONFIG
 
 GOOS=linux GOARCH=amd64 go build -o GSHC
 cp -R $HOMEDIR/GSHC $LINUX/GSHC
