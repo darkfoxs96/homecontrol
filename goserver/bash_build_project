@@ -24,146 +24,57 @@ CONFIG="app.conf"
 # START
 mkdir $OUTDIR
 cd $HOMEDIR
-# MAC
-# amd64
-mkdir $MAC64
-mkdir $MAC64/webhomecontrol
-mkdir $MAC64/models
 
-cp $LOADFILESDIR/$MACSTART $MAC64/$MACSTART
-cp -R $HOMEDIR/swagger $MAC64/swagger
-cp -R $HOMEDIR/conf $MAC64/conf
-cp -R $HOMEDIR/static $MAC64/static
-cp -R $HOMEDIR/views $MAC64/views
-cp -R $HOMEDIR/webhomecontrol/dist $MAC64/webhomecontrol/dist
-cp $LOADFILESDIR/$CONFIG $MAC64/conf/$CONFIG
+# Example:
+# $1 = $MAC64 or $WIN ...
+# $2 = $MACSTART or $LINUXSTART ...
+# $3 = name: "mac_x64" or "linux_x64" or "win" ...
+# $4 = OS   for go build: "darwin" or "windows" or "linux" ...
+# $5 = ARCH for go build: "amd64" or "386" ...
+# $6 = name out file go build: "macGSHC" or "winGSHC.exe" ...
+# $7 = out name file:          "GSHC"    or "GSHC.exe" ...
+funcBuildServer () {
+    mkdir $1
+    mkdir $1/webhomecontrol
+    mkdir $1/models
 
-GOOS=darwin GOARCH=amd64 go build -o GSHC
-cp -R $HOMEDIR/GSHC $MAC64/GSHC
+    cp $LOADFILESDIR/$2 $1/$2
+    cp -R $HOMEDIR/swagger $1/swagger
+    cp -R $HOMEDIR/conf $1/conf
+    cp -R $HOMEDIR/static $1/static
+    cp -R $HOMEDIR/views $1/views
+    cp -R $HOMEDIR/webhomecontrol/dist $1/webhomecontrol/dist
+    cp $LOADFILESDIR/$CONFIG $1/conf/$CONFIG
 
-cd $MAC64
-zip -r mac_x64_"$VERSERVER"_home_control_server.zip ./
-cp ./mac_x64_"$VERSERVER"_home_control_server.zip $OUTDIR/mac_x64_"$VERSERVER"_home_control_server.zip
-rm -r -f $MAC64
-cd $HOMEDIR
+    env GOOS="$4" GOARCH="$5" go build -o "$6"
+    cp -R $HOMEDIR/"$6" $1/"$6"
 
-# 386
-mkdir $MAC
-mkdir $MAC/webhomecontrol
-mkdir $MAC/models
+    mv $1/"$6" $1/"$7"
 
-cp $LOADFILESDIR/$MACSTART $MAC/$MACSTART
-cp -R $HOMEDIR/swagger $MAC/swagger
-cp -R $HOMEDIR/conf $MAC/conf
-cp -R $HOMEDIR/static $MAC/static
-cp -R $HOMEDIR/views $MAC/views
-cp -R $HOMEDIR/webhomecontrol/dist $MAC/webhomecontrol/dist
-cp $LOADFILESDIR/$CONFIG $MAC/conf/$CONFIG
+    cd $1
+    zip -r "$3"_"$VERSERVER"_home_control_server.zip ./
+    cp ./"$3"_"$VERSERVER"_home_control_server.zip $OUTDIR/"$3"_"$VERSERVER"_home_control_server.zip
+    rm -r -f $1
+    cd $HOMEDIR
 
-GOOS=darwin GOARCH=386 go build -o GSHC
-cp -R $HOMEDIR/GSHC $MAC/GSHC
+    rm -r -f $HOMEDIR/"$6"
+}
 
-cd $MAC
-zip -r mac_"$VERSERVER"_home_control_server.zip ./
-cp ./mac_"$VERSERVER"_home_control_server.zip $OUTDIR/mac_"$VERSERVER"_home_control_server.zip
-rm -r -f $MAC
-cd $HOMEDIR
+# BUILD
+funcBuildServer $MAC64 $MACSTART "mac_x64" "darwin" "amd64" "mac64GSHC" "GSHC" &
+funcBuildServer $MAC   $MACSTART "mac"     "darwin" "386"   "macGSHC"   "GSHC" &
 
-rm -r -f $HOMEDIR/GSHC
+funcBuildServer $WIN64 $WINSTART "win_x64" "windows" "amd64" "win64GSHC.exe" "GSHC.exe" &
+funcBuildServer $WIN   $WINSTART "win"     "windows" "386"   "winGSHC.exe"   "GSHC.exe" &
 
-# WIN
-# amd64
-mkdir $WIN64
-mkdir $WIN64/webhomecontrol
-mkdir $WIN64/models
+funcBuildServer $LINUX64 $LINUXSTART "linux_x64" "linux" "amd64" "linux64GSHC" "GSHC" &
+funcBuildServer $LINUX   $LINUXSTART "linux"     "linux" "386"   "linuxGSHC"   "GSHC" &
 
-cp $LOADFILESDIR/$WINSTART $WIN64/$WINSTART
-cp -R $HOMEDIR/swagger $WIN64/swagger
-cp -R $HOMEDIR/conf $WIN64/conf
-cp -R $HOMEDIR/static $WIN64/static
-cp -R $HOMEDIR/views $WIN64/views
-cp -R $HOMEDIR/webhomecontrol/dist $WIN64/webhomecontrol/dist
-cp $LOADFILESDIR/$CONFIG $WIN64/conf/$CONFIG
+echo "build..."
 
-GOOS=windows GOARCH=amd64 go build -o GSHC.exe
-cp -R $HOMEDIR/GSHC.exe $WIN64/GSHC.exe
-
-cd $WIN64
-zip -r win_x64_"$VERSERVER"_home_control_server.zip ./
-cp ./win_x64_"$VERSERVER"_home_control_server.zip $OUTDIR/win_x64_"$VERSERVER"_home_control_server.zip
-rm -r -f $WIN64
-cd $HOMEDIR
-
-# 386
-mkdir $WIN
-mkdir $WIN/webhomecontrol
-mkdir $WIN/models
-
-cp $LOADFILESDIR/$WINSTART $WIN/$WINSTART
-cp -R $HOMEDIR/swagger $WIN/swagger
-cp -R $HOMEDIR/conf $WIN/conf
-cp -R $HOMEDIR/static $WIN/static
-cp -R $HOMEDIR/views $WIN/views
-cp -R $HOMEDIR/webhomecontrol/dist $WIN/webhomecontrol/dist
-cp $LOADFILESDIR/$CONFIG $WIN/conf/$CONFIG
-
-GOOS=windows GOARCH=386 go build -o GSHC.exe
-cp -R $HOMEDIR/GSHC.exe $WIN/GSHC.exe
-
-cd $WIN
-zip -r win_"$VERSERVER"_home_control_server.zip ./
-cp ./win_"$VERSERVER"_home_control_server.zip $OUTDIR/win_"$VERSERVER"_home_control_server.zip
-rm -r -f $WIN
-cd $HOMEDIR
-
-rm -r -f $HOMEDIR/GSHC.exe
-
-# LINUX
-# amd64
-mkdir $LINUX64
-mkdir $LINUX64/webhomecontrol
-mkdir $LINUX64/models
-
-cp $LOADFILESDIR/$LINUXSTART $LINUX64/$LINUXSTART
-cp -R $HOMEDIR/swagger $LINUX64/swagger
-cp -R $HOMEDIR/conf $LINUX64/conf
-cp -R $HOMEDIR/static $LINUX64/static
-cp -R $HOMEDIR/views $LINUX64/views
-cp -R $HOMEDIR/webhomecontrol/dist $LINUX64/webhomecontrol/dist
-cp $LOADFILESDIR/$CONFIG $LINUX64/conf/$CONFIG
-
-GOOS=linux GOARCH=amd64 go build -o GSHC
-cp -R $HOMEDIR/GSHC $LINUX64/GSHC
-
-cd $LINUX64
-zip -r linux_x64_"$VERSERVER"_home_control_server.zip ./
-cp ./linux_x64_"$VERSERVER"_home_control_server.zip $OUTDIR/linux_x64_"$VERSERVER"_home_control_server.zip
-rm -r -f $LINUX64
-cd $HOMEDIR
-
-# 386
-mkdir $LINUX
-mkdir $LINUX/webhomecontrol
-mkdir $LINUX/models
-
-cp $LOADFILESDIR/$LINUXSTART $LINUX/$LINUXSTART
-cp -R $HOMEDIR/swagger $LINUX/swagger
-cp -R $HOMEDIR/conf $LINUX/conf
-cp -R $HOMEDIR/static $LINUX/static
-cp -R $HOMEDIR/views $LINUX/views
-cp -R $HOMEDIR/webhomecontrol/dist $LINUX/webhomecontrol/dist
-cp $LOADFILESDIR/$CONFIG $LINUX/conf/$CONFIG
-
-GOOS=linux GOARCH=amd64 go build -o GSHC
-cp -R $HOMEDIR/GSHC $LINUX/GSHC
-
-cd $LINUX
-zip -r linux_"$VERSERVER"_home_control_server.zip ./
-cp ./linux_"$VERSERVER"_home_control_server.zip $OUTDIR/linux_"$VERSERVER"_home_control_server.zip
-rm -r -f $LINUX
-cd $HOMEDIR
-
-rm -r -f $HOMEDIR/GSHC
+wait
+echo "ok!"
 
 # END
-exit
+kill -9 $PPID
+exit 0
