@@ -208,11 +208,11 @@ public class UsedCommand {
 
     // off: command ID = 5
     private void off() throws IOException {
-        if (OSName.contains("win")) {
+        if (OSName.contains("win") || OSName.contains("Win")) {
             rt.exec(new String[]{"shutdown", "-s", "f"});   // Windows
-        } else if (OSName.contains("mac")) {
+        } else if (OSName.contains("mac") || OSName.contains("Mac")) {
             rt.exec(new String[]{"shutdown", "-h", "now"}); // Mac
-        } else if (OSName.contains("nix") || OSName.contains("nux")) {
+        } else if (OSName.contains("nix") || OSName.contains("Nix") || OSName.contains("nux") || OSName.contains("Nux")) {
             rt.exec(new String[]{"shutdown", "-h", "now"}); // Linux
         }
     }
