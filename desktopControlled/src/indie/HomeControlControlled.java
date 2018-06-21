@@ -6,7 +6,7 @@ import java.util.prefs.Preferences;
 
 import indie.common_buffer.CommonBuffer;
 import indie.connect_to_server.ConnectToServer;
-import indie.http_listener.HTTPListener;
+import indie.http_listener.HttpServer;
 import indie.ui.UIControlled;
 import indie.use_control.UseControl;
 import indie.used_command.UsedCommand;
@@ -25,7 +25,7 @@ public class HomeControlControlled {
     // SERVICES
     static private ConnectToServer connectToServer = null;
     static private UsedCommand     goUsedCommand   = null;
-    static private HTTPListener    httpListener    = null;
+    static private HttpServer      httpServer      = null;
     static private CommonBuffer    commonBuffer    = null;
     static private UseControl      useControl      = null;
     // Store
@@ -72,7 +72,6 @@ public class HomeControlControlled {
             settings = Preferences.userRoot().node(SettingsHCControlled.class.getName());
         }
 
-        myServerName = settings.get   ("myServerName", "");
         myServerID   = settings.getInt("myServerID", 0);
         serverHost   = settings.get   ("serverHost", "");
         serverPort   = settings.getInt("serverPort", 0);
@@ -87,8 +86,8 @@ public class HomeControlControlled {
         serverHost = host;
         serverPort = port;
 
-        if(httpListener == null) {
-            httpListener = new HTTPListener();
+        if(httpServer == null) {
+            httpServer = new HttpServer();
         }
 
         myServerHost = InetAddress.getLocalHost().getHostAddress();
@@ -183,10 +182,6 @@ public class HomeControlControlled {
 
     // CLOSE
     public static void close() {
-        if(httpListener != null) {
-            httpListener.serverStop();
-        }
-
         save();
     }
 
@@ -195,7 +190,6 @@ public class HomeControlControlled {
             settings = Preferences.userRoot().node(SettingsHCControlled.class.getName());
         }
 
-        settings.put   ("myServerName", myServerName);
         settings.putInt("myServerID", myServerID);
         settings.put   ("serverHost", serverHost);
         settings.putInt("serverPort", serverPort);
