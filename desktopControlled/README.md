@@ -2,7 +2,7 @@
 
 Http server:
 -------
-###### Grizzly ######  
+###### java ######  
 
 API Documentation:  
 method POST '/used/command'  
