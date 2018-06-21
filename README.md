@@ -15,7 +15,7 @@ ip = device ip
 
 ###### controlled desktop ######  
 [linux, windows, mac & all JVM java](https://yadi.sk/d/-2WA7S753YCNQK)  
-put port = 8086
+put port = 8087
 
 ###### controlled mobile ######  
 [androidOS not](/)  
