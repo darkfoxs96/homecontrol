@@ -46,6 +46,19 @@ public class UIControlled extends JFrame{
                 } catch (IOException | IllegalArgumentException e1) {
                     e1.printStackTrace();
                     outError.setText(e1.getMessage());
+                } catch (RuntimeException e1) {
+                    if(e1.getMessage().equals("server response bad status 500: Models: Not found record 'Controlled' for update")) {
+                        HomeControlControlled.setMyServerID(0);
+                        try {
+                            HomeControlControlled.createHTTPListener(textField1.getText(),Integer.parseInt(textField2.getText()), textField3.getText());
+                            outError.setText("Work");
+                        } catch (IOException e2) {
+                            e2.printStackTrace();
+                            outError.setText(e2.getMessage());
+                        }
+                    } else {
+                        e1.printStackTrace();
+                    }
                 }
             }
         });
