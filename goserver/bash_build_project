@@ -4,22 +4,22 @@
 VERSERVER="1.0.0_alpha"
 
 # PATHS
-HOMEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-OUTDIR="$HOMEDIR/build/dist"
+HOMEDIR     ="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+OUTDIR      ="$HOMEDIR/build/dist"
 LOADFILESDIR="$HOMEDIR/build"
 
-MAC64="$OUTDIR/mac_x64_"$VERSERVER"_home_control_server"
-MAC="$OUTDIR/mac_"$VERSERVER"_home_control_server"
-WIN64="$OUTDIR/win_x64_"$VERSERVER"_home_control_server"
-WIN="$OUTDIR/win_"$VERSERVER"_home_control_server"
+MAC64  ="$OUTDIR/mac_x64_"$VERSERVER"_home_control_server"
+MAC    ="$OUTDIR/mac_"$VERSERVER"_home_control_server"
+WIN64  ="$OUTDIR/win_x64_"$VERSERVER"_home_control_server"
+WIN    ="$OUTDIR/win_"$VERSERVER"_home_control_server"
 LINUX64="$OUTDIR/linux_x64_"$VERSERVER"_home_control_server"
-LINUX="$OUTDIR/linux_"$VERSERVER"_home_control_server"
+LINUX  ="$OUTDIR/linux_"$VERSERVER"_home_control_server"
 
 # FILES
-WINSTART="win_start_server.bat"
-MACSTART="mac_start_server"
+WINSTART  ="win_start_server.bat"
+MACSTART  ="mac_start_server"
 LINUXSTART="linux_start_server"
-CONFIG="app.conf"
+CONFIG    ="app.conf"
 
 # START
 mkdir $OUTDIR
@@ -61,6 +61,7 @@ funcBuildServer () {
 }
 
 # BUILD
+# $6 not copy !!!
 funcBuildServer $MAC64 $MACSTART "mac_x64" "darwin" "amd64" "mac64GSHC" "GSHC" &
 funcBuildServer $MAC   $MACSTART "mac"     "darwin" "386"   "macGSHC"   "GSHC" &
 
